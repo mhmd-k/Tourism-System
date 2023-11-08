@@ -1,0 +1,373 @@
+{
+  "country": "Italy",
+  "cityName": "Venice",
+  "descripyion": "Venice, the capital of northern Italy’s Veneto region, is built on more than 100 small islands in a lagoon in the Adriatic Sea. It has no roads, just canals – including the Grand Canal thoroughfare – lined with Renaissance and Gothic palaces. The central square, Piazza San Marco, contains St. Mark’s Basilica, which is tiled with Byzantine mosaics, and the Campanile bell tower offering views of the city’s red roofs.",
+  "restaurants": [
+    {
+      "id": 1,
+      "name": "Osteria Alle Testiere",
+      "address": "Calle del Mondo Novo, 5801, 30122 Venice, Italy",
+      "geoCode": {
+        "Latitude": 45.437462,
+        "Longitude": 12.340527
+      }
+    },
+    {
+      "id": 2,
+      "name": "Ristorante Da Ivo",
+      "address": "Calle dei Fuseri, 1809, 30124 Venice, Italy",
+      "geoCode": {
+        "Latitude": 45.437836,
+        "Longitude": 12.334222
+      }
+    },
+    {
+      "id": 3,
+      "name": "Trattoria Antiche Carampane",
+      "address": "Rio Terà de la Carampane, 1911, 30125 Venice, Italy",
+      "geoCode": {
+        "Latitude": 45.437531,
+        "Longitude": 12.334492
+      }
+    },
+    {
+      "id": 4,
+      "name": "Osteria Bancogiro",
+      "address": "Campo San Giacometto, 122, 30125 Venice, Italy",
+      "geoCode": {
+        "Latitude": 45.434377,
+        "Longitude": 12.342789
+      }
+    },
+    {
+      "id": 5,
+      "name": "Trattoria Corte Sconta",
+      "address": "Corte Sconta, 3886, 30122 Venice, Italy",
+      "geoCode": {
+        "Latitude": 45.431719,
+        "Longitude": 12.334537
+      }
+    },
+    {
+      "id": 6,
+      "name": "Osteria Al Squero",
+      "address": "Dorsoduro, 943, 30123 Venice, Italy",
+      "geoCode": {
+        "Latitude": 45.432945,
+        "Longitude": 12.325223
+      }
+    },
+    {
+      "id": 7,
+      "name": "Ristorante La Zucca",
+      "address": "Santa Croce, 1762, 30135 Venice, Italy",
+      "geoCode": {
+        "Latitude": 45.438658,
+        "Longitude": 12.321912
+      }
+    },
+    {
+      "id": 8,
+      "name": "Trattoria Da Fiore",
+      "address": "San Polo, 2202, 30125 Venice, Italy",
+      "geoCode": {
+        "Latitude": 45.438477,
+        "Longitude": 12.329399
+      }
+    },
+    {
+      "id": 9,
+      "name": "Hostaria Vecio Biavarol",
+      "address": "Fondamenta de la Sensa, 30121 Venice, Italy",
+      "geoCode": {
+        "Latitude": 45.447003,
+        "Longitude": 12.342426
+      }
+    },
+    {
+      "id": 10,
+      "name": "Ristorante Alle Corone",
+      "address": "Castello, 3886, 30122 Venice, Italy",
+      "geoCode": {
+        "Latitude": 45.433584,
+        "Longitude": 12.343622
+      }
+    }
+  ],
+  "shoppingPlaces": [
+    {
+      "id": 1,
+      "name": "Rialto Market",
+      "address": "San Polo, 30125 Venice, Italy",
+      "geoCode": {
+        "Latitude": 45.438594,
+        "Longitude": 12.335198
+      }
+    },
+    {
+      "id": 2,
+      "name": "T Fondaco dei Tedeschi",
+      "address": "Calle del Fontego dei Tedeschi, 30124 Venice, Italy",
+      "geoCode": {
+        "Latitude": 45.438823,
+        "Longitude": 12.335003
+      }
+    },
+    {
+      "id": 3,
+      "name": "Venetian Dreams",
+      "address": "Calle dei Saoneri, 30121 Venice, Italy",
+      "geoCode": {
+        "Latitude": 45.437993,
+        "Longitude": 12.334065
+      }
+    },
+    {
+      "id": 4,
+      "name": "Le Mercerie",
+      "address": "Calle dei Fabbri, 30124 Venice, Italy",
+      "geoCode": {
+        "Latitude": 45.437919,
+        "Longitude": 12.335984
+      }
+    },
+    {
+      "id": 5,
+      "name": "Marco Polo Airport Shopping Mall",
+      "address": "Via Galileo Galilei, 30, 30173 Tessera VE, Italy",
+      "geoCode": {
+        "Latitude": 45.506712,
+        "Longitude": 12.348813
+      }
+    },
+    {
+      "id": 6,
+      "name": "Calzoleria Rialto",
+      "address": "San Polo, 30125 Venice, Italy",
+      "geoCode": {
+        "Latitude": 45.438594,
+        "Longitude": 12.335198
+      }
+    },
+    {
+      "id": 7,
+      "name": "Libreria Acqua Alta",
+      "address": "Calle Longa Santa Maria Formosa, 5176/B, 30122 Venice, Italy",
+      "geoCode": {
+        "Latitude": 45.439145,
+        "Longitude": 12.343539
+      }
+    },
+    {
+      "id": 8,
+      "name": "Tiepolo Bookstore",
+      "address": "Calle Larga dei Bari, 1239, 30125 Venice, Italy",
+      "geoCode": {
+        "Latitude": 45.439596,
+        "Longitude": 12.339557
+      }
+    },
+    {
+      "id": 9,
+      "name": "Nardi",
+      "address": "Calle Vallaresso, 1332, 30124 Venice, Italy",
+      "geoCode": {
+        "Latitude": 45.431635,
+        "Longitude": 12.334413
+      }
+    },
+    {
+      "id": 10,
+      "name": "Artigianato d'Arte di Vianello Mauro",
+      "address": "Calle dei Fabbri, 993, 30124 Venice, Italy",
+      "geoCode": {
+        "Latitude": 45.437789,
+        "Longitude": 12.337051
+      }
+    }
+  ],
+  "oldPlaces": [
+    {
+      "id": 1,
+      "name": "St. Mark's Basilica",
+      "address": "Piazza San Marco, 328, 30124 Venice, Italy",
+      "geoCode": {
+        "Latitude": 45.434336,
+        "Longitude": 12.338784
+      }
+    },
+    {
+      "id": 2,
+      "name": "Doge's Palace",
+      "address": "Piazza San Marco, 1, 30124 Venice, Italy",
+      "geoCode": {
+        "Latitude": 45.434237,
+        "Longitude": 12.340385
+      }
+    },
+    {
+      "id": 3,
+      "name": "Rialto Bridge",
+      "address": "Sestiere San Polo, 30125 Venice, Italy",
+      "geoCode": {
+        "Latitude": 45.438922,
+        "Longitude": 12.335177
+      }
+    },
+    {
+      "id": 4,
+      "name": "Bridge of Sighs",
+      "address": "Piazza San Marco, 1, 30124 Venice, Italy",
+      "geoCode": {
+        "Latitude": 45.433786,
+        "Longitude": 12.342197
+      }
+    },
+    {
+      "id": 5,
+      "name": "Santa Maria della Salute",
+      "address": "Dorsoduro, 1, 30123 Venice, Italy",
+      "geoCode": {
+        "Latitude": 45.431934,
+        "Longitude": 12.33459
+      }
+    },
+    {
+      "id": 6,
+      "name": "Basilica di Santa Maria Gloriosa dei Frari",
+      "address": "San Polo, 3072, 30125 Venice, Italy",
+      "geoCode": {
+        "Latitude": 45.437651,
+        "Longitude": 12.325172
+      }
+    },
+    {
+      "id": 7,
+      "name": "Scuola Grande di San Rocco",
+      "address": "San Polo, 3052, 30125 Venice, Italy",
+      "geoCode": {
+        "Latitude": 45.437858,
+        "Longitude": 12.329815
+      }
+    },
+    {
+      "id": 8,
+      "name": "Ca' d'Oro",
+      "address": "Cannaregio, 3932, 30121 Venice, Italy",
+      "geoCode": {
+        "Latitude": 45.443267,
+        "Longitude": 12.339533
+      }
+    },
+    {
+      "id": 9,
+      "name": "San Giorgio Maggiore",
+      "address": "San Giorgio Maggiore, 30133 Venice, Italy",
+      "geoCode": {
+        "Latitude": 45.429969,
+        "Longitude": 12.345628
+      }
+    },
+    {
+      "id": 10,
+      "name": "San Zaccaria",
+      "address": "Campo San Zaccaria, 5016, 30122 Venice, Italy",
+      "geoCode": {
+        "Latitude": 45.437109,
+        "Longitude": 12.342509
+      }
+    }
+  ],
+  "naturePlaces": [
+    {
+      "id": 1,
+      "name": "Lido di Venezia",
+      "address": "Lido, 30126 Venice, Italy",
+      "geoCode": {
+        "Latitude": 45.397722,
+        "Longitude": 12.368619
+      }
+    },
+    {
+      "id": 2,
+      "name": "Isola di San Michele",
+      "address": "Isola di San Michele, 30135 Venice, Italy",
+      "geoCode": {
+        "Latitude": 45.446589,
+        "Longitude": 12.342786
+      }
+    },
+    {
+      "id": 3,
+      "name": "Giardini della Biennale",
+      "address": "Castello, 30122 Venice, Italy",
+      "geoCode": {
+        "Latitude": 45.429087,
+        "Longitude": 12.358767
+      }
+    },
+    {
+      "id": 4,
+      "name": "Isola di Burano",
+      "address": "Isola di Burano, 30142 Venice, Italy",
+      "geoCode": {
+        "Latitude": 45.485022,
+        "Longitude": 12.416824
+      }
+    },
+    {
+      "id": 5,
+      "name": "Isola di Torcello",
+      "address": "Isola di Torcello, 30142 Venice, Italy",
+      "geoCode": {
+        "Latitude": 45.497267,
+        "Longitude": 12.417499
+      }
+    },
+    {
+      "id": 6,
+      "name": "Laguna Veneta",
+      "address": "Venice, Italy",
+      "geoCode": {
+        "Latitude": 45.43719,
+        "Longitude": 12.33459
+      }
+    },
+    {
+      "id": 7,
+      "name": "Isola di Sant'Erasmo",
+      "address": "Isola di Sant'Erasmo, 30141 Venice, Italy",
+      "geoCode": {
+        "Latitude": 45.446389,
+        "Longitude": 12.428413
+      }
+    },
+    {
+      "id": 8,
+      "name": "Isola di Mazzorbo",
+      "address": "Isola di Mazzorbo, 30142 Venice, Italy",
+      "geoCode": {
+        "Latitude": 45.487754,
+        "Longitude": 12.34065
+      }
+    },
+    {
+      "id": 9,
+      "name": "Isola di Pellestrina",
+      "address": "Isola di Pellestrina, 30126 Venice, Italy",
+      "geoCode": {
+        "Latitude": 45.370522,
+        "Longitude": 12.354457
+      }
+    },
+    {
+      "id": 10,
+      "name": "Isola di San Giorgio in Alga",
+      "address": "Isola di San Giorgio in Alga, 30100 Venice, Italy",
+      "geoCode": {
+        "Latitude": 45.406805,
+        "Longitude": 12.312684
+      }
+    }
+  ]
+}

@@ -1,0 +1,496 @@
+{
+  "country": "Italy",
+  "cityName": "Rome",
+  "descripyion": "Rome is the capital city of Italy. It is also the capital of the Lazio region, the centre of the Metropolitan City of Rome, and a special comune named Comune di Roma Capitale.",
+  "resturants": [
+    {
+      "id": 1,
+      "name": "La Pergola",
+      "address": "Via Alberto Cadlolo, 101, 00136 Roma RM, Italy",
+      "geoCode": {
+        "Latitude": 41.920110744370284,
+        "Longitude": 12.446031690814332
+      },
+      "budget": "high",
+      "foodType": "fine dinning"
+    },
+    {
+      "id": 2,
+      "name": "Aroma Osteria",
+      "address": "Via Labicana 125 Palazzo Manfredi, 00184 Rome Italy",
+      "geoCode": {
+        "Latitude": 41.894336555920006,
+        "Longitude": 12.496274818992072
+      },
+      "budget": "medium",
+      "foodType": "traditional"
+    },
+    {
+      "id": 3,
+      "name": "Roscioli",
+      "address": "Via dei Giubbonari, 21, 00186 Roma RM, Italy",
+      "geoCode": {
+        "Latitude": 41.89489285707279,
+        "Longitude": 12.473089476756683
+      },
+      "budget": "high",
+      "foodType": "fine dinning"
+    },
+    {
+      "id": 4,
+      "name": "Trattoria Da Danilo",
+      "address": "Via Petrarca, 13, 00185 Roma RM, Italy",
+      "geoCode": {
+        "Latitude": 41.89736613876378,
+        "Longitude": 12.507873998643996
+      },
+      "budget": "high",
+      "foodType": "fine dinning"
+    },
+    {
+      "id": 5,
+      "name": "Tonnarello",
+      "address": "Via della Paglia, 1, 00153 Roma RM, Italy",
+      "geoCode": {
+        "Latitude": 41.88901683607882,
+        "Longitude": 12.47974200214277
+      },
+      "budget": "low",
+      "foodType": "traditional"
+    },
+    {
+      "id": 6,
+      "name": "Armando al Pantheon",
+      "address": "Salita dei Crescenzi, 31, 00186 Roma RM, Italy",
+      "geoCode": {
+        "Latitude": 41.89997661533425,
+        "Longitude": 12.477517868587144
+      },
+      "budget": "medium",
+      "foodType": "traditional"
+    },
+    {
+      "id": 7,
+      "name": "Kathmandu - fast food",
+      "address": "Via Buonarroti, 38, 00185 Roma RM, Italy",
+      "geoCode": {
+        "Latitude": 41.89791985513992,
+        "Longitude": 12.502734773664042
+      },
+      "budget": "low",
+      "foodType": "fast food"
+    },
+    {
+      "id": 8,
+      "name": "Roscioli Caffè Pasticceria",
+      "address": "Piazza Benedetto Cairoli, 16, 00186 Roma RM, Italy",
+      "geoCode": {
+        "Latitude": 41.895085085698095,
+        "Longitude": 12.478286145392767
+      },
+      "budget": "medium",
+      "foodType": "dessert"
+    },
+    {
+      "id": 9,
+      "name": "La Taverna dei Fori Imperiali",
+      "address": "Via della Madonna dei Monti, 9, 00184 Roma RM, Italy",
+      "geoCode": {
+        "Latitude": 41.89453422606252,
+        "Longitude": 12.489192080861834
+      },
+      "budget": "high",
+      "foodType": "dessert"
+    },
+    {
+      "id": 10,
+      "name": "Ristorante Piperno",
+      "address": "Monte de' Cenci, 9, 00186 Roma RM, Italy",
+      "geoCode": {
+        "Latitude": 41.88968021905381,
+        "Longitude": 12.480586630819304
+      },
+      "budget": "high",
+      "foodType": "fine dinning"
+    },
+    {
+      "id": 11,
+      "name": "Five Guys",
+      "address": "Roma Termini, Piazza dei Cinquecento, 00187 Roma RM, Italy",
+      "geoCode": {
+        "Latitude": 41.9064960798235,
+        "Longitude": 12.50225891959091
+      },
+      "budget": "low",
+      "foodType": "fast food"
+    }
+  ],
+  "shoppingPlaces": [
+    {
+      "id": 1,
+      "name": "Galleria Alberto Sordi",
+      "address": "Piazza Colonna, 00187 Roma RM, Italy",
+      "geoCode": {
+        "Latitude": 41.902102,
+        "Longitude": 12.481708
+      },
+      "budget": "medium"
+    },
+    {
+      "id": 2,
+      "name": "Via del Corso",
+      "address": "Via del Corso, 00186 Roma RM, Italy",
+      "geoCode": {
+        "Latitude": 41.902119,
+        "Longitude": 12.482297
+      },
+      "budget": "low"
+    },
+    {
+      "id": 3,
+      "name": "Via Condotti",
+      "address": "Via dei Condotti, 00187 Roma RM, Italy",
+      "geoCode": {
+        "Latitude": 41.905964,
+        "Longitude": 12.481628
+      },
+      "budget": "low"
+    },
+    {
+      "id": 4,
+      "name": "La Rinascente",
+      "address": "Via del Tritone, 61, 00187 Roma RM, Italy",
+      "geoCode": {
+        "Latitude": 41.902175,
+        "Longitude": 12.488292
+      },
+      "budget": "high"
+    },
+    {
+      "id": 5,
+      "name": "Porta Portese Market",
+      "address": "Via di Porta Portese, 00153 Roma RM, Italy",
+      "geoCode": {
+        "Latitude": 41.87251,
+        "Longitude": 12.472869
+      },
+      "budget": "medium"
+    },
+    {
+      "id": 6,
+      "name": "Euroma2",
+      "address": "Viale dell'Oceano Pacifico, 83, 00144 Roma RM, Italy",
+      "geoCode": {
+        "Latitude": 41.828383,
+        "Longitude": 12.468162
+      },
+      "budget": "high"
+    },
+    {
+      "id": 7,
+      "name": "Castel Romano Designer Outlet",
+      "address": "Via Ponte di Piscina Cupa, 64, 00128 Castel Romano RM, Italy",
+      "geoCode": {
+        "Latitude": 41.63776,
+        "Longitude": 12.452605
+      },
+      "budget": "medium"
+    },
+    {
+      "id": 8,
+      "name": "Via Cola di Rienzo",
+      "address": "Via Cola di Rienzo, 00192 Roma RM, Italy",
+      "geoCode": {
+        "Latitude": 41.908646,
+        "Longitude": 12.465426
+      },
+      "budget": "high"
+    },
+    {
+      "id": 9,
+      "name": "Via Borgognona",
+      "address": "Via Borgognona, 00187 Roma RM, Italy",
+      "geoCode": {
+        "Latitude": 41.904793,
+        "Longitude": 12.481215
+      },
+      "budget": "low"
+    },
+    {
+      "id": 10,
+      "name": "Piazza di Spagna",
+      "address": "Piazza di Spagna, 00187 Roma RM, Italy",
+      "geoCode": {
+        "Latitude": 41.90546,
+        "Longitude": 12.482145
+      },
+      "budget": "high"
+    }
+  ],
+  "oldPlaces": [
+    {
+      "id": 1,
+      "name": "Colosseum",
+      "address": "Piazza del Colosseo, 1, 00184 Roma RM, Italy",
+      "geoCode": {
+        "Latitude": 41.89021,
+        "Longitude": 12.49223
+      }
+    },
+    {
+      "id": 2,
+      "name": "Roman Forum",
+      "address": "Via della Salara Vecchia, 5/6, 00186 Roma RM, Italy",
+      "geoCode": {
+        "Latitude": 41.892635,
+        "Longitude": 12.485349
+      }
+    },
+    {
+      "id": 3,
+      "name": "Pantheon",
+      "address": "Piazza della Rotonda, 00186 Roma RM, Italy",
+      "geoCode": {
+        "Latitude": 41.89861,
+        "Longitude": 12.476846
+      }
+    },
+    {
+      "id": 4,
+      "name": "Trevi Fountain",
+      "address": "Piazza di Trevi, 00187 Roma RM, Italy",
+      "geoCode": {
+        "Latitude": 41.900932,
+        "Longitude": 12.48329
+      }
+    },
+    {
+      "id": 5,
+      "name": "Vatican City",
+      "address": "Vatican City",
+      "geoCode": {
+        "Latitude": 41.902916,
+        "Longitude": 12.453389
+      }
+    },
+    {
+      "id": 6,
+      "name": "Spanish Steps",
+      "address": "Piazza di Spagna, 00187 Roma RM, Italy",
+      "geoCode": {
+        "Latitude": 41.90546,
+        "Longitude": 12.482145
+      }
+    },
+    {
+      "id": 7,
+      "name": "Castel Sant'Angelo",
+      "address": "Lungotevere Castello, 50, 00193 Roma RM, Italy",
+      "geoCode": {
+        "Latitude": 41.903056,
+        "Longitude": 12.466389
+      }
+    },
+    {
+      "id": 8,
+      "name": "Palatine Hill",
+      "address": "Via di San Gregorio, 00186 Roma RM, Italy",
+      "geoCode": {
+        "Latitude": 41.888359,
+        "Longitude": 12.487366
+      }
+    },
+    {
+      "id": 9,
+      "name": "Baths of Caracalla",
+      "address": "Viale delle Terme di Caracalla, 52, 00153 Roma RM, Italy",
+      "geoCode": {
+        "Latitude": 41.87956,
+        "Longitude": 12.492309
+      }
+    },
+    {
+      "id": 10,
+      "name": "Piazza Navona",
+      "address": "Piazza Navona, 00186 Roma RM, Italy",
+      "geoCode": {
+        "Latitude": 41.89917,
+        "Longitude": 12.47351
+      }
+    }
+  ],
+  "naturePlaces": [
+    {
+      "id": 1,
+      "name": "Villa Borghese Gardens",
+      "address": "Piazzale Napoleone I, 00197 Roma RM, Italy",
+      "geoCode": {
+        "Latitude": 41.912731,
+        "Longitude": 12.4856
+      }
+    },
+    {
+      "id": 2,
+      "name": "Janiculum Hill",
+      "address": "Via Garibaldi, 30, 00153 Roma RM, Italy",
+      "geoCode": {
+        "Latitude": 41.891448,
+        "Longitude": 12.468141
+      }
+    },
+    {
+      "id": 3,
+      "name": "Monte Mario",
+      "address": "Monte Mario, 00136 Roma RM, Italy",
+      "geoCode": {
+        "Latitude": 41.932116,
+        "Longitude": 12.427197
+      }
+    },
+    {
+      "id": 4,
+      "name": "Gianicolo Hill",
+      "address": "Piazzale Giuseppe Garibaldi, 00165 Roma RM, Italy",
+      "geoCode": {
+        "Latitude": 41.890737,
+        "Longitude": 12.461903
+      }
+    },
+    {
+      "id": 5,
+      "name": "Parco degli Acquedotti",
+      "address": "Via Lemonia, 256, 00174 Roma RM, Italy",
+      "geoCode": {
+        "Latitude": 41.853483,
+        "Longitude": 12.571637
+      }
+    },
+    {
+      "id": 6,
+      "name": "Lake Bracciano",
+      "address": "Lago di Bracciano, Italy",
+      "geoCode": {
+        "Latitude": 42.111241,
+        "Longitude": 12.199484
+      }
+    },
+    {
+      "id": 7,
+      "name": "Tiber Island",
+      "address": "Isola Tiberina, 00186 Roma RM, Italy",
+      "geoCode": {
+        "Latitude": 41.888611,
+        "Longitude": 12.4775
+      }
+    },
+    {
+      "id": 8,
+      "name": "Appian Way Regional Park",
+      "address": "Parco Regionale dell'Appia Antica, Via Appia Antica, 42, 00178 Roma RM, Italy",
+      "geoCode": {
+        "Latitude": 41.858203,
+        "Longitude": 12.515993
+      }
+    },
+    {
+      "id": 9,
+      "name": "Villa Doria Pamphili",
+      "address": "Via di San Pancrazio, 00152 Roma RM, Italy",
+      "geoCode": {
+        "Latitude": 41.881972,
+        "Longitude": 12.444107
+      }
+    },
+    {
+      "id": 10,
+      "name": "Ostia Beach",
+      "address": "Lido di Ostia, 00122 Roma RM, Italy",
+      "geoCode": {
+        "Latitude": 41.73698985513557,
+        "Longitude": 12.28517615956347
+      }
+    }
+  ],
+  "nightPlaces": [
+    {
+      "id": 1,
+      "name": "Teatro dell'Opera di Roma",
+      "address": "Piazza Beniamino Gigli, 00184 Roma RM, Italy",
+      "geoCode": {
+        "Latitude": 41.90079059587993,
+        "Longitude": 12.495658295400876
+      },
+      "budget": "medium"
+    },
+    {
+      "id": 2,
+      "name": "Piazza Navona in Rome",
+      "address": "Piazza Navona, 00186 Roma RM, Italy",
+      "geoCode": {
+        "Latitude": 42.61517702203919,
+        "Longitude": 12.588172027923532
+      },
+      "budget": "high"
+    },
+    {
+      "id": 3,
+      "name": "Trevi Fountain in Rome",
+      "address": "Piazza di Trevi, 00187 Roma RM, Italy",
+      "geoCode": {
+        "Latitude": 41.90108118403159,
+        "Longitude": 12.483358776092714
+      },
+      "budget": "low"
+    },
+    {
+      "id": 4,
+      "name": "The Roman Guy Tours",
+      "address": "Via di Ripetta, 142, 00186 Roma RM, Italy",
+      "geoCode": {
+        "Latitude": 41.904141879788085,
+        "Longitude": 12.47503285466089
+      },
+      "budget": "low"
+    },
+    {
+      "id": 5,
+      "name": "Castel Sant'Angelo",
+      "address": "Lungotevere Castello, 50, 00193 Roma RM, Italy",
+      "geoCode": {
+        "Latitude": 41.90318294933377,
+        "Longitude": 12.466254537728092
+      },
+      "budget": "high"
+    },
+    {
+      "id": 6,
+      "name": "Roof Garden & Bar",
+      "address": "Via Giovanni Vitelleschi, 34, 00193 Roma RM, Italy",
+      "geoCode": {
+        "Latitude": 41.905156608826275,
+        "Longitude": 12.461993231390387
+      },
+      "budget": "medium"
+    },
+    {
+      "id": 7,
+      "name": "Vatican Museums",
+      "address": "00120 Vatican City",
+      "geoCode": {
+        "Latitude": 41.90663948198113,
+        "Longitude": 12.453652024237723
+      },
+      "budget": "medium"
+    },
+    {
+      "id": 7,
+      "name": "Trastevere",
+      "address": "Trastevere, Rome, Metropolitan City of Rome Capital, Italy",
+      "geoCode": {
+        "Latitude": 41.885986467545884,
+        "Longitude": 12.47013118675295
+      },
+      "budget": "low"
+    }
+  ]
+}
