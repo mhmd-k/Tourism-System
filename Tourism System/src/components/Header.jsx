@@ -14,7 +14,7 @@ import LuggageSharpIcon from "@mui/icons-material/LuggageSharp";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 
 const pages = ["Trips", "Places"];
-const settings = ["Profile", "Logout"];
+const settings = ["Login", "Sign up"];
 
 function Header() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -36,17 +36,15 @@ function Header() {
   };
 
   return (
-    <AppBar position="static" sx={{ backgroundColor: "white", color: "black" }}>
+    <AppBar
+      position="sticky"
+      sx={{ backgroundColor: "white", color: "black", boxShadow: 0 }}
+    >
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <LuggageSharpIcon
-            sx={{ display: { xs: "none", md: "flex" }, mr: 1 }}
-          />
           <Typography
-            variant="h6"
+            variant="h4"
             noWrap
-            component="a"
-            href="#app-bar-with-responsive-menu"
             sx={{
               mr: 2,
               display: { xs: "none", md: "flex" },
@@ -55,8 +53,13 @@ function Header() {
               letterSpacing: ".3rem",
               color: "inherit",
               textDecoration: "none",
+              alignItems: "center",
             }}
           >
+            <LuggageSharpIcon
+              sx={{ display: { xs: "none", md: "flex" }, mr: 1 }}
+              fontSize="20px"
+            />
             TS
           </Typography>
 
@@ -106,9 +109,6 @@ function Header() {
               ))}
             </Menu>
           </Box>
-          <LuggageSharpIcon
-            sx={{ display: { xs: "flex", md: "none" }, mr: 1 }}
-          />
           <Typography
             variant="h5"
             noWrap
@@ -122,9 +122,12 @@ function Header() {
               fontWeight: 700,
               letterSpacing: ".3rem",
               textDecoration: "none",
+              color: "#72c476",
             }}
           >
-            TS
+            <LuggageSharpIcon
+              sx={{ display: { xs: "flex", md: "none" }, mr: 1 }}
+            />
           </Typography>
           <Box
             sx={{
