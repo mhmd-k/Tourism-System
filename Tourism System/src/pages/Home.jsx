@@ -39,9 +39,12 @@ function Home() {
             </Button>
             <Button
               endIcon={<AutoFixHighOutlinedIcon />}
-              color="success"
               variant="contained"
-              sx={{ borderRadius: "30px", padding: "10px 20px" }}
+              sx={{
+                borderRadius: "30px",
+                padding: "10px 20px",
+                backgroundColor: "#009688",
+              }}
             >
               Generate A Trip
             </Button>

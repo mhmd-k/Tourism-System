@@ -10,11 +10,15 @@ import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
-import LuggageSharpIcon from "@mui/icons-material/LuggageSharp";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import ShareLocationIcon from "@mui/icons-material/ShareLocation";
+import { Link } from "react-router-dom";
 
 const pages = ["Trips", "Places"];
-const settings = ["Login", "Sign up"];
+const settings = [
+  { label: "Login", link: "login" },
+  { label: "Signup", link: "signup" },
+];
 
 function Header() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -38,7 +42,12 @@ function Header() {
   return (
     <AppBar
       position="sticky"
-      sx={{ backgroundColor: "white", color: "black", boxShadow: 0 }}
+      sx={{
+        backgroundColor: "white",
+        color: "black",
+        boxShadow: 0,
+        borderBottom: "1px solid black",
+      }}
     >
       <Container maxWidth="xl">
         <Toolbar disableGutters>
@@ -56,8 +65,12 @@ function Header() {
               alignItems: "center",
             }}
           >
-            <LuggageSharpIcon
-              sx={{ display: { xs: "none", md: "flex" }, mr: 1 }}
+            <ShareLocationIcon
+              sx={{
+                display: { xs: "none", md: "flex" },
+                mr: 1,
+                color: "#009688",
+              }}
               fontSize="20px"
             />
             TS
@@ -125,8 +138,12 @@ function Header() {
               color: "#72c476",
             }}
           >
-            <LuggageSharpIcon
-              sx={{ display: { xs: "flex", md: "none" }, mr: 1 }}
+            <ShareLocationIcon
+              sx={{
+                display: { xs: "flex", md: "none" },
+                mr: 1,
+                color: "#009688",
+              }}
             />
           </Typography>
           <Box
@@ -170,7 +187,14 @@ function Header() {
             >
               {settings.map((setting) => (
                 <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
+                  <Typography textAlign="center">
+                    <Link
+                      style={{ textDecoration: "none", color: "inherit" }}
+                      to={setting.link}
+                    >
+                      {setting.label}
+                    </Link>
+                  </Typography>
                 </MenuItem>
               ))}
             </Menu>

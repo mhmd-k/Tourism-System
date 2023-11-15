@@ -63,3 +63,22 @@ input[name="search"] {
 .home p {
   font-size: 20px;
 }
+.login {
+  height: 100dvh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(
+    115deg,
+    rgb(86, 216, 228) 10%,
+    rgb(159, 1, 234) 90%
+  );
+}
+.login-from {
+  max-width: 400px;
+  width: 100%;
+  margin: 20px;
+  border-radius: 5px;
+  background-color: white;
+  padding: 40px 20px;
+}
