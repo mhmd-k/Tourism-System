@@ -5,8 +5,10 @@
 }
 main {
   flex: 1;
-  padding: 40px 0;
   text-align: center;
+}
+.home-page {
+  padding: 40px 0;
 }
 h1 {
   margin: 10px 0;
@@ -81,4 +83,24 @@ input[name="search"] {
   border-radius: 5px;
   background-color: white;
   padding: 40px 20px;
+}
+.home-btn:hover {
+  background-color: #009688 !important;
+}
+.generate-trip {
+  height: 100dvh;
+  .image {
+    background-image: url(./assets/generateTripsImage.jpg);
+    background-position: right;
+    background-size: cover;
+    width: 40%;
+    filter: brightness(0.7);
+  }
+}
+@media (max-width: 767px) {
+  .generate-trip {
+    .image {
+      display: none;
+    }
+  }
 }

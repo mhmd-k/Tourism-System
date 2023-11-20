@@ -3,6 +3,7 @@ import SearchIcon from "@mui/icons-material/Search";
 import { Button, Container, Stack, Typography } from "@mui/material";
 import AddLocationAltOutlinedIcon from "@mui/icons-material/AddLocationAltOutlined";
 import AutoFixHighOutlinedIcon from "@mui/icons-material/AutoFixHighOutlined";
+import { useNavigate } from "react-router-dom";
 
 function Home() {
   const [search, setSearch] = useState("");
@@ -11,8 +12,10 @@ function Home() {
     setSearch(e.target.value);
   };
 
+  const navigate = useNavigate();
+
   return (
-    <>
+    <div className="home-page">
       <h1>Where to?</h1>
       <div className="search">
         <input
@@ -39,19 +42,21 @@ function Home() {
             </Button>
             <Button
               endIcon={<AutoFixHighOutlinedIcon />}
+              className="home-btn"
               variant="contained"
               sx={{
                 borderRadius: "30px",
                 padding: "10px 20px",
-                backgroundColor: "#009688",
+                backgroundColor: "rgb(14, 186, 169)",
               }}
+              onClick={() => navigate("generateTrip")}
             >
               Generate A Trip
             </Button>
           </Stack>
         </Container>
       </div>
-    </>
+    </div>
   );
 }
 

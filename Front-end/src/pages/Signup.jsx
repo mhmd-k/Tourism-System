@@ -31,8 +31,8 @@ function Signup() {
             Country
           </InputLabel>
           <Select size="small" label="country">
-            {counteryOptions.map((e) => (
-              <MenuItem key={e} value={e}>
+            {counteryOptions.map((e, i) => (
+              <MenuItem key={`${e}-${i}`} value={e}>
                 {e}
               </MenuItem>
             ))}

@@ -45,8 +45,7 @@ function Header() {
       sx={{
         backgroundColor: "white",
         color: "black",
-        boxShadow: 0,
-        borderBottom: "1px solid black",
+        boxShadow: "0px 0px 8px lightgrey",
       }}
     >
       <Container maxWidth="xl">
