@@ -1,0 +1,16 @@
+id,name,address,city_id,location,description
+1,Villa Borghese Gardens,"Piazzale Napoleone I, 00197 Roma RM, Italy",1,41.912983078988084 12.48516558006076,"Vast urban park with formally landscaped gardens, a lake & villas now housing important museums."
+2,Botanical Garden of Rome,"Largo Cristina di Svezia, 23 A - 24, 00165 Roma RM, Italy",1,41.89288280617462 12.462939079547962,"7,000 plant species from around the world, plus fountains, a bamboo grove & a Japanese tea garden."
+3,Monte Mario,"Monte Mario, 00136 Roma RM, Italy",1,41.932116 12.427197,"Forested hill offering a nature reserve, observatory & panoramic views of the city & its monuments."
+4,Gianicolo Hill,"Piazzale Giuseppe Garibaldi, 00165 Roma RM, Italy",1,41.89166933751176 12.461351280059397,"This historic, well-known hilltop terrace offers panoramic views of Rome."
+5,Parco degli Acquedotti,"Via Lemonia, 256, 00174 Roma RM, Italy",1,41.850548739851135 12.557414284514692,"Protected parkland with a Roman aqueduct & ancient archaeological sites, plus a former mill."
+6,Lake Bracciano,"Lago di Bracciano, Italy",1,42.111241 12.199484,"a popular place for sailing, swimming & scuba diving."
+7,Tiber Island,"Isola Tiberina, 00186 Roma RM, Italy",1,41.888611 12.4775,Compact island in a bend of the River Tiber with a number of historical buildings & monuments.
+8,Appian Way Regional Park,"Parco Regionale dell'Appia Antica, Via Appia Antica, 42, 00178 Roma RM, Italy",1,41.858203 12.515993,Park along 16 km of the Roman road preserving important ancient Roman tombs & villas.
+9,Villa Doria Pamphili,"Via di San Pancrazio, 00152 Roma RM, Italy",1,41.881972 12.444107,"Landscaped park on ancient noble Roman estate, with open-air concerts, nature trails & fountain."
+10,Ostia Beach,"Lido di Ostia, 00122 Roma RM, Italy",1,41.73698985513557 12.28517615956347,"Historical 150-meter jetty, first founded in 1940, ending in a circular observation space."
+11,Vatican Gardens,"Vatican City, 00120",1,41.9022 12.4532,"Formal gardens within Vatican City, featuring fountains, sculptures & landscaped greenery."
+12,Janiculum Hill,"Via Garibaldi, 00153 Roma RM, Italy",1,41.889661 12.464192,"Hilltop park known for its panoramic views, statues, and memorials, including a large statue of Giuseppe Garibaldi."
+13,Villa Celimontana,"Via della Navicella, 12, 00184 Roma RM, Italy",1,41.885743 12.494257,"Renaissance villa and park with ancient Roman ruins, gardens, and a summer jazz festival."
+14,Villa Ada,"Via Salaria, 00199 Roma RM, Italy",1,41.9334 12.5015,"Large park with a lake, trees, and walking paths, offering a peaceful retreat from the city."
+15,Parco Savello (Orange Garden),"Piazza Pietro D'Illiria, 00153 Roma RM, Italy",1,41.886079 12.482297,"Garden on the Aventine Hill with orange trees, rose beds, and a panoramic view of Rome."

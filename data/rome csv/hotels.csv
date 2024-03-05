@@ -1,0 +1,29 @@
+id,name,address,city_id,location,price,stars
+3,The St. Regis Rome,"Via Vittorio Emanuele Orlando, 3, 00185 Rome, Italy",1,41.90416749222035 12.49482998006026,50,2
+4,"Rome Cavalieri, A Waldorf Astoria Hotel","Via Alberto Cadlolo, 101, 00136 Rome, Italy",1,41.914167 12.447222,150,4
+5,Palazzo Manfredi - Small Luxury Hotels of the World,"Via Labicana, 125, 00184 Rome, Italy",1,41.890831 12.494586,120,3
+6,Hotel Eden - Dorchester Collection,"Via Ludovisi, 49, 00187 Rome, Italy",1,41.906828 12.488686,250,5
+7,Gran Meliá Rome Villa Agrippina - The Leading Hotels of the World,"Via del Gianicolo, 3, 00165 Rome, Italy",1,41.895456 12.456547,200,4
+8,Hotel de Russie - Rocco Forte,"Via del Babuino, 9, 00187 Rome, Italy",1,41.907557 12.479913,80,3
+9,Grand Hotel de la Minerve,"Piazza della Minerva, 69, 00186 Rome, Italy",1,41.898463 12.475861,120,4
+10,The Westin Excelsior Rome,"Via Vittorio Veneto, 125, 00187 Rome, Italy",1,41.905504 12.487463,400,5
+11,"Boscolo Exedra Roma, Autograph Collection","Piazza della Repubblica, 47, 00185 Rome, Italy",1,41.903614 12.495467,100,3
+12,Hotel de Ricci,"Via della Barchetta, 14, 00186 Rome, Italy",1,41.894897 12.471283,90,3
+13,Hotel Raphael - Relais & Châteaux,"Largo Febo, 2, 00186 Rome, Italy",1,41.904255 12.469162,140,4
+14,Hotel Indigo Rome - St. George,"Via Giulia, 62, 00186 Rome, Italy",1,41.892822 12.466567,240,4
+15,The First Roma Dolce,"Via del Vantaggio, 14, 00186 Rome, Italy",1,41.903209 12.477169,350,5
+16,Hotel Artemide,"Via Nazionale, 22, 00184 Rome, Italy",1,41.901145 12.494852,250,4
+17,"Aleph Rome Hotel, Curio Collection by Hilton","Via di San Basilio, 15, 00187 Rome, Italy",1,41.906823 12.488709,100,3
+18,iQ Hotel Roma,"Via Firenze, 8, 00184 Rome, Italy",1,41.900328 12.493844,200,4
+19,Hotel Locarno,"Via della Penna, 22, 00186 Rome, Italy",1,41.907749 12.472732,300,4
+20,Hotel Vilòn,"Via dellArancio, 69, 00186 Rome, Italy",1,41.899137 12.469972,350,5
+21,Hotel Splendide Royal,"Via di Porta Pinciana, 14, 00187 Rome, Italy",1,41.906687 12.487253,140,4
+22,Hotel Adriano,"Via di Pallacorda, 2, 00186 Rome, Italy",1,41.900958 12.470338,250,3
+23,Hotel Quattro Fontane,"Via delle Quattro Fontane, 16, 00184 Rome, Italy",1,41.903402 12.488662,200,3
+24,Hotel Isa,"Via Cicerone, 39, 00193 Rome, Italy",1,41.906258 12.464542,150,3
+25,Hotel Santa Maria,"Vicolo del Piede, 2, 00153 Rome, Italy",1,41.891974 12.469231,100,2
+26,Hotel San Anselmo,"Piazza SantAnselmo, 2, 00153 Rome, Italy",1,41.885686 12.479225,80,2
+27,Hotel Forum,"Via Tor de Conti, 25-30, 00184 Rome, Italy",1,41.894517 12.485578,150,3
+28,Hotel Majestic Roma,"Via Vittorio Veneto, 50, 00187 Rome, Italy",1,41.906057 12.488132,350,5
+29,Hotel Ponte Sisto,"Via dei Pettinari, 64, 00186 Rome, Italy",1,41.890131 12.473864,200,4
+30,Hotel Mozart,"Via dei Greci, 23, 00187 Rome, Italy",1,41.906639 12.480727,150,3
