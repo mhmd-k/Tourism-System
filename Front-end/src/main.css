@@ -1,3 +1,6 @@
+:root {
+  --green-color: rgb(14, 186, 169);
+}
 #root {
   display: flex;
   flex-direction: column;
@@ -6,6 +9,10 @@
 main {
   flex: 1;
   text-align: center;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  display: none;
 }
 .home-page {
   padding: 40px 0;
@@ -103,4 +110,19 @@ input[name="search"] {
       display: none;
     }
   }
+}
+.generate-trip-input-container {
+  flex: 1;
+  position: relative;
+}
+.generate-trip-input-container svg {
+  position: absolute;
+  right: 4px;
+  top: 50%;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  color: var(--green-color);
 }

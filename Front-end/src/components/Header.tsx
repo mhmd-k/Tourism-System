@@ -1,4 +1,4 @@
-import * as React from "react";
+import { useState } from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
@@ -21,13 +21,15 @@ const settings = [
 ];
 
 function Header() {
-  const [anchorElNav, setAnchorElNav] = React.useState(null);
-  const [anchorElUser, setAnchorElUser] = React.useState(null);
+  const [anchorElNav, setAnchorElNav] = useState(null);
+  const [anchorElUser, setAnchorElUser] = useState(null);
 
-  const handleOpenNavMenu = (event) => {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const handleOpenNavMenu = (event: any) => {
     setAnchorElNav(event.currentTarget);
   };
-  const handleOpenUserMenu = (event) => {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const handleOpenUserMenu = (event: any) => {
     setAnchorElUser(event.currentTarget);
   };
 

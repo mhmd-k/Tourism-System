@@ -15,7 +15,7 @@
     {
       "id": 1,
       "name": "Hotel Quirinale",
-      "address": " Via Nazionale 7, Central Station, 00184 Rome, Italy",
+      "address": "Via Nazionale 7, Central Station, 00184 Rome, Italy",
       "location": {
         "Latitude": 41.90182202037885,
         "Longitude": 12.494873553074376
@@ -1203,10 +1203,7 @@
       "id": 1,
       "name": "Teatro dell'Opera di Roma",
       "address": "Piazza Beniamino Gigli, 00184 Roma RM, Italy",
-      "geoCode": {
-        "Latitude": 41.90079059587993,
-        "Longitude": 12.495658295400876
-      },
+      "location": "41.90079059587993 12.495658295400876",
       "description": "Iconic 19th-century theater that's as visually dramatic & lavish as the opera productions it stages.",
       "price": 50
     },
@@ -1214,10 +1211,7 @@
       "id": 2,
       "name": "Piazza Navona in Rome",
       "address": "Piazza Navona, 00186 Roma RM, Italy",
-      "geoCode": {
-        "Latitude": 42.61517702203919,
-        "Longitude": 12.588172027923532
-      },
+      "location": "42.61517702203919 12.588172027923532",
       "description": "Elegant square dating from the 1st century A.D., with a baroque fountain, street artists & bars.",
       "price": 60
     },
@@ -1225,10 +1219,7 @@
       "id": 3,
       "name": "Trevi Fountain in Rome",
       "address": "Piazza di Trevi, 00187 Roma RM, Italy",
-      "geoCode": {
-        "Latitude": 41.90108118403159,
-        "Longitude": 12.483358776092714
-      },
+      "location": "41.90108118403159 12.483358776092714",
       "description": "Aqueduct-fed rococo fountain, designed by Nicola Salvi & completed in 1762, with sculpted figures.",
       "price": 50
     },
@@ -1236,10 +1227,7 @@
       "id": 4,
       "name": "The Roman Guy Tours",
       "address": "Via di Ripetta, 142, 00186 Roma RM, Italy",
-      "geoCode": {
-        "Latitude": 41.904141879788085,
-        "Longitude": 12.47503285466089
-      },
+      "location": "41.904141879788085 12.47503285466089",
       "description": "",
       "price": 35
     },
@@ -1247,10 +1235,7 @@
       "id": 5,
       "name": "Castel Sant'Angelo",
       "address": "Lungotevere Castello, 50, 00193 Roma RM, Italy",
-      "geoCode": {
-        "Latitude": 41.90318294933377,
-        "Longitude": 12.466254537728092
-      },
+      "location": "41.90318294933377 12.466254537728092",
       "description": "Circular, 2nd-century castle housing furniture & paintings collections in Renaissance apartments.",
       "price": 35
     },
@@ -1258,21 +1243,15 @@
       "id": 6,
       "name": "Roof Garden & Bar",
       "address": "Via Giovanni Vitelleschi, 34, 00193 Roma RM, Italy",
-      "geoCode": {
-        "Latitude": 41.905156608826275,
-        "Longitude": 12.461993231390387
-      },
-      "description": "",
+      "location": "41.905156608826275 12.461993231390387",
+      "description": "A roof that turns into a terrace for cocktails, private parties, business meetings or can also be used only to admire Rome from an unconventional perspective. ",
       "price": 75
     },
     {
       "id": 7,
       "name": "Vatican Museums",
       "address": "00120 Vatican City",
-      "geoCode": {
-        "Latitude": 41.90663948198113,
-        "Longitude": 12.453652024237723
-      },
+      "location": "41.90663948198113 12.453652024237723",
       "description": "Multiple galleries of classical & Renaissance art masterpieces, plus the Sistine Chapel frescoes.",
       "price": 70
     },
@@ -1280,10 +1259,7 @@
       "id": 8,
       "name": "Trastevere",
       "address": "Trastevere, Rome, Metropolitan City of Rome Capital, Italy",
-      "geoCode": {
-        "Latitude": 41.885986467545884,
-        "Longitude": 12.47013118675295
-      },
+      "location": "41.885986467545884 12.47013118675295",
       "description": "Colorful Trastevere is a funky, bohemian area that clings to its centuries-old, working-class roots. It's known for traditional and innovative trattorias, craft beer pubs and artisan shops, as well as simple B&Bs and budget hotels. From the pre-dinner passeggiata (promenade) until late, a young crowd buzzes around Piazza di San Calisto and Piazza Santa Maria in Trastevere, the site of a gilded, mosaic-filled church.",
       "price": 40
     },
@@ -1291,10 +1267,7 @@
       "id": 9,
       "name": "Ice Club Roma",
       "address": "Via della Madonna dei Monti, 18/19, 00184 Roma RM, Italy",
-      "geoCode": {
-        "Latitude": 41.89587441474658,
-        "Longitude": 12.489198508866922
-      },
+      "location": "41.89587441474658 12.489198508866922",
       "description": "Cool cocktails & bar meals in a low-lit setting with a frosty vibe & decor made out of ice.",
       "price": 50
     },
@@ -1302,10 +1275,7 @@
       "id": 10,
       "name": "La Cabala",
       "address": "Via dei Soldati, 25c, 00186 Roma RM, Italy",
-      "geoCode": {
-        "Latitude": 41.90571254723192,
-        "Longitude": 12.47117406485654
-      },
+      "location": "41.90571254723192 12.47117406485654",
       "description": "Intimate nightclub on the top floor of a medieval building with views of the River Tiber.",
       "price": 70
     },
@@ -1313,10 +1283,7 @@
       "id": 11,
       "name": "Disco Planet Rome",
       "address": "Via del Commercio, 36, 00154 Roma RM, Italy",
-      "geoCode": {
-        "Latitude": 41.87287026998206,
-        "Longitude": 12.475808921887781
-      },
+      "location": "41.87287026998206 12.475808921887781",
       "description": "Busy nightclub with multiple rooms & dance floors offering live bands & themed nights, plus a bar.",
       "price": 50
     },
@@ -1324,10 +1291,7 @@
       "id": 12,
       "name": "Sharivari",
       "address": "Via de' Nari, 14, 00186 Roma RM, Italy",
-      "geoCode": {
-        "Latitude": 41.89813384139835,
-        "Longitude": 12.47603553805878
-      },
+      "location": "41.89813384139835 12.47603553805878",
       "description": "Elegant & glamorous venue with an Italian fine dining restaurant, a bistro & a stylish nightclub.",
       "price": 60
     },
@@ -1335,10 +1299,7 @@
       "id": 13,
       "name": "Yellow Bar",
       "address": "Via Palestro, 40, 00185 Roma RM, Italy",
-      "geoCode": {
-        "Latitude": 41.90549788598787,
-        "Longitude": 12.504623530116069
-      },
+      "location": "41.90549788598787 12.504623530116069",
       "description": "Low-lit, buzzing restaurant/bar in a hostel, with live music & an underground club.",
       "price": 25
     }

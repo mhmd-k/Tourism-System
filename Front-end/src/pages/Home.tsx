@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 function Home() {
   const [search, setSearch] = useState("");
 
-  const handleSeachChange = (e) => {
+  const handleSeachChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearch(e.target.value);
   };
 

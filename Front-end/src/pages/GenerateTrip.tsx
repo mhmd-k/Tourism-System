@@ -10,6 +10,12 @@ import {
   Typography,
 } from "@mui/material";
 import AutoFixHighOutlinedIcon from "@mui/icons-material/AutoFixHighOutlined";
+import { GroupOutlined, PriceChange } from "@mui/icons-material";
+import { useState } from "react";
+
+interface GenerateTripForm {
+  foodType: Array<string>;
+}
 
 const foodTypes = [
   "Sea Food",
@@ -20,10 +26,26 @@ const foodTypes = [
 ];
 
 function GenerateTrip() {
+  const [formData, setFormData] = useState<GenerateTripForm>({
+    foodType: [],
+  });
+
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const handleFoodChange = (e: any) => {
+    setFormData((prevState) => ({
+      foodType: [...prevState.foodType, e.target.value],
+    }));
+  };
+
   return (
     <div className="generate-trip">
       <Stack direction={"row"} sx={{ height: "100%" }}>
-        <Container sx={{ margin: "50px 0", flex: 1 }}>
+        <Container
+          sx={{
+            margin: "50px 0",
+            flex: 1,
+          }}
+        >
           <Typography
             component={"h2"}
             fontSize={"24px"}
@@ -31,7 +53,7 @@ function GenerateTrip() {
             marginBottom={"20px"}
             fontWeight={"bold"}
           >
-            Fill This Form Please
+            Answer The Following Questions
           </Typography>
           <Stack direction={"column"} gap={2}>
             <FormControl>
@@ -65,22 +87,26 @@ function GenerateTrip() {
                 size="small"
               />
             </FormControl>
-            <FormControl>
-              <TextField
-                type="number"
-                label="Number of People"
-                inputProps={{ min: "1", max: "8" }}
-                size="small"
-              />
-            </FormControl>
-            <FormControl>
-              <TextField
-                type="number"
-                label="Total Budget in Dollars"
-                inputProps={{ min: "1" }}
-                size="small"
-              />
-            </FormControl>
+            <Stack direction={"row"} gap={2}>
+              <FormControl className="generate-trip-input-container">
+                <TextField
+                  type="number"
+                  label="Number of People"
+                  inputProps={{ min: "1", max: "8" }}
+                  size="small"
+                />
+                <GroupOutlined />
+              </FormControl>
+              <FormControl className="generate-trip-input-container">
+                <TextField
+                  type="number"
+                  label="Total Budget in Dollars"
+                  inputProps={{ min: "1" }}
+                  size="small"
+                />
+                <PriceChange />
+              </FormControl>
+            </Stack>
             <FormControl>
               <InputLabel size="small" id="to-country">
                 Prefered Food
@@ -90,7 +116,8 @@ function GenerateTrip() {
                 size="small"
                 label="to-country"
                 sx={{ textAlign: "left" }}
-                value={[]}
+                onChange={handleFoodChange}
+                value={formData.foodType}
               >
                 {foodTypes.map((e, i) => (
                   <MenuItem key={`${e},${i}`} value={e}>
@@ -101,10 +128,13 @@ function GenerateTrip() {
             </FormControl>
             <Button
               variant="contained"
-              sx={{ backgroundColor: "rgb(14, 186, 169)" }}
+              sx={{
+                backgroundColor: "var(--green-color)",
+                borderRadius: "5px !important",
+              }}
               endIcon={<AutoFixHighOutlinedIcon />}
             >
-              Generate The Trip
+              Generate Trip
             </Button>
           </Stack>
         </Container>
