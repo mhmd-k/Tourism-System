@@ -1,18 +1,17 @@
 import { create } from "zustand";
-
-interface User {
-  name: string;
-  email: string;
-  token: string;
-  imageReferance: null | string;
-}
+import { User } from "../types";
+import { getStoredUser } from "../utils";
 
 interface UserStore {
   user: User | null;
   setUser: (user: User) => void;
 }
 
-export const useUserStore = create<UserStore>((set) => ({
-  user: null,
-  setUser: (user) => set(() => ({ user: user })),
+export const userStore = create<UserStore>((set) => ({
+  user: getStoredUser(),
+  setUser: (user) =>
+    set(() => {
+      localStorage.setItem("user", JSON.stringify(user));
+      return { user: user };
+    }),
 }));

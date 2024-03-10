@@ -11,10 +11,10 @@ export async function signup(request: SignupRequest) {
       password,
     });
 
-    console.log("the respnose is:", response);
+    console.log("Signup Respnose:", response);
     return response;
   } catch (error) {
-    console.error({ error });
+    console.log("Signup Error:", error);
     return error;
   }
 }

@@ -1,19 +1,25 @@
 import { Button, Stack, TextField, Typography } from "@mui/material";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { signup } from "../RESTFunctions";
 import { isEmailValid } from "../utils";
-import { Response } from "../types";
+import { SignupError, SignupRequest, SignupResponse, User } from "../types";
+import Spinner from "../components/Spinner";
+import { userStore } from "../zustand/UserStore";
 
 function Signup() {
-  const [signupData, setSignupData] = useState({
+  const [signupData, setSignupData] = useState<SignupRequest>({
     name: "",
     email: "",
     password: "",
   });
-  const [verifyPass, setVerifyPass] = useState("");
-  const [error, setError] = useState<null | Response>(null);
-  // const [loading, setLoading] = useState(false);
+  const [verifyPass, setVerifyPass] = useState<string>("");
+  const [error, setError] = useState<null | string>(null);
+  const [loading, setLoading] = useState<boolean>(false);
+
+  const setUser = userStore((state) => state.setUser);
+
+  const navigate = useNavigate();
 
   const handleChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
     setSignupData((prevState) => ({
@@ -29,47 +35,50 @@ function Signup() {
   };
 
   const handleSubmit = async () => {
+    setLoading(true);
     setError(null);
+
     const { email, name, password } = signupData;
 
     // if any of the field is empty
     if (!email || !name || !password || !verifyPass) {
-      setError({ message: "please fill all the fields", status: 0 });
+      setError("please fill all the fields");
+      setLoading(false);
       return;
     }
 
     // if email is not valid
     if (!isEmailValid(email)) {
-      setError({ message: "Please Enter a valid email", status: 0 });
+      setError("Please Enter a valid email");
+      setLoading(false);
       return;
     }
 
     // if the password and confirm password are not the same
     if (verifyPass !== password) {
-      setError({
-        message: 'Password and "Confirm Password" must be the same',
-        status: 0,
-      });
+      setError('Password and "Confirm Password" must be the same');
+      setLoading(false);
       return;
     }
 
     if (password.length < 8) {
-      setError({
-        message: "Password must be at least 8 characters",
-        status: 0,
-      });
+      setError("Password must be at least 8 characters");
+      setLoading(false);
       return;
     }
 
-    try {
-      const res = await signup(signupData);
+    const res = await signup(signupData);
 
-      if (res.status === 200) {
-        console.log("success");
-      }
-    } catch (err) {
-      setError(err as Response);
+    if ((res as SignupResponse).status === 200) {
+      setUser((res as SignupResponse).data.user as User);
+      navigate("/", {
+        state: `Welcome to Travel Helper "${(res as SignupResponse).data.user.name}", We are glade to have u here 😁`,
+      });
+    } else {
+      setError((res as SignupError).response.data.message);
     }
+
+    setLoading(false);
   };
 
   return (
@@ -91,7 +100,7 @@ function Signup() {
               borderRadius: 2,
             }}
           >
-            {error.message}
+            {error}
           </Typography>
         ) : (
           <></>
@@ -143,8 +152,9 @@ function Signup() {
           color="primary"
           sx={{ width: "100%" }}
           onClick={handleSubmit}
+          disabled={loading}
         >
-          Submit
+          {loading ? <Spinner /> : "Submit"}
         </Button>
         <Typography textAlign={"center"}>
           Already have an Account? <Link to={"../login"}>Login</Link>
