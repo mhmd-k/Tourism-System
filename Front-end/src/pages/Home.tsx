@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import SearchIcon from "@mui/icons-material/Search";
 import { Button, Container, Stack, Typography } from "@mui/material";
 import AddLocationAltOutlinedIcon from "@mui/icons-material/AddLocationAltOutlined";
@@ -6,25 +6,26 @@ import AutoFixHighOutlinedIcon from "@mui/icons-material/AutoFixHighOutlined";
 import { useLocation, useNavigate } from "react-router-dom";
 
 function Home() {
-  const [search, setSearch] = useState("");
+  const [search, setSearch] = useState<string>("");
 
-  const location = useLocation();
+  const { state } = useLocation();
+  const navigate = useNavigate();
 
-  console.log(location);
+  useEffect(() => {
+    if (state) {
+      setTimeout(() => {
+        navigate(location.pathname, {});
+      }, 4000);
+    }
+  }, [navigate, state]);
 
   const handleSeachChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearch(e.target.value);
   };
 
-  const navigate = useNavigate();
-
   return (
     <>
-      {location.state ? (
-        <div className="welcome-msg">{location.state}</div>
-      ) : (
-        <></>
-      )}
+      {state ? <div className="welcome-msg">{state}</div> : <></>}
       <div className="home-page">
         <h1>Where to?</h1>
         <div className="search">
@@ -46,7 +47,7 @@ function Home() {
                 endIcon={<AddLocationAltOutlinedIcon />}
                 color="primary"
                 variant="contained"
-                sx={{ borderRadius: "30px", padding: "10px 20px" }}
+                sx={{ borderRadius: "30px", padding: "2%" }}
               >
                 Build Your Own Trip
               </Button>
@@ -56,8 +57,8 @@ function Home() {
                 variant="contained"
                 sx={{
                   borderRadius: "30px",
-                  padding: "10px 20px",
-                  backgroundColor: "rgb(14, 186, 169)",
+                  padding: "2%",
+                  backgroundColor: "var(--green-color)",
                 }}
                 onClick={() => navigate("generateTrip")}
               >
