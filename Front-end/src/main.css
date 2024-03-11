@@ -14,41 +14,11 @@ input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   display: none;
 }
-.home-page {
-  padding: 40px 0;
+.header-link {
+  color: black;
+  text-decoration: none;
 }
-h1 {
-  margin: 10px 0;
-  font-size: 55px;
-  font-weight: 900;
-}
-.search {
-  position: relative;
-  width: 100%;
-  max-width: 600px;
-  margin: auto;
-}
-.search svg {
-  position: absolute;
-  right: 5px;
-  top: 50%;
-  transform: translateY(-50%);
-  cursor: pointer;
-}
-input[name="search"] {
-  border-radius: 40px;
-  padding: 15px;
-  font-weight: 300;
-  width: 100%;
-  margin: 5px;
-  border: 0;
-  box-shadow: 0 0 10px #cecece;
-  -webkit-border-radius: 40px;
-  -moz-border-radius: 40px;
-  -ms-border-radius: 40px;
-  -o-border-radius: 40px;
-  font-size: 20px;
-}
+/* home page */
 .welcome-msg {
   padding: 30px 10px;
   background-color: #3db542;
@@ -61,6 +31,42 @@ input[name="search"] {
   color: white;
   font-weight: bold;
   font-size: 18px;
+  z-index: 200;
+}
+.home-page {
+  padding: 40px 0;
+}
+.home-page h1 {
+  margin: 10px 0;
+  font-size: 55px;
+  font-weight: 900;
+}
+.home-page .search {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin: auto;
+}
+.home-page .search svg {
+  position: absolute;
+  right: 2%;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+.home-page input[name="search"] {
+  border-radius: 40px;
+  padding: 15px;
+  font-weight: 300;
+  width: 100%;
+  margin: 5px;
+  border: 0;
+  box-shadow: 0 0 10px #cecece;
+  -webkit-border-radius: 40px;
+  -moz-border-radius: 40px;
+  -ms-border-radius: 40px;
+  -o-border-radius: 40px;
+  font-size: 20px;
 }
 .home {
   background-image: url(./assets/home.png),
@@ -85,6 +91,27 @@ input[name="search"] {
 .home p {
   font-size: 20px;
 }
+@media (max-width: 991px) {
+  .home-page h1 {
+    font-size: 30px;
+    font-weight: 700;
+  }
+  .home-page .search svg {
+    right: 12%;
+  }
+  .home-page input[name="search"] {
+    width: 80%;
+  }
+  .home {
+    padding: 10px;
+    margin: 10px;
+    min-height: 400px;
+  }
+  .home h2 {
+    font-size: 22px;
+  }
+}
+/* login page */
 .login {
   height: 100dvh;
   display: flex;
@@ -138,6 +165,16 @@ input[name="search"] {
   -ms-transform: translateY(-50%);
   -o-transform: translateY(-50%);
   color: var(--green-color);
+}
+
+/* user profile */
+.lg-w-50 {
+  flex-basis: 50%;
+}
+@media (max-width: 767px) {
+  .lg-w-50 {
+    flex-basis: 100%;
+  }
 }
 
 /* spinner */

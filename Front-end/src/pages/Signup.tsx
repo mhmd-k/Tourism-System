@@ -72,7 +72,9 @@ function Signup() {
     if ((res as SignupResponse).status === 200) {
       setUser((res as SignupResponse).data.user as User);
       navigate("/", {
-        state: `Welcome to Travel Helper "${(res as SignupResponse).data.user.name}", We are glade to have u here 😁`,
+        state: `Welcome to Travel Helper "${(res as SignupResponse).data.user.name}",
+          We are glade to have u here 😁`,
+        replace: true,
       });
     } else {
       setError((res as SignupError).response.data.message);
