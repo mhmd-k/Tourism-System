@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { signup } from "../RESTFunctions";
 import { isEmailValid } from "../utils";
-import { SignupError, SignupRequest, SignupResponse, User } from "../types";
+import { SignupRequest, User, UserResponse, UserResponseError } from "../types";
 import Spinner from "../components/Spinner";
 import { userStore } from "../zustand/UserStore";
 
@@ -21,7 +21,7 @@ function Signup() {
 
   const navigate = useNavigate();
 
-  const handleChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSignupData((prevState) => ({
       ...prevState,
       [e.target.name]: e.target.value,
@@ -69,15 +69,15 @@ function Signup() {
 
     const res = await signup(signupData);
 
-    if ((res as SignupResponse).status === 200) {
-      setUser((res as SignupResponse).data.user as User);
+    if ((res as UserResponse).status === 200) {
+      setUser((res as UserResponse).data.user as User);
       navigate("/", {
-        state: `Welcome to Travel Helper "${(res as SignupResponse).data.user.name}",
+        state: `Welcome to Travel Helper "${(res as UserResponse).data.user.name}",
           We are glade to have u here 😁`,
         replace: true,
       });
     } else {
-      setError((res as SignupError).response.data.message);
+      setError((res as UserResponseError).response.data.message);
     }
 
     setLoading(false);

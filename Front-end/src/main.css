@@ -131,6 +131,9 @@ input::-webkit-inner-spin-button {
   background-color: white;
   padding: 40px 20px;
 }
+.from-control {
+  position: relative;
+}
 .home-btn:hover {
   background-color: #009688 !important;
 }

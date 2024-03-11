@@ -1,17 +1,145 @@
-import { Button, Stack, TextField, Typography } from "@mui/material";
-import { Link } from "react-router-dom";
+import {
+  Button,
+  FormControl,
+  InputAdornment,
+  InputLabel,
+  OutlinedInput,
+  Stack,
+  Typography,
+} from "@mui/material";
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { LoginRequest, User, UserResponse, UserResponseError } from "../types";
+import { isEmailValid } from "../utils";
+import { Email } from "@mui/icons-material";
+import LockIcon from "@mui/icons-material/Lock";
+import LockOpenIcon from "@mui/icons-material/LockOpen";
+import IconButton from "@mui/material/IconButton";
+import Spinner from "../components/Spinner";
+import { login } from "../RESTFunctions";
+import { userStore } from "../zustand/UserStore";
 
 function Login() {
+  const [loginData, setLoginData] = useState<LoginRequest>({
+    email: "",
+    password: "",
+  });
+  const [error, setError] = useState<null | string>(null);
+  const [loading, setLoading] = useState<boolean>(false);
+  const [showPassword, setShowPassword] = useState<boolean>(false);
+
+  const setUser = userStore((state) => state.setUser);
+
+  const navigate = useNavigate();
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setLoginData((prevState) => ({
+      ...prevState,
+      [e.target.name]: e.target.value,
+    }));
+  };
+
+  const handleSubmit = async () => {
+    setLoading(true);
+    setError(null);
+
+    if (!loginData.email || !loginData.password) {
+      setError("Please fill all the fields");
+      setLoading(false);
+      return;
+    }
+
+    if (!isEmailValid(loginData.email)) {
+      setError("Please enter a valid email");
+      setLoading(false);
+      return;
+    }
+
+    const res = await login(loginData);
+
+    if ((res as UserResponse).status === 200) {
+      setUser((res as UserResponse).data.user as User);
+      navigate("/", {
+        state: `Welcome Back "${(res as UserResponse).data.user.name}",
+          We are glade to have u here 😁`,
+        replace: true,
+      });
+    } else {
+      setError((res as UserResponseError).response.data.message);
+    }
+
+    setLoading(false);
+  };
+
   return (
     <div className="login">
       <Stack direction={"column"} gap={4} className="login-from">
         <Typography component={"h2"} fontSize={30} textAlign={"center"}>
           Login To Your Account
         </Typography>
-        <TextField label="Email" autoFocus type="email" variant="outlined" />
-        <TextField label="Password" type="password" variant="outlined" />
-        <Button variant="contained" color="primary" sx={{ width: "100%" }}>
-          Login
+        {error ? (
+          <Typography
+            className="bold"
+            component={"p"}
+            fontSize={15}
+            textAlign={"center"}
+            color={"red"}
+            style={{
+              border: "2px solid red",
+              padding: 10,
+              borderRadius: 2,
+            }}
+          >
+            {error}
+          </Typography>
+        ) : (
+          <></>
+        )}
+        <FormControl variant="outlined">
+          <InputLabel htmlFor="email">Email</InputLabel>
+          <OutlinedInput
+            value={loginData.email}
+            onChange={handleChange}
+            name="email"
+            id="email"
+            endAdornment={
+              <InputAdornment position="end">
+                <Email color="info" />
+              </InputAdornment>
+            }
+            label="Email"
+          />
+        </FormControl>
+        <FormControl variant="outlined">
+          <InputLabel htmlFor="password">Password</InputLabel>
+          <OutlinedInput
+            value={loginData.password}
+            onChange={handleChange}
+            name="password"
+            id="password"
+            type={showPassword ? "text" : "password"}
+            endAdornment={
+              <InputAdornment position="end">
+                <IconButton onClick={() => setShowPassword(!showPassword)}>
+                  {showPassword ? (
+                    <LockOpenIcon color="info" />
+                  ) : (
+                    <LockIcon color="info" />
+                  )}
+                </IconButton>
+              </InputAdornment>
+            }
+            label="Password"
+          />
+        </FormControl>
+        <Button
+          variant="contained"
+          color="primary"
+          sx={{ width: "100%" }}
+          onClick={handleSubmit}
+          disabled={loading}
+        >
+          {loading ? <Spinner /> : "Login"}
         </Button>
         <Typography textAlign={"center"}>
           Not a member? <Link to={"../signup"}>Create Account</Link>

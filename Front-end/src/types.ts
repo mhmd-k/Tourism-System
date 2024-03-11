@@ -20,7 +20,7 @@ export interface SignupRequest extends LoginRequest {
   name: string;
 }
 
-export interface SignupResponse {
+export interface UserResponse {
   message: string;
   status: number;
   data: {
@@ -28,7 +28,7 @@ export interface SignupResponse {
   };
 }
 
-export interface SignupError {
+export interface UserResponseError {
   response: {
     data: {
       status: number;

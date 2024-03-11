@@ -15,7 +15,7 @@ function Home() {
     if (state) {
       setTimeout(() => {
         navigate(location.pathname, {});
-      }, 4000);
+      }, 6000);
     }
   }, [navigate, state]);
 
