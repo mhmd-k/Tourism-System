@@ -8,7 +8,7 @@ export interface User {
   name: string;
   email: string;
   token: string;
-  imageReferance: null | string;
+  image: null | string;
 }
 
 export interface LoginRequest {
@@ -35,4 +35,14 @@ export interface UserResponseError {
       message: string;
     };
   };
+}
+
+export interface GenerateTripData {
+  toCountry: string;
+  fromCity: string;
+  numberOfDays: number;
+  numberOfPeople: number;
+  budget: number;
+  preferredFood: Array<string>;
+  preferredPlaces: Array<string>;
 }

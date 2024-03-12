@@ -186,9 +186,9 @@ function Header() {
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                {user?.imageReferance ? (
+                {user?.image ? (
                   <div>
-                    <img src={user.imageReferance} alt="" />
+                    <img src={user.image} alt="" />
                   </div>
                 ) : (
                   <AccountCircleIcon fontSize="large" />

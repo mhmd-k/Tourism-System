@@ -1,10 +1,17 @@
-import { Button, Container, Stack, TextField } from "@mui/material";
+import { Button, Container, Stack, TextField, Typography } from "@mui/material";
 import Avatar from "@mui/material/Avatar";
 import { userStore } from "../zustand/UserStore";
 import { Navigate } from "react-router-dom";
+import { useRef } from "react";
 
 function UserProfile() {
   const user = userStore((state) => state.user);
+
+  const fileInputRef = useRef<null | HTMLInputElement>(null);
+
+  const handleClick = () => {
+    fileInputRef.current?.click();
+  };
 
   if (!user) {
     return (
@@ -17,7 +24,12 @@ function UserProfile() {
   }
 
   return (
-    <Container sx={{ display: "flex", flexWrap: "wrap" }}>
+    <Container
+      sx={{
+        display: "flex",
+        justifyContent: "center",
+      }}
+    >
       <Stack direction={"column"} className="lg-w-50">
         <Stack
           alignItems={"center"}
@@ -37,13 +49,27 @@ function UserProfile() {
             {user.name[0].toUpperCase()}
           </Avatar>
           <Stack gap={2}>
-            <Button size="small" variant="outlined" color="info">
-              Change Picture
+            {user.image ? (
+              <Button
+                size="small"
+                variant="outlined"
+                color="info"
+                onClick={handleClick}
+              >
+                Change Picture
+              </Button>
+            ) : (
+              <></>
+            )}
+            <Button
+              size="small"
+              variant="contained"
+              color="primary"
+              onClick={handleClick}
+            >
+              {user.image ? "Remove Picture" : "Upload Picture"}
             </Button>
-            <Button size="small" variant="contained" color="primary">
-              {user.imageReferance ? "Remove Picture" : "Upload Picture"}
-            </Button>
-            <TextField type="file" />
+            <input type="file" hidden={true} ref={fileInputRef} />
           </Stack>
         </Stack>
         <Stack gap={2}>
@@ -52,31 +78,34 @@ function UserProfile() {
             disabled
             value={user.name}
             size="small"
+            label="username"
           />
           <TextField
             placeholder="Email"
             disabled
             value={user.email}
             size="small"
+            label="email"
           />
         </Stack>
-      </Stack>
-      <Stack className="lg-w-50">
-        <label htmlFor="password">New Password</label>
+        <Typography
+          component={"h3"}
+          sx={{
+            margin: "20px 0",
+            textAlign: "left",
+          }}
+        >
+          Change Password:
+        </Typography>
         <TextField
           id="password"
           placeholder="New Password"
           type="password"
           label="New Password"
         />
-        <label htmlFor="confirm-password">Confirm Password</label>
-        <TextField
-          id="confirm-password"
-          placeholder="Confirm Password"
-          type="password"
-          label="Confirm Password"
-        />
-        <Button className="w-full">Save</Button>
+        <Button variant="contained" color="success">
+          Save
+        </Button>
       </Stack>
     </Container>
   );
