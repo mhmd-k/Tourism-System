@@ -1,0 +1,60 @@
+id,name,address,city_id,location,price,stars
+1,Hotel Quirinale,"Via Nazionale 7, Central Station, 00184 Rome, Italy",1,41.90182202037885 12.494873553074376,200,5
+2,Hotel Hassler Roma,"Piazza della Trinita dei Monti, 6, 00187 Rome, Italy",1,41.906092743874524 12.484043924238929,90,3
+3,The St. Regis Rome,"Via Vittorio Emanuele Orlando, 3, 00185 Rome, Italy",1,41.90416749222035 12.49482998006026,50,2
+4,"Rome Cavalieri, A Waldorf Astoria Hotel","Via Alberto Cadlolo, 101, 00136 Rome, Italy",1,41.918979375018125 12.446569334032556,150,5
+5,Palazzo Manfredi - Small Luxury Hotels of the World,"Via Labicana, 125, 00184 Rome, Italy",1,41.89034133388365 12.495560980059329,120,3
+6,Hotel Eden - Dorchester Collection,"Via Ludovisi, 49, 00187 Rome, Italy",1,41.90679538161047 12.486303322388942,250,5
+7,Gran Meliá Rome Villa Agrippina - The Leading Hotels of the World,"Via del Gianicolo, 3, 00165 Rome, Italy",1,41.89915022839809 12.461118495402745,200,4
+8,Hotel de Russie - Rocco Forte,"Via del Babuino, 9, 00187 Rome, Italy",1,41.91011114243399 12.477447366567763,80,5
+9,Grand Hotel de la Minerve,"Piazza della Minerva, 69, 00186 Rome, Italy",1,41.89778220180332 12.477604995402661,120,4
+10,The Westin Excelsior Rome,"Via Vittorio Veneto, 125, 00187 Rome, Italy",1,41.907870017589 12.490085824239056,400,4
+11,"Boscolo Exedra Roma, Autograph Collection","Piazza della Repubblica, 47, 00185 Rome, Italy",1,41.9026154377316 12.495568191110168,100,3
+12,Hotel de Ricci,"Via della Barchetta, 14, 00186 Rome, Italy",1,41.89626312055495 12.468818281909737,90,5
+13,Hotel Raphael - Relais & Châteaux,"Largo Febo, 2, 00186 Rome, Italy",1,41.900151982199965 12.472093695402847,140,4
+14,Hotel Indigo Rome - St. George,"Via Giulia, 62, 00186 Rome, Italy",1,41.898346501687016 12.4661624800598,240,4
+15,The First Roma Dolce,"Via del Vantaggio, 14, 00186 Rome, Italy",1,41.90759668388538 12.477888085839808,350,5
+16,Hotel Artemide,"Via Nazionale, 22, 00184 Rome, Italy",1,41.901473378399785 12.493354288002738,250,4
+17,"Aleph Rome Hotel, Curio Collection by Hilton","Via di San Basilio, 15, 00187 Rome, Italy",1,41.90547539981711 12.489989651224544,100,3
+18,iQ Hotel Roma,"Via Firenze, 8, 00184 Rome, Italy",1,41.90063451071497 12.495210880059954,200,4
+19,Hotel Locarno,"Via della Penna, 22, 00186 Rome, Italy",1,41.90980551499586 12.47472659540348,300,4
+20,Hotel Vilon,"Via dell'Arancio, 69, 00186 Roma RM, Italy",1,41.9059421938531 12.476676105313542,350,5
+21,Hotel Splendide Royal,"Via di Porta Pinciana, 14, 00187 Rome, Italy",1,41.90809521694122 12.486773281910532,140,4
+22,Hotel Adriano,"Via di Pallacorda, 2, 00186 Rome, Italy",1,41.90228219233538 12.475510480060118,250,3
+23,Hotel Quattro Fontane,"Via delle Quattro Fontane, 16, 00184 Rome, Italy",1,41.90023416969737 12.499937249907134,200,3
+24,Hotel Isa,"Via Cicerone, 39, 00193 Rome, Italy",1,41.907065335168696 12.468977924238992,150,5
+25,Hotel Santa Maria,"Vicolo del Piede, 2, 00153 Roma RM, Italy",1,41.891722104369606 12.47041029886061,100,2
+26,Hotel San Anselmo,"Piazza SantAnselmo, 2, 00153 Rome, Italy",1,41.882233500795216 12.479393637730261,80,2
+27,Hotel Forum,"Via Tor de Conti, 25-30, 00184 Rome, Italy",1,41.894095170853824 12.487707424238144,150,3
+28,Hotel Majestic Roma,"Via Vittorio Veneto, 50, 00187 Rome, Italy",1,41.90570918419164 12.48778916471744,350,5
+29,Hotel Ponte Sisto,"Via dei Pettinari, 64, 00186 Rome, Italy",1,"41.8934933775578, 12.472037672116816",200,4
+30,Hotel Mozart,"Via dei Greci, 23, 00187 Rome, Italy",1,41.90790507870516 12.477850548149615,150,4
+31,"The Spa at Four Seasons Hotel Milano
+1. Four Seasons Hotel Milano","Via Gesu, 6/8, 20121 Milano MI, Italy",2,45.4692189063453 9.195258206708136,50,5
+32,Baglioni Hotel Carlton,"Via Senato, 5",2,45.47292694643953 9.192488517486964,150,4
+33,Armani Hotel Milano," Via Manzoni, 31",2,45.4707174004707 9.19288253554521,120,5
+34,Grand Hotel et de Milan ," Via Manzoni, 29",2,45.47000892541901 9.192433162539787,250,5
+35,"The Westin Palace, Milan","Piazza della Repubblica, 20",2,45.478795894235176 9.199260922058958,200,4
+36,Bulgari Hotel Milan,"Via Privata Fratelli Gabba, 7/B",2,45.470010465030136 9.189530535542609,80,5
+37,Hotel Principe di Savoia,"Piazza della Repubblica, 17",2,45.48410826577781 9.197782925717764,120,4
+38,ME Milan Il Duca," Piazza della Repubblica, 13",2,45.47949634477958 9.196094717926911,400,5
+39,NH Collection Milano President," Largo Augusto, 10",2,45.46331771021254 9.197736218528945,100,3
+40,Rosa Grand Milano," Piazza Fontana, 3",2,45.46397430674375 9.19401588124518,90,3
+41,"Excelsior Hotel Gallia, a Luxury Collection Hotel ","Piazza Duca d'Aosta, 9",2,45.48593476971682 9.201355440750017,140,4
+42,Sheraton Milan Malpensa Airport Hotel & Conference Centre ,Aeroporto Malpensa 2000,2,45.62762814690808 8.711160620236834,240,4
+43,Hotel Milano Scala," Via dell'Orso, 7",2,45.469344926070406 9.1867449397892,350,5
+44,Hotel Principe Di Savoia,"Piazza della Repubblica, 17",2,45.48262574457176 9.196575528394675,250,4
+45,Room Mate Giulia," Via Silvio Pellico, 4",2,45.4656118269547 9.189569867335985,100,3
+46,Hotel Manin,"Via Manin, 7",2,45.47413633962939 9.195885902177052,200,4
+47,Hotel VIU Milan,"Via Aristotile Fioravanti, 6",2,45.48358472501871 9.177702710453234,300,4
+48,NH Milano Touring,"Via Ugo Tarchetti, 2",2,45.47704118369528 9.196511518383016,350,5
+49,Uptown Palace," Via Santa Sofia, 10",2,45.457745592531495 9.191981835581872,140,4
+50,UNAHOTELS Cusani Milano," Via Cusani, 13",2,45.468816293964956 9.18345920354451,250,3
+51,Hotel Dei Cavalieri," Piazza Giuseppe Missori, 1",2,45.46119844180991 9.188696577909345,200,3
+52,Hotel Pierre Milano,"Via De Amicis, 32",2,45.459695370787884 9.17684558335797,150,3
+53,Hotel Magna Pars,"Via Forcella, 6",2,45.45359793734293 9.166845211062736,100,2
+54,Hotel Straf ," Via San Raffaele, 3",2,45.465504002334434 9.191000785744498,80,2
+55,Hotel Milano Navigli," Alzaia Naviglio Grande, 8",2,45.4535074540873 9.18053673342967,150,3
+56,Hotel VIU Milan," Via Aristotile Fioravanti, 6",2,45.48347941506482 9.177380845365473,350,5
+57,NYX Hotel Milan," Piazza Quattro Novembre, 3",2,45.48729333072683 9.201819679763164,200,4
+58,B&B Hotel Milano San Siro,"Via Achille Zezon, 6",2,45.480704191177196 9.123438396614663,150,3
