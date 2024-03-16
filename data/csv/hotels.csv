@@ -27,7 +27,7 @@ id,name,address,city_id,location,price,stars
 26,Hotel San Anselmo,"Piazza SantAnselmo, 2, 00153 Rome, Italy",1,41.882233500795216 12.479393637730261,80,2
 27,Hotel Forum,"Via Tor de Conti, 25-30, 00184 Rome, Italy",1,41.894095170853824 12.487707424238144,150,3
 28,Hotel Majestic Roma,"Via Vittorio Veneto, 50, 00187 Rome, Italy",1,41.90570918419164 12.48778916471744,350,5
-29,Hotel Ponte Sisto,"Via dei Pettinari, 64, 00186 Rome, Italy",1,"41.8934933775578, 12.472037672116816",200,4
+29,Hotel Ponte Sisto,"Via dei Pettinari, 64, 00186 Rome, Italy",1,41.8934933775578 12.472037672116816,200,4
 30,Hotel Mozart,"Via dei Greci, 23, 00187 Rome, Italy",1,41.90790507870516 12.477850548149615,150,4
 31,"The Spa at Four Seasons Hotel Milano
 1. Four Seasons Hotel Milano","Via Gesu, 6/8, 20121 Milano MI, Italy",2,45.4692189063453 9.195258206708136,50,5
@@ -58,3 +58,61 @@ id,name,address,city_id,location,price,stars
 56,Hotel VIU Milan," Via Aristotile Fioravanti, 6",2,45.48347941506482 9.177380845365473,350,5
 57,NYX Hotel Milan," Piazza Quattro Novembre, 3",2,45.48729333072683 9.201819679763164,200,4
 58,B&B Hotel Milano San Siro,"Via Achille Zezon, 6",2,45.480704191177196 9.123438396614663,150,3
+59,Grand Hotel Vesuvio," Via Partenope, 45, 80121 Naples NA, Italy.",3,40.8380872423375  14.251142580360971,50,2
+60,Romeo Hotel,"Via Cristoforo Colombo, 45, 80133 Naples NA, Italy.",3,40.8415235847282  14.255424027913602,150,4
+61,Hotel Excelsior,"Via Partenope, 48, 80121 Naples NA, Italy",3,40.83017537722135  14.249590309849587,120,3
+62,Eurostars Hotel Excelsior,"Via Partenope, 48, 80121 Naples NA, Italy.",3,40.83013287961239  14.24959166980103,250,5
+63,UNAHOTELS Napoli," Piazza Giuseppe Garibaldi, 9/10, 80142 Naples NA, Italy.",3,40.85190701664029  14.267408565670854,200,4
+64,Palazzo Caracciolo Napoli,"Via Partenope, 38/44, 80121 Naples NA, Italy.",3,40.85497359566896  14.261410152178977,80,3
+65,Grand Hotel Parker's,"at Corso Vittorio Emanuele, 135, 80121 Naples NA, Italy.",3,40.837277130965525  14.22995420984997,120,4
+66,Hotel Piazza Bellini,"Via Santa Maria di Costantinopoli, 101, 80138 Naples NA, Italy.",3,40.85065983457499  14.251679781014692,400,5
+67,Hotel San Francesco al Monte,"Corso Vittorio Emanuele, 328, 80135 Naples NA, Italy.",3,40.84348264951901  14.244504896358173,100,3
+68,Palazzo Alabardieri," Via Alabardieri, 38, 80121 Naples NA, Italy.",3,40.83948384215477  14.248806140537877,90,3
+69,Hotel Santa Brigida,"Via Santa Brigida, 6, 80132 Naples NA, Italy.",3,40.839475725311566  14.248752496357996,140,4
+70,Renaissance Naples Hotel Mediterraneo,"Via Ponte di Tappia, 25, 80133 Naples NA, Italy.",3,40.841184154304585  14.25057653868617,240,4
+71,Palazzo Salgar,"Via dei Mille, 64, 80121 Naples NA, Italy.",3,40.846400339537716  14.263999681014445,350,5
+72,Grand Hotel Oriente," Via Armando Diaz, 44, 80134 Naples NA, Italy.",3,40.84267343473535  14.25024925403015,250,4
+73,Hotel San Pietro," Via San Pietro ad Aram, 18, 80138 Naples NA, Italy.",3,40.86655360560546  14.264098590590391,100,3
+74,Hotel Paradiso,"Via Ottavio Tupputi, 9, 80139 Napoli NA, Italy",3,40.84686993722129 14.207105328101061,200,4
+75,Hotel Palazzo Esedra," Piazza Giovanni Bovio 22, near the central train station.",3,40.83513338990712  14.24949648427931,300,4
+76,Hotel Cavour, Situated in the historic center at Piazza Garibaldi 32.,3,40.8531982444697  14.26837422334287,350,5
+77,Hotel Micalo,"Riviera di Chiaia 88, close to the waterfront and Castel dell'Ovo.",3,40.833002371336825  14.2269902810137,140,4
+78,Hotel Albergo del Golfo:," Via Sedile di Porto 23, offering views of the Gulf of Naples.",3,40.84468817945561  14.255018396358246,250,3
+79,Hotel Piazza Bellini & Apartments,"Via S. Maria di Costantinopoli 101, near Piazza Bellini.",3,40.85065983457499  14.251744154030545,200,3
+80,Hotel Piazza Bellini & Apartments," Via S. Maria di Costantinopoli 101, near Piazza Bellini.",3,40.85064360362496  14.2517656117025,150,3
+81,Hotel San Francesco,"at Corso Umberto I 104, in a former monastery in the historic center.",3,40.84344206774152  14.24448343868621,100,2
+82,Hotel Toledo,"Montecalvario 15, in the lively neighborhood of Chiaia.",3,39.86801805691146  -4.024354965663239,80,2
+83,Hotel Tiempo,"Via del Sannio 19, near the central train station.",3,39.857100959082246  -4.030154719039112,150,3
+84,Hotel Royal Prisco,"Via Posillipo 394, in the picturesque neighborhood of Posillipo.",3,40.63045456489176 14.484690367510648,350,5
+85,Hotel Miramare,"Via Nazario Sauro 24, in the Mergellina neighborhood, overlooking the sea.",3,40.8345205563515  14.250919591906811,200,4
+86,Hotel Nuvo," Nuova Agnano 5, in the Fuorigrotta district, close to sports facilities and exhibition centers.",3,40.81729995220598  14.175692428825293,150,3
+87,Hotel Monaco & Grand Canal,"P.za San Marco, 1332/1238, 30100 Venezia VE, Italy",5,45.43247376656437 12.33693429312769,300,4
+88,Aman Venice,"Calle Tiepolo, 1364, 30125 Venezia VE, Italy",5,45.4370591312262 12.331537896157487,400,5
+89,Hilton Molino Stucky Venice,"Giudecca, 810, 30133 Venezia VE, Italy",5,45.42832807795654 12.320250184514691,400,5
+90,Palazzo Veneziano - Venice Collection,"Fondamenta Zattere Al Ponte Lungo, 1413, 30123 Venezia VE, Italy",5,45.430805278570915 12.322806326843253,500,5
+91,Canal Grande Hotel,"Campiello S. Simeone Grande, 932, 30135 Venezia VE, Italy",5,45.441545457789296 12.324089499857577,180,4
+92,Hotel NH Venezia Santa Lucia - Formerly Hotel Bellini,"Rio Terà Lista di Spagna, 116/A, 30121 Venezia VE, Italy",5,45.44206486970939 12.322694751213914,100,4
+93,Hotel Metropole,"Riva degli Schiavoni, 4149, 30122 Venezia VE, Italy",5,45.43416579309345 12.345199798007531,200,4
+94,Rialto Unique Venice Experience,"Riva del Ferro, 5149, 30124 Venezia VE, Italy",5,45.437810685697734 12.336145957529016,120,3
+95,Splendid Venice - Starhotels Collezione,"Mercerie, 760, 30124 Venezia VE, Italy",5,45.4362974887801 12.337454875486914,140,5
+96,Hotel Papadopoli Venezia - MGallery,"Santa Croce 245, Giardini Papadopoli, 30135 Venezia VE, Italy",5,45.43810234176103 12.321170597292884,380,5
+97,NH Collection Venezia Grand Hotel Palazzo dei Dogi,"Fondamenta Madona de l'Orto, 3500, 30121 Venezia VE, Italy",5,45.44677228053236 12.330962044553909,250,4
+98,Hotel Ai Reali,"Calle Seconda de la Fava, 5527, 30122 Venezia VE, Italy",5,45.43717152208364 12.337866866196691,150,3
+99,Hotel Abbazia,"Calle Priuli dei Cavaletti, 68, 30121 Venezia VE, Italy",5,45.442102867144534 12.321713271093067,250,4
+100,Hotel Carlton on the Grand Canal,"Fondamenta del Monastero, 578, 30135 Venezia VE, Italy",5,45.44003986955301 12.322072850853809,400,4
+101,Venezia Palazzo Barocci,"Corte de l'Albero, 3878 A, 30124 Venezia VE, Italy",5,45.43547811055205 12.330291920168044,400,5
+102,Hotel Santa Chiara,"Santa Croce, 548, 30135 Venezia VE, Italy",5,45.438603807157115 12.31954045760023,300,4
+103,Hotel Principe,"Rio Terà Lista di Spagna, 146, 30121 Venezia VE, Italy",5,45.4421781223947 12.323493855750185,250,4
+104,Hotel Saturnia & International Venezia,"Calle Larga XXII Marzo, 2398, 30124 Venezia VE, Italy",5,45.43289384260228 12.334244324348854,200,5
+105,Al Ponte Antico,"Calle Aseo, 5768, 30125 Venezia VE, Italy",5,45.43883280090976 12.336442082191128,150,5
+106,Ca 'Nigra Lagoon Resort - Venice,"Campiello S. Simeone Grande, 927, 30135 Venezia VE, Italy",5,45.44101194059503 12.324149029606392,200,4
+107,Hotel Florida,"Calle Priuli dei Cavaletti, 106/A, 30121 Venezia VE, Italy",5,45.44192055891206 12.32209129992879,180,4
+108,Hotel Royal San Marco,"S. Marco, 848, 30124 Venezia VE, Italy",5,45.43469546179546 12.337708262496605,100,3
+109,Duodo Palace Hotel,"San Marco, Calle Minelli 1887-1888, 30124 Venezia VE, Italy",5,45.43445400477284 12.333902955750185,150,4
+110,UNAHOTELS Ala Venezia,"Campo Santa Maria del Giglio, 2494, 30124 Venezia VE, Italy",5,45.43241607190943 12.332712528764507,250,5
+111,Aqua Palace Hotel,"Calle de la Malvasia, 5492, 30122 Venezia VE, Italy",5,45.436656701907665 12.33859571527167,250,4
+112,Hotel Antiche Figure,"Santa Croce, 687 Fondamenta San Simeon Piccolo, 30135 Venezia VE, Italy",5,45.440310952992455 12.322079806675207,100,3
+113,Hotel Monaco & Grand Canal,"P.za San Marco, 1332/1238, 30100 Venezia VE, Italy",5,45.43240380090029 12.336923042257345,200,4
+114,Hilton Molino Stucky Venice,"Giudecca, 810, 30133 Venezia VE, Italy",5,45.428284783274904 12.320282371093064,500,5
+115,Hotel Iris,"Campo S. Tomà, 2910, 30125 Venezia VE, Italy",5,45.43626333767644 12.32633957668725,50,2
+116,Corte Canal Venice,"Corte Canal, 645a, 30135 Venezia VE, Italy",5,45.439906989046 12.324022148171627,60,2

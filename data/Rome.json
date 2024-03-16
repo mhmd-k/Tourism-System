@@ -1,0 +1,1307 @@
+{
+  "country": "Italy",
+  "cityName": "Rome",
+  "cityCode": "RM",
+  "description": "Rome is the capital city of Italy. It is also the capital of the Lazio region, the centre of the Metropolitan City of Rome, and a special comune named Comune di Roma Capitale.",
+  "airport": {
+    "name": "Leonardo da Vinci–Fiumicino Airport",
+    "address": "Via dell'Aeroporto, di, 00054 Fiumicino RM, Italy",
+    "location": {
+      "Latitude": 41.803499350173176,
+      "Longitude": 12.251828422382225
+    }
+  },
+  "hotels": [
+    {
+      "id": 1,
+      "name": "Hotel Quirinale",
+      "address": "Via Nazionale 7, Central Station, 00184 Rome, Italy",
+      "location": {
+        "Latitude": 41.90182202037885,
+        "Longitude": 12.494873553074376
+      },
+      "price": 200,
+      "stars": 5
+    },
+    {
+      "id": 2,
+      "name": "Hotel Hassler Roma",
+      "address": "Piazza della Trinità dei Monti, 6, 00187 Rome, Italy",
+      "location": {
+        "Latitude": 41.906092743874524,
+        "Longitude": 12.484043924238929
+      },
+      "price": 90,
+      "stars": 2
+    },
+    {
+      "id": 3,
+      "name": "The St. Regis Rome",
+      "address": "Via Vittorio Emanuele Orlando, 3, 00185 Rome, Italy",
+      "location": {
+        "Latitude": 41.90416749222035,
+        "Longitude": 12.49482998006026
+      },
+      "price": 50,
+      "stars": 2
+    },
+    {
+      "id": 4,
+      "name": "Rome Cavalieri, A Waldorf Astoria Hotel",
+      "address": "Via Alberto Cadlolo, 101, 00136 Rome, Italy",
+      "location": {
+        "Latitude": 41.914167,
+        "Longitude": 12.447222
+      },
+      "price": 150,
+      "stars": 4
+    },
+    {
+      "id": 5,
+      "name": "Palazzo Manfredi - Small Luxury Hotels of the World",
+      "address": "Via Labicana, 125, 00184 Rome, Italy",
+      "location": {
+        "Latitude": 41.890831,
+        "Longitude": 12.494586
+      },
+      "price": 120,
+      "stars": 3
+    },
+    {
+      "id": 6,
+      "name": "Hotel Eden - Dorchester Collection",
+      "address": "Via Ludovisi, 49, 00187 Rome, Italy",
+      "location": {
+        "Latitude": 41.906828,
+        "Longitude": 12.488686
+      },
+      "price": 250,
+      "stars": 5
+    },
+    {
+      "id": 7,
+      "name": "Gran Meliá Rome Villa Agrippina - The Leading Hotels of the World",
+      "address": "Via del Gianicolo, 3, 00165 Rome, Italy",
+      "location": {
+        "Latitude": 41.895456,
+        "Longitude": 12.456547
+      },
+      "price": 200,
+      "stars": 4
+    },
+    {
+      "id": 8,
+      "name": "Hotel de Russie - Rocco Forte",
+      "address": "Via del Babuino, 9, 00187 Rome, Italy",
+      "location": {
+        "Latitude": 41.907557,
+        "Longitude": 12.479913
+      },
+      "price": 80,
+      "stars": 3
+    },
+    {
+      "id": 9,
+      "name": "Grand Hotel de la Minerve",
+      "address": "Piazza della Minerva, 69, 00186 Rome, Italy",
+      "location": {
+        "Latitude": 41.898463,
+        "Longitude": 12.475861
+      },
+      "price": 120,
+      "stars": 4
+    },
+    {
+      "id": 10,
+      "name": "The Westin Excelsior Rome",
+      "address": "Via Vittorio Veneto, 125, 00187 Rome, Italy",
+      "location": {
+        "Latitude": 41.905504,
+        "Longitude": 12.487463
+      },
+      "price": 400,
+      "stars": 5
+    },
+    {
+      "id": 11,
+      "name": "Boscolo Exedra Roma, Autograph Collection",
+      "address": "Piazza della Repubblica, 47, 00185 Rome, Italy",
+      "location": {
+        "Latitude": 41.903614,
+        "Longitude": 12.495467
+      },
+      "price": 100,
+      "stars": 3
+    },
+    {
+      "id": 12,
+      "name": "Hotel de' Ricci",
+      "address": "Via della Barchetta, 14, 00186 Rome, Italy",
+      "location": {
+        "Latitude": 41.894897,
+        "Longitude": 12.471283
+      },
+      "price": 90,
+      "stars": 3
+    },
+    {
+      "id": 13,
+      "name": "Hotel Raphael - Relais & Châteaux",
+      "address": "Largo Febo, 2, 00186 Rome, Italy",
+      "location": {
+        "Latitude": 41.904255,
+        "Longitude": 12.469162
+      },
+      "price": 140,
+      "stars": 4
+    },
+    {
+      "id": 14,
+      "name": "Hotel Indigo Rome - St. George",
+      "address": "Via Giulia, 62, 00186 Rome, Italy",
+      "location": {
+        "Latitude": 41.892822,
+        "Longitude": 12.466567
+      },
+      "price": 240,
+      "stars": 4
+    },
+    {
+      "id": 15,
+      "name": "The First Roma Dolce",
+      "address": "Via del Vantaggio, 14, 00186 Rome, Italy",
+      "location": {
+        "Latitude": 41.903209,
+        "Longitude": 12.477169
+      },
+      "price": 350,
+      "stars": 5
+    },
+    {
+      "id": 16,
+      "name": "Hotel Artemide",
+      "address": "Via Nazionale, 22, 00184 Rome, Italy",
+      "location": {
+        "Latitude": 41.901145,
+        "Longitude": 12.494852
+      },
+      "price": 250,
+      "stars": 4
+    },
+    {
+      "id": 17,
+      "name": "Aleph Rome Hotel, Curio Collection by Hilton",
+      "address": "Via di San Basilio, 15, 00187 Rome, Italy",
+      "location": {
+        "Latitude": 41.906823,
+        "Longitude": 12.488709
+      },
+      "price": 100,
+      "stars": 3
+    },
+    {
+      "id": 18,
+      "name": "iQ Hotel Roma",
+      "address": "Via Firenze, 8, 00184 Rome, Italy",
+      "location": {
+        "Latitude": 41.900328,
+        "Longitude": 12.493844
+      },
+      "price": 200,
+      "stars": 4
+    },
+    {
+      "id": 19,
+      "name": "Hotel Locarno",
+      "address": "Via della Penna, 22, 00186 Rome, Italy",
+      "location": {
+        "Latitude": 41.907749,
+        "Longitude": 12.472732
+      },
+      "price": 300,
+      "stars": 4
+    },
+    {
+      "id": 20,
+      "name": "Hotel Vilòn",
+      "address": "Via dell'Arancio, 69, 00186 Rome, Italy",
+      "location": {
+        "Latitude": 41.899137,
+        "Longitude": 12.469972
+      },
+      "price": 350,
+      "stars": 5
+    },
+    {
+      "id": 21,
+      "name": "Hotel Splendide Royal",
+      "address": "Via di Porta Pinciana, 14, 00187 Rome, Italy",
+      "location": {
+        "Latitude": 41.906687,
+        "Longitude": 12.487253
+      },
+      "price": 140,
+      "stars": 4
+    },
+    {
+      "id": 22,
+      "name": "Hotel Adriano",
+      "address": "Via di Pallacorda, 2, 00186 Rome, Italy",
+      "location": {
+        "Latitude": 41.900958,
+        "Longitude": 12.470338
+      },
+      "price": 250,
+      "stars": 3
+    },
+    {
+      "id": 23,
+      "name": "Hotel Quattro Fontane",
+      "address": "Via delle Quattro Fontane, 16, 00184 Rome, Italy",
+      "location": {
+        "Latitude": 41.903402,
+        "Longitude": 12.488662
+      },
+      "price": 200,
+      "stars": 3
+    },
+    {
+      "id": 24,
+      "name": "Hotel Isa",
+      "address": "Via Cicerone, 39, 00193 Rome, Italy",
+      "location": {
+        "Latitude": 41.906258,
+        "Longitude": 12.464542
+      },
+      "price": 150,
+      "stars": 3
+    },
+    {
+      "id": 25,
+      "name": "Hotel Santa Maria",
+      "address": "Vicolo del Piede, 2, 00153 Rome, Italy",
+      "location": {
+        "Latitude": 41.891974,
+        "Longitude": 12.469231
+      },
+      "price": 100,
+      "stars": 2
+    },
+    {
+      "id": 26,
+      "name": "Hotel San Anselmo",
+      "address": "Piazza Sant'Anselmo, 2, 00153 Rome, Italy",
+      "location": {
+        "Latitude": 41.885686,
+        "Longitude": 12.479225
+      },
+      "price": 80,
+      "stars": 2
+    },
+    {
+      "id": 27,
+      "name": "Hotel Forum",
+      "address": "Via Tor de' Conti, 25-30, 00184 Rome, Italy",
+      "location": {
+        "Latitude": 41.894517,
+        "Longitude": 12.485578
+      },
+      "price": 150,
+      "stars": 3
+    },
+    {
+      "id": 28,
+      "name": "Hotel Majestic Roma",
+      "address": "Via Vittorio Veneto, 50, 00187 Rome, Italy",
+      "location": {
+        "Latitude": 41.906057,
+        "Longitude": 12.488132
+      },
+      "price": 350,
+      "stars": 5
+    },
+    {
+      "id": 29,
+      "name": "Hotel Ponte Sisto",
+      "address": "Via dei Pettinari, 64, 00186 Rome, Italy",
+      "location": {
+        "Latitude": 41.890131,
+        "Longitude": 12.473864
+      },
+      "price": 200,
+      "stars": 4
+    },
+    {
+      "id": 30,
+      "name": "Hotel Mozart",
+      "address": "Via dei Greci, 23, 00187 Rome, Italy",
+      "location": {
+        "Latitude": 41.906639,
+        "Longitude": 12.480727
+      },
+      "price": 150,
+      "stars": 3
+    }
+  ],
+  "resturants": [
+    {
+      "id": 1,
+      "name": "La Pergola",
+      "address": "Via Alberto Cadlolo, 101, 00136 Roma RM, Italy",
+      "geoCode": {
+        "Latitude": 41.920110744370284,
+        "Longitude": 12.446031690814332
+      },
+      "foodType": "fine dining",
+      "stars": 4,
+      "description": "La Pergola is an exquisite fine dining restaurant located in Rome. Situated on Via Alberto Cadlolo, it offers a luxurious and elegant dining experience. The restaurant is known for its impeccable service, innovative cuisine, and breathtaking views of the city. La Pergola is a perfect choice for those seeking a memorable culinary journey in a refined setting."
+    },
+    {
+      "id": 2,
+      "name": "Aroma Osteria",
+      "address": "Via Labicana 125 Palazzo Manfredi, 00184 Rome Italy",
+      "geoCode": {
+        "Latitude": 41.894336555920006,
+        "Longitude": 12.496274818992072
+      },
+      "foodType": "traditional",
+      "stars": 3,
+      "description": "Aroma Osteria is a charming restaurant located in Palazzo Manfredi on Via Labicana. It specializes in traditional Italian cuisine, offering a combination of classic flavors and innovative twists. With its cozy ambiance and attentive service, Aroma Osteria provides a delightful dining experience for those looking to savor authentic Italian dishes."
+    },
+    {
+      "id": 3,
+      "name": "Roscioli",
+      "address": "Via dei Giubbonari, 21, 00186 Roma RM, Italy",
+      "geoCode": {
+        "Latitude": 41.89489285707279,
+        "Longitude": 12.473089476756683
+      },
+      "foodType": "fine dining",
+      "stars": 5,
+      "description": "Roscioli is an award-winning fine dining restaurant situated on Via dei Giubbonari. It is renowned for its exceptional culinary creations, using the finest ingredients to deliver a gourmet experience. With its elegant atmosphere, knowledgeable staff, and a menu that combines traditional and innovative flavors, Roscioli promises an unforgettable gastronomic journey."
+    },
+    {
+      "id": 4,
+      "name": "Trattoria Da Danilo",
+      "address": "Via Petrarca, 13, 00185 Roma RM, Italy",
+      "geoCode": {
+        "Latitude": 41.89736613876378,
+        "Longitude": 12.507873998643996
+      },
+      "foodType": "seafood",
+      "stars": 2,
+      "description": "Trattoria Da Danilo is a cozy restaurant located on Via Petrarca. It specializes in seafood dishes, offering a variety of fresh and flavorful options. While the ambiance is casual, the focus is on serving delicious seafood prepared with care. Trattoria Da Danilo is a great choice for seafood enthusiasts looking for a relaxed dining experience."
+    },
+    {
+      "id": 5,
+      "name": "Tonnarello",
+      "address": "Via della Paglia, 1, 00153 Roma RM, Italy",
+      "geoCode": {
+        "Latitude": 41.88901683607882,
+        "Longitude": 12.47974200214277
+      },
+      "foodType": "traditional",
+      "stars": 4,
+      "description": "Tonnarello is a delightful restaurant located on Via della Paglia. It specializes in traditional Italian cuisine, offering a wide range of classic dishes prepared with fresh ingredients and authentic flavors. With its warm and welcoming atmosphere, Tonnarello provides a memorable dining experience for those seeking a taste of traditional Roman cuisine."
+    },
+    {
+      "id": 6,
+      "name": "Armando al Pantheon",
+      "address": "Salita dei Crescenzi, 31, 00186 Roma RM, Italy",
+      "geoCode": {
+        "Latitude": 41.89997661533425,
+        "Longitude": 12.477517868587144
+      },
+      "foodType": "traditional",
+      "stars": 5,
+      "description": "Armando al Pantheon is a highly regarded restaurant situated on Salita dei Crescenzi. It specializes in traditional Roman cuisine, offering a menu that showcases the rich flavors of the region. With its cozy and rustic ambiance, attentive service, and dishes prepared with passion, Armando al Pantheon guarantees an authentic and satisfying dining experience."
+    },
+    {
+      "id": 7,
+      "name": "Kathmandu - fast food",
+      "address": "Via Buonarroti, 38, 00185 Roma RM, Italy",
+      "geoCode": {
+        "Latitude": 41.89791985513992,
+        "Longitude": 12.502734773664042
+      },
+      "foodType": "fast food",
+      "stars": 5,
+      "description": "Kathmandu is a fast-food restaurant located on Via Buonarroti. It offers a diverse menu featuring a variety of fast-food options. Whether you're in the mood for burgers, sandwiches, or other quick bites, Kathmandu provides a convenient and flavorful dining experience."
+    },
+    {
+      "id": 8,
+      "name": "Roscioli Caffè Pasticceria",
+      "address": "Piazza Benedetto Cairoli, 16, 00186 Roma RM, Italy",
+      "geoCode": {
+        "Latitude": 41.895085085698095,
+        "Longitude": 12.478286145392767
+      },
+      "foodType": "dessert",
+      "stars": 3,
+      "description": "Roscioli Caffè Pasticceria is a charming café and pastry shop situated on Piazza Benedetto Cairoli. It is known for its delectable desserts, pastries, and coffee. With its inviting atmosphere and a wide selection of sweet treats, Roscioli Caffè Pasticceria is the perfect place to satisfy your dessert cravings."
+    },
+    {
+      "id": 9,
+      "name": "La Taverna dei Fori Imperiali",
+      "address": "Via della Madonna dei Monti, 9, 00184 Roma RM, Italy",
+      "geoCode": {
+        "Latitude": 41.89453422606252,
+        "Longitude": 12.489192080861834
+      },
+      "foodType": "dessert",
+      "stars": 4,
+      "description": "La Taverna dei Fori Imperiali is located on Via della Madonna dei Monti. It offers a cozy and traditional dining experience, specializing in Italian desserts. From classic tiramisu to a variety of sweet delights, La Taverna dei Fori Imperiali is a must-visit for dessert lovers."
+    },
+    {
+      "id": 10,
+      "name": "Ristorante Piperno",
+      "address": "Monte de' Cenci, 9, 00186 Roma RM, Italy",
+      "geoCode": {
+        "Latitude": 41.88968021905381,
+        "Longitude": 12.480586630819304
+      },
+      "foodType": "fine dinning",
+      "stars": 3,
+      "description": "Ristorante Piperno is situated on Monte de' Cenci. It is a fine dining restaurant that focuses on providing a memorable culinary experience. With its refined ambiance and a menu that showcases the best of Italian cuisine, Ristorante Piperno offers an elegant setting for those seeking a sophisticated dining experience."
+    },
+    {
+      "id": 11,
+      "name": "Five Guys",
+      "address": "Roma Termini, Piazza dei Cinquecento, 00187 Roma RM, Italy",
+      "geoCode": {
+        "Latitude": 41.9064960798235,
+        "Longitude": 12.50225891959091
+      },
+      "foodType": "fast food",
+      "stars": 2,
+      "description": "Five Guys is a popular fast-food chain located in Roma Termini, Piazza dei Cinquecento. It is known for its delicious burgers, fries, and milkshakes. With its casual and vibrant atmosphere, Five Guys is a go-to spot for a quick and satisfying meal."
+    },
+    {
+      "id": 12,
+      "name": "McDonald's",
+      "address": "Via del Tritone 57-58 - 00187 Rome",
+      "geoCode": {
+        "Latitude": 41.90315546021247,
+        "Longitude": 12.48399363277724
+      },
+      "foodType": "fast food",
+      "stars": 3,
+      "description": "McDonald's is a well-known fast-food chain situated on Via del Tritone. It offers a wide selection of fast-food options, including burgers, fries, and chicken sandwiches. McDonald's provides a convenient and familiar dining experience for those looking for a quick bite to eat."
+    },
+    {
+      "id": 13,
+      "name": "Kilo Restaurant",
+      "address": "Kilo Restaurant, Via Tirso, 30, 00198 Roma RM, Italy",
+      "location": {
+        "Latitude": 41.919289522631594,
+        "Longitude": 12.498208922715905
+      },
+      "foodType": "sea food",
+      "stars": 4,
+      "description": "Kilo Restaurant is a renowned seafood restaurant located in Rome. With its prime location and a wide variety of seafood dishes, Kilo Restaurant offers a delightful dining experience. From fresh catches of the day to expertly prepared seafood delicacies, this restaurant ensures high-quality ingredients and excellent flavors. The restaurant's elegant ambiance and attentive service add to the overall experience, making it a popular choice for seafood enthusiasts."
+    },
+    {
+      "id": 14,
+      "name": "\"DOC\" Cruderia EnoBistrot",
+      "address": "Via Pietro Manzi, 1, 00153 Roma RM, Italy",
+      "location": {
+        "Latitude": 41.87402411516257,
+        "Longitude": 12.46573271074401
+      },
+      "foodType": "fine dinning",
+      "stars": 5,
+      "description": "\"DOC\" Cruderia EnoBistrot is a top-rated fine dining restaurant situated in Rome. Known for its sophisticated atmosphere and outstanding culinary offerings, this restaurant provides an exceptional gastronomic experience. The menu features a combination of innovative and traditional dishes, prepared with the finest ingredients. With attentive service and a charming ambience, \"DOC\" Cruderia EnoBistrot aims to create a memorable dining experience for its guests."
+    },
+    {
+      "id": 15,
+      "name": "Imàgo",
+      "address": "Piazza della Trinita' Dei Monti 6, Hassler Roma Hotel - 00187 Rome",
+      "location": {
+        "Latitude": 41.906546429658455,
+        "Longitude": 12.483946963483989
+      },
+      "foodType": "traditional",
+      "stars": 5,
+      "description": "Imàgo is a restaurant situated in Rome, located within the prestigious Hassler Roma Hotel. Offering traditional cuisine with a modern twist, Imàgo is known for its refined dishes and elegant presentation. The restaurant boasts breathtaking views of Rome's iconic landmarks, providing a stunning backdrop for a memorable dining experience. While the stars indicate a good rating, the true highlight of Imàgo lies in its fusion of traditional flavors and contemporary culinary techniques."
+    },
+    {
+      "id": 16,
+      "name": "Yes food",
+      "address": "Via Catania, 53, 00161 Roma RM, Italy",
+      "location": {
+        "Latitude": 41.910599332721716,
+        "Longitude": 12.519778574435634
+      },
+      "foodType": "fast food",
+      "stars": 3,
+      "description": "Yes food is a fast food restaurant located in Rome. It offers a wide range of quick and tasty food options, perfect for those looking for a convenient and casual dining experience. The menu includes popular fast food items such as burgers, sandwiches, fries, and more. While the focus is on fast service, Yes food strives to maintain quality and freshness in its offerings, ensuring a satisfying meal for its customers."
+    },
+    {
+      "id": 17,
+      "name": "Ristorante Crispi 19",
+      "address": "Via Francesco Crispi 19 RM - 00187 Rome",
+      "location": {
+        "Latitude": 41.90360567435532,
+        "Longitude": 12.485467453074525
+      },
+      "foodType": "sea food",
+      "stars": 4,
+      "description": "Ristorante Crispi 19 is a well-regarded seafood restaurant in Rome. With a prime location and a reputation for excellence, it offers a diverse menu featuring a variety of seafood delicacies. From fresh fish to shellfish, Ristorante Crispi 19 ensures high-quality ingredients and skillful preparation. The restaurant's warm and inviting atmosphere, combined with attentive service, creates an enjoyable dining experience for seafood lovers."
+    },
+    {
+      "id": 18,
+      "name": "Ai Tre Scalini",
+      "address": "Via Panisperna, 251, 00184 Roma RM, Italy",
+      "location": {
+        "Latitude": 41.89642592018854,
+        "Longitude": 12.490489037731189
+      },
+      "foodType": "traditional",
+      "stars": 4,
+      "description": "Ai Tre Scalini is a popular traditional restaurant located in Rome. Known for its authentic Italian cuisine and warm ambiance, the restaurant offers a range of traditional dishes prepared with care and attention to detail. From homemade pasta to classic meat and fish dishes, Ai Tre Scalini aims to provide a genuine taste of Roman cuisine. With its friendly staff and cozy setting, it's a great place to experience the flavors of traditional Italian cooking."
+    },
+    {
+      "id": 19,
+      "name": "Chinappi",
+      "address": "Via Augusto Valenziani, 19, 00187 Roma RM, Italy",
+      "location": {
+        "Latitude": 41.91007392075696,
+        "Longitude": 12.498728937731986
+      },
+      "foodType": "sea food",
+      "stars": 4,
+      "description": "Chinappi is a seafood restaurant located in Rome. Known for its fresh seafood dishes and delightful flavors, Chinappi offers a wide range of culinary delights. From expertly prepared fish to flavorful shellfish, the restaurant takes pride in using high-quality ingredients to create memorable dining experiences. With its charming atmosphere and attentive service, Chinappi provides a welcoming environment for seafood enthusiasts."
+    },
+    {
+      "id": 20,
+      "name": "Frigidarium",
+      "address": "Via del Governo Vecchio, 112, 00186 Roma RM, Italy",
+      "location": {
+        "Latitude": 41.898353058394086,
+        "Longitude": 12.47047625307417
+      },
+      "foodType": "dessert",
+      "stars": 5,
+      "description": "Frigidarium is a renowned dessert destination situated in Rome. This establishment is celebrated for its delectable gelato and mouth-watering sweet treats. With a wide array of flavors and creative combinations, Frigidarium offers a delightful experience for dessert lovers. The high-quality ingredients and exceptional craftsmanship make their gelato a must-try. The cozy atmosphere and friendly staff further enhance the overall experience."
+    },
+    {
+      "id": 21,
+      "name": "Giolitti",
+      "address": "Via degli Uffici del Vicario, 40, 00186 Roma RM, Italy",
+      "location": {
+        "Latitude": 41.90251964226468,
+        "Longitude": 12.47732096509553
+      },
+      "foodType": "dessert",
+      "stars": 4,
+      "description": "Giolitti is a popular dessert destination located in Rome. Established in 1900, this historic gelateria offers a wide range of traditional Italian gelato flavors. With its rich and creamy textures, Giolitti's gelato has garnered a strong following over the years. The charming vintage decor and friendly service provide a nostalgic atmosphere, making it a favorite spot for locals and tourists alike."
+    },
+    {
+      "id": 22,
+      "name": "Pierluigi",
+      "address": "Piazza de' Ricci, 144, 00186 Roma RM, Italy",
+      "location": {
+        "Latitude": 41.897429999746066,
+        "Longitude": 12.46876732479837
+      },
+      "foodType": "sea food",
+      "stars": 3,
+      "description": "Pierluigi is a seafood restaurant situated in Rome. With its prime location near Piazza Navona, this restaurant offers a range of seafood dishes prepared with fresh ingredients. From classic Italian seafood pasta to grilled fish specialties, Pierluigi aims to provide a satisfying dining experience. The restaurant's rustic yet elegant ambiance adds to its charm, making it a popular choice for seafood lovers."
+    },
+    {
+      "id": 23,
+      "name": "Ristorante PORTO - Fish & Chips",
+      "address": "Via Crescenzio, 56, 00193 Roma RM, Italy",
+      "location": {
+        "Latitude": 41.90597808950289,
+        "Longitude": 12.463548395403208
+      },
+      "foodType": "sea food",
+      "stars": 5,
+      "description": "Ristorante PORTO - Fish & Chips is a seafood restaurant located in Rome. With a focus on fish and chips, this establishment offers a unique twist on traditional seafood dishes. The menu features a variety of freshly battered and fried fish, accompanied by homemade chips and flavorful sauces. Ristorante PORTO aims to provide a casual yet memorable dining experience, with a combination of quality ingredients, attentive service, and a relaxed atmosphere."
+    },
+    {
+      "id": 24,
+      "name": "Pinoy Ristorante",
+      "address": "Via Gaeta, 21, 00189 Roma RM, Italy",
+      "location": {
+        "Latitude": 41.905574699790904,
+        "Longitude": 12.501258189877626
+      },
+      "foodType": "fast food",
+      "stars": 4,
+      "description": " Pinoy Ristorante is a fast-food restaurant located in Rome. Specializing in Filipino cuisine, this restaurant offers a variety of quick and flavorful dishes. From traditional rice meals to popular street food options, Pinoy Ristorante aims to bring the authentic flavors of the Philippines to Rome. The restaurant's casual setting and efficient service make it a convenient choice for those looking to enjoy Filipino fast food."
+    }
+  ],
+  "shoppingPlaces": [
+    {
+      "id": 1,
+      "name": "Galleria Alberto Sordi",
+      "address": "Piazza Colonna, 00187 Roma RM, Italy",
+      "geoCode": {
+        "Latitude": 41.902102,
+        "Longitude": 12.481708
+      },
+      "description": "Galleria Alberto Sordi is a historic shopping mall located in the heart of Rome. It offers a blend of elegant shops, boutiques, cafes, and restaurants, making it a popular destination for both locals and tourists."
+    },
+    {
+      "id": 2,
+      "name": "Via del Corso",
+      "address": "Via del Corso, 00186 Roma RM, Italy",
+      "geoCode": {
+        "Latitude": 41.902119,
+        "Longitude": 12.482297
+      },
+      "description": "Via del Corso is one of the main shopping streets in Rome, known for its wide range of fashion boutiques, department stores, and popular brands. It offers a vibrant shopping experience in the heart of the city."
+    },
+    {
+      "id": 3,
+      "name": "Via Condotti",
+      "address": "Via dei Condotti, 00187 Roma RM, Italy",
+      "geoCode": {
+        "Latitude": 41.905964,
+        "Longitude": 12.481628
+      },
+      "description": "Via Condotti is a prestigious street in Rome, renowned for its luxury fashion boutiques, high-end jewelry stores, and designer brands. It attracts fashion enthusiasts and luxury shoppers from around the world."
+    },
+    {
+      "id": 4,
+      "name": "La Rinascente",
+      "address": "Via del Tritone, 61, 00187 Roma RM, Italy",
+      "geoCode": {
+        "Latitude": 41.90600659996459,
+        "Longitude": 12.484760359092748
+      },
+      "description": "La Rinascente is a famous department store in Rome, offering a wide range of products including fashion, cosmetics, home goods, and gourmet food. It provides a modern shopping experience and a great selection of international and Italian brands."
+    },
+    {
+      "id": 5,
+      "name": "Porta Portese Market",
+      "address": "Via di Porta Portese, 00153 Roma RM, Italy",
+      "geoCode": {
+        "Latitude": 41.87251,
+        "Longitude": 12.472869
+      },
+      "description": "Porta Portese Market is one of the largest flea markets in Rome, known for its diverse selection of vintage clothing, antiques, furniture, books, and much more. It's a treasure trove for bargain hunters and collectors."
+    },
+    {
+      "id": 6,
+      "name": "Euroma2",
+      "address": "Viale dell'Oceano Pacifico, 83, 00144 Roma RM, Italy",
+      "geoCode": {
+        "Latitude": 41.828383,
+        "Longitude": 12.468162
+      },
+      "description": "Euroma2 is a modern shopping center located on the outskirts of Rome. It features a wide range of shops, including fashion, electronics, home goods, and entertainment options such as cinemas and restaurants."
+    },
+    {
+      "id": 7,
+      "name": "Castel Romano Designer Outlet",
+      "address": "Via Ponte di Piscina Cupa, 64, 00128 Castel Romano RM, Italy",
+      "geoCode": {
+        "Latitude": 41.63776,
+        "Longitude": 12.452605
+      },
+      "description": "Castel Romano Designer Outlet is a popular shopping destination near Rome, offering discounted prices on a variety of designer brands. It features a charming village-like setting and a wide selection of fashion, accessories, and homeware."
+    },
+    {
+      "id": 8,
+      "name": "Via Cola di Rienzo",
+      "address": "Via Cola di Rienzo, 00192 Roma RM, Italy",
+      "geoCode": {
+        "Latitude": 41.908646,
+        "Longitude": 12.465426
+      },
+      "description": "Via Cola di Rienzo is a vibrant shopping street in Rome, known for its mix of local boutiques, department stores, and international brands. It offers a great shopping experience with a lively atmosphere."
+    },
+    {
+      "id": 9,
+      "name": "Via Borgognona",
+      "address": "Via Borgognona, 00187 Roma RM, Italy",
+      "geoCode": {
+        "Latitude": 41.904793,
+        "Longitude": 12.481215
+      },
+      "description": "Via Borgognona is a charming street in Rome known for its luxury fashion boutiques, art galleries, and upscale shops. It offers a sophisticated shopping experience with a range of high-end brands and designer stores."
+    },
+    {
+      "id": 10,
+      "name": "Piazza di Spagna",
+      "address": "Piazza di Spagna, 00187 Roma RM, Italy",
+      "geoCode": {
+        "Latitude": 41.90546,
+        "Longitude": 12.482145
+      },
+      "description": "Piazza di Spagna is a famous square in Rome that is home to the iconic Spanish Steps. It is a popular shopping area, featuring a mix of designer boutiques, luxury brands, and renowned Italian fashion houses."
+    },
+    {
+      "id": 11,
+      "name": "Centro Commerciale Aura",
+      "address": "Viale di Valle Aurelia, 30, 00167 Roma RM, Italy",
+      "geoCode": {
+        "Latitude": 41.904707036258145,
+        "Longitude": 12.437269529492056
+      },
+      "description": "Centro Commerciale Aura is a modern shopping center located in Rome. It offers a wide range of shops, including fashion, electronics, home goods, and a variety of dining options, providing a convenient and enjoyable shopping experience."
+    },
+    {
+      "id": 12,
+      "name": "Centro Commerciale ROMAEST",
+      "address": "Via Collatina, Km 12.800, 00132 Roma RM, Italy",
+      "geoCode": {
+        "Latitude": 41.91616301623824,
+        "Longitude": 12.660801074978163
+      },
+      "description": "Centro Commerciale ROMAEST is a large shopping mall located on the outskirts of Rome. It features a wide selection of shops, including fashion, electronics, home decor, and a range of entertainment options such as cinemas and restaurants."
+    },
+    {
+      "id": 13,
+      "name": "Maximo Shopping Center",
+      "address": "Via Laurentina, 865, 00143 Roma RM, Italy",
+      "geoCode": {
+        "Latitude": 41.810083544780966,
+        "Longitude": 12.486444743207326
+      },
+      "description": "Maximo Shopping Center is a modern retail complex situated in the southern part of Rome. It offers a diverse range of shops, including fashion, electronics, and supermarkets, providing a convenient shopping experience for local residents."
+    },
+    {
+      "id": 14,
+      "name": "Isola Sas di Aron Sufir",
+      "address": "Via in Arcione, 113, 00187 Roma RM, Italy",
+      "geoCode": {
+        "Latitude": 41.90394847068115,
+        "Longitude": 12.486074220464273
+      },
+      "description": "Isola Sas di Aron Sufir is a renowned antique store located near Piazza di Spagna in Rome. It specializes in a wide range of unique and collectible antiquities, attracting antique enthusiasts and collectors from around the city."
+    },
+    {
+      "id": 15,
+      "name": "Antiquities Alberto Di Castro",
+      "address": "Piazza di Spagna, 5, 00187 Roma RM, Italy",
+      "geoCode": {
+        "Latitude": 41.9078942371483,
+        "Longitude": 12.481267625824877
+      },
+      "description": "Antiquities Alberto Di Castro is a prestigious antique shop situated in the vicinity of Piazza di Spagna. It offers a curated collection of fine antique furniture, artworks, and decorative objects, catering to discerning collectors and interior designers."
+    },
+    {
+      "id": 16,
+      "name": "Carlucci Gallerie Antiquarie",
+      "address": "Via del Babuino, 50, 00187 Roma RM, Italy",
+      "geoCode": {
+        "Latitude": 41.91083250568285,
+        "Longitude": 12.479379350738073
+      },
+      "description": "Carlucci Gallerie Antiquarie is a well-established gallery of fine antiques located on Via del Babuino. It showcases a wide array of exquisite antiquefurniture, artwork, and decorative objects, offering a unique shopping experience for antique enthusiasts and collectors in Rome."
+    },
+    {
+      "id": 17,
+      "name": "Stone Island Store Roma",
+      "address": "Via del Babuino, 174/175, 00187 Roma RM, Italy",
+      "geoCode": {
+        "Latitude": 41.91222299611914,
+        "Longitude": 12.478005983529382
+      },
+      "description": "Stone Island Store Roma is a flagship store located on Via del Babuino in Rome. It specializes in high-quality and innovative fashion for men, featuring the renowned Stone Island brand. The store showcases the latest collections and offers a premium shopping experience for fashion-forward individuals."
+    },
+    {
+      "id": 18,
+      "name": "Burberry",
+      "address": "La Rinascente, Via del Tritone, 61, 00187 Roma RM, Italy",
+      "geoCode": {
+        "Latitude": 41.904813351288844,
+        "Longitude": 12.484529115647428
+      },
+      "description": "Burberry is a renowned luxury fashion brand located in La Rinascente on Via del Tritone in Rome. The store offers a wide selection of high-end clothing, accessories, and fragrances, showcasing Burberry's iconic British style and craftsmanship."
+    },
+    {
+      "id": 19,
+      "name": "Murano Max Murano Glass Rome",
+      "address": "Via dei Banchi Nuovi, 8, 00186 Roma RM, Italy",
+      "geoCode": {
+        "Latitude": 41.900616741905736,
+        "Longitude": 12.467311760232139
+      },
+      "description": "Murano Max Murano Glass Rome is a specialized store located on Via dei Banchi Nuovi. It features a stunning collection of handcrafted Murano glass artworks, including vases, sculptures, jewelry, and decorative items, showcasing the renowned Venetian glassmaking tradition."
+    },
+    {
+      "id": 20,
+      "name": "BD-SAS",
+      "address": "Via Milano, 35, 00184 Roma RM, Italy",
+      "geoCode": {
+        "Latitude": 41.90023343583015,
+        "Longitude": 12.491086860188688
+      },
+      "description": "BD-SAS is a boutique store located on Via Milano in Rome. It offers a curated selection of trendy and fashionable clothing, accessories, and footwear for men and women. The store focuses on contemporary styles and aims to provide a unique shopping experience for fashion-conscious individuals."
+    }
+  ],
+  "oldPlaces": [
+    {
+      "id": 1,
+      "name": "Colosseum",
+      "address": "Piazza del Colosseo, 1, 00184 Roma RM, Italy",
+      "geoCode": {
+        "Latitude": 41.89021,
+        "Longitude": 12.49223
+      },
+      "price": 42,
+      "description": "The Colosseum is an ancient amphitheater located in Rome, Italy. It is one of the most iconic landmarks of the Roman Empire and a popular tourist attraction."
+    },
+    {
+      "id": 2,
+      "name": "Roman Forum",
+      "address": "Via della Salara Vecchia, 5/6, 00186 Roma RM, Italy",
+      "geoCode": {
+        "Latitude": 41.892635,
+        "Longitude": 12.485349
+      },
+      "price": 55,
+      "description": "The Roman Forum is a rectangular plaza surrounded by the ruins of several important ancient government buildings. It served as the center of Roman public life for centuries."
+    },
+    {
+      "id": 3,
+      "name": "Pantheon",
+      "address": "Piazza della Rotonda, 00186 Roma RM, Italy",
+      "geoCode": {
+        "Latitude": 41.89861,
+        "Longitude": 12.476846
+      },
+      "price": 12,
+      "description": "The Pantheon is a former Roman temple and now a church. It is known for its impressive dome and the oculus in the center, which allows natural light to enter the building."
+    },
+    {
+      "id": 4,
+      "name": "Trevi Fountain",
+      "address": "Piazza di Trevi, 00187 Roma RM, Italy",
+      "geoCode": {
+        "Latitude": 41.900932,
+        "Longitude": 12.48329
+      },
+      "price": 51,
+      "description": "The Trevi Fountain is a famous Baroque fountain in Rome. It is known for its stunning sculptures and is a popular spot for visitors to throw coins into the water."
+    },
+    {
+      "id": 5,
+      "name": "Vatican City",
+      "address": "Vatican City",
+      "geoCode": {
+        "Latitude": 41.902916,
+        "Longitude": 12.453389
+      },
+      "price": 42,
+      "description": "Vatican City is an independent city-state surrounded by Rome, Italy. It is the spiritual and administrative headquarters of the Roman Catholic Church and home to St. Peter's Basilica and the Vatican Museums."
+    },
+    {
+      "id": 6,
+      "name": "Spanish Steps",
+      "address": "Piazza di Spagna, 00187 Roma RM, Italy",
+      "geoCode": {
+        "Latitude": 41.90546,
+        "Longitude": 12.482145
+      },
+      "price": 28,
+      "description": "The Spanish Steps is a famous staircase in Rome, connecting the Piazza di Spagna at the bottom with the Trinità dei Monti church at the top. It is a popular meeting point and gathering place."
+    },
+    {
+      "id": 7,
+      "name": "Castel Sant'Angelo",
+      "address": "Lungotevere Castello, 50, 00193 Roma RM, Italy",
+      "geoCode": {
+        "Latitude": 41.903056,
+        "Longitude": 12.466389
+      },
+      "price": 17,
+      "description": "Castel Sant'Angelo is a fortress located on the right bank of the Tiber River in Rome. It has served various purposes throughout history, including as a mausoleum, a castle, and a museum."
+    },
+    {
+      "id": 8,
+      "name": "Palatine Hill",
+      "address": "Via di San Gregorio, 00186 Roma RM, Italy",
+      "geoCode": {
+        "Latitude": 41.888359,
+        "Longitude": 12.487366
+      },
+      "price": 27,
+      "description": "Palatine Hill is one of the seven hills of Rome and is considered the centermost of the famous Seven Hills of Rome. It offers panoramic views of the Roman Forum and the Circus Maximus."
+    },
+    {
+      "id": 9,
+      "name": "Baths of Caracalla",
+      "address": "Viale delle Terme di Caracalla,52, 00153 Roma RM, Italy",
+      "geoCode": {
+        "Latitude": 41.87956,
+        "Longitude": 12.492309
+      },
+      "price": 31,
+      "description": "The Baths of Caracalla were ancient Roman public baths built during the reign of Emperor Caracalla. They were one of the largest and most impressive thermal complexes in ancient Rome."
+    },
+    {
+      "id": 10,
+      "name": "Piazza Navona",
+      "address": "Piazza Navona, 00186 Roma RM, Italy",
+      "geoCode": {
+        "Latitude": 41.89917,
+        "Longitude": 12.47351
+      },
+      "price": 17,
+      "description": "Piazza Navona is a beautiful square in Rome, famous for its Baroque architecture and stunning fountains. It is a lively gathering place and a hub of activity with numerous cafes and street performers."
+    },
+    {
+      "id": 11,
+      "name": "Circus Maximus",
+      "address": "Via del Circo Massimo, 00186 Roma RM, Italy",
+      "geoCode": {
+        "Latitude": 41.8839,
+        "Longitude": 12.4845
+      },
+      "price": 15,
+      "description": "Circus Maximus is an ancient Roman chariot racing stadium and entertainment venue. It was the largest stadium in ancient Rome and could accommodate over 150,000 spectators."
+    },
+    {
+      "id": 12,
+      "name": "Capitoline Hill",
+      "address": "Piazza del Campidoglio, 00186 Roma RM, Italy",
+      "geoCode": {
+        "Latitude": 41.8931,
+        "Longitude": 12.4828
+      },
+      "price": 20,
+      "description": "Capitoline Hill is one of the seven hills of Rome and was the citadel of the ancient city. It now houses the Capitoline Museums, which showcase a vast collection of ancient art and artifacts."
+    },
+    {
+      "id": 13,
+      "name": "Ara Pacis",
+      "address": "Lungotevere in Augusta, 00186 Roma RM, Italy",
+      "geoCode": {
+        "Latitude": 41.9047,
+        "Longitude": 12.4769
+      },
+      "price": 10,
+      "description": "The Ara Pacis is an ancient altar dedicated to the Roman goddess of peace, Pax. It is considered one of the most important works of Roman sculpture and is housed in a modern museum building."
+    },
+    {
+      "id": 14,
+      "name": "Basilica of Santa Maria Maggiore",
+      "address": "Piazza di Santa Maria Maggiore, 42, 00185 Roma RM, Italy",
+      "geoCode": {
+        "Latitude": 41.8975,
+        "Longitude": 12.4983
+      },
+      "price": 5,
+      "description": "The Basilica of Santa Maria Maggiore is one of the major basilicas in Rome and is dedicated to the Virgin Mary. It is known for its beautiful mosaics and stunning interior."
+    },
+    {
+      "id": 15,
+      "name": "Palazzo Barberini",
+      "address": "Via delle Quattro Fontane, 13, 00184 Roma RM, Italy",
+      "geoCode": {
+        "Latitude": 41.9039,
+        "Longitude": 12.4896
+      },
+      "price": 25,
+      "description": "Palazzo Barberini is a palace in Rome that houses the Galleria Nazionale d'Arte Antica, an art gallery with a vast collection of paintings, sculptures, and other artworks."
+    },
+    {
+      "id": 16,
+      "name": "Campo de' Fiori",
+      "address": "Campo de' Fiori, 00186 Roma RM, Italy",
+      "geoCode": {
+        "Latitude": 41.8956,
+        "Longitude": 12.4728
+      },
+      "price": 0,
+      "description": "Campo de' Fiori is a lively square in Rome known for its bustling market during the day and vibrant nightlife. It is surrounded by restaurants, cafes, and historic buildings."
+    },
+    {
+      "id": 17,
+      "name": "Santa Maria in Trastevere",
+      "address": "Piazza di Santa Maria in Trastevere, 00153 Roma RM, Italy",
+      "geoCode": {
+        "Latitude": 41.8894,
+        "Longitude": 12.4691
+      },
+      "price": 10,
+      "description": "Santa Maria in Trastevere is one of the oldest churches in Rome and is located in the charming Trastevere neighborhood. It is known for its beautiful mosaics and stunning interior."
+    },
+    {
+      "id": 18,
+      "name": "Catacombs of San Callisto",
+      "address": "Via Appia Antica, 110/126, 00179 Roma RM, Italy",
+      "geoCode": {
+        "Latitude": 41.8583,
+        "Longitude": 12.5134
+      },
+      "price": 8,
+      "description": "The Catacombs of San Callisto are underground burial sites that were used by early Christians in Rome. They are one of the largest and most important catacombs in the city."
+    },
+    {
+      "id": 19,
+      "name": "Arch of Constantine",
+      "address": "Via di San Gregorio, 00186 Roma RM, Italy",
+      "geoCode": {
+        "Latitude": 41.88875,
+        "Longitude": 12.48889
+      },
+      "price": 5,
+      "description": "The Arch of Constantine is a triumphal arch in Rome, located near the Colosseum. It was built to commemorate the victory of Constantine the Great and is known for its well-preserved reliefs."
+    }
+  ],
+  "naturePlaces": [
+    {
+      "id": 1,
+      "name": "Villa Borghese Gardens",
+      "address": "Piazzale Napoleone I, 00197 Roma RM, Italy",
+      "geoCode": {
+        "Latitude": 41.912983078988084,
+        "Longitude": 12.48516558006076
+      },
+      "description": "Vast urban park with formally landscaped gardens, a lake & villas now housing important museums."
+    },
+    {
+      "id": 2,
+      "name": "Botanical Garden of Rome",
+      "address": "Largo Cristina di Svezia, 23 A - 24, 00165 Roma RM, Italy",
+      "geoCode": {
+        "Latitude": 41.89288280617462,
+        "Longitude": 12.462939079547962
+      },
+      "description": "7,000 plant species from around the world, plus fountains, a bamboo grove & a Japanese tea garden."
+    },
+    {
+      "id": 3,
+      "name": "Monte Mario",
+      "address": "Monte Mario, 00136 Roma RM, Italy",
+      "geoCode": {
+        "Latitude": 41.932116,
+        "Longitude": 12.427197
+      },
+      "description": "Forested hill offering a nature reserve, observatory & panoramic views of the city & its monuments."
+    },
+    {
+      "id": 4,
+      "name": "Gianicolo Hill",
+      "address": "Piazzale Giuseppe Garibaldi, 00165 Roma RM, Italy",
+      "geoCode": {
+        "Latitude": 41.89166933751176,
+        "Longitude": 12.461351280059397
+      },
+      "description": "This historic, well-known hilltop terrace offers panoramic views of Rome."
+    },
+    {
+      "id": 5,
+      "name": "Parco degli Acquedotti",
+      "address": "Via Lemonia, 256, 00174 Roma RM, Italy",
+      "geoCode": {
+        "Latitude": 41.850548739851135,
+        "Longitude": 12.557414284514692
+      },
+      "description": "Protected parkland with a Roman aqueduct & ancient archaeological sites, plus a former mill."
+    },
+    {
+      "id": 6,
+      "name": "Lake Bracciano",
+      "address": "Lago di Bracciano, Italy",
+      "geoCode": {
+        "Latitude": 42.111241,
+        "Longitude": 12.199484
+      },
+      "description": "a popular place for sailing, swimming & scuba diving."
+    },
+    {
+      "id": 7,
+      "name": "Tiber Island",
+      "address": "Isola Tiberina, 00186 Roma RM, Italy",
+      "geoCode": {
+        "Latitude": 41.888611,
+        "Longitude": 12.4775
+      },
+      "description": "Compact island in a bend of the River Tiber with a number of historical buildings & monuments."
+    },
+    {
+      "id": 8,
+      "name": "Appian Way Regional Park",
+      "address": "Parco Regionale dell'Appia Antica, Via Appia Antica, 42, 00178 Roma RM, Italy",
+      "geoCode": {
+        "Latitude": 41.858203,
+        "Longitude": 12.515993
+      },
+      "description": "Park along 16 km of the Roman road preserving important ancient Roman tombs & villas."
+    },
+    {
+      "id": 9,
+      "name": "Villa Doria Pamphili",
+      "address": "Via di San Pancrazio, 00152 Roma RM, Italy",
+      "geoCode": {
+        "Latitude": 41.881972,
+        "Longitude": 12.444107
+      },
+      "description": "Landscaped park on ancient noble Roman estate, with open-air concerts, nature trails & fountain."
+    },
+    {
+      "id": 10,
+      "name": "Ostia Beach",
+      "address": "Lido di Ostia, 00122 Roma RM, Italy",
+      "geoCode": {
+        "Latitude": 41.73698985513557,
+        "Longitude": 12.28517615956347
+      },
+      "description": "Historical 150-meter jetty, first founded in 1940, ending in a circular observation space."
+    },
+    {
+      "id": 11,
+      "name": "Vatican Gardens",
+      "address": "Vatican City, 00120",
+      "geoCode": {
+        "Latitude": 41.9022,
+        "Longitude": 12.4532
+      },
+      "description": "Formal gardens within Vatican City, featuring fountains, sculptures & landscaped greenery."
+    },
+    {
+      "id": 12,
+      "name": "Janiculum Hill",
+      "address": "Via Garibaldi, 00153 Roma RM, Italy",
+      "geoCode": {
+        "Latitude": 41.889661,
+        "Longitude": 12.464192
+      },
+      "description": "Hilltop park known for its panoramic views, statues, and memorials, including a large statue of Giuseppe Garibaldi."
+    },
+    {
+      "id": 13,
+      "name": "Villa Celimontana",
+      "address": "Via della Navicella, 12, 00184 Roma RM, Italy",
+      "geoCode": {
+        "Latitude": 41.885743,
+        "Longitude": 12.494257
+      },
+      "description": "Renaissance villa and park with ancient Roman ruins, gardens, and a summer jazz festival."
+    },
+    {
+      "id": 14,
+      "name": "Villa Ada",
+      "address": "Via Salaria, 00199 Roma RM, Italy",
+      "geoCode": {
+        "Latitude": 41.9334,
+        "Longitude": 12.5015
+      },
+      "description": "Large park with a lake, trees, and walking paths, offering a peaceful retreat from the city."
+    },
+    {
+      "id": 15,
+      "name": "Parco Savello (Orange Garden)",
+      "address": "Piazza Pietro D'Illiria, 00153 Roma RM, Italy",
+      "geoCode": {
+        "Latitude": 41.886079,
+        "Longitude": 12.482297
+      },
+      "description": "Garden on the Aventine Hill with orange trees, rose beds, and a panoramic view of Rome."
+    }
+  ],
+  "nightPlaces": [
+    {
+      "id": 1,
+      "name": "Teatro dell'Opera di Roma",
+      "address": "Piazza Beniamino Gigli, 00184 Roma RM, Italy",
+      "location": "41.90079059587993 12.495658295400876",
+      "description": "Iconic 19th-century theater that's as visually dramatic & lavish as the opera productions it stages.",
+      "price": 50
+    },
+    {
+      "id": 2,
+      "name": "Piazza Navona in Rome",
+      "address": "Piazza Navona, 00186 Roma RM, Italy",
+      "location": "42.61517702203919 12.588172027923532",
+      "description": "Elegant square dating from the 1st century A.D., with a baroque fountain, street artists & bars.",
+      "price": 60
+    },
+    {
+      "id": 3,
+      "name": "Trevi Fountain in Rome",
+      "address": "Piazza di Trevi, 00187 Roma RM, Italy",
+      "location": "41.90108118403159 12.483358776092714",
+      "description": "Aqueduct-fed rococo fountain, designed by Nicola Salvi & completed in 1762, with sculpted figures.",
+      "price": 50
+    },
+    {
+      "id": 4,
+      "name": "The Roman Guy Tours",
+      "address": "Via di Ripetta, 142, 00186 Roma RM, Italy",
+      "location": "41.904141879788085 12.47503285466089",
+      "description": "",
+      "price": 35
+    },
+    {
+      "id": 5,
+      "name": "Castel Sant'Angelo",
+      "address": "Lungotevere Castello, 50, 00193 Roma RM, Italy",
+      "location": "41.90318294933377 12.466254537728092",
+      "description": "Circular, 2nd-century castle housing furniture & paintings collections in Renaissance apartments.",
+      "price": 35
+    },
+    {
+      "id": 6,
+      "name": "Roof Garden & Bar",
+      "address": "Via Giovanni Vitelleschi, 34, 00193 Roma RM, Italy",
+      "location": "41.905156608826275 12.461993231390387",
+      "description": "A roof that turns into a terrace for cocktails, private parties, business meetings or can also be used only to admire Rome from an unconventional perspective. ",
+      "price": 75
+    },
+    {
+      "id": 7,
+      "name": "Vatican Museums",
+      "address": "00120 Vatican City",
+      "location": "41.90663948198113 12.453652024237723",
+      "description": "Multiple galleries of classical & Renaissance art masterpieces, plus the Sistine Chapel frescoes.",
+      "price": 70
+    },
+    {
+      "id": 8,
+      "name": "Trastevere",
+      "address": "Trastevere, Rome, Metropolitan City of Rome Capital, Italy",
+      "location": "41.885986467545884 12.47013118675295",
+      "description": "Colorful Trastevere is a funky, bohemian area that clings to its centuries-old, working-class roots. It's known for traditional and innovative trattorias, craft beer pubs and artisan shops, as well as simple B&Bs and budget hotels. From the pre-dinner passeggiata (promenade) until late, a young crowd buzzes around Piazza di San Calisto and Piazza Santa Maria in Trastevere, the site of a gilded, mosaic-filled church.",
+      "price": 40
+    },
+    {
+      "id": 9,
+      "name": "Ice Club Roma",
+      "address": "Via della Madonna dei Monti, 18/19, 00184 Roma RM, Italy",
+      "location": "41.89587441474658 12.489198508866922",
+      "description": "Cool cocktails & bar meals in a low-lit setting with a frosty vibe & decor made out of ice.",
+      "price": 50
+    },
+    {
+      "id": 10,
+      "name": "La Cabala",
+      "address": "Via dei Soldati, 25c, 00186 Roma RM, Italy",
+      "location": "41.90571254723192 12.47117406485654",
+      "description": "Intimate nightclub on the top floor of a medieval building with views of the River Tiber.",
+      "price": 70
+    },
+    {
+      "id": 11,
+      "name": "Disco Planet Rome",
+      "address": "Via del Commercio, 36, 00154 Roma RM, Italy",
+      "location": "41.87287026998206 12.475808921887781",
+      "description": "Busy nightclub with multiple rooms & dance floors offering live bands & themed nights, plus a bar.",
+      "price": 50
+    },
+    {
+      "id": 12,
+      "name": "Sharivari",
+      "address": "Via de' Nari, 14, 00186 Roma RM, Italy",
+      "location": "41.89813384139835 12.47603553805878",
+      "description": "Elegant & glamorous venue with an Italian fine dining restaurant, a bistro & a stylish nightclub.",
+      "price": 60
+    },
+    {
+      "id": 13,
+      "name": "Yellow Bar",
+      "address": "Via Palestro, 40, 00185 Roma RM, Italy",
+      "location": "41.90549788598787 12.504623530116069",
+      "description": "Low-lit, buzzing restaurant/bar in a hostel, with live music & an underground club.",
+      "price": 25
+    }
+  ]
+}
