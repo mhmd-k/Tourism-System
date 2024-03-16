@@ -91,7 +91,7 @@ id,name,address,city_id,location,price,stars
 89,Hilton Molino Stucky Venice,"Giudecca, 810, 30133 Venezia VE, Italy",5,45.42832807795654 12.320250184514691,400,5
 90,Palazzo Veneziano - Venice Collection,"Fondamenta Zattere Al Ponte Lungo, 1413, 30123 Venezia VE, Italy",5,45.430805278570915 12.322806326843253,500,5
 91,Canal Grande Hotel,"Campiello S. Simeone Grande, 932, 30135 Venezia VE, Italy",5,45.441545457789296 12.324089499857577,180,4
-92,Hotel NH Venezia Santa Lucia - Formerly Hotel Bellini,"Rio Terà Lista di Spagna, 116/A, 30121 Venezia VE, Italy",5,45.44206486970939 12.322694751213914,100,4
+92,Hotel NH Venezia Santa Lucia - Formerly Hotel Bellini,"Rio Tera Lista di Spagna, 116/A, 30121 Venezia VE, Italy",5,45.44206486970939 12.322694751213914,100,4
 93,Hotel Metropole,"Riva degli Schiavoni, 4149, 30122 Venezia VE, Italy",5,45.43416579309345 12.345199798007531,200,4
 94,Rialto Unique Venice Experience,"Riva del Ferro, 5149, 30124 Venezia VE, Italy",5,45.437810685697734 12.336145957529016,120,3
 95,Splendid Venice - Starhotels Collezione,"Mercerie, 760, 30124 Venezia VE, Italy",5,45.4362974887801 12.337454875486914,140,5
@@ -101,8 +101,8 @@ id,name,address,city_id,location,price,stars
 99,Hotel Abbazia,"Calle Priuli dei Cavaletti, 68, 30121 Venezia VE, Italy",5,45.442102867144534 12.321713271093067,250,4
 100,Hotel Carlton on the Grand Canal,"Fondamenta del Monastero, 578, 30135 Venezia VE, Italy",5,45.44003986955301 12.322072850853809,400,4
 101,Venezia Palazzo Barocci,"Corte de l'Albero, 3878 A, 30124 Venezia VE, Italy",5,45.43547811055205 12.330291920168044,400,5
-102,Hotel Santa Chiara,"Santa Croce, 548, 30135 Venezia VE, Italy",5,45.438603807157115 12.31954045760023,300,4
-103,Hotel Principe,"Rio Terà Lista di Spagna, 146, 30121 Venezia VE, Italy",5,45.4421781223947 12.323493855750185,250,4
+102,Hotel Santa Chiara,"Santa Croce, 30135 Venezia VE, Italy",5,45.438603807157115 12.31954045760023,300,4
+103,Hotel Principe,"Rio Tera Lista di Spagna, 146, 30121 Venezia VE, Italy",5,45.4421781223947 12.323493855750185,250,4
 104,Hotel Saturnia & International Venezia,"Calle Larga XXII Marzo, 2398, 30124 Venezia VE, Italy",5,45.43289384260228 12.334244324348854,200,5
 105,Al Ponte Antico,"Calle Aseo, 5768, 30125 Venezia VE, Italy",5,45.43883280090976 12.336442082191128,150,5
 106,Ca 'Nigra Lagoon Resort - Venice,"Campiello S. Simeone Grande, 927, 30135 Venezia VE, Italy",5,45.44101194059503 12.324149029606392,200,4
@@ -114,5 +114,5 @@ id,name,address,city_id,location,price,stars
 112,Hotel Antiche Figure,"Santa Croce, 687 Fondamenta San Simeon Piccolo, 30135 Venezia VE, Italy",5,45.440310952992455 12.322079806675207,100,3
 113,Hotel Monaco & Grand Canal,"P.za San Marco, 1332/1238, 30100 Venezia VE, Italy",5,45.43240380090029 12.336923042257345,200,4
 114,Hilton Molino Stucky Venice,"Giudecca, 810, 30133 Venezia VE, Italy",5,45.428284783274904 12.320282371093064,500,5
-115,Hotel Iris,"Campo S. Tomà, 2910, 30125 Venezia VE, Italy",5,45.43626333767644 12.32633957668725,50,2
+115,Hotel Iris,"Campo S. Toma, 2910, 30125 Venezia VE, Italy",5,45.43626333767644 12.32633957668725,50,2
 116,Corte Canal Venice,"Corte Canal, 645a, 30135 Venezia VE, Italy",5,45.439906989046 12.324022148171627,60,2
