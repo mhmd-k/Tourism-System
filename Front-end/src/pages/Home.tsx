@@ -47,7 +47,7 @@ function Home() {
                 endIcon={<AddLocationAltOutlinedIcon />}
                 color="primary"
                 variant="contained"
-                sx={{ borderRadius: "30px", padding: "2%" }}
+                sx={{ borderRadius: "30px" }}
               >
                 Build Your Own Trip
               </Button>
@@ -57,7 +57,7 @@ function Home() {
                 variant="contained"
                 sx={{
                   borderRadius: "30px",
-                  padding: "2%",
+
                   backgroundColor: "var(--green-color)",
                 }}
                 onClick={() => navigate("generateTrip")}

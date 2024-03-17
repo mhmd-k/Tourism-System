@@ -178,6 +178,16 @@ function GenerateTrip() {
                   label="Number of People"
                   inputProps={{ min: "1", max: "8" }}
                   size="small"
+                  value={formData.numberOfPeople}
+                  onChange={(e) =>
+                    setFormData((prevState) => ({
+                      ...prevState,
+                      numberOfPeople:
+                        Number(e.target.value) > 10
+                          ? 10
+                          : Number(e.target.value),
+                    }))
+                  }
                 />
                 <GroupOutlined />
               </FormControl>
@@ -185,8 +195,15 @@ function GenerateTrip() {
                 <TextField
                   type="number"
                   label="Total Budget in Dollars"
-                  inputProps={{ min: "1" }}
+                  inputProps={{ min: "1000" }}
                   size="small"
+                  value={formData.budget}
+                  onChange={(e) =>
+                    setFormData((prevState) => ({
+                      ...prevState,
+                      budget: Number(e.target.value),
+                    }))
+                  }
                 />
                 <PriceChange />
               </FormControl>

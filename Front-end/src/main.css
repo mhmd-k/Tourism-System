@@ -106,9 +106,38 @@ input::-webkit-inner-spin-button {
     padding: 10px;
     margin: 10px;
     min-height: 400px;
+    background-position: left;
   }
   .home h2 {
     font-size: 22px;
+  }
+}
+@media (max-width: 767px) {
+  .home-page {
+    padding: 20px 0;
+  }
+  .home-page h1 {
+    font-size: 25px;
+  }
+  .home-page input[name="search"] {
+    font-size: 15px;
+  }
+  .home {
+    min-height: unset;
+  }
+  .home .MuiContainer-root {
+    text-align: center;
+  }
+  .home .MuiContainer-root > :last-child {
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+  .home button {
+    font-size: 10px;
+    text-wrap: nowrap;
+    max-width: 300px;
+    width: 100%;
   }
 }
 /* login page */

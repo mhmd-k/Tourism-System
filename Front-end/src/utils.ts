@@ -21,6 +21,7 @@ export function validateTripInfo(
 ): string | null {
   // if there is a field empty
   for (const [, value] of Object.entries(userPreferrences)) {
+    console.log("value:", value);
     if (!value) {
       return "Please fill all the fields";
     }
@@ -31,7 +32,7 @@ export function validateTripInfo(
     return "Please Choose at least two types of food.";
 
   // if the user choosed less than 2 types of places
-  if (userPreferrences.preferredFood.length < 2)
+  if (userPreferrences.preferredPlaces.length < 2)
     return "Please Choose at least two types of Places.";
 
   return null;

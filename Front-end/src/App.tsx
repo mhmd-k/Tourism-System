@@ -6,6 +6,7 @@ import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import GenerateTrip from "./pages/GenerateTrip";
 import UserProfile from "./pages/UserProfile";
+import MapElement from "./pages/MapElement";
 
 const router = createBrowserRouter([
   {
@@ -19,6 +20,7 @@ const router = createBrowserRouter([
   },
   { path: "login", element: <Login /> },
   { path: "Signup", element: <Signup /> },
+  { path: "map", element: <MapElement /> },
 ]);
 
 function App() {
