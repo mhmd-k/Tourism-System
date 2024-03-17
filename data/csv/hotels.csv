@@ -116,3 +116,31 @@ id,name,address,city_id,location,price,stars
 114,Hilton Molino Stucky Venice,"Giudecca, 810, 30133 Venezia VE, Italy",5,45.428284783274904 12.320282371093064,500,5
 115,Hotel Iris,"Campo S. Toma, 2910, 30125 Venezia VE, Italy",5,45.43626333767644 12.32633957668725,50,2
 116,Corte Canal Venice,"Corte Canal, 645a, 30135 Venezia VE, Italy",5,45.439906989046 12.324022148171627,60,2
+117,Hotel Brunelleschi," Piazza Santa Elisabetta 3, Florence",4,43.77187866442428  11.255716352315137,50,2
+118,Hotel Savoy,"Piazza della Repubblica 7, Florence",4,43.772025669440794  11.254535938822873,150,4
+119,Portrait Firenze," Lungarno degli Acciaiuoli 4, Florence",4,43.76909262565899  11.252768552315045,120,3
+120,Hotel Lungarno,"Borgo San Jacopo 14, Florence",4,43.7680979036615  11.251519862780485,250,5
+121,Hotel Continentale,"Vicolo dell'Oro 6R, Florence",4,43.768992081541775 11.253466611838112,200,4
+122,Hotel Bernini Palace,"Piazza di San Firenze 29, Florence",4,43.7693921759225  11.25760419649448,80,3
+123,Four Seasons Hotel Firenze," Borgo Pinti 99, Florence",4,43.77710327716274  11.266366038823241,120,4
+124,Hotel degli Orafi," Lungarno degli Archibusieri 4, Florence",4,43.76825433538948  11.254589283002199,400,5
+125,Hotel Ville sull'Arno,"Lungarno Cristoforo Colombo 1, Florence",4,43.765909947936315  11.284702267658414,100,3
+126,The St. Regis Florence," Piazza Ognissanti 1, Florence",4,43.77259716426933  11.24498097150814,90,3
+127,Hotel Mulino di Firenze,"Via Villamagna 119, Florence",4,43.76251869875749  11.317015969509528,140,4
+128,Hotel Degli Artisti:," Via del Giglio 87, Florence",4,43.777188844213555 11.242873688847778,240,4
+129,J.K. Place Firenze,"Piazza Santa Maria Novella 7, Florence",4,43.77303403117064  11.249815425330596,350,5
+130,Hotel Santa Maria Novella," Piazza Santa Maria Novella 1, Florence",4,43.77354721279  11.250084709987073,250,4
+131,Hotel Torre Guelfa,"Borgo Santi Apostoli 8, Florence",4,43.769355333107605  11.252901983002284,100,3
+132,Hotel Palazzo Vecchio," Via Solferino 2, Florence",4,43.77802326863081 11.249934796495001,200,4
+133,Hotel Albani Firenze,"Via Fiume 12, Florence",4,43.777285237050485 11.25007129279237,300,4
+134,NH Collection Firenze Porta Rossa,"Via Porta Rossa 19, Florence",4,43.77024927877319 11.252006254166389,350,5
+135,Hotel Rivoli,": Via della Scala 33, Florence",4,43.77436617573765  11.247264667658953,140,4
+136,Hotel Balestri,"Piazza Mentana 7, Florence",4,43.76733464150673 11.257967496494427,250,3
+137,Hotel Cerretani Firenze - MGallery by Sofitel,"Via de' Cerretani 10, Florence",4,43.77375053574843  11.252279580099493,200,3
+138,Hotel Home Florence,"Piazza Piave 3, Florence",4,43.76698064214859 11.268039956017486,150,3
+139,Hotel L'Orologio," Piazza Santa Maria Novella 24, Florence",4,43.77363602423512  11.250259225330653,100,2
+140,Hotel Spadai," Via dei Martelli 10, Florence",4,43.77535387810771  11.255842275212544,80,2
+141,Hotel Calzaiuoli,"Via Calzaiuoli 6, Florence",4,43.77144608141184  11.255318852315126,150,3
+142,Hotel degli Orafi,"Lungarno degli Archibusieri 4, Florence",4,43.768269830908004  11.254546367658591,350,5
+143,Hotel Loggiato dei Serviti:," Piazza Santissima Annunziata 3, Florence",4,43.77677915109262  11.259993496494953,200,4
+144,Hotel Tornabuoni Beacci,"Via de' Tornabuoni 3, Florence",4,43.77051305810226  11.25123852533046,150,3

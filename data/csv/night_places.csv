@@ -74,3 +74,28 @@ id,name,address,city_id,location,description,price
 73,Cantina Do Mori,"San Polo, 30125 VeniceVenice",5,45.43911542029395 12.333987980298884,"Cantina Do Mori is one of the oldest wine bars in Venice, dating back to 1462. Step into history and enjoy a glass of wine in this atmospheric and traditional establishment.",10
 74,The Gritti Palace Terrace,"San Marco, 30124 Venice",5,45.43196136790368 12.333323153312689,The Gritti Palace Terrace is a luxurious rooftop bar offering stunning views of the Grand Canal. Indulge in exquisite cocktails and soak in the opulence of Venice.,30
 75,Peggy Guggenheim Collection,"Dorsoduro, 30123 Venice",5,45.43101662927538 12.331537395641181,Peggy Guggenheim Collection is a renowned modern art museum. Discover masterpieces by prominent artists and enjoy the vibrant art scene in the heart of Venice.,15
+76,Red Garter,"Via de' Benci, 33",4,43.76836469187916  11.25974135231494,"Lively pub with live music, karaoke, and a vibrant atmosphere.",50
+77,The Blob Club,"Via Vinegia, 21/r",4,43.76891828170419  11.257509125330413," Popular nightclub playing a mix of music genres, from rock to electronic.",60
+78,Space Electronic Disco Club,"Via Palazzuolo, 37",4,43.77381941208471  11.24630386765888,Underground electronic music venue with multiple dance floors.,50
+79,Jazz Club Firenze,"Via Nuova de' Caccini, 3",4,43.77364993005363  11.263129996494765,Intimate jazz club hosting live performances by local and international artists.,35
+80,Lion's Fountain Pub,"Via del Giglio, 49",4,43.771689206953496  11.261546311838273," Irish pub featuring live sports screenings, pub quizzes, and a wide selection of beers.",35
+81,Bitter Bar,"Via di Mezzo, 28r",4,40.01620377335088  -105.28422277487975, Upscale cocktail bar with a refined atmosphere and an extensive drink menu.,75
+82,YAB Disco Club,"Via Sassetti, 5r",4,43.77102791931721  11.252681725330541,Stylish nightclub with multiple dance floors and a mix of music genres.,70
+83,Mayday Club,"Via Dante Alighieri, 16",4,43.77112426647661  11.256593338822828,"Late-night club with a dance floor, DJ sets, and a trendy atmosphere.",40
+84,Rex Café,"Piazza della Repubblica, 6R",4,43.77268477340966 11.26320500998696," Chic café-bar offering cocktails, live music, and a terrace with panoramic views.",50
+85,Full Up Club ,"Via della Vigna Vecchia, 23r",4,43.7702493936777  11.258863038822758,Nightclub playing a mix of music genres and hosting regular themed parties.,70
+86,Tenax Club,"Via Pratese, 46",4,43.79907592178722  11.195229340675793,Renowned club known for its electronic and techno music events.,50
+87,Moyo," Via dei Benci, 23r",4,43.76828162198765  11.259612408135453,"Cocktail bar with a relaxed ambiance, outdoor seating, and a wide range of drinks.",60
+88,Negroni,"Via dei Renai, 17r",4,43.76822199914468  11.258593783855463, Trendy cocktail bar with a stylish interior and expertly crafted drinks.,25
+89,Rasputin Disco Pub,"Via Pier Capponi, 1",4,43.76649688304835 11.248074725330342,Russian-themed nightclub with multiple dance floors and live DJ performances.,44
+90,The Fusion Bar ,"Via del Ghibellina, 70r",4,43.76901093382141  11.25321075416632 ,"Lounge bar offering a fusion of cocktails, sushi, and live music.",45
+91,Slowly Club,"Via Porta Rossa, 63",4,43.88170687721324  11.256453811007072," Cosy nightclub with a dance floor, DJ sets, and a friendly atmosphere.",54
+92,Volume,"Piazza Santo Spirito, 5r",4,43.7668254342757  11.247837067658484,"Artistic venue hosting live music, DJ sets, and cultural events.",65
+93,The Friends Pub,"Via de' Pepi, 51",4,43.770623170687344  11.250934164070319,"Cozy pub with a warm atmosphere, offering a selection of beers and spirits. ",56
+94,Rivoire,"Piazza della Signoria, 5-6r",4,43.769751570210744 11.255085496494521," Historic café with outdoor seating, known for its hot chocolate and pastries.",45
+95,Zoe,"Piazza Santa Maria Novella, 20r",4,43.76556532992247 11.260219383652483, Lounge bar and restaurant with a sophisticated ambiance and signature cocktails.,34
+96,The Blob Firenze,"Via del Proconsolo, 9r",4,43.768887290999125  11.257444752315003,Eclectic bar with a unique interior and a mix of music genres.,55
+97,The Beer House Club,"Via de' Benci, 23r",4,43.76762609944837  11.260033742525252,Lively pub offering a wide selection of craft beers and live sports screenings.,60
+98,Colle Bereto,"Piazza Strozzi, 5r",4,43.77112653463012 11.252039781151037," Rooftop bar with panoramic views of Florence, serving cocktails and light bites.",65
+99,Oibo - Beer e Burger,"Via dei Benci, 34r",4,43.768698739032935  11.260299983002195,Casual bar offering a variety of beers on tap and gourmet burgers.,45
+100,Rari Nantes Florentia,"Viale Paoli, 3",4,43.76659939407486  11.275888098033125,Sports bar with big screens for watching live sports events and a friendly atmosphere.,23

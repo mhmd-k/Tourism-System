@@ -79,3 +79,27 @@ id,name,address,city_id,location,desciption
 78,Ba?ù,"Calle del Scaleter, 2888/A, 30122 Venice, Italy",5,45.43875506479433 12.329299094768464,"Ba?ù is a concept store offering a curated selection of unique fashion, accessories, and home decor items from emerging designers."
 79,Via Garibaldi,"Via Giuseppe Garibaldi, 30122 Venice, Italy",5,45.43246306629741 12.353157295641282,"Via Garibaldi is a lively street in the Castello district, known for its local shops, artisanal products, and charming cafes."
 80,I Tre Mercanti,"Calle dei Fabbri, 1323, 30124 Venice, Italy",5,45.436382840786166 12.339383724477264,Elegant boutique carrying gourmet Italian foods & wines & making tiramisu in many different flavors.
+81,Via de' Tornabuoni,"City center, Florence",4,43.77106432439211  11.251374096494624,Prestigious shopping street with high-end fashion boutiques.
+82,Mercato Centrale," Piazza del Mercato Centrale, Florence",4,43.77647215072686  11.25283227031003, Indoor food market with fresh produce and local delicacies.
+83,San Lorenzo Market,"Piazza San Lorenzo, Florence",4,43.77663799817249  11.252844525330863,Vibrant market for leather goods and souvenirs.
+84,Ponte Vecchio," Across the Arno River, Florence",4,43.76806443138688  11.253186411838058,Historic bridge with jewelry shops.
+85,Via del Corso,"City center, Florence",4,43.771589581133114  11.256695352315171, Popular shopping street with international brands.
+86,The Mall Firenze," Via Europa 8, Leccio Reggello, Florence",4,43.778438270344076  11.247499744563758,Luxury outlet shopping destination.
+87,Oltrarno District,"South of the Arno River, Florence",4,43.76617904140871  11.2501486086048, Bohemian neighborhood with artisan workshops and antique stores.
+88,Via dei Calzaiuoli,"City center, Florence",4,43.77166511766622  11.25532686765872,Lively street with shops and boutiques.
+89,Via Maggio,"Oltrarno District, Florence",4,43.76671893452393  11.248835009986706,Street with antique shops and art galleries.
+90,Via Roma," City center, Florence",4,43.77234497415806  11.25444982533061, Bustling street with department stores and fashion boutiques.
+91,Via del Proconsolo,"City center, Florence",4,43.77132141855673  11.257957825330573, Charming street with artisan workshops and shops.
+92,Via Strozzi,"City center, Florence",4,43.77168971227526  11.25248000998699,Prestigious street with high-fashion stores.
+93,Via della Vigna Nuova," City center, Florence",4,43.77129813956082  11.249635967658776, Street with international fashion brands and boutique shops.
+94,Via dei Benci:,"Santa Croce neighborhood, Florence",4,43.767965892550905  11.259554938822665,Lively street with trendy fashion boutiques.
+95,Via Por Santa Maria," City center, Florence",4,43.76903484307901 11.253781881150903, Pedestrian street with shops and restaurants.
+96,Via Magenta,"Near Santa Maria Novella train station, Florence",4,43.77613117879981 11.239742309987209,Street with vintage clothing stores.
+97,Via dei Serragli,"Oltrarno District, Florence",4,43.76527898971804  11.244224209986555,Street with artisan workshops and vintage shops.
+98,Via dei Servi,"City center, Florence",4,43.774916262326016  11.25862602533079,Street with shops and cafes.
+99,Officina Profumo-Farmaceutica di Santa Maria Nov20. Via Roma,"City center, Florence",4,43.772108616517286 11.254623309986988,Bustling street with department stores and fashion boutiques.
+100,Via del Proconsolo,"City center, Florence",4,43.77125943962089 11.257968554166476, Charming street with artisan workshops and shops.
+101,Via Strozzi,"City center, Florence",4,43.771658723006205  11.25248000998699, Prestigious street with high-fashion stores.
+102,Via della Vigna Nuova," City center, Florence",4,43.77132138165425  11.249635967658776, Street with international fashion brands and boutique shops.
+103,Santa Trinita Market,"Piazza Santa Trinita, Florence",4,43.77016234132639  11.251303809986902," An open-air market where you can find clothing, shoes,"
+104,Porta Rossa,": Shopping street known for boutique stores and high-end fashion brands, offering a mix of clothing, accessories, and luxury items.",4,43.770399573443065  11.25368682533048,"end fashion brands, offering a mix of clothing, accessories, and luxury items."
