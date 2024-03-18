@@ -13,9 +13,9 @@ import {
 import AutoFixHighOutlinedIcon from "@mui/icons-material/AutoFixHighOutlined";
 import { GroupOutlined, PriceChange } from "@mui/icons-material";
 import { useState } from "react";
-import { GenerateTripData } from "../types";
-import { validateTripInfo } from "../utils";
-import Spinner from "../components/Spinner";
+import { GenerateTripData } from "../../types";
+import { validateTripInfo } from "../../utils";
+import Spinner from "../../components/Spinner";
 
 const foodTypes = [
   "Sea Food",

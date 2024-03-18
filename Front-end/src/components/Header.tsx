@@ -16,7 +16,11 @@ import { Link } from "react-router-dom";
 import { userStore } from "../zustand/UserStore";
 import { clearUserInfo } from "../utils";
 
-const pages = ["Trips", "Places"];
+const pages = [
+  { label: "Trips", link: "trips" },
+  { label: "Places", link: "places" },
+  { label: "About us", link: "about" },
+];
 const settings = [
   { label: "Login", link: "login" },
   { label: "Signup", link: "signup" },
@@ -131,7 +135,16 @@ function Header() {
             >
               {pages.map((page, i) => (
                 <MenuItem key={i} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
+                  <Link
+                    style={{
+                      textDecoration: "none",
+                      color: "black",
+                      fontWeight: "bold",
+                    }}
+                    to={page.link}
+                  >
+                    {page.label}
+                  </Link>
                 </MenuItem>
               ))}
             </Menu>
@@ -178,7 +191,16 @@ function Header() {
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: "inherit", display: "block" }}
               >
-                {page}
+                <Link
+                  style={{
+                    textDecoration: "none",
+                    color: "black",
+                    fontWeight: "bold",
+                  }}
+                  to={page.link}
+                >
+                  {page.label}
+                </Link>
               </Button>
             ))}
           </Box>

@@ -12,7 +12,7 @@ export const getStoredUser = (): User | null => {
 
 // this funciton is used to logout the user
 export const clearUserInfo = (): void => {
-  localStorage.clear();
+  localStorage.removeItem("user");
   window.location.reload();
 };
 

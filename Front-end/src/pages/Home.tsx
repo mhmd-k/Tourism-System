@@ -35,6 +35,7 @@ function Home() {
             value={search}
             onChange={handleSeachChange}
             placeholder="Place, City, Hotel..."
+            autoComplete="off"
           />
           <SearchIcon />
         </div>
@@ -66,6 +67,9 @@ function Home() {
               </Button>
             </Stack>
           </Container>
+          <div className="mobile-image">
+            <img src="/src/assets/home-mobile.png" alt="" />
+          </div>
         </div>
       </div>
     </>

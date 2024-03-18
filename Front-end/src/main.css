@@ -91,6 +91,9 @@ input::-webkit-inner-spin-button {
 .home p {
   font-size: 20px;
 }
+.home .mobile-image {
+  display: none;
+}
 @media (max-width: 991px) {
   .home-page h1 {
     font-size: 30px;
@@ -106,15 +109,15 @@ input::-webkit-inner-spin-button {
     padding: 10px;
     margin: 10px;
     min-height: 400px;
-    background-position: left;
   }
-  .home h2 {
-    font-size: 22px;
+  .home p {
+    font-weight: 700;
   }
 }
 @media (max-width: 767px) {
   .home-page {
     padding: 20px 0;
+    height: 100%;
   }
   .home-page h1 {
     font-size: 25px;
@@ -124,6 +127,14 @@ input::-webkit-inner-spin-button {
   }
   .home {
     min-height: unset;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-color: #dcc8ff;
+    background-image: none;
+    margin: 0;
+    margin-top: 30px;
+    padding-bottom: 0;
+    position: relative;
   }
   .home .MuiContainer-root {
     text-align: center;
@@ -138,6 +149,12 @@ input::-webkit-inner-spin-button {
     text-wrap: nowrap;
     max-width: 300px;
     width: 100%;
+    z-index: 1;
+  }
+  .home .mobile-image {
+    display: flex;
+    justify-content: center;
+    align-self: flex-end;
   }
 }
 /* login page */
@@ -209,6 +226,121 @@ input::-webkit-inner-spin-button {
   }
 }
 
+/* search for places page */
+.places-page {
+  margin-top: 20px;
+}
+.places-page .search {
+  display: flex;
+  gap: 10px;
+}
+.places-page .search > div {
+  max-width: 350px;
+  flex: 1;
+}
+.places-page .search > div > div {
+  border-radius: 30px !important;
+  -webkit-border-radius: 30px !important;
+  -moz-border-radius: 30px !important;
+  -ms-border-radius: 30px !important;
+  -o-border-radius: 30px !important;
+}
+.places-page .search button {
+  background: var(--green-color);
+  border-radius: 30px;
+  max-width: 110px;
+  flex: 1;
+  font-size: 17px;
+}
+.places-page .filters {
+  margin-top: 10px;
+  border-bottom: 2px solid #cecece;
+}
+.places-page .filters > div {
+  display: flex;
+}
+.places-page .filters a {
+  text-decoration: none;
+  color: black;
+  padding: 10px 20px;
+  transition: 0.3s;
+  text-wrap: nowrap;
+  border-bottom: 4px solid transparent;
+}
+.places-page .filters a:hover,
+.places-page .filters a.active {
+  background-color: #f4f4f4;
+  border-bottom: 4px solid var(--green-color);
+}
+.places-page .places-container {
+  background-color: #f1f1f1;
+  min-height: calc(100vh - 200px);
+  padding: 10px;
+}
+.places-page .places-container a {
+  text-decoration: none;
+}
+.places-page .place-card {
+  background-color: white;
+  border-bottom: 1px solid #f1f1f1;
+  display: flex;
+  gap: 15px;
+  padding: 10px;
+  max-height: 200px;
+  color: #2c2c2c;
+}
+.places-page .place-card .image {
+  flex-basis: 20%;
+  position: relative;
+  overflow: hidden;
+}
+.places-page .place-card .image img {
+  width: 100%;
+  filter: brightness(0.4);
+  -webkit-filter: brightness(0.6);
+}
+.places-page .place-card .image .place-type {
+  position: absolute;
+  left: 12px;
+  bottom: 12px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  font-weight: bold;
+  font-size: 15px;
+  text-transform: capitalize;
+}
+.places-page .place-card .content {
+  text-align: left;
+}
+.places-page .place-card .content .stars svg {
+  color: #ffeb3b;
+}
+/* .places-page .place-card .content address {
+  font-size: 14px;
+  margin-top: 5px;
+} */
+.places-page .place-card .content p {
+  margin-top: 15px;
+  line-break: loose;
+}
+@media (max-width: 767px) {
+  .places-page .filters {
+    overflow-x: scroll;
+  }
+  .places-page a {
+    padding: 10px;
+  }
+  .places-page .places-container {
+    padding: 0;
+    padding-top: 10px;
+  }
+  .places-page .place-card .image {
+    flex-basis: 35%;
+  }
+}
 /* spinner */
 @keyframes ldio-a8jjl73qw7 {
   0% {

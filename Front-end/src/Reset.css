@@ -5,6 +5,17 @@ body {
 * {
   box-sizing: border-box;
 }
+button {
+  cursor: pointer;
+  color: white;
+  border: 0;
+  font-weight: bold;
+  opacity: 1;
+  transition: 0.3s;
+}
+button:hover {
+  opacity: 0.8;
+}
 /* HTML5 display-role reset for older browsers */
 article,
 aside,
