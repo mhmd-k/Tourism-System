@@ -12,7 +12,7 @@ import {
 } from "@mui/material";
 import AutoFixHighOutlinedIcon from "@mui/icons-material/AutoFixHighOutlined";
 import { GroupOutlined, PriceChange } from "@mui/icons-material";
-import { useState } from "react";
+import { ChangeEvent, useState } from "react";
 import { GenerateTripData } from "../../types";
 import { validateTripInfo } from "../../utils";
 import Spinner from "../../components/Spinner";
@@ -31,6 +31,7 @@ function GenerateTrip() {
   const [formData, setFormData] = useState<GenerateTripData>({
     toCountry: "",
     fromCity: "",
+    date: "",
     numberOfDays: 0,
     numberOfPeople: 0,
     budget: 0,
@@ -40,10 +41,19 @@ function GenerateTrip() {
   const [error, setError] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
+  console.log("genearateTrip:", formData);
+
   const handelSelectChange = (event: SelectChangeEvent<string>) => {
     setFormData((prevState) => ({
       ...prevState,
       [event.target.name]: `${event.target.value}`,
+    }));
+  };
+
+  const handleDateChange = (event: ChangeEvent<HTMLInputElement>) => {
+    setFormData((prevState) => ({
+      ...prevState,
+      date: event.target.value,
     }));
   };
 
@@ -90,7 +100,7 @@ function GenerateTrip() {
       <Stack direction={"row"} sx={{ height: "100%" }}>
         <Container
           sx={{
-            margin: "50px 0",
+            margin: "20px 0",
             flex: 1,
           }}
         >
@@ -154,6 +164,15 @@ function GenerateTrip() {
                 <MenuItem value=""></MenuItem>
                 <MenuItem value="Italy">Italy</MenuItem>
               </Select>
+            </FormControl>
+            <FormControl>
+              <TextField
+                type="date"
+                size="small"
+                inputProps={{ min: new Date().toISOString().split("T")[0] }}
+                value={formData.date}
+                onChange={handleDateChange}
+              ></TextField>
             </FormControl>
             <FormControl>
               <TextField

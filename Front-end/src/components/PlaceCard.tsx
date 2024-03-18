@@ -3,18 +3,7 @@ import GradeIcon from "@mui/icons-material/Grade";
 import StarBorderIcon from "@mui/icons-material/StarBorder";
 import { Typography } from "@mui/material";
 import { Link } from "react-router-dom";
-
-interface Place {
-  id: number;
-  name: string;
-  address: string;
-  location: string;
-  price: number;
-  stars: number;
-  placeType: string;
-  description?: string;
-  foodType?: string;
-}
+import { TripPlace } from "../types";
 
 function PlaceCard({
   name,
@@ -23,7 +12,7 @@ function PlaceCard({
   stars,
   placeType,
   foodType,
-}: Place) {
+}: TripPlace) {
   let icon = null;
 
   switch (placeType) {

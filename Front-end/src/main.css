@@ -92,6 +92,7 @@ input::-webkit-inner-spin-button {
   font-size: 20px;
 }
 .home .mobile-image {
+  overflow: hidden;
   display: none;
 }
 @media (max-width: 991px) {
@@ -184,7 +185,6 @@ input::-webkit-inner-spin-button {
   background-color: #009688 !important;
 }
 .generate-trip {
-  height: 100dvh;
   .image {
     background-image: url(./assets/generateTripsImage.jpg);
     background-position: right;
@@ -318,10 +318,6 @@ input::-webkit-inner-spin-button {
 .places-page .place-card .content .stars svg {
   color: #ffeb3b;
 }
-/* .places-page .place-card .content address {
-  font-size: 14px;
-  margin-top: 5px;
-} */
 .places-page .place-card .content p {
   margin-top: 15px;
   line-break: loose;
@@ -339,6 +335,26 @@ input::-webkit-inner-spin-button {
   }
   .places-page .place-card .image {
     flex-basis: 35%;
+  }
+}
+/* trip page */
+.trip {
+  display: grid;
+  grid-template-columns: repeat(14, 1fr);
+}
+.trip aside {
+  grid-column: span 4;
+}
+.trip .map {
+  grid-column: span 10;
+  min-height: 90vh;
+}
+@media (max-width: 767px) {
+  .trip aside {
+    grid-column: span 0;
+  }
+  .trip .map {
+    grid-column: span 14;
   }
 }
 /* spinner */
@@ -376,7 +392,7 @@ input::-webkit-inner-spin-button {
   position: relative;
   transform: translateZ(0) scale(1);
   backface-visibility: hidden;
-  transform-origin: 0 0; /* see note above */
+  transform-origin: 0 0;
 }
 .ldio-a8jjl73qw7 div {
   box-sizing: content-box;

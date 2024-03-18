@@ -1,0 +1,80 @@
+{
+  "status": 200,
+  "id": 1324,
+  "date": "3/18/2024",
+  "fromCity": "Damascus",
+  "destination": "italy",
+  "totalBudget": 9000,
+  "numberOfPeople": 4,
+  "tripDays": [
+    {
+      "dayId": 1,
+      "date": "3/18/2024",
+      "city": {
+        "cityId": 1,
+        "name": "Roma",
+        "description": "Roma is a great anciant city",
+        "location": "42.899002 12.3498034",
+        "capital": true
+      },
+      "neededMony": 1800,
+      "flightReservation": {
+        "id": 3,
+        "name": "Roma Airport",
+        "type": "airport",
+        "address": "Roma International Airport",
+        "transportaionMethod": "plane",
+        "price": 250,
+        "toatlAmountOfMony": 1000,
+        "location": "42.899002 12.3498034"
+      },
+      "hotelReservation": {
+        "id": 58,
+        "name": "Hotel Quantimarcos",
+        "type": "hotel",
+        "address": "Roma street Quant 1243, Italy",
+        "transportationMethod": "car",
+        "price": 200,
+        "toatlAmountOfMony": 800,
+        "location": "42.899002 12.3498034"
+      },
+      "dayPlaces": [
+        {
+          "id": 3,
+          "name": "Roma Airport",
+          "type": "airport",
+          "address": "Roma International Airport",
+          "transportaionMethod": "plane",
+          "ticketPrice": 250,
+          "location": "42.899002 12.3498034"
+        },
+        {
+          "id": 58,
+          "name": "Hotel Quantimarcos",
+          "type": "hotel",
+          "address": "Roma street Quant 1243, Italy",
+          "transportationMethod": "car",
+          "price": 200,
+          "location": "42.899002 12.3498034"
+        },
+        {
+          "id": 5,
+          "name": "Pizza italiano",
+          "type": "resturant",
+          "address": "san mamis street, Roma",
+          "transportationMethod": "walking",
+          "price": 200,
+          "location": "42.899002 12.3498034"
+        }
+      ]
+    },
+    {
+      "dayId": 2,
+      "date": "3/19/2024",
+      "neededMony": 970,
+      "flightReservation": {},
+      "hotelReservation": {},
+      "dayPlaces": ["..."]
+    }
+  ]
+}
