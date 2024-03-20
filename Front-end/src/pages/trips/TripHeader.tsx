@@ -1,3 +1,5 @@
+import { Typography } from "@mui/material";
+
 interface TripHeaderProps {
   destination: string;
   date: string;
@@ -13,17 +15,19 @@ function TripHeader({
   numberOfPeople,
 }: TripHeaderProps) {
   return (
-    <div
-      style={{
-        textAlign: "left",
-        padding: "10px",
-        borderBottom: "1px solid black",
-      }}
-    >
-      <h2>Trip to {destination}</h2>
-      <div>date: {date}</div>
-      <div>budget: {totalBudget}</div>
-      <div>number of people: {numberOfPeople}</div>
+    <div className="trip-header">
+      <Typography component={"h2"}>Trip to {destination}</Typography>
+      <ul>
+        <li>
+          date: <span>{date}</span>
+        </li>
+        <li>
+          budget: <span>{totalBudget}$</span>
+        </li>
+        <li>
+          number of people: <span>{numberOfPeople}</span>
+        </li>
+      </ul>
     </div>
   );
 }

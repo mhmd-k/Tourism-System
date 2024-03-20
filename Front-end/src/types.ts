@@ -48,33 +48,58 @@ export interface GenerateTripData {
   preferredPlaces: Array<string>;
 }
 
-export type PlacesTypes =
-  | "airport"
-  | "hotel"
-  | "restaurant"
-  | "night place"
-  | "old place"
-  | "natural place"
-  | "shopping place";
+export interface PlaceLocation {
+  lng: number;
+  lat: number;
+}
 
-export type FoodTypes =
-  | "fine dinning"
-  | "fast food"
-  | "traditional"
-  | "sea food"
-  | "dessert";
-
-export type TransportaionMethod = "plane" | "car" | "walking" | "train";
+export interface City {
+  cityId: number;
+  name: string;
+  latitude: number;
+  longitude: number;
+  capital: boolean;
+}
 
 export interface TripPlace {
   id: number;
   name: string;
-  placeType: PlacesTypes;
-  price: number;
-  stars: number;
-  foodType: FoodTypes;
+  placeType: string;
   address: string;
-  transportaionMethod?: TransportaionMethod;
-  ticketPrice?: number;
   location: string;
+  stars?: number;
+  description?: string;
+  foodType?: string;
+  price?: number;
+  transportaionMethod?: string;
+  ticketPrice?: number;
+}
+
+export interface HotelReservation {
+  hotelId: number;
+  hotelName: string;
+  address: string;
+  price: number;
+  toatlAmountOfMony: number;
+  location: string;
+}
+
+export interface FlightReservation {
+  airportId: number;
+  fromCity: string;
+  airportName: string;
+  address: string;
+  price: number;
+  toatlAmountOfMony: number;
+  location: string;
+}
+
+export interface TripDay {
+  dayId: number;
+  date: string;
+  city: City;
+  neededMony: number;
+  dayPlaces: TripPlace[];
+  hotelReservation?: HotelReservation;
+  flightReservation?: FlightReservation;
 }

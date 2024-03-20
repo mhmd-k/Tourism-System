@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Container, TextField } from "@mui/material";
 import { NavLink } from "react-router-dom";
 import PlaceCard from "../components/PlaceCard";
+import { TripPlace } from "../types";
 
 const filters = [
   { label: "All", value: "" },
@@ -12,7 +13,7 @@ const filters = [
   { label: "Natural Places", value: "natural_places" },
 ];
 
-const places = [
+const places: TripPlace[] = [
   {
     id: 1,
     name: "Hotel Quirinale",

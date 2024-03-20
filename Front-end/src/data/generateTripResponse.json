@@ -1,5 +1,4 @@
 {
-  "status": 200,
   "id": 1324,
   "date": "3/18/2024",
   "fromCity": "Damascus",
@@ -13,68 +12,70 @@
       "city": {
         "cityId": 1,
         "name": "Roma",
-        "description": "Roma is a great anciant city",
-        "location": "42.899002 12.3498034",
+        "latitude": 42.78980798698,
+        "longitude": 12.8698473094,
         "capital": true
       },
       "neededMony": 1800,
       "flightReservation": {
-        "id": 3,
-        "name": "Roma Airport",
-        "type": "airport",
-        "address": "Roma International Airport",
-        "transportaionMethod": "plane",
+        "airportId": 3,
+        "fromCity": "Damascus",
+        "airportName": "Leonardo da Vinci–Fiumicino Airport",
+        "address": "Via dell'Aeroporto, di, 00054 Fiumicino RM, Italy",
         "price": 250,
         "toatlAmountOfMony": 1000,
-        "location": "42.899002 12.3498034"
+        "location": "41.803499350173176 12.251828422382225"
       },
       "hotelReservation": {
-        "id": 58,
-        "name": "Hotel Quantimarcos",
-        "type": "hotel",
+        "hotelId": 58,
+        "hotelName": "Hotel Quantimarcos",
         "address": "Roma street Quant 1243, Italy",
-        "transportationMethod": "car",
         "price": 200,
         "toatlAmountOfMony": 800,
-        "location": "42.899002 12.3498034"
+        "location": "41.90182202037885 12.494873553074376"
       },
       "dayPlaces": [
         {
           "id": 3,
-          "name": "Roma Airport",
-          "type": "airport",
-          "address": "Roma International Airport",
+          "name": "Leonardo da Vinci–Fiumicino Airport",
+          "placeType": "airport",
+          "address": "Via dell'Aeroporto, di, 00054 Fiumicino RM, Italy",
           "transportaionMethod": "plane",
-          "ticketPrice": 250,
-          "location": "42.899002 12.3498034"
+          "price": 250,
+          "location": "41.803499350173176 12.251828422382225"
         },
         {
           "id": 58,
-          "name": "Hotel Quantimarcos",
-          "type": "hotel",
-          "address": "Roma street Quant 1243, Italy",
+          "name": "Hotel Quirinale",
+          "placeType": "hotel",
+          "address": "Via Nazionale 7, Central Station, 00184 Rome, Italy",
           "transportationMethod": "car",
           "price": 200,
-          "location": "42.899002 12.3498034"
+          "location": "41.90182202037885 12.494873553074376",
+          "stars": 4
         },
         {
           "id": 5,
-          "name": "Pizza italiano",
-          "type": "resturant",
+          "name": "Trattoria Da Danilo",
+          "placeType": "restaurant",
+          "address": "Via Petrarca, 13, 00185 Roma RM, Italy",
+          "transportationMethod": "walking",
+          "price": 22,
+          "location": "41.89736613876378 12.507873998643996",
+          "description": "Trattoria Da Danilo is a cozy restaurant located on Via Petrarca. It specializes in seafood dishes, offering a variety of fresh and flavorful options. While the ambiance is casual, the focus is on serving delicious seafood prepared with care. Trattoria Da Danilo is a great choice for seafood enthusiasts looking for a relaxed dining experience..",
+          "stars": 3,
+          "foodType": "sea food"
+        },
+        {
+          "id": 89,
+          "name": "Lorinzo Park",
+          "placeType": "natural place",
           "address": "san mamis street, Roma",
           "transportationMethod": "walking",
           "price": 200,
-          "location": "42.899002 12.3498034"
+          "location": "41.00009002 12.6122433"
         }
       ]
-    },
-    {
-      "dayId": 2,
-      "date": "3/19/2024",
-      "neededMony": 970,
-      "flightReservation": {},
-      "hotelReservation": {},
-      "dayPlaces": ["..."]
     }
   ]
 }
