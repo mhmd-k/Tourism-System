@@ -76,6 +76,112 @@
           "location": "41.00009002 12.6122433"
         }
       ]
+    },
+    {
+      "dayId": 2,
+      "date": "3/19/2024",
+      "city": {
+        "cityId": 1,
+        "name": "milan",
+        "latitude": 40.78980798698,
+        "longitude": 12.8698473094,
+        "capital": true
+      },
+      "neededMony": 1700,
+      "hotelReservation": {
+        "hotelId": 58,
+        "hotelName": "Hotel Quantimarcos",
+        "address": "Roma street Quant 1243, Italy",
+        "price": 200,
+        "toatlAmountOfMony": 800,
+        "location": "41.90182202037885 12.494873553074376"
+      },
+      "dayPlaces": [
+        {
+          "id": 58,
+          "name": "Hotel Quirinale",
+          "placeType": "hotel",
+          "address": "Via Nazionale 7, Central Station, 00184 Rome, Italy",
+          "transportationMethod": "car",
+          "price": 200,
+          "location": "41.90182202037885 12.494873553074376",
+          "stars": 4
+        },
+        {
+          "id": 5,
+          "name": "Trattoria Da Danilo",
+          "placeType": "restaurant",
+          "address": "Via Petrarca, 13, 00185 Roma RM, Italy",
+          "transportationMethod": "walking",
+          "price": 22,
+          "location": "41.89736613876378 12.507873998643996",
+          "description": "Trattoria Da Danilo is a cozy restaurant located on Via Petrarca. It specializes in seafood dishes, offering a variety of fresh and flavorful options. While the ambiance is casual, the focus is on serving delicious seafood prepared with care. Trattoria Da Danilo is a great choice for seafood enthusiasts looking for a relaxed dining experience..",
+          "stars": 3,
+          "foodType": "sea food"
+        },
+        {
+          "id": 89,
+          "name": "Lorinzo Park",
+          "placeType": "natural place",
+          "address": "san mamis street, Roma",
+          "transportationMethod": "walking",
+          "price": 200,
+          "location": "41.00009002 12.6122433"
+        }
+      ]
+    },
+    {
+      "dayId": 3,
+      "date": "3/20/2024",
+      "city": {
+        "cityId": 1,
+        "name": "napoli",
+        "latitude": 42.78980798698,
+        "longitude": 12.8698473094,
+        "capital": true
+      },
+      "neededMony": 1800,
+      "hotelReservation": {
+        "hotelId": 58,
+        "hotelName": "Hotel Quantimarcos",
+        "address": "Roma street Quant 1243, Italy",
+        "price": 200,
+        "toatlAmountOfMony": 800,
+        "location": "41.90182202037885 12.494873553074376"
+      },
+      "dayPlaces": [
+        {
+          "id": 58,
+          "name": "Da Venci De La Hotel",
+          "placeType": "hotel",
+          "address": "Via Nazionale 7, Central Station, 00184 Rome, Italy",
+          "transportationMethod": "car",
+          "price": 200,
+          "location": "43.90182202037885 11.494873553074376",
+          "stars": 4
+        },
+        {
+          "id": 5,
+          "name": "Trattoria Da Danilo",
+          "placeType": "restaurant",
+          "address": "Via Petrarca, 13, 00185 Roma RM, Italy",
+          "transportationMethod": "walking",
+          "price": 22,
+          "location": "41.89736613876378 12.507873998643996",
+          "description": "Trattoria Da Danilo is a cozy restaurant located on Via Petrarca. It specializes in seafood dishes, offering a variety of fresh and flavorful options. While the ambiance is casual, the focus is on serving delicious seafood prepared with care. Trattoria Da Danilo is a great choice for seafood enthusiasts looking for a relaxed dining experience..",
+          "stars": 3,
+          "foodType": "sea food"
+        },
+        {
+          "id": 89,
+          "name": "Lorinzo Park",
+          "placeType": "natural place",
+          "address": "san mamis street, Roma",
+          "transportationMethod": "walking",
+          "price": 200,
+          "location": "41.00009002 12.6122433"
+        }
+      ]
     }
   ]
 }
