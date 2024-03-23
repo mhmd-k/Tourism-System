@@ -4,37 +4,38 @@ function About() {
   return (
     <Container className="about">
       <h1>About Travel Helper</h1>
-      <Stack direction="row" gap={2}>
+      <Stack direction="row" gap={4}>
         <div className="image">
           <img src="/src/assets/generate-trip-2.jpg" alt="" />
         </div>
-        <div>
+        <div className="content">
           <p>
-            At Travel Helper, we're passionate about making travel planning
-            easy, efficient, and cost-effective. Whether you're a seasoned
-            globetrotter or a first-time traveler, our platform is designed to
-            simplify your journey. Here's what we offer:
+            At <span>Travel Helper</span>, we believe that traveling should be
+            an exciting and accessible experience for everyone. We understand
+            that planning a trip can often be overwhelming, time-consuming, and
+            expensive. That's why we have created a unique travel helper to make
+            your journey as effortless as possible.
           </p>
-          <div>
-            Optimized Routes: Our intelligent algorithms calculate the shortest
-            and most efficient travel routes between destinations. Say goodbye
-            to hours of manual research - we've got you covered.
-          </div>
-          <div>
-            Budget-Friendly Options: We understand that travel costs matter.
-            That's why we prioritize finding the cheapest flights and affordable
-            accommodation options. No more breaking the bank!
-          </div>
-          <div>
-            Flight Booking: Need to book a flight? Look no further. Our seamless
-            flight booking system connects you to major airlines, ensuring a
-            smooth and hassle-free experience.
-          </div>
-          <div>
-            Hotel Reservations: Finding the perfect place to stay is crucial.
-            With our hotel booking feature, you can easily browse and reserve
-            accommodations that suit your preferences and budget.
-          </div>
+          <p>
+            Our mission is simple: to provide you with the most cost-effective
+            and efficient travel itineraries tailored to your preferences.
+            Whether you're a seasoned traveler or embarking on your first
+            adventure, our website is designed to simplify the planning process
+            and ensure you have an unforgettable trip.
+          </p>
+          <p>
+            How does it work? It's easy! Just provide us with a few essential
+            details, such as your desired destination, travel dates, budget and
+            the number of people you are going with. Our advanced algorithm will
+            then create the best itinerary for your needs.
+          </p>
+          <p>
+            So, whether you're planning a weekend getaway, an international
+            adventure, or a backpacking expedition, let{" "}
+            <span>Travel Helper</span> be your trusted travel partner. Start
+            exploring the world with us today and unlock a world of
+            possibilities!
+          </p>
         </div>
       </Stack>
     </Container>

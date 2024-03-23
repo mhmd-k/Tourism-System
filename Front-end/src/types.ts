@@ -53,6 +53,26 @@ export interface PlaceLocation {
   lat: number;
 }
 
+export interface Trip {
+  id: number;
+  date: string;
+  fromCity: string;
+  destination: string;
+  totalBudget: number;
+  numberOfPeople: number;
+  tripDays: TripDay[];
+}
+
+export interface TripDay {
+  dayId: number;
+  date: string;
+  city: City;
+  neededMony: number;
+  dayPlaces: TripPlace[];
+  hotelReservation?: HotelReservation;
+  flightReservation?: FlightReservation;
+}
+
 export interface City {
   cityId: number;
   name: string;
@@ -92,14 +112,4 @@ export interface FlightReservation {
   price: number;
   toatlAmountOfMony: number;
   location: string;
-}
-
-export interface TripDay {
-  dayId: number;
-  date: string;
-  city: City;
-  neededMony: number;
-  dayPlaces: TripPlace[];
-  hotelReservation?: HotelReservation;
-  flightReservation?: FlightReservation;
 }

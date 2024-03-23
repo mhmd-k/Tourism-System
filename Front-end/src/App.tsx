@@ -5,12 +5,11 @@ import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import GenerateTrip from "./pages/trips/GenerateTrip";
 import UserProfile from "./pages/UserProfile";
-import MapElement from "./pages/trips/MapElement";
 import About from "./pages/About";
 import TripsPage from "./pages/TripsPage";
 import PlacesPage from "./pages/PlacesPage";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import Trip from "./pages/trips/Trip";
+import Trip from "./pages/trips/TripPage";
 
 const router = createBrowserRouter([
   {

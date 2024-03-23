@@ -1,4 +1,4 @@
-import { FoodTypes, GenerateTripData, User } from "./types";
+import { GenerateTripData, User } from "./types";
 
 export function isEmailValid(email: string): boolean {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -38,7 +38,7 @@ export function validateTripInfo(
   return null;
 }
 
-export function setImage(placeType: string, foodType: FoodTypes | undefined) {
+export function setImage(placeType: string, foodType?: string) {
   let imageUrl = "";
 
   switch (placeType) {

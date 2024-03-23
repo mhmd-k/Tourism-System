@@ -49,13 +49,20 @@ function PlaceModal({
           )}
 
           <div className="footer">
-            <Stack direction={"row"} justifyContent={"end"}>
-              <IconButton color="success" size="large">
-                <EditLocationTwoTone />
-              </IconButton>
-              <IconButton color="error" size="large">
-                <DeleteOutline />
-              </IconButton>
+            <Stack direction={"row"} alignItems={"center"}>
+              {place.transportaionMethod ? (
+                <div>Recommended Transport: {place.transportaionMethod}</div>
+              ) : (
+                <></>
+              )}
+              <Stack direction={"row"} marginLeft={"auto"}>
+                <IconButton color="success" size="large">
+                  <EditLocationTwoTone />
+                </IconButton>
+                <IconButton color="error" size="large">
+                  <DeleteOutline />
+                </IconButton>
+              </Stack>
             </Stack>
           </div>
         </Box>

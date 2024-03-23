@@ -85,7 +85,7 @@
         "name": "milan",
         "latitude": 40.78980798698,
         "longitude": 12.8698473094,
-        "capital": true
+        "capital": false
       },
       "neededMony": 1700,
       "hotelReservation": {
@@ -138,7 +138,7 @@
         "name": "napoli",
         "latitude": 42.78980798698,
         "longitude": 12.8698473094,
-        "capital": true
+        "capital": false
       },
       "neededMony": 1800,
       "hotelReservation": {
