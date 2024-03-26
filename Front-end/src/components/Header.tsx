@@ -209,7 +209,7 @@ function Header() {
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                 {user?.image ? (
-                  <div>
+                  <div className="user-image">
                     <img src={user.image} alt="" />
                   </div>
                 ) : (
@@ -238,6 +238,11 @@ function Header() {
                   <MenuItem onClick={handleCloseUserMenu}>
                     <Link to="userProfile" className="header-link">
                       Profile
+                    </Link>
+                  </MenuItem>
+                  <MenuItem onClick={handleCloseUserMenu}>
+                    <Link to="reservations" className="header-link">
+                      My Reservations
                     </Link>
                   </MenuItem>
                   <MenuItem

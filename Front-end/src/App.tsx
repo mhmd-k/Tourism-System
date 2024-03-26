@@ -10,6 +10,7 @@ import TripsPage from "./pages/TripsPage";
 import PlacesPage from "./pages/PlacesPage";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Trip from "./pages/trips/TripPage";
+import ReservationsPage from "./pages/ReservationsPage";
 
 const router = createBrowserRouter([
   {
@@ -22,10 +23,8 @@ const router = createBrowserRouter([
       { path: "about", element: <About /> },
       { path: "trips", element: <TripsPage /> },
       { path: "trips/:id", element: <Trip /> },
-      {
-        path: "places",
-        element: <PlacesPage />,
-      },
+      { path: "places", element: <PlacesPage /> },
+      { path: "reservations", element: <ReservationsPage /> },
     ],
   },
   { path: "login", element: <Login /> },

@@ -4,7 +4,16 @@ export interface Response {
   data?: unknown;
 }
 
+export interface UploadImageResponse {
+  status: number;
+  data?: {
+    image: string;
+    message: string;
+  };
+}
+
 export interface User {
+  id: number;
   name: string;
   email: string;
   token: string;
