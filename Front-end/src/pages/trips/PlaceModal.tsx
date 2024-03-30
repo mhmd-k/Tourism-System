@@ -3,9 +3,15 @@ import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
 import Fade from "@mui/material/Fade";
 import { IconButton, Stack, Typography } from "@mui/material";
-import { DeleteOutline, EditLocationTwoTone } from "@mui/icons-material";
+import {
+  DeleteOutline,
+  EditLocationTwoTone,
+  EmojiTransportation,
+  Timer,
+} from "@mui/icons-material";
 import { TripPlace } from "../../types";
 import PlaceCard from "../../components/PlaceCard";
+import { formatTravelTime } from "../../utils";
 
 function PlaceModal({
   place,
@@ -49,12 +55,27 @@ function PlaceModal({
           )}
 
           <div className="footer">
-            <Stack direction={"row"} alignItems={"center"}>
-              {place.transportaionMethod ? (
-                <div>Recommended Transport: {place.transportaionMethod}</div>
+            <Stack>
+              {place.placeType !== "airport" && place.transportationMethod ? (
+                <div>
+                  <EmojiTransportation color="success" />{" "}
+                  {place.transportationMethod}
+                </div>
               ) : (
                 <></>
               )}
+              <div>
+                <Timer /> {place.time}
+              </div>
+              {place.travelTimeInMinutes ? (
+                <div>
+                  time to arrive {formatTravelTime(place.travelTimeInMinutes)}
+                </div>
+              ) : (
+                <></>
+              )}
+            </Stack>
+            <Stack direction={"row"} alignItems={"center"}>
               <Stack direction={"row"} marginLeft={"auto"}>
                 <IconButton color="success" size="large">
                   <EditLocationTwoTone />

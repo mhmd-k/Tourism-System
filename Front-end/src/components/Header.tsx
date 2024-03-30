@@ -133,8 +133,8 @@ function Header() {
                 justifyContent: "center",
               }}
             >
-              {pages.map((page, i) => (
-                <MenuItem key={i} onClick={handleCloseNavMenu}>
+              {pages.map((page) => (
+                <MenuItem key={page.label} onClick={handleCloseNavMenu}>
                   <Link
                     style={{
                       textDecoration: "none",
@@ -185,9 +185,9 @@ function Header() {
               display: { xs: "none", md: "flex" },
             }}
           >
-            {pages.map((page, i) => (
+            {pages.map((page) => (
               <Button
-                key={i}
+                key={page.label}
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: "inherit", display: "block" }}
               >
@@ -234,17 +234,15 @@ function Header() {
               onClose={handleCloseUserMenu}
             >
               {user ? (
-                <>
-                  <MenuItem onClick={handleCloseUserMenu}>
-                    <Link to="userProfile" className="header-link">
-                      Profile
-                    </Link>
-                  </MenuItem>
-                  <MenuItem onClick={handleCloseUserMenu}>
-                    <Link to="reservations" className="header-link">
+                <div>
+                  <Link to="userProfile" className="header-link">
+                    <MenuItem onClick={handleCloseUserMenu}>Profile</MenuItem>
+                  </Link>
+                  <Link to="reservations" className="header-link">
+                    <MenuItem onClick={handleCloseUserMenu}>
                       My Reservations
-                    </Link>
-                  </MenuItem>
+                    </MenuItem>
+                  </Link>
                   <MenuItem
                     onClick={() => {
                       clearUserInfo();
@@ -253,10 +251,10 @@ function Header() {
                   >
                     Logout
                   </MenuItem>
-                </>
+                </div>
               ) : (
-                settings.map((setting, i) => (
-                  <MenuItem key={i} onClick={handleCloseUserMenu}>
+                settings.map((setting) => (
+                  <MenuItem key={setting.label} onClick={handleCloseUserMenu}>
                     <Link to={setting.link} className="header-link">
                       {setting.label}
                     </Link>

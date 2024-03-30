@@ -40,7 +40,7 @@
           "name": "Leonardo da Vinci–Fiumicino Airport",
           "placeType": "airport",
           "address": "Via dell'Aeroporto, di, 00054 Fiumicino RM, Italy",
-          "transportaionMethod": "plane",
+          "transportationMethod": "plane",
           "price": 250,
           "location": "41.803499350173176 12.251828422382225"
         },
@@ -67,13 +67,25 @@
           "foodType": "sea food"
         },
         {
+          "id": 5,
+          "name": "Pantheon",
+          "placeType": "old place",
+          "address": "Piazza della Rotonda, 00186 Roma RM, Italy",
+          "transportationMethod": "car",
+          "price": 22,
+          "location": "41.89873854344063 12.476787064716968",
+          "description": "The Pantheon is a former Roman temple and now a church. It is known for its impressive dome and the oculus in the center, which allows natural light to enter the building.",
+          "stars": 3,
+          "foodType": "sea food"
+        },
+        {
           "id": 89,
-          "name": "Lorinzo Park",
+          "name": "Lake Bracciano",
           "placeType": "natural place",
-          "address": "san mamis street, Roma",
+          "address": "Lago di Bracciano, Italy",
           "transportationMethod": "walking",
-          "price": 200,
-          "location": "41.00009002 12.6122433"
+          "location": "42.13049402148912 12.234714392817125",
+          "description": "a popular place for sailing, swimming & scuba diving."
         }
       ]
     },
@@ -83,14 +95,14 @@
       "city": {
         "cityId": 1,
         "name": "milan",
-        "latitude": 40.78980798698,
-        "longitude": 12.8698473094,
+        "latitude": 45.4626,
+        "longitude": 9.18321,
         "capital": false
       },
       "neededMony": 1700,
       "hotelReservation": {
         "hotelId": 58,
-        "hotelName": "Hotel Quantimarcos",
+        "hotelName": "Hotel Milano Scala",
         "address": "Roma street Quant 1243, Italy",
         "price": 200,
         "toatlAmountOfMony": 800,
@@ -99,34 +111,35 @@
       "dayPlaces": [
         {
           "id": 58,
-          "name": "Hotel Quirinale",
+          "name": "Hotel Milano Scala",
           "placeType": "hotel",
-          "address": "Via Nazionale 7, Central Station, 00184 Rome, Italy",
-          "transportationMethod": "car",
+          "address": " Via dell'Orso, 7",
+          "transportationMethod": "train",
           "price": 200,
-          "location": "41.90182202037885 12.494873553074376",
+          "location": "45.469344926070406 9.1867449397892",
           "stars": 4
         },
         {
           "id": 5,
-          "name": "Trattoria Da Danilo",
+          "name": "Luini ",
           "placeType": "restaurant",
-          "address": "Via Petrarca, 13, 00185 Roma RM, Italy",
+          "address": "- Via Santa Radegonda, 16, 20121 Milano",
           "transportationMethod": "walking",
           "price": 22,
-          "location": "41.89736613876378 12.507873998643996",
-          "description": "Trattoria Da Danilo is a cozy restaurant located on Via Petrarca. It specializes in seafood dishes, offering a variety of fresh and flavorful options. While the ambiance is casual, the focus is on serving delicious seafood prepared with care. Trattoria Da Danilo is a great choice for seafood enthusiasts looking for a relaxed dining experience..",
+          "location": "45.46587374699259 9.19154170680182",
+          "description": " Luini is a small bakery and restaurant famous for its delicious panzerotti. Panzerotti are deep-fried stuffed pastries filled with ingredients like cheese, tomato, and ham. It offers a quick and tasty option for a satisfying meal.",
           "stars": 3,
-          "foodType": "sea food"
+          "foodType": "dessert"
         },
         {
           "id": 89,
-          "name": "Lorinzo Park",
+          "name": "Parco Villa Litta",
           "placeType": "natural place",
-          "address": "san mamis street, Roma",
+          "address": "Via Jacopo della Quercia, 20151 Milano MI",
           "transportationMethod": "walking",
           "price": 200,
-          "location": "41.00009002 12.6122433"
+          "location": "45.51605173143442 9.167153642299478",
+          "description": "Historical 150-meter jetty, first founded in 1940, ending in a circular observation space."
         }
       ]
     },
@@ -136,14 +149,14 @@
       "city": {
         "cityId": 1,
         "name": "napoli",
-        "latitude": 42.78980798698,
-        "longitude": 12.8698473094,
+        "latitude": 40.8517,
+        "longitude": 14.2646,
         "capital": false
       },
       "neededMony": 1800,
       "hotelReservation": {
         "hotelId": 58,
-        "hotelName": "Hotel Quantimarcos",
+        "hotelName": "Grand Hotel Parker's",
         "address": "Roma street Quant 1243, Italy",
         "price": 200,
         "toatlAmountOfMony": 800,
@@ -152,34 +165,34 @@
       "dayPlaces": [
         {
           "id": 58,
-          "name": "Da Venci De La Hotel",
+          "name": "Grand Hotel Parker's",
           "placeType": "hotel",
-          "address": "Via Nazionale 7, Central Station, 00184 Rome, Italy",
+          "address": "at Corso Vittorio Emanuele, 135, 80121 Naples NA, Italy.",
           "transportationMethod": "car",
           "price": 200,
-          "location": "43.90182202037885 11.494873553074376",
+          "location": "40.837277130965525  14.22995420984997",
           "stars": 4
         },
         {
           "id": 5,
-          "name": "Trattoria Da Danilo",
+          "name": "Sorbillo",
           "placeType": "restaurant",
-          "address": "Via Petrarca, 13, 00185 Roma RM, Italy",
+          "address": "Via Port'Alba, 18",
           "transportationMethod": "walking",
           "price": 22,
-          "location": "41.89736613876378 12.507873998643996",
-          "description": "Trattoria Da Danilo is a cozy restaurant located on Via Petrarca. It specializes in seafood dishes, offering a variety of fresh and flavorful options. While the ambiance is casual, the focus is on serving delicious seafood prepared with care. Trattoria Da Danilo is a great choice for seafood enthusiasts looking for a relaxed dining experience..",
+          "location": "40.88514205573757  14.253775100577771",
+          "description": "Sorbillo - Popular pizzeria offering a wide selection of traditional and creative pizzas culinary creations, using the finest ingredients to deliver a gourmet experience. With its elegant atmosphere, knowledgeable staff, and a menu that combines traditional and innovative flavors, Roscioli promises an unforgettable gastronomic journey.",
           "stars": 3,
-          "foodType": "sea food"
+          "foodType": "fine dinning"
         },
         {
           "id": 89,
-          "name": "Lorinzo Park",
-          "placeType": "natural place",
-          "address": "san mamis street, Roma",
+          "name": "Ischia Island",
+          "placeType": "night place",
+          "address": "Gulf of Naples",
           "transportationMethod": "walking",
-          "price": 200,
-          "location": "41.00009002 12.6122433"
+          "price": 20,
+          "location": "40.75542807742513  13.90939044952321"
         }
       ]
     }

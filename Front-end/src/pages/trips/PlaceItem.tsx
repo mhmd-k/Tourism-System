@@ -6,20 +6,22 @@ import {
   ListItemText,
 } from "@mui/material";
 import PlaceIcon from "../../components/PlaceIcon";
-import { PlaceLocation, TripPlace } from "../../types";
+import { TripPlace } from "../../types";
 import { InfoOutlined } from "@mui/icons-material";
 import { useState } from "react";
 import PlaceModal from "./PlaceModal";
+import { mapStore } from "../../zustand/MapStore";
+import { stringToLngLat } from "../../utils";
 
 function PlaceItem({
   place,
-  handleChangeLocation,
+  nextPlace,
   isActive,
   activeIndex,
   setActiveIndex,
 }: {
   place: TripPlace;
-  handleChangeLocation: (location: PlaceLocation) => void;
+  nextPlace: TripPlace | null;
   isActive: boolean;
   activeIndex: number;
   setActiveIndex: React.Dispatch<React.SetStateAction<number>>;
@@ -28,21 +30,30 @@ function PlaceItem({
 
   const { name, placeType, address, location } = place;
 
+  const setCenter = mapStore((state) => state.setCenter);
+  const setDestination = mapStore((state) => state.setDestination);
+
   const handleOpenCloseModal = () => {
     setIsModalOpen(!isModalOpen);
+  };
+
+  const handelClick = () => {
+    setCenter(stringToLngLat(location));
+
+    if (nextPlace) {
+      setDestination(stringToLngLat(nextPlace.location));
+    } else {
+      setDestination(null);
+    }
+
+    setActiveIndex(activeIndex);
   };
 
   return (
     <>
       <ListItem
         className={isActive ? "day-item active" : "day-item"}
-        onClick={() => {
-          handleChangeLocation({
-            lat: Number(location.split(" ")[0]),
-            lng: Number(location.split(" ")[1]),
-          });
-          setActiveIndex(activeIndex);
-        }}
+        onClick={handelClick}
         secondaryAction={
           <IconButton
             edge="end"

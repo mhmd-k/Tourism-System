@@ -100,8 +100,10 @@ export interface TripPlace {
   description?: string;
   foodType?: string;
   price?: number;
-  transportaionMethod?: string;
+  transportationMethod?: string;
   ticketPrice?: number;
+  travelTimeInMinutes?: number;
+  time?: string;
 }
 
 export interface HotelReservation {

@@ -1,12 +1,15 @@
-function Spinner() {
+function Spinner({ color, size }: { color?: string; size?: number }) {
   return (
-    <>
-      <div className="loadingio-spinner-rolling-7brfq3999z9">
-        <div className="ldio-a8jjl73qw7">
-          <div></div>
-        </div>
-      </div>
-    </>
+    <div
+      className="spinner"
+      style={{
+        borderColor: color,
+        borderTopColor: "transparent",
+        width: `${size}px`,
+        height: `${size}px`,
+        borderWidth: size ? `${Math.round(size * (10 / 100))}px` : "2px",
+      }}
+    ></div>
   );
 }
 

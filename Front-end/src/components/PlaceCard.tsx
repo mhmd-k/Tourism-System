@@ -42,7 +42,7 @@ const PlaceCard = memo(
           ) : (
             <></>
           )}
-          <p>Avg price: {price}$</p>
+          {price ? <p>Avg price: {price}$</p> : <></>}
           <address>{address}</address>
         </div>
       </div>
