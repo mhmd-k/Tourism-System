@@ -25,7 +25,7 @@ function TripPage() {
   const [isMobileNavbarOpen, setIsMobileNavbarOpen] = useState<boolean>(false);
   const [isDayModalOpen, setIsDayModalOpen] = useState<boolean>(false);
 
-  console.log("activeDAy: ", activeDay);
+  console.log("activeDay: ", activeDay);
 
   const setCenter = mapStore((state) => state.setCenter);
   const setDestination = mapStore((state) => state.setDestination);
@@ -69,13 +69,15 @@ function TripPage() {
 
             minutes += res?.travelTimeInSeconds / 60;
 
+            const spentTime = placeSpentTime(day.dayPlaces[i].placeType);
+
             updatedDayPlaces.push({
               ...day.dayPlaces[i],
               travelTimeInMinutes: Math.round(res?.travelTimeInSeconds / 60),
               time: formatMinutesToTime(minutes),
+              spentTime: spentTime,
             });
 
-            const spentTime = placeSpentTime(day.dayPlaces[i].placeType);
             minutes += spentTime;
           } else {
             updatedDayPlaces.push({

@@ -22,7 +22,7 @@ const PlaceCard = memo(
     return (
       <div className="place-card">
         <div className="image">
-          <img src={imageUrl} alt="" />
+          <img src={imageUrl} loading="lazy" alt="" />
           <div className="place-type">
             <PlaceIcon placeType={placeType} /> {placeType} <br />
           </div>

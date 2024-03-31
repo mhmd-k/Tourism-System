@@ -7,7 +7,6 @@ import {
   DeleteOutline,
   EditLocationTwoTone,
   EmojiTransportation,
-  Timer,
 } from "@mui/icons-material";
 import { TripPlace } from "../../types";
 import PlaceCard from "../../components/PlaceCard";
@@ -36,45 +35,58 @@ function PlaceModal({
     >
       <Fade in={isModalOpen}>
         <Box className="place-popup">
-          <div className="place-popup-header">
+          <div className="header">
             <PlaceCard {...place} />
           </div>
 
-          {place.description ? (
-            <Typography
-              component={"p"}
-              color={"var(--text-color)"}
-              fontSize={14}
-              padding={1}
-              borderBottom={"1px solid var(--secondary-text-color)"}
+          <div className="body">
+            {place.description ? (
+              <Typography
+                component={"p"}
+                color={"var(--text-color)"}
+                fontSize={14}
+                padding={1}
+                borderBottom={"1px solid #d9d9d9"}
+              >
+                {place.description}
+              </Typography>
+            ) : (
+              <></>
+            )}
+            <Stack
+              direction="row"
+              alignItems="center"
+              padding="15px 0"
+              borderBottom={"1px solid #d9d9d9"}
             >
-              {place.description}
-            </Typography>
-          ) : (
-            <></>
-          )}
-
-          <div className="footer">
-            <Stack>
               {place.placeType !== "airport" && place.transportationMethod ? (
-                <div>
-                  <EmojiTransportation color="success" />{" "}
+                <div title="transport method">
+                  <EmojiTransportation fontSize="small" />{" "}
                   {place.transportationMethod}
                 </div>
               ) : (
                 <></>
               )}
-              <div>
-                <Timer /> {place.time}
-              </div>
               {place.travelTimeInMinutes ? (
-                <div>
-                  time to arrive {formatTravelTime(place.travelTimeInMinutes)}
+                <div title="travel time">
+                  <img src="/src/assets/travel.png" alt="" />
+                  {formatTravelTime(place.travelTimeInMinutes)}
+                </div>
+              ) : (
+                <></>
+              )}
+              {place.time ? (
+                <div title="arrival time">
+                  <img src="/src/assets/wall-clock.png" alt="" />
+                  {place.time}
                 </div>
               ) : (
                 <></>
               )}
             </Stack>
+          </div>
+
+          <div className="footer">
             <Stack direction={"row"} alignItems={"center"}>
               <Stack direction={"row"} marginLeft={"auto"}>
                 <IconButton color="success" size="large">

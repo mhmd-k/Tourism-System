@@ -104,6 +104,7 @@ export interface TripPlace {
   ticketPrice?: number;
   travelTimeInMinutes?: number;
   time?: string;
+  spentTime?: number;
 }
 
 export interface HotelReservation {
