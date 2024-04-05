@@ -24,7 +24,8 @@ const PlaceCard = memo(
         <div className="image">
           <img src={imageUrl} loading="lazy" alt="" />
           <div className="place-type">
-            <PlaceIcon placeType={placeType} /> {placeType} <br />
+            <PlaceIcon placeType={placeType} /> {placeType.split("_").join(" ")}{" "}
+            <br />
           </div>
         </div>
         <div className="content">

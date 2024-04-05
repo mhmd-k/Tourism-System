@@ -9,6 +9,8 @@ import {
   Stack,
   TextField,
   Typography,
+  Checkbox,
+  FormControlLabel,
 } from "@mui/material";
 import AutoFixHighOutlinedIcon from "@mui/icons-material/AutoFixHighOutlined";
 import { GroupOutlined, PriceChange } from "@mui/icons-material";
@@ -34,6 +36,7 @@ function GenerateTrip() {
     date: "",
     numberOfDays: 0,
     numberOfPeople: 0,
+    careAboutBudget: true,
     budget: 0,
     preferredFood: [],
     preferredPlaces: [],
@@ -174,22 +177,6 @@ function GenerateTrip() {
                 onChange={handleDateChange}
               ></TextField>
             </FormControl>
-            <FormControl>
-              <TextField
-                type="number"
-                label="Number of Days"
-                inputProps={{ max: "10", min: "1" }}
-                size="small"
-                value={formData.numberOfDays}
-                onChange={(e) =>
-                  setFormData((prevState) => ({
-                    ...prevState,
-                    numberOfDays:
-                      Number(e.target.value) > 10 ? 10 : Number(e.target.value),
-                  }))
-                }
-              />
-            </FormControl>
             <Stack direction={"row"} gap={2}>
               <FormControl className="generate-trip-input-container">
                 <TextField
@@ -210,23 +197,56 @@ function GenerateTrip() {
                 />
                 <GroupOutlined />
               </FormControl>
-              <FormControl className="generate-trip-input-container">
+              <FormControl>
                 <TextField
                   type="number"
-                  label="Total Budget in Dollars"
-                  inputProps={{ min: "1000" }}
+                  label="Number of Days"
+                  inputProps={{ max: "10", min: "1" }}
                   size="small"
-                  value={formData.budget}
+                  value={formData.numberOfDays}
                   onChange={(e) =>
                     setFormData((prevState) => ({
                       ...prevState,
-                      budget: Number(e.target.value),
+                      numberOfDays:
+                        Number(e.target.value) > 10
+                          ? 10
+                          : Number(e.target.value),
                     }))
                   }
                 />
-                <PriceChange />
               </FormControl>
             </Stack>
+            <FormControl className="generate-trip-input-container">
+              <TextField
+                type="number"
+                label="Total Budget in Dollars"
+                inputProps={{ min: "1000" }}
+                size="small"
+                disabled={!formData.careAboutBudget}
+                value={formData.budget}
+                onChange={(e) =>
+                  setFormData((prevState) => ({
+                    ...prevState,
+                    budget: Number(e.target.value),
+                  }))
+                }
+              />
+              <PriceChange />
+            </FormControl>
+            <FormControlLabel
+              control={
+                <Checkbox
+                  checked={!formData.careAboutBudget}
+                  onChange={() =>
+                    setFormData((prevData) => ({
+                      ...prevData,
+                      careAboutBudget: !prevData.careAboutBudget,
+                    }))
+                  }
+                />
+              }
+              label="Doesn't care about budget"
+            />
             <FormControl>
               <InputLabel size="small" id="to-country">
                 Prefered Food

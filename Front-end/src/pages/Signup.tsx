@@ -12,6 +12,7 @@ function Signup() {
     name: "",
     email: "",
     password: "",
+    age: 0,
   });
   const [verifyPass, setVerifyPass] = useState<string>("");
   const [error, setError] = useState<null | string>(null);
@@ -28,6 +29,13 @@ function Signup() {
     }));
   };
 
+  const handleAgeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSignupData((prevState) => ({
+      ...prevState,
+      age: Number(e.target.value),
+    }));
+  };
+
   const handleVerifyPasswordChange = (
     e: React.ChangeEvent<HTMLInputElement>
   ) => {
@@ -38,7 +46,7 @@ function Signup() {
     setLoading(true);
     setError(null);
 
-    const { email, name, password } = signupData;
+    const { email, name, password, age } = signupData;
 
     // if any of the field is empty
     if (!email || !name || !password || !verifyPass) {
@@ -50,6 +58,13 @@ function Signup() {
     // if email is not valid
     if (!isEmailValid(email)) {
       setError("Please Enter a valid email");
+      setLoading(false);
+      return;
+    }
+
+    // if age is less than 18
+    if (age < 18) {
+      setError("You must be at least 18 years old");
       setLoading(false);
       return;
     }
@@ -128,6 +143,14 @@ function Signup() {
         />
         <TextField
           size="small"
+          label="Age"
+          type="number"
+          value={signupData.age}
+          variant="outlined"
+          onChange={handleAgeChange}
+        />
+        <TextField
+          size="small"
           label="Password"
           type="password"
           name="password"
@@ -143,12 +166,6 @@ function Signup() {
           variant="outlined"
           onChange={handleVerifyPasswordChange}
         />
-        <Typography
-          className="bold"
-          component={"p"}
-          fontSize={20}
-          textAlign={"center"}
-        ></Typography>
         <Button
           variant="contained"
           color="primary"

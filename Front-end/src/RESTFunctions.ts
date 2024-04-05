@@ -2,13 +2,14 @@ import axios from "axios";
 import { LoginRequest, PlaceLocation, SignupRequest } from "./types";
 
 export async function signup(request: SignupRequest) {
-  const { name, email, password } = request;
+  const { name, email, password, age } = request;
 
   try {
     const response = await axios.post("http://localhost:8000/api/signup", {
       name,
       email,
       password,
+      age,
     });
 
     console.log("Signup Respnose:", response);

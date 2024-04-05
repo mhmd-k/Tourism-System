@@ -1,49 +1,62 @@
 import { useState } from "react";
-import { Container, TextField } from "@mui/material";
-import { NavLink } from "react-router-dom";
+import { Container, TextField, Typography } from "@mui/material";
+import { NavLink, useSearchParams } from "react-router-dom";
 import PlaceCard from "../components/PlaceCard";
 import { TripPlace } from "../types";
+import Spinner from "../components/Spinner";
+import axios from "axios";
 
 const filters = [
   { label: "All", value: "" },
-  { label: "Resturants", value: "resturants" },
-  { label: "Hotels", value: "hotels" },
-  { label: "Old Places", value: "old_places" },
-  { label: "Night Places", value: "night_places" },
-  { label: "Natural Places", value: "natural_places" },
-];
-
-const places: TripPlace[] = [
-  {
-    id: 1,
-    name: "Hotel Quirinale",
-    address: "Via Nazionale 7, Central Station, 00184 Rome, Italy",
-    location: "41.90182202037885 12.494873553074376",
-    price: 200,
-    stars: 5,
-    placeType: "hotel",
-  },
-  {
-    id: 2,
-    name: "Hassler Roma resturnat",
-    address: "Piazza della Trinità dei Monti, 6, 00187 Rome, Italy",
-    location: "41.906092743874524 12.484043924238929",
-    description:
-      "dsfhvbo sdfuoias bkjdfer wuofuierf  wif iashdfuligasjkdf oiwuds f",
-    stars: 2,
-    price: 90,
-    placeType: "restaurant",
-    foodType: "fine dinning",
-  },
+  { label: "Resturants", value: "resturant" },
+  { label: "Hotels", value: "hotel" },
+  { label: "Old Places", value: "old_place" },
+  { label: "Night Places", value: "night_place" },
+  { label: "Natural Places", value: "natural_place" },
 ];
 
 function PlacesPage() {
+  const [places, setPlaces] = useState<TripPlace[]>([]);
   const [activeLink, setActiveLink] = useState<number>(0);
-  const [search, setSearch] = useState<string>("");
+  const [placeName, setPlaceName] = useState<string>("");
+  const [error, setError] = useState<string>("");
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+
+  const [searchParams] = useSearchParams();
 
   const handleSeachChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setSearch(e.target.value);
+    setPlaceName(e.target.value);
   };
+
+  const handleSearchSubmit = async () => {
+    setIsLoading(true);
+    setError("");
+
+    const placeType = searchParams.get("type");
+
+    const URL = placeType
+      ? `http://localhost:8000/api/search?placeType=${placeType}&placeName=${placeName}`
+      : `http://localhost:8000/api/search?placeName=${placeName}`;
+
+    try {
+      const response = await axios.get(URL);
+
+      if (response.status === 200) {
+        setPlaces(response.data.places);
+      } else {
+        setError(response.data.error);
+      }
+    } catch (error) {
+      // @ts-expect-error error is undefined
+      setError(error.response.data.error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const filteredPlaces = searchParams.get("type")
+    ? places.filter((place) => place.placeType === searchParams.get("type"))
+    : places;
 
   return (
     <div className="places-page">
@@ -53,7 +66,7 @@ function PlacesPage() {
             variant="outlined"
             placeholder="Search..."
             size="small"
-            value={search}
+            value={placeName}
             onInput={handleSeachChange}
             sx={{
               width: "100%",
@@ -61,7 +74,9 @@ function PlacesPage() {
             }}
             autoComplete="off"
           />
-          <button>Search</button>
+          <button onClick={handleSearchSubmit} disabled={isLoading}>
+            {isLoading ? <Spinner color="white" size={20} /> : "Search"}
+          </button>
         </div>
       </Container>
       <div className="filters">
@@ -78,8 +93,15 @@ function PlacesPage() {
           ))}
         </Container>
       </div>
+      {error ? (
+        <Typography p={2} color={"error"} component={"h2"}>
+          {error}
+        </Typography>
+      ) : (
+        <></>
+      )}
       <div className="places-container">
-        {places.map((e, i) => (
+        {filteredPlaces.map((e, i) => (
           <PlaceCard {...e} key={i} />
         ))}
       </div>

@@ -27,6 +27,7 @@ export interface LoginRequest {
 
 export interface SignupRequest extends LoginRequest {
   name: string;
+  age: number;
 }
 
 export interface UserResponse {
@@ -52,6 +53,7 @@ export interface GenerateTripData {
   date: string;
   numberOfDays: number;
   numberOfPeople: number;
+  careAboutBudget: boolean;
   budget: number;
   preferredFood: Array<string>;
   preferredPlaces: Array<string>;
@@ -105,6 +107,8 @@ export interface TripPlace {
   travelTimeInMinutes?: number;
   time?: string;
   spentTime?: number;
+  cityId?: number;
+  cityName?: string;
 }
 
 export interface HotelReservation {

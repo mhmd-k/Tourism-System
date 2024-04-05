@@ -51,15 +51,15 @@ export function setImage(placeType: string, foodType?: string) {
       imageUrl = `/src/assets/airport-${Math.ceil(Math.random() * 3)}.jpg`;
       break;
 
-    case "night place":
+    case "night_place":
       imageUrl = `/src/assets/night-${Math.ceil(Math.random() * 2)}.jpg`;
       break;
 
-    case "old place":
+    case "old_place":
       imageUrl = `/src/assets/old-${Math.ceil(Math.random() * 5)}.jpg`;
       break;
 
-    case "natural place":
+    case "natural_place":
       imageUrl = `/src/assets/nature-${Math.ceil(Math.random() * 3)}.jpg`;
       break;
 
@@ -114,22 +114,22 @@ export function formatTravelTime(minutes: number): string {
 export function placeSpentTime(placeType: string): number {
   switch (placeType) {
     case "hotel":
-      return 120; // 1 hour
+      return 120; // 2 hour
 
     case "night place":
       return 120; // 2 hours
 
     case "old place":
-      return 90; // 1 hour 30 minutes
+      return 120; // 1 hour 30 minutes
 
     case "natural place":
       return 120; // 2 hours
 
     case "shopping place":
-      return 60; // 1 hour
+      return 120; // 1 hour
 
     case "restaurant":
-      return 45; // 45 minutes
+      return 60; // 45 minutes
 
     default:
       return 0;
