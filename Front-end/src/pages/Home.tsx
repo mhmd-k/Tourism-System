@@ -23,6 +23,14 @@ function Home() {
     setSearch(e.target.value);
   };
 
+  const handleSearch = () => {
+    navigate("places", {
+      state: {
+        placeName: search,
+      },
+    });
+  };
+
   return (
     <>
       {state ? <div className="welcome-msg">{state}</div> : <></>}
@@ -37,7 +45,9 @@ function Home() {
             placeholder="Place, City, Hotel..."
             autoComplete="off"
           />
-          <SearchIcon />
+          <Button onClick={handleSearch}>
+            <SearchIcon />
+          </Button>
         </div>
         <div className="home">
           <Container>

@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Container, TextField, Typography } from "@mui/material";
-import { NavLink, useSearchParams } from "react-router-dom";
+import { NavLink, useLocation, useSearchParams } from "react-router-dom";
 import PlaceCard from "../components/PlaceCard";
 import { TripPlace } from "../types";
 import Spinner from "../components/Spinner";
@@ -23,6 +23,37 @@ function PlacesPage() {
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const [searchParams] = useSearchParams();
+
+  const location = useLocation();
+
+  useEffect(() => {
+    async function getPlaces() {
+      if (!location.state.placeName) return;
+
+      setPlaceName(location.state.placeName);
+      setIsLoading(true);
+      setError("");
+
+      const URL = `http://localhost:8000/api/search?placeName=${location.state.placeName}`;
+
+      try {
+        const response = await axios.get(URL);
+
+        if (response.status === 200) {
+          setPlaces(response.data.places);
+        } else {
+          setError(response.data.error);
+        }
+      } catch (error) {
+        // @ts-expect-error error is undefined
+        setError(error.response.data.error);
+      } finally {
+        setIsLoading(false);
+      }
+    }
+
+    getPlaces();
+  }, []);
 
   const handleSeachChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setPlaceName(e.target.value);
