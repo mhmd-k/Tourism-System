@@ -1,4 +1,5 @@
 import {
+  Alert,
   Button,
   FormControl,
   InputAdornment,
@@ -7,11 +8,11 @@ import {
   Stack,
   Typography,
 } from "@mui/material";
-import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { LoginRequest, User, UserResponse, UserResponseError } from "../types";
 import { isEmailValid } from "../utils";
-import { Email } from "@mui/icons-material";
+import { Email, Error } from "@mui/icons-material";
 import LockIcon from "@mui/icons-material/Lock";
 import LockOpenIcon from "@mui/icons-material/LockOpen";
 import IconButton from "@mui/material/IconButton";
@@ -30,7 +31,16 @@ function Login() {
 
   const setUser = userStore((state) => state.setUser);
 
+  const { state } = useLocation();
   const navigate = useNavigate();
+
+  useEffect(() => {
+    if (state) {
+      setTimeout(() => {
+        navigate(location.pathname, {});
+      }, 6000);
+    }
+  }, [navigate, state]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setLoginData((prevState) => ({
@@ -74,6 +84,13 @@ function Login() {
   return (
     <div className="login">
       <Stack direction={"column"} gap={4} className="login-from">
+        {state ? (
+          <Alert color="warning" icon={<Error />}>
+            {state}
+          </Alert>
+        ) : (
+          <></>
+        )}
         <Typography component={"h2"} fontSize={30} textAlign={"center"}>
           Login To Your Account
         </Typography>
@@ -139,7 +156,7 @@ function Login() {
           onClick={handleSubmit}
           disabled={loading}
         >
-          {loading ? <Spinner /> : "Login"}
+          {loading ? <Spinner size={20} /> : "Login"}
         </Button>
         <Typography textAlign={"center"}>
           Not a member? <Link to={"../signup"}>Create Account</Link>

@@ -3,13 +3,13 @@ import Layout from "./components/Layout";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
-import GenerateTrip from "./pages/trips/GenerateTrip";
+import GenerateTrip from "./pages/generate-trip/GenerateTrip";
 import UserProfile from "./pages/UserProfile";
 import About from "./pages/About";
 import TripsPage from "./pages/TripsPage";
 import PlacesPage from "./pages/PlacesPage";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import Trip from "./pages/trips/TripPage";
+import Trip from "./pages/trip/TripPage";
 import ReservationsPage from "./pages/ReservationsPage";
 
 const router = createBrowserRouter([

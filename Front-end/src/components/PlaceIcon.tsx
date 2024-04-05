@@ -18,16 +18,16 @@ function PlaceIcon({ placeType }: { placeType: string }) {
     case "restaurant":
       icon = <Restaurant />;
       break;
-    case "night_place":
+    case "night place":
       icon = <Nightlife />;
       break;
-    case "old_place":
+    case "old place":
       icon = <AccountBalanceIcon />;
       break;
-    case "natural_place":
+    case "natural place":
       icon = <ParkIcon />;
       break;
-    case "shopping_place":
+    case "shopping place":
       icon = <ShoppingCart />;
       break;
     case "airport":

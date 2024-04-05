@@ -1,10 +1,10 @@
 import { GenerateTripData, PlaceLocation, User } from "./types";
 import { DateTime } from "luxon";
 
-export function isEmailValid(email: string): boolean {
+export const isEmailValid = (email: string): boolean => {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   return emailRegex.test(email);
-}
+};
 
 export const getStoredUser = (): User | null => {
   const storedUser = localStorage.getItem("user");
@@ -42,7 +42,7 @@ export function validateTripInfo(
 export function setImage(placeType: string, foodType?: string) {
   let imageUrl = "";
 
-  switch (placeType) {
+  switch (placeType.split("_").join("")) {
     case "hotel":
       imageUrl = `/src/assets/hotel-${Math.ceil(Math.random() * 4)}.jpg`;
       break;
@@ -51,15 +51,15 @@ export function setImage(placeType: string, foodType?: string) {
       imageUrl = `/src/assets/airport-${Math.ceil(Math.random() * 3)}.jpg`;
       break;
 
-    case "night_place":
+    case "night place":
       imageUrl = `/src/assets/night-${Math.ceil(Math.random() * 2)}.jpg`;
       break;
 
-    case "old_place":
+    case "old place":
       imageUrl = `/src/assets/old-${Math.ceil(Math.random() * 5)}.jpg`;
       break;
 
-    case "natural_place":
+    case "natural place":
       imageUrl = `/src/assets/nature-${Math.ceil(Math.random() * 3)}.jpg`;
       break;
 
@@ -78,21 +78,21 @@ export function setImage(placeType: string, foodType?: string) {
   return imageUrl;
 }
 
-export function stringToLngLat(str: string): PlaceLocation {
+export const stringToLngLat = (str: string): PlaceLocation => {
   const coords = str.split(" ");
   return {
     lat: Number(coords[0]),
     lng: Number(coords[1]),
   };
-}
+};
 
-export function formatMinutesToTime(minutes: number): string {
+export const formatMinutesToTime = (minutes: number): string => {
   const hours = Math.floor(minutes / 60);
   const mins = Math.floor(minutes % 60);
 
   const time = DateTime.fromObject({ hour: hours, minute: mins });
   return time.toLocaleString(DateTime.TIME_SIMPLE);
-}
+};
 
 export function formatTravelTime(minutes: number): string {
   const hours = Math.floor(minutes / 60);

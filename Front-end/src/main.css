@@ -208,6 +208,8 @@ input::-webkit-inner-spin-button {
 .home-btn:hover {
   background-color: #009688 !important;
 }
+
+/* generate trip form page */
 .generate-trip {
   .image {
     background-image: url(./assets/generateTripsImage.jpg);
@@ -216,6 +218,60 @@ input::-webkit-inner-spin-button {
     width: 40%;
     filter: brightness(0.7);
   }
+
+  > div {
+    min-height: 90vh;
+  }
+
+  .generate-trip-container {
+    margin: 20px 0;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    > div {
+      width: 100%;
+    }
+    .form-body {
+      flex: 1;
+
+      .MuiAutocomplete-root {
+        margin: auto;
+
+        button {
+          background-color: var(--secondary-text-color);
+        }
+      }
+    }
+  }
+
+  button {
+    background-color: var(--green-color);
+    color: white;
+    border-radius: 3px;
+  }
+
+  button:hover {
+    background-color: var(--green-color);
+  }
+
+  .generate-trip-input-container {
+    flex: 1;
+    position: relative;
+
+    svg {
+      position: absolute;
+      right: 4px;
+      top: 50%;
+      transform: translateY(-50%);
+      -webkit-transform: translateY(-50%);
+      -moz-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      -o-transform: translateY(-50%);
+      color: var(--green-color);
+    }
+  }
 }
 @media (max-width: 767px) {
   .generate-trip {
@@ -223,21 +279,6 @@ input::-webkit-inner-spin-button {
       display: none;
     }
   }
-}
-.generate-trip-input-container {
-  flex: 1;
-  position: relative;
-}
-.generate-trip-input-container svg {
-  position: absolute;
-  right: 4px;
-  top: 50%;
-  transform: translateY(-50%);
-  -webkit-transform: translateY(-50%);
-  -moz-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  -o-transform: translateY(-50%);
-  color: var(--green-color);
 }
 
 /* user profile */
