@@ -1,12 +1,11 @@
 import GradeIcon from "@mui/icons-material/Grade";
 import StarBorderIcon from "@mui/icons-material/StarBorder";
 import { TripPlace } from "../types";
-import { setImage } from "../utils";
 import PlaceIcon from "./PlaceIcon";
 import { memo } from "react";
 
 const PlaceCard = memo(
-  ({ name, address, price, stars, placeType, foodType }: TripPlace) => {
+  ({ name, address, price, stars, placeType }: TripPlace) => {
     const starsArr = [];
     if (stars) {
       for (let i = 0; i < stars; i++) {
@@ -17,12 +16,14 @@ const PlaceCard = memo(
       }
     }
 
-    const imageUrl = setImage(placeType, foodType);
-
     return (
       <div className="place-card">
         <div className="image">
-          <img src={imageUrl} loading="lazy" alt="" />
+          <img
+            src={`https://source.unsplash.com/1600x900/?${name}`}
+            loading="lazy"
+            alt=""
+          />
           <div className="place-type">
             <PlaceIcon placeType={placeType} /> {placeType.split("_").join(" ")}{" "}
             <br />

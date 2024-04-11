@@ -601,6 +601,66 @@ input::-webkit-inner-spin-button {
   }
 }
 
+/* trips page */
+
+.trips {
+  padding: 20px 0;
+
+  a {
+    color: unset;
+    text-decoration: none;
+    transition: 0.3s ease-in-out;
+  }
+
+  a:hover {
+    transform: translateY(-5px);
+    -webkit-transform: translateY(-5px);
+    -moz-transform: translateY(-5px);
+    -ms-transform: translateY(-5px);
+    -o-transform: translateY(-5px);
+  }
+
+  .trip-card {
+    display: flex;
+    flex-wrap: wrap;
+    border: 1px solid var(--secondary-text-color);
+    border-radius: 5px;
+    position: relative;
+
+    .image {
+      flex-basis: 30%;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .content {
+      flex: 1;
+      padding: 10px 20px;
+      text-align: left;
+
+      p {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+    }
+  }
+}
+
+@media (max-width: 560px) {
+  .trips {
+    .trip-card {
+      .image {
+        flex-basis: 100%;
+      }
+    }
+  }
+}
+
 /* spinner */
 @keyframes spoinning {
   0% {

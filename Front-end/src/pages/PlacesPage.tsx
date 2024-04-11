@@ -8,7 +8,7 @@ import axios from "axios";
 
 const filters = [
   { label: "All", value: "" },
-  { label: "Resturants", value: "resturant" },
+  { label: "Resturants", value: "restaurant" },
   { label: "Hotels", value: "hotel" },
   { label: "Old Places", value: "old_place" },
   { label: "Night Places", value: "night_place" },
