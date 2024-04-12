@@ -6,7 +6,7 @@ import Stack from "@mui/material/Stack";
 import DayList from "./DayList";
 import MapElement from "./MapElement";
 import { Box, Drawer, IconButton } from "@mui/material";
-import { InfoSharp, Map } from "@mui/icons-material";
+import { CreditCard, InfoSharp, Map } from "@mui/icons-material";
 import DayModal from "./DayModal";
 import { mapStore } from "../../zustand/MapStore";
 import { Trip } from "../../types";
@@ -17,6 +17,7 @@ import {
 } from "../../utils";
 import { getPath } from "../../RESTFunctions";
 import Spinner from "../../components/Spinner";
+import ReservationsModal from "./ReservationsModal";
 
 function TripPage() {
   const [trip, setTrip] = useState<Trip | null>(null);
@@ -24,6 +25,8 @@ function TripPage() {
   const [activeDay, setActiveDay] = useState(0);
   const [isMobileNavbarOpen, setIsMobileNavbarOpen] = useState<boolean>(false);
   const [isDayModalOpen, setIsDayModalOpen] = useState<boolean>(false);
+  const [isReservationsModalOpen, setIsReservationsModalOpen] =
+    useState<boolean>(false);
 
   console.log("activeDay: ", activeDay);
 
@@ -47,6 +50,10 @@ function TripPage() {
 
   const handleOpenCloseModel = () => {
     setIsDayModalOpen(!isDayModalOpen);
+  };
+
+  const handleOpenCloseReservationsModel = () => {
+    setIsReservationsModalOpen(!isReservationsModalOpen);
   };
 
   useEffect(() => {
@@ -165,6 +172,16 @@ function TripPage() {
       </Drawer>
       <aside>{tripNavbar}</aside>
       <MapElement />
+      <IconButton
+        className="reservations-btn"
+        onClick={handleOpenCloseReservationsModel}
+      >
+        <CreditCard />
+      </IconButton>
+      <ReservationsModal
+        handleOpenCloseModal={handleOpenCloseReservationsModel}
+        isModalOpen={isReservationsModalOpen}
+      />
     </div>
   );
 }

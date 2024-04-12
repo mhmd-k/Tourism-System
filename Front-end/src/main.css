@@ -425,6 +425,16 @@ input::-webkit-inner-spin-button {
   display: grid;
   grid-template-columns: repeat(14, 1fr);
   position: relative;
+
+  .reservations-btn {
+    background-color: var(--green-color) !important;
+    width: 40px;
+    height: 40px;
+    position: fixed;
+    box-shadow: 0 0 9px #2f2f2f;
+    right: 40px;
+    bottom: 40px;
+  }
 }
 .trip aside {
   grid-column: span 5;
@@ -471,7 +481,8 @@ input::-webkit-inner-spin-button {
   background-color: var(--blue-color);
 }
 .place-popup,
-.day-popup {
+.day-popup,
+.reservations-popup {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -540,6 +551,29 @@ input::-webkit-inner-spin-button {
   gap: 5px;
   font-weight: bold;
 }
+.reservations-popup {
+  max-height: 90dvh;
+  overflow-y: scroll;
+  max-width: 1200px;
+
+  th {
+    padding: 8px !important;
+  }
+
+  p {
+    border: 1px solid var(--text-color);
+    padding: 10px;
+    width: fit-content;
+    margin: 10px auto;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+    font-weight: bold;
+    font-size: 20px;
+  }
+}
 @media (max-width: 767px) {
   .trip aside {
     grid-column: span 0;
@@ -585,31 +619,6 @@ input::-webkit-inner-spin-button {
 @media (max-width: 767px) {
   .about .image {
     display: none;
-  }
-}
-
-/* Reservation Popup */
-.reservation-popup {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: white;
-  box-shadow: 24px;
-  border-radius: 5px;
-  min-height: 90dvh;
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  width: 90%;
-  outline: none;
-
-  .info {
-    grid-column: span 4;
-    padding: 20px 10px;
-  }
-
-  .form {
-    grid-column: span 8;
   }
 }
 
