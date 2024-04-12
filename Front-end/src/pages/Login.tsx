@@ -10,7 +10,7 @@ import {
 } from "@mui/material";
 import { useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { LoginRequest, User, UserResponse, UserResponseError } from "../types";
+import { LoginRequest, UserResponse, UserResponseError } from "../types";
 import { isEmailValid } from "../utils";
 import { Email, Error } from "@mui/icons-material";
 import LockIcon from "@mui/icons-material/Lock";
@@ -68,7 +68,11 @@ function Login() {
     const res = await login(loginData);
 
     if ((res as UserResponse).status === 200) {
-      setUser((res as UserResponse).data.user as User);
+      setUser({
+        ...(res as UserResponse).data.user,
+        // http://localhost:8000/storage/profile_pictures/picture
+        image: `http://localhost:8000/storage/${(res as UserResponse).data.user.image?.slice(7)}`,
+      });
       navigate("/", {
         state: `Welcome Back "${(res as UserResponse).data.user.name}",
           We are glade to have u here 😁`,

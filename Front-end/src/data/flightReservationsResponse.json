@@ -1,0 +1,52 @@
+[
+  {
+    "airportId": 3,
+    "fromCity": "Damascus",
+    "airportName": "Leonardo da Vinci–Fiumicino Airport",
+    "address": "Via dell'Aeroporto, di, 00054 Fiumicino RM, Italy",
+    "date": "4/24/2024",
+    "price": 250,
+    "toatlAmountOfMony": 1000,
+    "location": "41.803499350173176 12.251828422382225"
+  },
+  {
+    "airportId": 3,
+    "fromCity": "Damascus",
+    "date": "4/24/2024",
+    "airportName": "Leonardo da Vinci–Fiumicino Airport",
+    "address": "Via dell'Aeroporto, di, 00054 Fiumicino RM, Italy",
+    "price": 250,
+    "toatlAmountOfMony": 1000,
+    "location": "41.803499350173176 12.251828422382225"
+  },
+  {
+    "airportId": 3,
+    "fromCity": "Damascus",
+    "date": "4/24/2024",
+    "airportName": "Leonardo da Vinci–Fiumicino Airport",
+    "address": "Via dell'Aeroporto, di, 00054 Fiumicino RM, Italy",
+    "price": 250,
+    "toatlAmountOfMony": 1000,
+    "location": "41.803499350173176 12.251828422382225"
+  },
+  {
+    "airportId": 3,
+    "fromCity": "Damascus",
+    "date": "4/24/2024",
+    "airportName": "Leonardo da Vinci–Fiumicino Airport",
+    "address": "Via dell'Aeroporto, di, 00054 Fiumicino RM, Italy",
+    "price": 250,
+    "toatlAmountOfMony": 1000,
+    "location": "41.803499350173176 12.251828422382225"
+  },
+  {
+    "airportId": 3,
+    "fromCity": "Damascus",
+    "date": "4/24/2024",
+    "airportName": "Leonardo da Vinci–Fiumicino Airport",
+    "address": "Via dell'Aeroporto, di, 00054 Fiumicino RM, Italy",
+    "price": 250,
+    "toatlAmountOfMony": 1000,
+    "location": "41.803499350173176 12.251828422382225"
+  }
+]

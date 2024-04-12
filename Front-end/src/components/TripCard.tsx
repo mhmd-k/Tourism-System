@@ -35,6 +35,7 @@ function TripCard({ id, destination, tripDays, date }: Trip) {
             zIndex: "100",
           }}
           onClick={handleDelete}
+          color="error"
         >
           <DeleteOutline />
         </IconButton>

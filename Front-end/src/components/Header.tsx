@@ -15,6 +15,7 @@ import ShareLocationIcon from "@mui/icons-material/ShareLocation";
 import { Link } from "react-router-dom";
 import { userStore } from "../zustand/UserStore";
 import { clearUserInfo } from "../utils";
+import { Flight, Hotel, Logout, Person } from "@mui/icons-material";
 
 const pages = [
   { label: "Trips", link: "trips" },
@@ -235,21 +236,29 @@ function Header() {
             >
               {user ? (
                 <div>
-                  <Link to="userProfile" className="header-link">
-                    <MenuItem onClick={handleCloseUserMenu}>Profile</MenuItem>
-                  </Link>
-                  <Link to="reservations" className="header-link">
-                    <MenuItem onClick={handleCloseUserMenu}>
-                      My Reservations
-                    </MenuItem>
-                  </Link>
+                  <MenuItem onClick={handleCloseUserMenu}>
+                    <Link to="userProfile" className="header-link">
+                      <Person fontSize="small" /> Profile
+                    </Link>
+                  </MenuItem>
+                  <MenuItem onClick={handleCloseUserMenu}>
+                    <Link to="hotelsReservations" className="header-link">
+                      <Hotel fontSize="small" /> Hotel Reservations
+                    </Link>
+                  </MenuItem>
+                  <MenuItem onClick={handleCloseUserMenu}>
+                    <Link to="FlightsReservations" className="header-link">
+                      <Flight fontSize="small" /> Flight Reservations
+                    </Link>
+                  </MenuItem>
                   <MenuItem
                     onClick={() => {
                       clearUserInfo();
                       handleCloseUserMenu();
                     }}
+                    className="header-link"
                   >
-                    Logout
+                    <Logout fontSize="small" /> Logout
                   </MenuItem>
                 </div>
               ) : (

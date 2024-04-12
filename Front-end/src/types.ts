@@ -118,6 +118,7 @@ export interface HotelReservation {
   price: number;
   toatlAmountOfMony: number;
   location: string;
+  date?: string;
 }
 
 export interface FlightReservation {
@@ -128,4 +129,5 @@ export interface FlightReservation {
   price: number;
   toatlAmountOfMony: number;
   location: string;
+  date?: string;
 }
