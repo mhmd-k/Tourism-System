@@ -72,6 +72,8 @@ export interface Trip {
   totalBudget: number;
   numberOfPeople: number;
   tripDays: TripDay[];
+  flightReservation: FlightReservation[];
+  hotelReservation: HotelReservation[];
 }
 
 export interface TripDay {
@@ -80,16 +82,14 @@ export interface TripDay {
   city: City;
   neededMony: number;
   dayPlaces: TripPlace[];
-  hotelReservation?: HotelReservation;
-  flightReservation?: FlightReservation;
 }
 
 export interface City {
-  cityId: number;
+  city_id: number;
   name: string;
   latitude: number;
   longitude: number;
-  capital: boolean;
+  capital: number | boolean;
 }
 
 export interface TripPlace {
@@ -102,23 +102,24 @@ export interface TripPlace {
   description?: string;
   foodType?: string;
   price?: number;
-  transportationMethod?: string;
+  transportaionMethod?: string | null;
   ticketPrice?: number;
   travelTimeInMinutes?: number;
   time?: string;
   spentTime?: number;
-  cityId?: number;
+  city_id?: number;
   cityName?: string;
 }
 
 export interface HotelReservation {
-  hotelId: number;
-  hotelName: string;
   address: string;
-  price: number;
-  toatlAmountOfMony: number;
+  city_id: number;
+  id: number;
   location: string;
-  date?: string;
+  name: string;
+  placeType: string;
+  price: number;
+  stars: number;
 }
 
 export interface FlightReservation {
@@ -129,5 +130,4 @@ export interface FlightReservation {
   price: number;
   toatlAmountOfMony: number;
   location: string;
-  date?: string;
 }

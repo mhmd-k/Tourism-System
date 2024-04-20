@@ -4,19 +4,21 @@ import Survey from "./Survey";
 import Spinner from "../../components/Spinner";
 import { useState } from "react";
 import {
+  Alert,
   Button,
   ButtonGroup,
   Container,
   IconButton,
   Stack,
-  Typography,
 } from "@mui/material";
 import AutoFixHighOutlinedIcon from "@mui/icons-material/AutoFixHighOutlined";
 import ArrowBackOutlined from "@mui/icons-material/ArrowBackOutlined";
 import ArrowForwardOutlinedIcon from "@mui/icons-material/ArrowForwardOutlined";
 import PlacesSearch from "./PlacesSearch";
 import { userStore } from "../../zustand/UserStore";
-import { Navigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
+import { generateTrip } from "../../RESTFunctions";
+import { Error } from "@mui/icons-material";
 
 function GenerateTrip() {
   const [formData, setFormData] = useState<GenerateTripData>({
@@ -35,12 +37,16 @@ function GenerateTrip() {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [page, setPage] = useState<number>(0);
 
+  const navigate = useNavigate();
+
   const user = userStore((state) => state.user);
 
-  console.log("genearateTrip:", formData);
-  console.log("places: ", places);
+  // console.log("genearateTrip:", formData);
+  // console.log("places: ", places);
+  // console.log("trip: ", trip);
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
+    setError(null);
     setIsLoading(true);
     const err = validateTripInfo(formData);
 
@@ -50,9 +56,18 @@ function GenerateTrip() {
       return;
     }
 
-    // TODO: Make API call
+    try {
+      const trip = await generateTrip(formData);
 
-    setIsLoading(false);
+      console.log("trip generate: ", trip);
+
+      navigate("../trips/1", { state: { trip: trip } });
+    } catch (error) {
+      console.error(error);
+      setError("something went worng please try again later");
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   if (!user?.token) {
@@ -68,20 +83,9 @@ function GenerateTrip() {
       <Stack direction={"row"} sx={{ height: "100%" }}>
         <Container className="generate-trip-container">
           {error ? (
-            <Typography
-              className="bold"
-              component={"p"}
-              fontSize={15}
-              textAlign={"center"}
-              color={"red"}
-              style={{
-                border: "2px solid red",
-                padding: 10,
-                borderRadius: 2,
-              }}
-            >
+            <Alert color="error" icon={<Error />} sx={{ position: "fixed" }}>
               {error}
-            </Typography>
+            </Alert>
           ) : (
             <></>
           )}

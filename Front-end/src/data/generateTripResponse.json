@@ -1,200 +1,1085 @@
 {
-  "id": 1324,
-  "date": "3/18/2024",
-  "fromCity": "Damascus",
+  "id": 1,
+  "date": "2000-12-22",
+  "fromCity": "damascus",
   "destination": "italy",
-  "totalBudget": 9000,
-  "numberOfPeople": 4,
+  "totalBudget": 7000,
+  "numberOfPeople": 8,
+  "flightReservation": [
+    {
+      "airportId": 1,
+      "fromCity": "damascus",
+      "airportName": "Leonardo da Vinci–Fiumicino Airport",
+      "address": "Via dell'Aeroporto, di, 00054 Fiumicino RM, Italy",
+      "price": 183,
+      "toatlAmountOfMony": 1461,
+      "location": "41.803499350173176 12.251828422382225"
+    },
+    {
+      "airportId": 2,
+      "fromCity": "damascus",
+      "airportName": "Milan Malpensa Airport",
+      "address": "21010 Ferno, Province of Varese, Italy",
+      "price": 39,
+      "toatlAmountOfMony": 306,
+      "location": "45.63020501935424 8.725573610997992"
+    },
+    {
+      "airportId": 3,
+      "fromCity": "damascus",
+      "airportName": "Naples International Airport",
+      "address": "Viale F. Ruffo di Calabria, 80144 Napoli NA, Italy",
+      "price": 53,
+      "toatlAmountOfMony": 421,
+      "location": "40.88489246498448 14.289090822323116"
+    },
+    {
+      "airportId": 5,
+      "fromCity": "damascus",
+      "airportName": "Amerigo Vespucci Airport",
+      "address": "Via del Termine, 11, 50127 Firenze FI, Italy",
+      "price": 33,
+      "toatlAmountOfMony": 261,
+      "location": "43.81067921192396 11.203074951678381"
+    },
+    {
+      "airportId": 4,
+      "fromCity": "damascus",
+      "airportName": "Venice Marco Polo Airport",
+      "address": "Viale Galileo Galilei, 30, 30173 Venezia VE, Italy",
+      "price": 17,
+      "toatlAmountOfMony": 136,
+      "location": "45.506563207890586 12.346714735140504"
+    }
+  ],
+  "hotelReservation": [
+    {
+      "id": 3,
+      "name": "The St. Regis Rome",
+      "address": "Via Vittorio Emanuele Orlando, 3, 00185 Rome, Italy",
+      "city_id": 1,
+      "location": "41.90416749222035 12.49482998006026",
+      "price": 50,
+      "stars": 2,
+      "placeType": "Hotel"
+    },
+    {
+      "id": 31,
+      "name": "The Spa at Four Seasons Hotel Milano\n1. Four Seasons Hotel Milano",
+      "address": "Via Gesu, 6/8, 20121 Milano MI, Italy",
+      "city_id": 2,
+      "location": "45.4692189063453 9.195258206708136",
+      "price": 50,
+      "stars": 5,
+      "placeType": "Hotel"
+    },
+    {
+      "id": 59,
+      "name": "Grand Hotel Vesuvio",
+      "address": " Via Partenope, 45, 80121 Naples NA, Italy.",
+      "city_id": 3,
+      "location": "40.8380872423375  14.251142580360971",
+      "price": 50,
+      "stars": 2,
+      "placeType": "Hotel"
+    },
+    {
+      "id": 117,
+      "name": "Hotel Brunelleschi",
+      "address": " Piazza Santa Elisabetta 3, Florence",
+      "city_id": 4,
+      "location": "43.77187866442428  11.255716352315137",
+      "price": 50,
+      "stars": 2,
+      "placeType": "Hotel"
+    },
+    {
+      "id": 115,
+      "name": "Hotel Iris",
+      "address": "Campo S. Toma, 2910, 30125 Venezia VE, Italy",
+      "city_id": 5,
+      "location": "45.43626333767644 12.32633957668725",
+      "price": 50,
+      "stars": 2,
+      "placeType": "Hotel"
+    }
+  ],
   "tripDays": [
     {
       "dayId": 1,
-      "date": "3/18/2024",
+      "date": "2000/12/22",
       "city": {
-        "cityId": 1,
-        "name": "Roma",
-        "latitude": 42.78980798698,
-        "longitude": 12.8698473094,
-        "capital": true
+        "city_id": 1,
+        "name": "roma",
+        "latitude": 41.9014,
+        "longitude": 12.4879,
+        "country": "Italy",
+        "capital": 1
       },
-      "neededMony": 1800,
-      "flightReservation": {
-        "airportId": 3,
-        "fromCity": "Damascus",
-        "airportName": "Leonardo da Vinci–Fiumicino Airport",
-        "address": "Via dell'Aeroporto, di, 00054 Fiumicino RM, Italy",
-        "price": 250,
-        "toatlAmountOfMony": 1000,
-        "location": "41.803499350173176 12.251828422382225"
-      },
-      "hotelReservation": {
-        "hotelId": 58,
-        "hotelName": "Hotel Quantimarcos",
-        "address": "Roma street Quant 1243, Italy",
-        "price": 200,
-        "toatlAmountOfMony": 800,
-        "location": "41.90182202037885 12.494873553074376"
-      },
+      "neededMony": 12350,
       "dayPlaces": [
         {
-          "id": 3,
+          "id": 1,
           "name": "Leonardo da Vinci–Fiumicino Airport",
-          "placeType": "airport",
           "address": "Via dell'Aeroporto, di, 00054 Fiumicino RM, Italy",
-          "transportationMethod": "plane",
-          "price": 250,
-          "location": "41.803499350173176 12.251828422382225"
+          "city_id": 1,
+          "location": "41.803499350173176 12.251828422382225",
+          "placeType": "Airport",
+          "transportaionMethod": "plane"
         },
         {
-          "id": 58,
-          "name": "Hotel Quirinale",
-          "placeType": "hotel",
-          "address": "Via Nazionale 7, Central Station, 00184 Rome, Italy",
-          "transportationMethod": "car",
-          "price": 200,
-          "location": "41.90182202037885 12.494873553074376",
-          "stars": 4
+          "id": 3,
+          "name": "The St. Regis Rome",
+          "address": "Via Vittorio Emanuele Orlando, 3, 00185 Rome, Italy",
+          "city_id": 1,
+          "location": "41.90416749222035 12.49482998006026",
+          "price": 50,
+          "stars": 2,
+          "placeType": "Hotel",
+          "transportaionMethod": "car"
         },
         {
-          "id": 5,
-          "name": "Trattoria Da Danilo",
-          "placeType": "restaurant",
-          "address": "Via Petrarca, 13, 00185 Roma RM, Italy",
-          "transportationMethod": "walking",
-          "price": 22,
-          "location": "41.89736613876378 12.507873998643996",
-          "description": "Trattoria Da Danilo is a cozy restaurant located on Via Petrarca. It specializes in seafood dishes, offering a variety of fresh and flavorful options. While the ambiance is casual, the focus is on serving delicious seafood prepared with care. Trattoria Da Danilo is a great choice for seafood enthusiasts looking for a relaxed dining experience..",
+          "id": 15,
+          "name": "Imàgo",
+          "address": "Piazza della Trinita' Dei Monti 6, Hassler Roma Hotel - 00187 Rome",
+          "city_id": 1,
+          "location": "41.906546429658455 12.483946963483989",
+          "desciption": "Imàgo is a restaurant situated in Rome, located within the prestigious Hassler Roma Hotel. Offering traditional cuisine with a modern twist, Imàgo is known for its refined dishes and elegant presentation. The restaurant boasts breathtaking views of Rome's iconic landmarks, providing a stunning backdrop for a memorable dining experience. While the stars indicate a good rating, the true highlight of Imàgo lies in its fusion of traditional flavors and contemporary culinary techniques.",
+          "stars": 5,
+          "food_type": "traditional",
+          "price": 4,
+          "placeType": "Resturant",
+          "transportaionMethod": "walking"
+        },
+        {
+          "id": 4,
+          "name": "La Rinascente",
+          "address": "Via del Tritone, 61, 00187 Roma RM, Italy",
+          "city_id": 1,
+          "location": "41.90600659996459 12.484760359092748",
+          "desciption": "La Rinascente is a famous department store in Rome, offering a wide range of products including fashion, cosmetics, home goods, and gourmet food. It provides a modern shopping experience and a great selection of international and Italian brands.",
+          "placeType": "shop",
+          "transportaionMethod": "walking"
+        },
+        {
+          "id": 4,
+          "name": "La Rinascente",
+          "address": "Via del Tritone, 61, 00187 Roma RM, Italy",
+          "city_id": 1,
+          "location": "41.90600659996459 12.484760359092748",
+          "desciption": "La Rinascente is a famous department store in Rome, offering a wide range of products including fashion, cosmetics, home goods, and gourmet food. It provides a modern shopping experience and a great selection of international and Italian brands.",
+          "placeType": "shop",
+          "transportaionMethod": "walking"
+        },
+        {
+          "id": 4,
+          "name": "La Rinascente",
+          "address": "Via del Tritone, 61, 00187 Roma RM, Italy",
+          "city_id": 1,
+          "location": "41.90600659996459 12.484760359092748",
+          "desciption": "La Rinascente is a famous department store in Rome, offering a wide range of products including fashion, cosmetics, home goods, and gourmet food. It provides a modern shopping experience and a great selection of international and Italian brands.",
+          "placeType": "shop",
+          "transportaionMethod": "walking"
+        },
+        {
+          "id": 13,
+          "name": "Yellow Bar",
+          "address": "Via Palestro, 40, 00185 Roma RM, Italy",
+          "city_id": 1,
+          "location": "41.90549788598787 12.504623530116069",
+          "desciption": "Low-lit, buzzing restaurant/bar in a hostel, with live music & an underground club.",
+          "price": 25,
+          "placeType": "night",
+          "transportaionMethod": "car"
+        },
+        {
+          "id": 8,
+          "name": "Roscioli Caffè Pasticceria",
+          "address": "Piazza Benedetto Cairoli, 16, 00186 Roma RM, Italy",
+          "city_id": 1,
+          "location": "41.895085085698095 12.478286145392767",
+          "desciption": "Roscioli Caffè Pasticceria is a charming café and pastry shop situated on Piazza Benedetto Cairoli. It is known for its delectable desserts, pastries, and coffee. With its inviting atmosphere and a wide selection of sweet treats, Roscioli Caffè Pasticceria is the perfect place to satisfy your dessert cravings.",
           "stars": 3,
-          "foodType": "sea food"
-        },
-        {
-          "id": 5,
-          "name": "Pantheon",
-          "placeType": "old place",
-          "address": "Piazza della Rotonda, 00186 Roma RM, Italy",
-          "transportationMethod": "car",
-          "price": 22,
-          "location": "41.89873854344063 12.476787064716968",
-          "description": "The Pantheon is a former Roman temple and now a church. It is known for its impressive dome and the oculus in the center, which allows natural light to enter the building.",
-          "stars": 3,
-          "foodType": "sea food"
-        },
-        {
-          "id": 89,
-          "name": "Lake Bracciano",
-          "placeType": "natural place",
-          "address": "Lago di Bracciano, Italy",
-          "transportationMethod": "walking",
-          "location": "42.13049402148912 12.234714392817125",
-          "description": "a popular place for sailing, swimming & scuba diving."
+          "food_type": "dessert",
+          "price": 4,
+          "placeType": "Resturant",
+          "transportaionMethod": "car"
         }
       ]
     },
     {
       "dayId": 2,
-      "date": "3/19/2024",
+      "date": "2000-12-23",
       "city": {
-        "cityId": 1,
-        "name": "milan",
-        "latitude": 45.4626,
-        "longitude": 9.18321,
-        "capital": false
+        "city_id": 1,
+        "name": "roma",
+        "latitude": 41.9014,
+        "longitude": 12.4879,
+        "country": "Italy",
+        "capital": 1
       },
-      "neededMony": 1700,
-      "hotelReservation": {
-        "hotelId": 58,
-        "hotelName": "Hotel Milano Scala",
-        "address": "Roma street Quant 1243, Italy",
-        "price": 200,
-        "toatlAmountOfMony": 800,
-        "location": "41.90182202037885 12.494873553074376"
-      },
+      "neededMony": 12350,
       "dayPlaces": [
         {
-          "id": 58,
-          "name": "Hotel Milano Scala",
-          "placeType": "hotel",
-          "address": " Via dell'Orso, 7",
-          "transportationMethod": "train",
-          "price": 200,
-          "location": "45.469344926070406 9.1867449397892",
-          "stars": 4
+          "id": 3,
+          "name": "The St. Regis Rome",
+          "address": "Via Vittorio Emanuele Orlando, 3, 00185 Rome, Italy",
+          "city_id": 1,
+          "location": "41.90416749222035 12.49482998006026",
+          "price": 50,
+          "stars": 2,
+          "placeType": "Hotel",
+          "transportaionMethod": null
         },
         {
-          "id": 5,
-          "name": "Luini ",
-          "placeType": "restaurant",
-          "address": "- Via Santa Radegonda, 16, 20121 Milano",
-          "transportationMethod": "walking",
-          "price": 22,
-          "location": "45.46587374699259 9.19154170680182",
-          "description": " Luini is a small bakery and restaurant famous for its delicious panzerotti. Panzerotti are deep-fried stuffed pastries filled with ingredients like cheese, tomato, and ham. It offers a quick and tasty option for a satisfying meal.",
+          "id": 15,
+          "name": "Imàgo",
+          "address": "Piazza della Trinita' Dei Monti 6, Hassler Roma Hotel - 00187 Rome",
+          "city_id": 1,
+          "location": "41.906546429658455 12.483946963483989",
+          "desciption": "Imàgo is a restaurant situated in Rome, located within the prestigious Hassler Roma Hotel. Offering traditional cuisine with a modern twist, Imàgo is known for its refined dishes and elegant presentation. The restaurant boasts breathtaking views of Rome's iconic landmarks, providing a stunning backdrop for a memorable dining experience. While the stars indicate a good rating, the true highlight of Imàgo lies in its fusion of traditional flavors and contemporary culinary techniques.",
+          "stars": 5,
+          "food_type": "traditional",
+          "price": 4,
+          "placeType": "Resturant",
+          "transportaionMethod": "walking"
+        },
+        {
+          "id": 4,
+          "name": "La Rinascente",
+          "address": "Via del Tritone, 61, 00187 Roma RM, Italy",
+          "city_id": 1,
+          "location": "41.90600659996459 12.484760359092748",
+          "desciption": "La Rinascente is a famous department store in Rome, offering a wide range of products including fashion, cosmetics, home goods, and gourmet food. It provides a modern shopping experience and a great selection of international and Italian brands.",
+          "placeType": "shop",
+          "transportaionMethod": "walking"
+        },
+        {
+          "id": 4,
+          "name": "La Rinascente",
+          "address": "Via del Tritone, 61, 00187 Roma RM, Italy",
+          "city_id": 1,
+          "location": "41.90600659996459 12.484760359092748",
+          "desciption": "La Rinascente is a famous department store in Rome, offering a wide range of products including fashion, cosmetics, home goods, and gourmet food. It provides a modern shopping experience and a great selection of international and Italian brands.",
+          "placeType": "shop",
+          "transportaionMethod": "walking"
+        },
+        {
+          "id": 4,
+          "name": "La Rinascente",
+          "address": "Via del Tritone, 61, 00187 Roma RM, Italy",
+          "city_id": 1,
+          "location": "41.90600659996459 12.484760359092748",
+          "desciption": "La Rinascente is a famous department store in Rome, offering a wide range of products including fashion, cosmetics, home goods, and gourmet food. It provides a modern shopping experience and a great selection of international and Italian brands.",
+          "placeType": "shop",
+          "transportaionMethod": "walking"
+        },
+        {
+          "id": 13,
+          "name": "Yellow Bar",
+          "address": "Via Palestro, 40, 00185 Roma RM, Italy",
+          "city_id": 1,
+          "location": "41.90549788598787 12.504623530116069",
+          "desciption": "Low-lit, buzzing restaurant/bar in a hostel, with live music & an underground club.",
+          "price": 25,
+          "placeType": "night",
+          "transportaionMethod": "car"
+        },
+        {
+          "id": 8,
+          "name": "Roscioli Caffè Pasticceria",
+          "address": "Piazza Benedetto Cairoli, 16, 00186 Roma RM, Italy",
+          "city_id": 1,
+          "location": "41.895085085698095 12.478286145392767",
+          "desciption": "Roscioli Caffè Pasticceria is a charming café and pastry shop situated on Piazza Benedetto Cairoli. It is known for its delectable desserts, pastries, and coffee. With its inviting atmosphere and a wide selection of sweet treats, Roscioli Caffè Pasticceria is the perfect place to satisfy your dessert cravings.",
           "stars": 3,
-          "foodType": "dessert"
-        },
-        {
-          "id": 89,
-          "name": "Parco Villa Litta",
-          "placeType": "natural place",
-          "address": "Via Jacopo della Quercia, 20151 Milano MI",
-          "transportationMethod": "walking",
-          "price": 200,
-          "location": "45.51605173143442 9.167153642299478",
-          "description": "Historical 150-meter jetty, first founded in 1940, ending in a circular observation space."
+          "food_type": "dessert",
+          "price": 4,
+          "placeType": "Resturant",
+          "transportaionMethod": "car"
         }
       ]
     },
     {
       "dayId": 3,
-      "date": "3/20/2024",
+      "date": "2000-12-23",
       "city": {
-        "cityId": 1,
+        "city_id": 2,
+        "name": "milan",
+        "latitude": 45.4626,
+        "longitude": 9.18321,
+        "country": "Italy",
+        "capital": 0
+      },
+      "neededMony": 3034,
+      "dayPlaces": [
+        {
+          "id": 2,
+          "name": "Milan Malpensa Airport",
+          "address": "21010 Ferno, Province of Varese, Italy",
+          "city_id": 2,
+          "location": "45.63020501935424 8.725573610997992",
+          "placeType": "Airport",
+          "transportaionMethod": "plane"
+        },
+        {
+          "id": 31,
+          "name": "The Spa at Four Seasons Hotel Milano\n1. Four Seasons Hotel Milano",
+          "address": "Via Gesu, 6/8, 20121 Milano MI, Italy",
+          "city_id": 2,
+          "location": "45.4692189063453 9.195258206708136",
+          "price": 50,
+          "stars": 5,
+          "placeType": "Hotel",
+          "transportaionMethod": "train"
+        },
+        {
+          "id": 42,
+          "name": "Ristorante Da Giacomo",
+          "address": " Ripa di Porta Ticinese, 55, 20143 Milano",
+          "city_id": 2,
+          "location": "45.46383652946612 9.190133813354366",
+          "desciption": "Ristorante Da Giacomo: Located at Via Pasquale Sottocorno, 6, Ristorante Da Giacomo is a renowned Milanese institution. It is known for its exceptional service and classic Italian cuisine. The menu features dishes made with high-quality ingredients, including fresh seafood, homemade pasta, and succulent meat dishes.",
+          "stars": 4,
+          "food_type": "traditional",
+          "price": 6,
+          "placeType": "Resturant",
+          "transportaionMethod": "walking"
+        },
+        {
+          "id": 29,
+          "name": "Via Torino",
+          "address": "Via Torino, Milan, Italy",
+          "city_id": 2,
+          "location": "45.46166170137358 9.18543357788882",
+          "desciption": "Via Torino: A vibrant shopping street offering a mix of popular fashion chain",
+          "placeType": "shop",
+          "transportaionMethod": "walking"
+        },
+        {
+          "id": 29,
+          "name": "Via Torino",
+          "address": "Via Torino, Milan, Italy",
+          "city_id": 2,
+          "location": "45.46166170137358 9.18543357788882",
+          "desciption": "Via Torino: A vibrant shopping street offering a mix of popular fashion chain",
+          "placeType": "shop",
+          "transportaionMethod": "walking"
+        },
+        {
+          "id": 29,
+          "name": "Via Torino",
+          "address": "Via Torino, Milan, Italy",
+          "city_id": 2,
+          "location": "45.46166170137358 9.18543357788882",
+          "desciption": "Via Torino: A vibrant shopping street offering a mix of popular fashion chain",
+          "placeType": "shop",
+          "transportaionMethod": "walking"
+        },
+        {
+          "id": 33,
+          "name": "Hole Rabbit Cafè:",
+          "address": "Via Giuseppe Mazzini 20, Milan,20123",
+          "city_id": 2,
+          "location": "45.46180397549449 9.18842832206119",
+          "desciption": "This café is an Alice in Wonderland-themed tea room, the first of its kind in Italy",
+          "price": 12,
+          "placeType": "night",
+          "transportaionMethod": "walking"
+        },
+        {
+          "id": 42,
+          "name": "Ristorante Da Giacomo",
+          "address": " Ripa di Porta Ticinese, 55, 20143 Milano",
+          "city_id": 2,
+          "location": "45.46383652946612 9.190133813354366",
+          "desciption": "Ristorante Da Giacomo: Located at Via Pasquale Sottocorno, 6, Ristorante Da Giacomo is a renowned Milanese institution. It is known for its exceptional service and classic Italian cuisine. The menu features dishes made with high-quality ingredients, including fresh seafood, homemade pasta, and succulent meat dishes.",
+          "stars": 4,
+          "food_type": "traditional",
+          "price": 6,
+          "placeType": "Resturant",
+          "transportaionMethod": "walking"
+        }
+      ]
+    },
+    {
+      "dayId": 4,
+      "date": "2000-12-23",
+      "city": {
+        "city_id": 2,
+        "name": "milan",
+        "latitude": 45.4626,
+        "longitude": 9.18321,
+        "country": "Italy",
+        "capital": 0
+      },
+      "neededMony": 3034,
+      "dayPlaces": [
+        {
+          "id": 31,
+          "name": "The Spa at Four Seasons Hotel Milano\n1. Four Seasons Hotel Milano",
+          "address": "Via Gesu, 6/8, 20121 Milano MI, Italy",
+          "city_id": 2,
+          "location": "45.4692189063453 9.195258206708136",
+          "price": 50,
+          "stars": 5,
+          "placeType": "Hotel",
+          "transportaionMethod": null
+        },
+        {
+          "id": 42,
+          "name": "Ristorante Da Giacomo",
+          "address": " Ripa di Porta Ticinese, 55, 20143 Milano",
+          "city_id": 2,
+          "location": "45.46383652946612 9.190133813354366",
+          "desciption": "Ristorante Da Giacomo: Located at Via Pasquale Sottocorno, 6, Ristorante Da Giacomo is a renowned Milanese institution. It is known for its exceptional service and classic Italian cuisine. The menu features dishes made with high-quality ingredients, including fresh seafood, homemade pasta, and succulent meat dishes.",
+          "stars": 4,
+          "food_type": "traditional",
+          "price": 6,
+          "placeType": "Resturant",
+          "transportaionMethod": "walking"
+        },
+        {
+          "id": 29,
+          "name": "Via Torino",
+          "address": "Via Torino, Milan, Italy",
+          "city_id": 2,
+          "location": "45.46166170137358 9.18543357788882",
+          "desciption": "Via Torino: A vibrant shopping street offering a mix of popular fashion chain",
+          "placeType": "shop",
+          "transportaionMethod": "walking"
+        },
+        {
+          "id": 29,
+          "name": "Via Torino",
+          "address": "Via Torino, Milan, Italy",
+          "city_id": 2,
+          "location": "45.46166170137358 9.18543357788882",
+          "desciption": "Via Torino: A vibrant shopping street offering a mix of popular fashion chain",
+          "placeType": "shop",
+          "transportaionMethod": "walking"
+        },
+        {
+          "id": 29,
+          "name": "Via Torino",
+          "address": "Via Torino, Milan, Italy",
+          "city_id": 2,
+          "location": "45.46166170137358 9.18543357788882",
+          "desciption": "Via Torino: A vibrant shopping street offering a mix of popular fashion chain",
+          "placeType": "shop",
+          "transportaionMethod": "walking"
+        },
+        {
+          "id": 33,
+          "name": "Hole Rabbit Cafè:",
+          "address": "Via Giuseppe Mazzini 20, Milan,20123",
+          "city_id": 2,
+          "location": "45.46180397549449 9.18842832206119",
+          "desciption": "This café is an Alice in Wonderland-themed tea room, the first of its kind in Italy",
+          "price": 12,
+          "placeType": "night",
+          "transportaionMethod": "walking"
+        },
+        {
+          "id": 42,
+          "name": "Ristorante Da Giacomo",
+          "address": " Ripa di Porta Ticinese, 55, 20143 Milano",
+          "city_id": 2,
+          "location": "45.46383652946612 9.190133813354366",
+          "desciption": "Ristorante Da Giacomo: Located at Via Pasquale Sottocorno, 6, Ristorante Da Giacomo is a renowned Milanese institution. It is known for its exceptional service and classic Italian cuisine. The menu features dishes made with high-quality ingredients, including fresh seafood, homemade pasta, and succulent meat dishes.",
+          "stars": 4,
+          "food_type": "traditional",
+          "price": 6,
+          "placeType": "Resturant",
+          "transportaionMethod": "walking"
+        }
+      ]
+    },
+    {
+      "dayId": 5,
+      "date": "2000-12-23",
+      "city": {
+        "city_id": 3,
         "name": "napoli",
         "latitude": 40.8517,
         "longitude": 14.2646,
-        "capital": false
+        "country": "Italy",
+        "capital": 0
       },
-      "neededMony": 1800,
-      "hotelReservation": {
-        "hotelId": 58,
-        "hotelName": "Grand Hotel Parker's",
-        "address": "Roma street Quant 1243, Italy",
-        "price": 200,
-        "toatlAmountOfMony": 800,
-        "location": "41.90182202037885 12.494873553074376"
-      },
+      "neededMony": 4063,
       "dayPlaces": [
         {
-          "id": 58,
-          "name": "Grand Hotel Parker's",
-          "placeType": "hotel",
-          "address": "at Corso Vittorio Emanuele, 135, 80121 Naples NA, Italy.",
-          "transportationMethod": "car",
-          "price": 200,
-          "location": "40.837277130965525  14.22995420984997",
-          "stars": 4
+          "id": 3,
+          "name": "Naples International Airport",
+          "address": "Viale F. Ruffo di Calabria, 80144 Napoli NA, Italy",
+          "city_id": 3,
+          "location": "40.88489246498448 14.289090822323116",
+          "placeType": "Airport",
+          "transportaionMethod": "plane"
         },
+        {
+          "id": 59,
+          "name": "Grand Hotel Vesuvio",
+          "address": " Via Partenope, 45, 80121 Naples NA, Italy.",
+          "city_id": 3,
+          "location": "40.8380872423375  14.251142580360971",
+          "price": 50,
+          "stars": 2,
+          "placeType": "Hotel",
+          "transportaionMethod": "car"
+        },
+        {
+          "id": 61,
+          "name": "Osteria La Mattonella",
+          "address": " Via Porta San Gennaro, 13",
+          "city_id": 3,
+          "location": "40.836740180841694  14.244088261179648",
+          "desciption": "Osteria La Mattonella - Charming osteria offering a variety of traditional Italian dishes.",
+          "stars": 3,
+          "food_type": "dessert",
+          "price": 6,
+          "placeType": "Resturant",
+          "transportaionMethod": "walking"
+        },
+        {
+          "id": 50,
+          "name": "Via Santa Caterina a Chiaia",
+          "address": " Via Santa Caterina a Chiaia, Naples, Italy.",
+          "city_id": 3,
+          "location": "40.83529499717521  14.242121218804328",
+          "desciption": "Via Santa Caterina a Chiaia: A charming street known for its antique shops, art galleries, and vintage boutiques. ",
+          "placeType": "shop",
+          "transportaionMethod": "walking"
+        },
+        {
+          "id": 50,
+          "name": "Via Santa Caterina a Chiaia",
+          "address": " Via Santa Caterina a Chiaia, Naples, Italy.",
+          "city_id": 3,
+          "location": "40.83529499717521  14.242121218804328",
+          "desciption": "Via Santa Caterina a Chiaia: A charming street known for its antique shops, art galleries, and vintage boutiques. ",
+          "placeType": "shop",
+          "transportaionMethod": "walking"
+        },
+        {
+          "id": 50,
+          "name": "Via Santa Caterina a Chiaia",
+          "address": " Via Santa Caterina a Chiaia, Naples, Italy.",
+          "city_id": 3,
+          "location": "40.83529499717521  14.242121218804328",
+          "desciption": "Via Santa Caterina a Chiaia: A charming street known for its antique shops, art galleries, and vintage boutiques. ",
+          "placeType": "shop",
+          "transportaionMethod": "walking"
+        },
+        {
+          "id": 47,
+          "name": " Piazza San Pasquale",
+          "address": "t Piazza San Pasquale, Naples, Italy.",
+          "city_id": 3,
+          "location": "40.834347946216745 14.236365352397153",
+          "desciption": "Piazza San Pasquale: A lively square with several bars and pubs, known for its vibrant nightlife and social gatherings",
+          "price": 25,
+          "placeType": "night",
+          "transportaionMethod": "walking"
+        },
+        {
+          "id": 61,
+          "name": "Osteria La Mattonella",
+          "address": " Via Porta San Gennaro, 13",
+          "city_id": 3,
+          "location": "40.836740180841694  14.244088261179648",
+          "desciption": "Osteria La Mattonella - Charming osteria offering a variety of traditional Italian dishes.",
+          "stars": 3,
+          "food_type": "dessert",
+          "price": 6,
+          "placeType": "Resturant",
+          "transportaionMethod": "walking"
+        }
+      ]
+    },
+    {
+      "dayId": 6,
+      "date": "2000-12-23",
+      "city": {
+        "city_id": 3,
+        "name": "napoli",
+        "latitude": 40.8517,
+        "longitude": 14.2646,
+        "country": "Italy",
+        "capital": 0
+      },
+      "neededMony": 4063,
+      "dayPlaces": [
+        {
+          "id": 59,
+          "name": "Grand Hotel Vesuvio",
+          "address": " Via Partenope, 45, 80121 Naples NA, Italy.",
+          "city_id": 3,
+          "location": "40.8380872423375  14.251142580360971",
+          "price": 50,
+          "stars": 2,
+          "placeType": "Hotel",
+          "transportaionMethod": null
+        },
+        {
+          "id": 61,
+          "name": "Osteria La Mattonella",
+          "address": " Via Porta San Gennaro, 13",
+          "city_id": 3,
+          "location": "40.836740180841694  14.244088261179648",
+          "desciption": "Osteria La Mattonella - Charming osteria offering a variety of traditional Italian dishes.",
+          "stars": 3,
+          "food_type": "dessert",
+          "price": 6,
+          "placeType": "Resturant",
+          "transportaionMethod": "walking"
+        },
+        {
+          "id": 50,
+          "name": "Via Santa Caterina a Chiaia",
+          "address": " Via Santa Caterina a Chiaia, Naples, Italy.",
+          "city_id": 3,
+          "location": "40.83529499717521  14.242121218804328",
+          "desciption": "Via Santa Caterina a Chiaia: A charming street known for its antique shops, art galleries, and vintage boutiques. ",
+          "placeType": "shop",
+          "transportaionMethod": "walking"
+        },
+        {
+          "id": 50,
+          "name": "Via Santa Caterina a Chiaia",
+          "address": " Via Santa Caterina a Chiaia, Naples, Italy.",
+          "city_id": 3,
+          "location": "40.83529499717521  14.242121218804328",
+          "desciption": "Via Santa Caterina a Chiaia: A charming street known for its antique shops, art galleries, and vintage boutiques. ",
+          "placeType": "shop",
+          "transportaionMethod": "walking"
+        },
+        {
+          "id": 50,
+          "name": "Via Santa Caterina a Chiaia",
+          "address": " Via Santa Caterina a Chiaia, Naples, Italy.",
+          "city_id": 3,
+          "location": "40.83529499717521  14.242121218804328",
+          "desciption": "Via Santa Caterina a Chiaia: A charming street known for its antique shops, art galleries, and vintage boutiques. ",
+          "placeType": "shop",
+          "transportaionMethod": "walking"
+        },
+        {
+          "id": 47,
+          "name": " Piazza San Pasquale",
+          "address": "t Piazza San Pasquale, Naples, Italy.",
+          "city_id": 3,
+          "location": "40.834347946216745 14.236365352397153",
+          "desciption": "Piazza San Pasquale: A lively square with several bars and pubs, known for its vibrant nightlife and social gatherings",
+          "price": 25,
+          "placeType": "night",
+          "transportaionMethod": "walking"
+        },
+        {
+          "id": 61,
+          "name": "Osteria La Mattonella",
+          "address": " Via Porta San Gennaro, 13",
+          "city_id": 3,
+          "location": "40.836740180841694  14.244088261179648",
+          "desciption": "Osteria La Mattonella - Charming osteria offering a variety of traditional Italian dishes.",
+          "stars": 3,
+          "food_type": "dessert",
+          "price": 6,
+          "placeType": "Resturant",
+          "transportaionMethod": "walking"
+        }
+      ]
+    },
+    {
+      "dayId": 7,
+      "date": "2000-12-23",
+      "city": {
+        "city_id": 4,
+        "name": "florence",
+        "latitude": 43.7582,
+        "longitude": 11.2592,
+        "country": "Italy",
+        "capital": 0
+      },
+      "neededMony": 2739,
+      "dayPlaces": [
         {
           "id": 5,
-          "name": "Sorbillo",
-          "placeType": "restaurant",
-          "address": "Via Port'Alba, 18",
-          "transportationMethod": "walking",
-          "price": 22,
-          "location": "40.88514205573757  14.253775100577771",
-          "description": "Sorbillo - Popular pizzeria offering a wide selection of traditional and creative pizzas culinary creations, using the finest ingredients to deliver a gourmet experience. With its elegant atmosphere, knowledgeable staff, and a menu that combines traditional and innovative flavors, Roscioli promises an unforgettable gastronomic journey.",
-          "stars": 3,
-          "foodType": "fine dinning"
+          "name": "Amerigo Vespucci Airport",
+          "address": "Via del Termine, 11, 50127 Firenze FI, Italy",
+          "city_id": 4,
+          "location": "43.81067921192396 11.203074951678381",
+          "placeType": "Airport",
+          "transportaionMethod": "plane"
         },
         {
-          "id": 89,
-          "name": "Ischia Island",
-          "placeType": "night place",
-          "address": "Gulf of Naples",
-          "transportationMethod": "walking",
-          "price": 20,
-          "location": "40.75542807742513  13.90939044952321"
+          "id": 117,
+          "name": "Hotel Brunelleschi",
+          "address": " Piazza Santa Elisabetta 3, Florence",
+          "city_id": 4,
+          "location": "43.77187866442428  11.255716352315137",
+          "price": 50,
+          "stars": 2,
+          "placeType": "Hotel",
+          "transportaionMethod": "car"
+        },
+        {
+          "id": 118,
+          "name": "All'Antico Vinaio",
+          "address": "Via dei Neri, 74r",
+          "city_id": 4,
+          "location": "43.76936540404297  11.25728873214846",
+          "desciption": "Popular panini shop known for its generous sandwiches filled with Tuscan ingredients.",
+          "stars": 3,
+          "food_type": "dessert",
+          "price": 4,
+          "placeType": "Resturant",
+          "transportaionMethod": "walking"
+        },
+        {
+          "id": 94,
+          "name": "Via dei Benci:",
+          "address": "Santa Croce neighborhood, Florence",
+          "city_id": 4,
+          "location": "43.767965892550905  11.259554938822665",
+          "desciption": "Lively street with trendy fashion boutiques.",
+          "placeType": "shop",
+          "transportaionMethod": "walking"
+        },
+        {
+          "id": 94,
+          "name": "Via dei Benci:",
+          "address": "Santa Croce neighborhood, Florence",
+          "city_id": 4,
+          "location": "43.767965892550905  11.259554938822665",
+          "desciption": "Lively street with trendy fashion boutiques.",
+          "placeType": "shop",
+          "transportaionMethod": "walking"
+        },
+        {
+          "id": 94,
+          "name": "Via dei Benci:",
+          "address": "Santa Croce neighborhood, Florence",
+          "city_id": 4,
+          "location": "43.767965892550905  11.259554938822665",
+          "desciption": "Lively street with trendy fashion boutiques.",
+          "placeType": "shop",
+          "transportaionMethod": "walking"
+        },
+        {
+          "id": 88,
+          "name": "Negroni",
+          "address": "Via dei Renai, 17r",
+          "city_id": 4,
+          "location": "43.76822199914468  11.258593783855463",
+          "desciption": " Trendy cocktail bar with a stylish interior and expertly crafted drinks.",
+          "price": 25,
+          "placeType": "night",
+          "transportaionMethod": "walking"
+        },
+        {
+          "id": 119,
+          "name": "Il Santo Bevitore",
+          "address": "Via Santo Spirito, 64r",
+          "city_id": 4,
+          "location": "43.76914763821876  11.246752994643208",
+          "desciption": "Rustic-chic restaurant offering creative Tuscan dishes and an extensive wine list.",
+          "stars": 4,
+          "food_type": "dessert",
+          "price": 3,
+          "placeType": "Resturant",
+          "transportaionMethod": "walking"
+        }
+      ]
+    },
+    {
+      "dayId": 8,
+      "date": "2000-12-23",
+      "city": {
+        "city_id": 4,
+        "name": "florence",
+        "latitude": 43.7582,
+        "longitude": 11.2592,
+        "country": "Italy",
+        "capital": 0
+      },
+      "neededMony": 2739,
+      "dayPlaces": [
+        {
+          "id": 117,
+          "name": "Hotel Brunelleschi",
+          "address": " Piazza Santa Elisabetta 3, Florence",
+          "city_id": 4,
+          "location": "43.77187866442428  11.255716352315137",
+          "price": 50,
+          "stars": 2,
+          "placeType": "Hotel",
+          "transportaionMethod": null
+        },
+        {
+          "id": 118,
+          "name": "All'Antico Vinaio",
+          "address": "Via dei Neri, 74r",
+          "city_id": 4,
+          "location": "43.76936540404297  11.25728873214846",
+          "desciption": "Popular panini shop known for its generous sandwiches filled with Tuscan ingredients.",
+          "stars": 3,
+          "food_type": "dessert",
+          "price": 4,
+          "placeType": "Resturant",
+          "transportaionMethod": "walking"
+        },
+        {
+          "id": 94,
+          "name": "Via dei Benci:",
+          "address": "Santa Croce neighborhood, Florence",
+          "city_id": 4,
+          "location": "43.767965892550905  11.259554938822665",
+          "desciption": "Lively street with trendy fashion boutiques.",
+          "placeType": "shop",
+          "transportaionMethod": "walking"
+        },
+        {
+          "id": 94,
+          "name": "Via dei Benci:",
+          "address": "Santa Croce neighborhood, Florence",
+          "city_id": 4,
+          "location": "43.767965892550905  11.259554938822665",
+          "desciption": "Lively street with trendy fashion boutiques.",
+          "placeType": "shop",
+          "transportaionMethod": "walking"
+        },
+        {
+          "id": 94,
+          "name": "Via dei Benci:",
+          "address": "Santa Croce neighborhood, Florence",
+          "city_id": 4,
+          "location": "43.767965892550905  11.259554938822665",
+          "desciption": "Lively street with trendy fashion boutiques.",
+          "placeType": "shop",
+          "transportaionMethod": "walking"
+        },
+        {
+          "id": 88,
+          "name": "Negroni",
+          "address": "Via dei Renai, 17r",
+          "city_id": 4,
+          "location": "43.76822199914468  11.258593783855463",
+          "desciption": " Trendy cocktail bar with a stylish interior and expertly crafted drinks.",
+          "price": 25,
+          "placeType": "night",
+          "transportaionMethod": "walking"
+        },
+        {
+          "id": 119,
+          "name": "Il Santo Bevitore",
+          "address": "Via Santo Spirito, 64r",
+          "city_id": 4,
+          "location": "43.76914763821876  11.246752994643208",
+          "desciption": "Rustic-chic restaurant offering creative Tuscan dishes and an extensive wine list.",
+          "stars": 4,
+          "food_type": "dessert",
+          "price": 3,
+          "placeType": "Resturant",
+          "transportaionMethod": "walking"
+        }
+      ]
+    },
+    {
+      "dayId": 9,
+      "date": "2000-12-23",
+      "city": {
+        "city_id": 5,
+        "name": "venice",
+        "latitude": 45.4999,
+        "longitude": 12.3393,
+        "country": "Italy",
+        "capital": 0
+      },
+      "neededMony": 1548,
+      "dayPlaces": [
+        {
+          "id": 4,
+          "name": "Venice Marco Polo Airport",
+          "address": "Viale Galileo Galilei, 30, 30173 Venezia VE, Italy",
+          "city_id": 5,
+          "location": "45.506563207890586 12.346714735140504",
+          "placeType": "Airport",
+          "transportaionMethod": "plane"
+        },
+        {
+          "id": 115,
+          "name": "Hotel Iris",
+          "address": "Campo S. Toma, 2910, 30125 Venezia VE, Italy",
+          "city_id": 5,
+          "location": "45.43626333767644 12.32633957668725",
+          "price": 50,
+          "stars": 2,
+          "placeType": "Hotel",
+          "transportaionMethod": "car"
+        },
+        {
+          "id": 90,
+          "name": "Osteria alle Testiere",
+          "address": "Calle del Mondo Novo, 5801, 30122 Venezia VE, Italy",
+          "city_id": 5,
+          "location": "45.438265553567234 12.340230140494752",
+          "desciption": "Whether you are a seafood lover or simply seeking an authentic taste of Venetian cuisine, Osteria alle Testiere is a must-visit for food enthusiasts.",
+          "stars": 5,
+          "food_type": "traditional",
+          "price": 4,
+          "placeType": "Resturant",
+          "transportaionMethod": "car"
+        },
+        {
+          "id": 76,
+          "name": "Libreria Acqua Alta",
+          "address": "Calle Longa Santa Maria Formosa, 5176/B, 30122 Venice, Italy",
+          "city_id": 5,
+          "location": "45.43807010963985 12.342173978448717",
+          "desciption": "Libreria Acqua Alta is a unique bookstore filled with books stacked in gondolas and bathtubs, creating a whimsical shopping experience.",
+          "placeType": "shop",
+          "transportaionMethod": "walking"
+        },
+        {
+          "id": 76,
+          "name": "Libreria Acqua Alta",
+          "address": "Calle Longa Santa Maria Formosa, 5176/B, 30122 Venice, Italy",
+          "city_id": 5,
+          "location": "45.43807010963985 12.342173978448717",
+          "desciption": "Libreria Acqua Alta is a unique bookstore filled with books stacked in gondolas and bathtubs, creating a whimsical shopping experience.",
+          "placeType": "shop",
+          "transportaionMethod": "walking"
+        },
+        {
+          "id": 76,
+          "name": "Libreria Acqua Alta",
+          "address": "Calle Longa Santa Maria Formosa, 5176/B, 30122 Venice, Italy",
+          "city_id": 5,
+          "location": "45.43807010963985 12.342173978448717",
+          "desciption": "Libreria Acqua Alta is a unique bookstore filled with books stacked in gondolas and bathtubs, creating a whimsical shopping experience.",
+          "placeType": "shop",
+          "transportaionMethod": "walking"
+        },
+        {
+          "id": 67,
+          "name": "Acqua Alta Bookstore",
+          "address": "Castello, 30122 Venice",
+          "city_id": 5,
+          "location": "45.438175504443926 12.342324182148804",
+          "desciption": "Acqua Alta Bookstore is a unique bookstore with a charming twist. Enjoy a drink amidst stacks of books and experience the cozy and eccentric ambiance.",
+          "price": 0,
+          "placeType": "night",
+          "transportaionMethod": "walking"
+        },
+        {
+          "id": 90,
+          "name": "Osteria alle Testiere",
+          "address": "Calle del Mondo Novo, 5801, 30122 Venezia VE, Italy",
+          "city_id": 5,
+          "location": "45.438265553567234 12.340230140494752",
+          "desciption": "Whether you are a seafood lover or simply seeking an authentic taste of Venetian cuisine, Osteria alle Testiere is a must-visit for food enthusiasts.",
+          "stars": 5,
+          "food_type": "traditional",
+          "price": 4,
+          "placeType": "Resturant",
+          "transportaionMethod": "walking"
+        }
+      ]
+    },
+    {
+      "dayId": 10,
+      "date": "2000-12-23",
+      "city": {
+        "city_id": 5,
+        "name": "venice",
+        "latitude": 45.4999,
+        "longitude": 12.3393,
+        "country": "Italy",
+        "capital": 0
+      },
+      "neededMony": 1548,
+      "dayPlaces": [
+        {
+          "id": 115,
+          "name": "Hotel Iris",
+          "address": "Campo S. Toma, 2910, 30125 Venezia VE, Italy",
+          "city_id": 5,
+          "location": "45.43626333767644 12.32633957668725",
+          "price": 50,
+          "stars": 2,
+          "placeType": "Hotel",
+          "transportaionMethod": null
+        },
+        {
+          "id": 90,
+          "name": "Osteria alle Testiere",
+          "address": "Calle del Mondo Novo, 5801, 30122 Venezia VE, Italy",
+          "city_id": 5,
+          "location": "45.438265553567234 12.340230140494752",
+          "desciption": "Whether you are a seafood lover or simply seeking an authentic taste of Venetian cuisine, Osteria alle Testiere is a must-visit for food enthusiasts.",
+          "stars": 5,
+          "food_type": "traditional",
+          "price": 4,
+          "placeType": "Resturant",
+          "transportaionMethod": "car"
+        },
+        {
+          "id": 76,
+          "name": "Libreria Acqua Alta",
+          "address": "Calle Longa Santa Maria Formosa, 5176/B, 30122 Venice, Italy",
+          "city_id": 5,
+          "location": "45.43807010963985 12.342173978448717",
+          "desciption": "Libreria Acqua Alta is a unique bookstore filled with books stacked in gondolas and bathtubs, creating a whimsical shopping experience.",
+          "placeType": "shop",
+          "transportaionMethod": "walking"
+        },
+        {
+          "id": 76,
+          "name": "Libreria Acqua Alta",
+          "address": "Calle Longa Santa Maria Formosa, 5176/B, 30122 Venice, Italy",
+          "city_id": 5,
+          "location": "45.43807010963985 12.342173978448717",
+          "desciption": "Libreria Acqua Alta is a unique bookstore filled with books stacked in gondolas and bathtubs, creating a whimsical shopping experience.",
+          "placeType": "shop",
+          "transportaionMethod": "walking"
+        },
+        {
+          "id": 76,
+          "name": "Libreria Acqua Alta",
+          "address": "Calle Longa Santa Maria Formosa, 5176/B, 30122 Venice, Italy",
+          "city_id": 5,
+          "location": "45.43807010963985 12.342173978448717",
+          "desciption": "Libreria Acqua Alta is a unique bookstore filled with books stacked in gondolas and bathtubs, creating a whimsical shopping experience.",
+          "placeType": "shop",
+          "transportaionMethod": "walking"
+        },
+        {
+          "id": 67,
+          "name": "Acqua Alta Bookstore",
+          "address": "Castello, 30122 Venice",
+          "city_id": 5,
+          "location": "45.438175504443926 12.342324182148804",
+          "desciption": "Acqua Alta Bookstore is a unique bookstore with a charming twist. Enjoy a drink amidst stacks of books and experience the cozy and eccentric ambiance.",
+          "price": 0,
+          "placeType": "night",
+          "transportaionMethod": "walking"
+        },
+        {
+          "id": 90,
+          "name": "Osteria alle Testiere",
+          "address": "Calle del Mondo Novo, 5801, 30122 Venezia VE, Italy",
+          "city_id": 5,
+          "location": "45.438265553567234 12.340230140494752",
+          "desciption": "Whether you are a seafood lover or simply seeking an authentic taste of Venetian cuisine, Osteria alle Testiere is a must-visit for food enthusiasts.",
+          "stars": 5,
+          "food_type": "traditional",
+          "price": 4,
+          "placeType": "Resturant",
+          "transportaionMethod": "walking"
         }
       ]
     }
-  ]
+  ],
+  "TotalCost": 47465
 }

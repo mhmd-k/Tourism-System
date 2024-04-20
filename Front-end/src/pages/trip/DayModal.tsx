@@ -41,7 +41,12 @@ function DayModal({
                 <AttachMoney /> Needed Mony: {day.neededMony}$
               </li>
               <li>
-                <Bed /> Hotel: {day.hotelReservation?.hotelName}
+                <Bed /> Hotel:{" "}
+                {
+                  day.dayPlaces.find(
+                    (place) => place.placeType.toLowerCase() === "hotel"
+                  )?.name
+                }
               </li>
             </ul>
           </div>

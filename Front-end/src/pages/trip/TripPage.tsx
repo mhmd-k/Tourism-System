@@ -18,9 +18,10 @@ import {
 import { getPath } from "../../RESTFunctions";
 import Spinner from "../../components/Spinner";
 import ReservationsModal from "./ReservationsModal";
+import { useLocation } from "react-router-dom";
 
 function TripPage() {
-  const [trip, setTrip] = useState<Trip | null>(null);
+  const [trip, setTrip] = useState<Trip | null>(tripData);
   const [isLoading, setIsLoading] = useState(false);
   const [activeDay, setActiveDay] = useState(0);
   const [isMobileNavbarOpen, setIsMobileNavbarOpen] = useState<boolean>(false);
@@ -29,6 +30,11 @@ function TripPage() {
     useState<boolean>(false);
 
   console.log("activeDay: ", activeDay);
+  console.log("trip: ", trip);
+
+  const location = useLocation();
+
+  console.log("location: ", location);
 
   const setCenter = mapStore((state) => state.setCenter);
   const setDestination = mapStore((state) => state.setDestination);
@@ -57,49 +63,53 @@ function TripPage() {
   };
 
   useEffect(() => {
-    setTrip(tripData);
+    const newTrip = location.state.trip as Trip;
+
+    setTrip(newTrip);
 
     async function fetchTripTimes() {
       setIsLoading(true);
       const newDays = [];
-      for (const day of tripData.tripDays) {
-        let minutes = 9 * 60;
-        const updatedDayPlaces = [];
-        for (let i = 0; i < day.dayPlaces.length; i++) {
-          if (i !== 0) {
-            await new Promise((resolve) => setTimeout(resolve, 1000)); // Delay of 1 second
+      if (trip) {
+        for (const day of newTrip.tripDays) {
+          let minutes = 9 * 60;
+          const updatedDayPlaces = [];
+          for (let i = 0; i < day.dayPlaces.length; i++) {
+            if (i !== 0) {
+              await new Promise((resolve) => setTimeout(resolve, 1000)); // Delay of 1 second
 
-            const res = await getPath(
-              stringToLngLat(day.dayPlaces[i - 1].location),
-              stringToLngLat(day.dayPlaces[i].location)
-            );
+              const res = await getPath(
+                stringToLngLat(day.dayPlaces[i - 1].location),
+                stringToLngLat(day.dayPlaces[i].location)
+              );
 
-            minutes += res?.travelTimeInSeconds / 60;
+              minutes += res?.travelTimeInSeconds / 60;
 
-            const spentTime = placeSpentTime(day.dayPlaces[i].placeType);
+              const spentTime = placeSpentTime(day.dayPlaces[i].placeType);
 
-            updatedDayPlaces.push({
-              ...day.dayPlaces[i],
-              travelTimeInMinutes: Math.round(res?.travelTimeInSeconds / 60),
-              time: formatMinutesToTime(minutes),
-              spentTime: spentTime,
-            });
+              updatedDayPlaces.push({
+                ...day.dayPlaces[i],
+                travelTimeInMinutes: Math.round(res?.travelTimeInSeconds / 60),
+                time: formatMinutesToTime(minutes),
+                spentTime: spentTime,
+              });
 
-            minutes += spentTime;
-          } else {
-            updatedDayPlaces.push({
-              ...day.dayPlaces[i],
-              time: formatMinutesToTime(minutes),
-            });
+              minutes += spentTime;
+            } else {
+              updatedDayPlaces.push({
+                ...day.dayPlaces[i],
+                time: formatMinutesToTime(minutes),
+              });
+            }
           }
+
+          console.log("Updated day places: ", updatedDayPlaces);
+
+          newDays.push({ ...day, dayPlaces: updatedDayPlaces });
         }
-
-        console.log("Updated day places: ", updatedDayPlaces);
-
-        newDays.push({ ...day, dayPlaces: updatedDayPlaces });
       }
 
-      setTrip({ ...tripData, tripDays: newDays });
+      setTrip({ ...newTrip, tripDays: newDays });
       setIsLoading(false);
     }
 

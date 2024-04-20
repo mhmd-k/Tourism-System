@@ -21,9 +21,8 @@ export function validateTripInfo(
   userPreferrences: GenerateTripData
 ): string | null {
   // if there is a field empty
-  for (const [, value] of Object.entries(userPreferrences)) {
-    console.log("value:", value);
-    if (!value) {
+  for (const [key, value] of Object.entries(userPreferrences)) {
+    if (!value && key !== "careAboutBudget") {
       return "Please fill all the fields";
     }
   }

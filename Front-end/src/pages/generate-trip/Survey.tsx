@@ -15,14 +15,19 @@ import { ChangeEvent } from "react";
 import { GenerateTripData } from "../../types";
 
 const foodTypes = [
-  "Sea Food",
+  "Sea food",
   "Traditional",
-  "Desserts",
-  "Fast Food",
-  "Fine Dinning",
+  "Dessert",
+  "Fast food",
+  "Fine dinning",
 ];
 
-const places = ["Old Places", "Natural places", "Night Places", "Shopping"];
+const places = [
+  "Old Places",
+  "Natural places",
+  "Night Places",
+  "Shopping Places",
+];
 
 function Survey({
   setFormData,

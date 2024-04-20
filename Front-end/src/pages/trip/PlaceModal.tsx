@@ -59,10 +59,10 @@ function PlaceModal({
               padding="15px 0"
               borderBottom={"1px solid #d9d9d9"}
             >
-              {place.placeType !== "airport" && place.transportationMethod ? (
+              {place.placeType !== "airport" && place.transportaionMethod ? (
                 <div title="transport method">
                   <EmojiTransportation fontSize="small" />{" "}
-                  {place.transportationMethod}
+                  {place.transportaionMethod}
                 </div>
               ) : (
                 <></>

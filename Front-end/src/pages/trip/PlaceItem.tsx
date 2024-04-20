@@ -69,8 +69,8 @@ function PlaceItem({
         }
       >
         <ListItemAvatar>
-          <Avatar className="avatar">
-            <PlaceIcon placeType={placeType} />
+          <Avatar className="avatar" title={placeType}>
+            <PlaceIcon placeType={placeType.toLowerCase()} />
           </Avatar>
         </ListItemAvatar>
         <ListItemText primary={name} secondary={address} />
