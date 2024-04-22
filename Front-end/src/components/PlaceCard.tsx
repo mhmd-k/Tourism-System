@@ -20,7 +20,7 @@ const PlaceCard = memo(
       <div className="place-card">
         <div className="image">
           <img
-            src={`https://source.unsplash.com/1600x900/?${name}`}
+            src={`https://source.unsplash.com/1600x900/?${placeType.toLowerCase() === "resturant" ? "restaurant" : name}`}
             loading="lazy"
             alt=""
           />

@@ -111,23 +111,23 @@ export function formatTravelTime(minutes: number): string {
 }
 
 export function placeSpentTime(placeType: string): number {
-  switch (placeType) {
+  switch (placeType.toLowerCase()) {
     case "hotel":
       return 120; // 2 hour
 
-    case "night place":
+    case "night":
       return 120; // 2 hours
 
-    case "old place":
+    case "old":
       return 120; // 1 hour 30 minutes
 
-    case "natural place":
+    case "natural":
       return 120; // 2 hours
 
-    case "shopping place":
+    case "shopping":
       return 120; // 1 hour
 
-    case "restaurant":
+    case "resturant":
       return 60; // 45 minutes
 
     default:

@@ -27,7 +27,7 @@ function PlaceIcon({ placeType }: { placeType: string }) {
     case "natural":
       icon = <ParkIcon />;
       break;
-    case "shopping":
+    case "shop":
       icon = <ShoppingCart />;
       break;
     case "airport":

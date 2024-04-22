@@ -2,7 +2,7 @@ import { GenerateTripData, TripPlace } from "../../types";
 import { validateTripInfo } from "../../utils";
 import Survey from "./Survey";
 import Spinner from "../../components/Spinner";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   Alert,
   Button,
@@ -19,6 +19,7 @@ import { userStore } from "../../zustand/UserStore";
 import { Navigate, useNavigate } from "react-router-dom";
 import { generateTrip } from "../../RESTFunctions";
 import { Error } from "@mui/icons-material";
+import { loadModel } from "../../predict-ratings-model/a";
 
 function GenerateTrip() {
   const [formData, setFormData] = useState<GenerateTripData>({
@@ -70,6 +71,10 @@ function GenerateTrip() {
     }
   };
 
+  useEffect(() => {
+    loadModel();
+  }, []);
+
   if (!user?.token) {
     return Navigate({
       to: "../login",
@@ -83,7 +88,7 @@ function GenerateTrip() {
       <Stack direction={"row"} sx={{ height: "100%" }}>
         <Container className="generate-trip-container">
           {error ? (
-            <Alert color="error" icon={<Error />} sx={{ position: "fixed" }}>
+            <Alert color="error" icon={<Error />}>
               {error}
             </Alert>
           ) : (

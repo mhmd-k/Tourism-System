@@ -182,15 +182,22 @@ function TripPage() {
       </Drawer>
       <aside>{tripNavbar}</aside>
       <MapElement />
-      <IconButton
-        className="reservations-btn"
-        onClick={handleOpenCloseReservationsModel}
-      >
-        <CreditCard />
-      </IconButton>
+      {trip.flightReservation || trip.hotelReservation ? (
+        <IconButton
+          className="reservations-btn"
+          onClick={handleOpenCloseReservationsModel}
+        >
+          <CreditCard />
+        </IconButton>
+      ) : (
+        <></>
+      )}
       <ReservationsModal
         handleOpenCloseModal={handleOpenCloseReservationsModel}
         isModalOpen={isReservationsModalOpen}
+        flightsReservations={trip.flightReservation}
+        hotelsReservations={trip.hotelReservation}
+        numberOfPeople={trip.numberOfPeople}
       />
     </div>
   );

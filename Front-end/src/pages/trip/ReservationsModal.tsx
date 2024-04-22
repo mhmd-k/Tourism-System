@@ -5,8 +5,6 @@ import Modal from "@mui/material/Modal";
 import Fade from "@mui/material/Fade";
 import HotelsTable from "../../components/HotelsTable";
 import FlightsTable from "../../components/FlightsTable";
-import FlightsReservations from "../../data/flightReservationsResponse.json";
-import HotelsReservations from "../../data/hotelReservationsResponse.json";
 import FormLabel from "@mui/material/FormLabel";
 import OutlinedInput from "@mui/material/OutlinedInput";
 import Typography from "@mui/material/Typography";
@@ -15,6 +13,7 @@ import SimCardRoundedIcon from "@mui/icons-material/SimCardRounded";
 import { styled } from "@mui/system";
 import { Alert, Button } from "@mui/material";
 import { Info } from "@mui/icons-material";
+import { FlightReservation, HotelReservation } from "../../types";
 
 const FormGrid = styled("div")(() => ({
   display: "flex",
@@ -24,9 +23,15 @@ const FormGrid = styled("div")(() => ({
 function ReservationsModal({
   isModalOpen,
   handleOpenCloseModal,
+  hotelsReservations,
+  flightsReservations,
+  numberOfPeople,
 }: {
   isModalOpen: boolean;
   handleOpenCloseModal: () => void;
+  hotelsReservations: HotelReservation[];
+  flightsReservations: FlightReservation[];
+  numberOfPeople: number;
 }) {
   const [cardNumber, setCardNumber] = useState("");
   const [cvv, setCvv] = useState("");
@@ -55,6 +60,14 @@ function ReservationsModal({
     }
   };
 
+  let totalCost = 0;
+  flightsReservations.forEach((e) => {
+    totalCost += e.toatlAmountOfMony;
+  });
+  hotelsReservations.forEach((e) => {
+    totalCost += e.price * numberOfPeople;
+  });
+
   return (
     <Modal
       open={isModalOpen}
@@ -70,9 +83,19 @@ function ReservationsModal({
       <Fade in={isModalOpen}>
         <Box className="reservations-popup">
           <h3>Reservations Needed:</h3>
-          <HotelsTable hotels={HotelsReservations.slice(0, 2)} />
-          <FlightsTable flights={FlightsReservations.slice(0, 1)} />
-          <p>Total: 2400$</p>
+          {hotelsReservations && (
+            <HotelsTable
+              hotels={hotelsReservations}
+              numberOfPeople={numberOfPeople}
+            />
+          )}
+          {flightsReservations && (
+            <FlightsTable
+              flights={flightsReservations}
+              numberOfPeople={numberOfPeople}
+            />
+          )}
+          <p>Total: {totalCost}$</p>
           <Box
             sx={{
               display: "flex",

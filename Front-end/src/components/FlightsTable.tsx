@@ -7,14 +7,19 @@ import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import { FlightReservation } from "../types";
 
-function FlightsTable({ flights }: { flights: FlightReservation[] }) {
+function FlightsTable({
+  flights,
+  numberOfPeople,
+}: {
+  flights: FlightReservation[];
+  numberOfPeople: number;
+}) {
   return (
     <TableContainer component={Paper}>
       <Table>
         <TableHead sx={{ backgroundColor: "#f0f0f0" }}>
           <TableRow>
             <TableCell>airport</TableCell>
-            <TableCell align="center">date</TableCell>
             <TableCell align="center">number of tickets</TableCell>
             <TableCell align="center">ticket price</TableCell>
             <TableCell align="center">total amount</TableCell>
@@ -27,9 +32,8 @@ function FlightsTable({ flights }: { flights: FlightReservation[] }) {
               <TableCell component="th" scope="row">
                 {place.airportName}
               </TableCell>
-              <TableCell align="center">{place.date}</TableCell>
-              <TableCell align="center">
-                {place.toatlAmountOfMony / place.price}
+              <TableCell component="th" scope="row">
+                {numberOfPeople}
               </TableCell>
               <TableCell align="center">{place.price}$</TableCell>
               <TableCell align="center">{place.toatlAmountOfMony}$</TableCell>

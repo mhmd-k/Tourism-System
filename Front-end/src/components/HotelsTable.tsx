@@ -7,7 +7,13 @@ import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import { HotelReservation } from "../types";
 
-function HotelsTable({ hotels }: { hotels: HotelReservation[] }) {
+function HotelsTable({
+  hotels,
+  numberOfPeople,
+}: {
+  hotels: HotelReservation[];
+  numberOfPeople: number;
+}) {
   return (
     <TableContainer component={Paper}>
       <Table>
@@ -15,7 +21,6 @@ function HotelsTable({ hotels }: { hotels: HotelReservation[] }) {
           <TableRow>
             <TableCell>hotel</TableCell>
             <TableCell align="center">address</TableCell>
-            <TableCell align="center">date</TableCell>
             <TableCell align="center">number of people</TableCell>
             <TableCell align="center">price pear person</TableCell>
             <TableCell align="center">total amount</TableCell>
@@ -26,15 +31,14 @@ function HotelsTable({ hotels }: { hotels: HotelReservation[] }) {
           {hotels.map((place) => (
             <TableRow>
               <TableCell component="th" scope="row">
-                {place.hotelName ? place.hotelName : <></>}
+                {place.name ? place.name : <></>}
               </TableCell>
               <TableCell align="center">{place.address}</TableCell>
-              <TableCell align="center">{place.date}</TableCell>
-              <TableCell align="center">
-                {place.toatlAmountOfMony / place.price}
-              </TableCell>
+              <TableCell align="center">{numberOfPeople}</TableCell>
               <TableCell align="center">{place.price}$</TableCell>
-              <TableCell align="center">{place.toatlAmountOfMony}$</TableCell>
+              <TableCell align="center">
+                {place.price * numberOfPeople}$
+              </TableCell>
             </TableRow>
           ))}
         </TableBody>
