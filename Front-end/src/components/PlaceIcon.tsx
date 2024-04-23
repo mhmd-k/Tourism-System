@@ -11,26 +11,26 @@ import AccountBalanceIcon from "@mui/icons-material/AccountBalance";
 function PlaceIcon({ placeType }: { placeType: string }) {
   let icon = null;
 
-  switch (placeType) {
-    case "hotel":
+  switch (placeType.slice(0, 3)) {
+    case "hot":
       icon = <Hotel />;
       break;
-    case "resturant":
+    case "res":
       icon = <Restaurant />;
       break;
-    case "night":
+    case "nig":
       icon = <Nightlife />;
       break;
     case "old":
       icon = <AccountBalanceIcon />;
       break;
-    case "natural":
+    case "nat":
       icon = <ParkIcon />;
       break;
-    case "shop":
+    case "sho":
       icon = <ShoppingCart />;
       break;
-    case "airport":
+    case "air":
       icon = <Flight />;
       break;
   }

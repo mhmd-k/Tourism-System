@@ -1,9 +1,15 @@
 import { List } from "@mui/material";
-import { TripDay } from "../../types";
+import { TripDay, TripPlace } from "../../types";
 import PlaceItem from "./PlaceItem";
 import { useEffect, useState } from "react";
 
-function DayList({ day }: { day: TripDay }) {
+function DayList({
+  day,
+  userPlaces,
+}: {
+  day: TripDay;
+  userPlaces: TripPlace[];
+}) {
   const [activePlace, setActivePlace] = useState<number>(0);
 
   useEffect(() => {
@@ -20,6 +26,7 @@ function DayList({ day }: { day: TripDay }) {
           isActive={activePlace === i}
           activeIndex={i}
           setActiveIndex={setActivePlace}
+          userPlaces={userPlaces}
         />
       ))}
     </List>

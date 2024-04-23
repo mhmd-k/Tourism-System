@@ -9,7 +9,7 @@ import { Box, Drawer, IconButton } from "@mui/material";
 import { CreditCard, InfoSharp, Map } from "@mui/icons-material";
 import DayModal from "./DayModal";
 import { mapStore } from "../../zustand/MapStore";
-import { Trip } from "../../types";
+import { Trip, TripPlace } from "../../types";
 import {
   formatMinutesToTime,
   placeSpentTime,
@@ -103,7 +103,7 @@ function TripPage() {
             }
           }
 
-          console.log("Updated day places: ", updatedDayPlaces);
+          console.log(`Updated day places[${day.dayId}]: `, updatedDayPlaces);
 
           newDays.push({ ...day, dayPlaces: updatedDayPlaces });
         }
@@ -142,6 +142,7 @@ function TripPage() {
         date={trip.date}
         fromCity={trip.fromCity}
         totalBudget={trip.totalBudget}
+        TotalCost={trip.TotalCost}
         numberOfPeople={trip.numberOfPeople}
       />
       <Stack
@@ -166,7 +167,10 @@ function TripPage() {
           handleOpenCloseModal={handleOpenCloseModel}
         />
       </Stack>
-      <DayList day={trip.tripDays[activeDay]} />
+      <DayList
+        day={trip.tripDays[activeDay]}
+        userPlaces={location.state.places as TripPlace[]}
+      />
     </>
   );
 

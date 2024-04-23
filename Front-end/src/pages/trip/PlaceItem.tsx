@@ -19,12 +19,14 @@ function PlaceItem({
   isActive,
   activeIndex,
   setActiveIndex,
+  userPlaces,
 }: {
   place: TripPlace;
   nextPlace: TripPlace | null;
   isActive: boolean;
   activeIndex: number;
   setActiveIndex: React.Dispatch<React.SetStateAction<number>>;
+  userPlaces: TripPlace[];
 }) {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
 
@@ -49,6 +51,11 @@ function PlaceItem({
     setActiveIndex(activeIndex);
   };
 
+  let isUserPlace = false;
+  userPlaces.forEach((e) => {
+    if (e.name === place.name) isUserPlace = true;
+  });
+
   return (
     <>
       <ListItem
@@ -69,7 +76,15 @@ function PlaceItem({
         }
       >
         <ListItemAvatar>
-          <Avatar className="avatar" title={placeType}>
+          <Avatar
+            className="avatar"
+            sx={{
+              background: isUserPlace
+                ? "linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); "
+                : "",
+            }}
+            title={placeType}
+          >
             <PlaceIcon placeType={placeType.toLowerCase()} />
           </Avatar>
         </ListItemAvatar>

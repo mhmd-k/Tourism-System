@@ -70,6 +70,7 @@ export interface Trip {
   fromCity: string;
   destination: string;
   totalBudget: number;
+  TotalCost: number;
   numberOfPeople: number;
   tripDays: TripDay[];
   flightReservation: FlightReservation[];

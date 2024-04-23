@@ -4,6 +4,7 @@ import {
   LoginRequest,
   PlaceLocation,
   SignupRequest,
+  TripPlace,
 } from "./types";
 
 export async function signup(request: SignupRequest) {
@@ -74,8 +75,29 @@ export async function getPath(
   }
 }
 
-export async function generateTrip(tripInfo: GenerateTripData) {
+export async function generateTrip(
+  userId: number,
+  tripInfo: GenerateTripData,
+  places: TripPlace[]
+) {
+  const romaPlaces = places.filter(
+    (e) => e.cityName && e.cityName.toLowerCase() === "roma"
+  );
+  const milanPlaces = places.filter(
+    (e) => e.cityName && e.cityName.toLowerCase() === "milan"
+  );
+  const venicePlaces = places.filter(
+    (e) => e.cityName && e.cityName.toLowerCase() === "venice"
+  );
+  const napoliPlaces = places.filter(
+    (e) => e.cityName && e.cityName.toLowerCase() === "napoli"
+  );
+  const florencePlaces = places.filter(
+    (e) => e.cityName && e.cityName.toLowerCase() === "florence"
+  );
+
   const body = {
+    user_id: userId,
     date: tripInfo.date.split("-").join("/"),
     fromcity: tripInfo.fromCity.toLowerCase(),
     tocountry: tripInfo.toCountry.toLowerCase(),
@@ -98,6 +120,203 @@ export async function generateTrip(tripInfo: GenerateTripData) {
       Traditional: Boolean(
         tripInfo.preferredFood.find((e) => e === "Traditional")
       ),
+    },
+    places: {
+      roma: {
+        night: romaPlaces
+          .filter((e) => e.placeType === "night_place")
+          .map((e) => ({
+            ...e,
+            placeType: "night",
+          })),
+        shopping: romaPlaces
+          .filter((e) => e.placeType === "shopping_place")
+          .map((e) => ({
+            ...e,
+            placeType: "shopping",
+          })),
+        natural: romaPlaces
+          .filter((e) => e.placeType === "natural_place")
+          .map((e) => ({
+            ...e,
+            placeType: "natural",
+          })),
+        Resturants: romaPlaces
+          .filter((e) => e.placeType === "restaurant")
+          .map((e) => ({
+            ...e,
+            placeType: "Resturant",
+          })),
+        old: romaPlaces
+          .filter((e) => e.placeType === "old_place")
+          .map((e) => ({
+            ...e,
+            placeType: "old",
+          })),
+        Hotels: romaPlaces
+          .filter((e) => e.placeType === "hotel")
+          .slice(0, 1)
+          .map((e) => ({
+            ...e,
+            placeType: e.placeType[0].toUpperCase() + e.placeType.slice(1),
+          })),
+      },
+      milan: {
+        night: milanPlaces
+          .filter((e) => e.placeType === "night_place")
+          .map((e) => ({
+            ...e,
+            placeType: "night",
+          })),
+        shopping: milanPlaces
+          .filter((e) => e.placeType === "shopping_place")
+          .map((e) => ({
+            ...e,
+            placeType: "shopping",
+          })),
+        natural: milanPlaces
+          .filter((e) => e.placeType === "natural_place")
+          .map((e) => ({
+            ...e,
+            placeType: "natural",
+          })),
+        Resturants: milanPlaces
+          .filter((e) => e.placeType === "restaurant")
+          .map((e) => ({
+            ...e,
+            placeType: "Resturant",
+          })),
+        old: milanPlaces
+          .filter((e) => e.placeType === "old_place")
+          .map((e) => ({
+            ...e,
+            placeType: "old",
+          })),
+        Hotels: milanPlaces
+          .filter((e) => e.placeType === "hotel")
+          .slice(0, 1)
+          .map((e) => ({
+            ...e,
+            placeType: e.placeType[0].toUpperCase() + e.placeType.slice(1),
+          })),
+      },
+      venice: {
+        night: venicePlaces
+          .filter((e) => e.placeType === "night_place")
+          .map((e) => ({
+            ...e,
+            placeType: "night",
+          })),
+        shopping: venicePlaces
+          .filter((e) => e.placeType === "shopping_place")
+          .map((e) => ({
+            ...e,
+            placeType: "shopping",
+          })),
+        natural: venicePlaces
+          .filter((e) => e.placeType === "natural_place")
+          .map((e) => ({
+            ...e,
+            placeType: "natural",
+          })),
+        Resturants: venicePlaces
+          .filter((e) => e.placeType === "restaurant")
+          .map((e) => ({
+            ...e,
+            placeType: "Resturant",
+          })),
+        old: venicePlaces
+          .filter((e) => e.placeType === "old_place")
+          .map((e) => ({
+            ...e,
+            placeType: "old",
+          })),
+        Hotels: venicePlaces
+          .filter((e) => e.placeType === "hotel")
+          .slice(0, 1)
+          .map((e) => ({
+            ...e,
+            placeType: e.placeType[0].toUpperCase() + e.placeType.slice(1),
+          })),
+      },
+      napoli: {
+        night: napoliPlaces
+          .filter((e) => e.placeType === "night_place")
+          .map((e) => ({
+            ...e,
+            placeType: "night",
+          })),
+        shopping: napoliPlaces
+          .filter((e) => e.placeType === "shopping_place")
+          .map((e) => ({
+            ...e,
+            placeType: "shopping",
+          })),
+        natural: napoliPlaces
+          .filter((e) => e.placeType === "natural_place")
+          .map((e) => ({
+            ...e,
+            placeType: "natural",
+          })),
+        Resturants: napoliPlaces
+          .filter((e) => e.placeType === "restaurant")
+          .map((e) => ({
+            ...e,
+            placeType: "Resturant",
+          })),
+        old: napoliPlaces
+          .filter((e) => e.placeType === "old_place")
+          .map((e) => ({
+            ...e,
+            placeType: "old",
+          })),
+        Hotel: napoliPlaces
+          .filter((e) => e.placeType === "hotel")
+          .slice(0, 1)
+          .map((e) => ({
+            ...e,
+            placeType: e.placeType[0].toUpperCase() + e.placeType.slice(1),
+          })),
+      },
+      florence: {
+        night: florencePlaces
+          .filter((e) => e.placeType === "night_place")
+          .map((e) => ({
+            ...e,
+            placeType: "night",
+          })),
+        shopping: florencePlaces
+          .filter((e) => e.placeType === "shopping_place")
+          .map((e) => ({
+            ...e,
+            placeType: "shopping",
+          })),
+        natural: florencePlaces
+          .filter((e) => e.placeType === "natural_place")
+          .map((e) => ({
+            ...e,
+            placeType: "natural",
+          })),
+        Resturants: florencePlaces
+          .filter((e) => e.placeType === "restaurant")
+          .map((e) => ({
+            ...e,
+            placeType: "Resturant",
+          })),
+        old: florencePlaces
+          .filter((e) => e.placeType === "old_place")
+          .map((e) => ({
+            ...e,
+            placeType: "old",
+          })),
+        Hotels: florencePlaces
+          .filter((e) => e.placeType === "hotel")
+          .slice(0, 1)
+          .map((e) => ({
+            ...e,
+            placeType: e.placeType[0].toUpperCase() + e.placeType.slice(1),
+          })),
+      },
     },
   };
 

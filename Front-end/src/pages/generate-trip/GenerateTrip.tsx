@@ -2,7 +2,7 @@ import { GenerateTripData, TripPlace } from "../../types";
 import { validateTripInfo } from "../../utils";
 import Survey from "./Survey";
 import Spinner from "../../components/Spinner";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import {
   Alert,
   Button,
@@ -19,7 +19,6 @@ import { userStore } from "../../zustand/UserStore";
 import { Navigate, useNavigate } from "react-router-dom";
 import { generateTrip } from "../../RESTFunctions";
 import { Error } from "@mui/icons-material";
-import { loadModel } from "../../predict-ratings-model/a";
 
 function GenerateTrip() {
   const [formData, setFormData] = useState<GenerateTripData>({
@@ -43,8 +42,16 @@ function GenerateTrip() {
   const user = userStore((state) => state.user);
 
   // console.log("genearateTrip:", formData);
-  // console.log("places: ", places);
+  console.log("places: ", places);
   // console.log("trip: ", trip);
+
+  if (!user?.token) {
+    return Navigate({
+      to: "../login",
+      replace: true,
+      state: "You must be loged in first",
+    });
+  }
 
   const handleSubmit = async () => {
     setError(null);
@@ -58,11 +65,17 @@ function GenerateTrip() {
     }
 
     try {
-      const trip = await generateTrip(formData);
+      const trip = await generateTrip(user?.id, formData, places);
 
       console.log("trip generate: ", trip);
 
-      navigate("../trips/1", { state: { trip: trip } });
+      navigate("../trips/1", {
+        state: {
+          trip: trip,
+          places: places,
+          careAboutBudget: formData.careAboutBudget,
+        },
+      });
     } catch (error) {
       console.error(error);
       setError("something went worng please try again later");
@@ -70,18 +83,6 @@ function GenerateTrip() {
       setIsLoading(false);
     }
   };
-
-  useEffect(() => {
-    loadModel();
-  }, []);
-
-  if (!user?.token) {
-    return Navigate({
-      to: "../login",
-      replace: true,
-      state: "You must be loged in first",
-    });
-  }
 
   return (
     <div className="generate-trip">

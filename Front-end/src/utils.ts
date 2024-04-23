@@ -22,7 +22,7 @@ export function validateTripInfo(
 ): string | null {
   // if there is a field empty
   for (const [key, value] of Object.entries(userPreferrences)) {
-    if (!value && key !== "careAboutBudget") {
+    if (!value && key !== "careAboutBudget" && key !== "budget") {
       return "Please fill all the fields";
     }
   }
@@ -112,25 +112,10 @@ export function formatTravelTime(minutes: number): string {
 
 export function placeSpentTime(placeType: string): number {
   switch (placeType.toLowerCase()) {
-    case "hotel":
-      return 120; // 2 hour
-
-    case "night":
-      return 120; // 2 hours
-
-    case "old":
-      return 120; // 1 hour 30 minutes
-
-    case "natural":
-      return 120; // 2 hours
-
-    case "shopping":
-      return 120; // 1 hour
-
     case "resturant":
-      return 60; // 45 minutes
+      return 60; // 1 hour
 
     default:
-      return 0;
+      return 120; // 2 hours
   }
 }
