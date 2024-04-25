@@ -81,8 +81,8 @@ id,name,address,city_id,location,price,stars
 79,Hotel Piazza Bellini & Apartments,"Via S. Maria di Costantinopoli 101, near Piazza Bellini.",3,40.85065983457499  14.251744154030545,200,3
 80,Hotel Piazza Bellini & Apartments," Via S. Maria di Costantinopoli 101, near Piazza Bellini.",3,40.85064360362496  14.2517656117025,150,3
 81,Hotel San Francesco,"at Corso Umberto I 104, in a former monastery in the historic center.",3,40.84344206774152  14.24448343868621,100,2
-82,Hotel Toledo,"Montecalvario 15, in the lively neighborhood of Chiaia.",3,39.86801805691146  -4.024354965663239,80,2
-83,Hotel Tiempo,"Via del Sannio 19, near the central train station.",3,39.857100959082246  -4.030154719039112,150,3
+82,B&B Hotel Napoli,"P.za Giuseppe Garibaldi, 32, 80142 Napoli NA, Italy",3,40.85418564145672 14.267898931865965,80,2
+83,Grand Hotel Vesuvio,"Via Partenope, 45, 80121 Napoli NA, Italy",3,40.83135039491359 14.24801363748908,150,3
 84,Hotel Royal Prisco,"Via Posillipo 394, in the picturesque neighborhood of Posillipo.",3,40.63045456489176 14.484690367510648,350,5
 85,Hotel Miramare,"Via Nazario Sauro 24, in the Mergellina neighborhood, overlooking the sea.",3,40.8345205563515  14.250919591906811,200,4
 86,Hotel Nuvo," Nuova Agnano 5, in the Fuorigrotta district, close to sports facilities and exhibition centers.",3,40.81729995220598  14.175692428825293,150,3

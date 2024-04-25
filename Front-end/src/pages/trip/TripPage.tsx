@@ -113,7 +113,7 @@ function TripPage() {
       setIsLoading(false);
     }
 
-    fetchTripTimes();
+    // fetchTripTimes();
   }, []);
 
   useEffect(() => {
@@ -144,6 +144,7 @@ function TripPage() {
         totalBudget={trip.totalBudget}
         TotalCost={trip.TotalCost}
         numberOfPeople={trip.numberOfPeople}
+        careAboutBudget={location.state.careAboutBudget as boolean}
       />
       <Stack
         direction={"row"}

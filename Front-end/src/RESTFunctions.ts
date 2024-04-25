@@ -270,7 +270,7 @@ export async function generateTrip(
             ...e,
             placeType: "old",
           })),
-        Hotel: napoliPlaces
+        Hotels: napoliPlaces
           .filter((e) => e.placeType === "hotel")
           .slice(0, 1)
           .map((e) => ({
@@ -331,7 +331,7 @@ export async function generateTrip(
     console.log("response: ", response);
 
     if (response?.status === 200) {
-      const tripData = response.data;
+      const tripData = response.data.trip;
 
       const tripDays = Object.values(tripData.tripDays).map((day) => ({
         // @ts-expect-error unknown type
