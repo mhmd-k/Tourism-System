@@ -1,5 +1,4 @@
 import { ChangeEvent, useEffect, useState } from "react";
-import tripData from "../../data/generateTripResponse.json";
 import TripHeader from "./TripHeader";
 import Pagination from "@mui/material/Pagination";
 import Stack from "@mui/material/Stack";
@@ -9,32 +8,26 @@ import { Box, Drawer, IconButton } from "@mui/material";
 import { CreditCard, InfoSharp, Map } from "@mui/icons-material";
 import DayModal from "./DayModal";
 import { mapStore } from "../../zustand/MapStore";
-import { Trip, TripPlace } from "../../types";
-import {
-  formatMinutesToTime,
-  placeSpentTime,
-  stringToLngLat,
-} from "../../utils";
-import { getPath } from "../../RESTFunctions";
+import { stringToLngLat } from "../../utils";
 import Spinner from "../../components/Spinner";
 import ReservationsModal from "./ReservationsModal";
 import { useLocation } from "react-router-dom";
 
 function TripPage() {
-  const [trip, setTrip] = useState<Trip | null>(tripData);
-  const [isLoading, setIsLoading] = useState(false);
-  const [activeDay, setActiveDay] = useState(0);
+  const [isLoading] = useState(false);
   const [isMobileNavbarOpen, setIsMobileNavbarOpen] = useState<boolean>(false);
   const [isDayModalOpen, setIsDayModalOpen] = useState<boolean>(false);
   const [isReservationsModalOpen, setIsReservationsModalOpen] =
     useState<boolean>(false);
 
+  const trip = mapStore((state) => state.trip);
+  const activeDay = mapStore((state) => state.activeDay);
+  const setActiveDay = mapStore((state) => state.setActiveDay);
+
   console.log("activeDay: ", activeDay);
   console.log("trip: ", trip);
 
   const location = useLocation();
-
-  console.log("location: ", location);
 
   const setCenter = mapStore((state) => state.setCenter);
   const setDestination = mapStore((state) => state.setDestination);
@@ -62,59 +55,46 @@ function TripPage() {
     setIsReservationsModalOpen(!isReservationsModalOpen);
   };
 
-  useEffect(() => {
-    const newTrip = location.state.trip as Trip;
-
-    setTrip(newTrip);
-
-    async function fetchTripTimes() {
-      setIsLoading(true);
-      const newDays = [];
-      if (trip) {
-        for (const day of newTrip.tripDays) {
-          let minutes = 9 * 60;
-          const updatedDayPlaces = [];
-          for (let i = 0; i < day.dayPlaces.length; i++) {
-            if (i !== 0) {
-              await new Promise((resolve) => setTimeout(resolve, 1000)); // Delay of 1 second
-
-              const res = await getPath(
-                stringToLngLat(day.dayPlaces[i - 1].location),
-                stringToLngLat(day.dayPlaces[i].location)
-              );
-
-              minutes += res?.travelTimeInSeconds / 60;
-
-              const spentTime = placeSpentTime(day.dayPlaces[i].placeType);
-
-              updatedDayPlaces.push({
-                ...day.dayPlaces[i],
-                travelTimeInMinutes: Math.round(res?.travelTimeInSeconds / 60),
-                time: formatMinutesToTime(minutes),
-                spentTime: spentTime,
-              });
-
-              minutes += spentTime;
-            } else {
-              updatedDayPlaces.push({
-                ...day.dayPlaces[i],
-                time: formatMinutesToTime(minutes),
-              });
-            }
-          }
-
-          console.log(`Updated day places[${day.dayId}]: `, updatedDayPlaces);
-
-          newDays.push({ ...day, dayPlaces: updatedDayPlaces });
-        }
-      }
-
-      setTrip({ ...newTrip, tripDays: newDays });
-      setIsLoading(false);
-    }
-
-    // fetchTripTimes();
-  }, []);
+  // useEffect(() => {
+  // async function fetchTripTimes() {
+  //   setIsLoading(true);
+  //   const newDays = [];
+  //   if (trip) {
+  //     for (const day of newTrip.tripDays) {
+  //       let minutes = 9 * 60;
+  //       const updatedDayPlaces = [];
+  //       for (let i = 0; i < day.dayPlaces.length; i++) {
+  //         if (i !== 0) {
+  //           await new Promise((resolve) => setTimeout(resolve, 1000)); // Delay of 1 second
+  //           const res = await getPath(
+  //             stringToLngLat(day.dayPlaces[i - 1].location),
+  //             stringToLngLat(day.dayPlaces[i].location)
+  //           );
+  //           minutes += res?.travelTimeInSeconds / 60;
+  //           const spentTime = placeSpentTime(day.dayPlaces[i].placeType);
+  //           updatedDayPlaces.push({
+  //             ...day.dayPlaces[i],
+  //             travelTimeInMinutes: Math.round(res?.travelTimeInSeconds / 60),
+  //             time: formatMinutesToTime(minutes),
+  //             spentTime: spentTime,
+  //           });
+  //           minutes += spentTime;
+  //         } else {
+  //           updatedDayPlaces.push({
+  //             ...day.dayPlaces[i],
+  //             time: formatMinutesToTime(minutes),
+  //           });
+  //         }
+  //       }
+  //       console.log(`Updated day places[${day.dayId}]: `, updatedDayPlaces);
+  //       newDays.push({ ...day, dayPlaces: updatedDayPlaces });
+  //     }
+  //   }
+  //   setTrip({ ...newTrip, tripDays: newDays });
+  //   setIsLoading(false);
+  // }
+  // fetchTripTimes();
+  // }, []);
 
   useEffect(() => {
     if (trip) {
@@ -137,15 +117,7 @@ function TripPage() {
 
   const tripNavbar = (
     <>
-      <TripHeader
-        destination={trip.destination}
-        date={trip.date}
-        fromCity={trip.fromCity}
-        totalBudget={trip.totalBudget}
-        TotalCost={trip.TotalCost}
-        numberOfPeople={trip.numberOfPeople}
-        careAboutBudget={location.state.careAboutBudget as boolean}
-      />
+      <TripHeader careAboutBudget={location.state.careAboutBudget as boolean} />
       <Stack
         direction={"row"}
         alignItems={"center"}
@@ -162,16 +134,11 @@ function TripPage() {
           <InfoSharp />
         </IconButton>
         <DayModal
-          activeDay={activeDay}
-          day={trip.tripDays[activeDay]}
           isModalOpen={isDayModalOpen}
           handleOpenCloseModal={handleOpenCloseModel}
         />
       </Stack>
-      <DayList
-        day={trip.tripDays[activeDay]}
-        userPlaces={location.state.places as TripPlace[]}
-      />
+      <DayList />
     </>
   );
 
@@ -200,9 +167,6 @@ function TripPage() {
       <ReservationsModal
         handleOpenCloseModal={handleOpenCloseReservationsModel}
         isModalOpen={isReservationsModalOpen}
-        flightsReservations={trip.flightReservation}
-        hotelsReservations={trip.hotelReservation}
-        numberOfPeople={trip.numberOfPeople}
       />
     </div>
   );

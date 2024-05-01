@@ -1,45 +1,36 @@
-interface TripHeaderProps {
-  destination: string;
-  date: string;
-  fromCity: string;
-  totalBudget: number;
-  TotalCost: number;
-  numberOfPeople: number;
-  careAboutBudget: boolean;
-}
+import { mapStore } from "../../zustand/MapStore";
 
-function TripHeader({
-  destination,
-  date,
-  totalBudget,
-  TotalCost,
-  numberOfPeople,
-  careAboutBudget,
-}: TripHeaderProps) {
+function TripHeader({ careAboutBudget }: { careAboutBudget: boolean }) {
+  const trip = mapStore((state) => state.trip);
+
+  if (!trip) return;
+
   return (
     <div className="trip-header">
-      <h2>Trip to {destination}</h2>
+      <h2>Trip to {trip.destination}</h2>
       <ul>
         <li>
-          date: <span>{date}</span>
+          date: <span>{trip.date}</span>
         </li>
         {careAboutBudget ? (
           <li>
             budget:{" "}
             <span
-              style={{ color: totalBudget - TotalCost > 0 ? "blue" : "red" }}
+              style={{
+                color: trip.totalBudget - trip.TotalCost > 0 ? "blue" : "red",
+              }}
             >
-              {totalBudget}$
+              {trip.totalBudget}$
             </span>
           </li>
         ) : (
           <></>
         )}
         <li>
-          needed Mony: <span>{TotalCost}$</span>
+          needed Mony: <span>{trip.TotalCost}$</span>
         </li>
         <li>
-          number of people: <span>{numberOfPeople}</span>
+          number of people: <span>{trip.numberOfPeople}</span>
         </li>
       </ul>
     </div>

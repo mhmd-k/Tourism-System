@@ -5,15 +5,14 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
-import { FlightReservation } from "../types";
+import { mapStore } from "../zustand/MapStore";
 
-function FlightsTable({
-  flights,
-  numberOfPeople,
-}: {
-  flights: FlightReservation[];
-  numberOfPeople: number;
-}) {
+function FlightsTable() {
+  const trip = mapStore((state) => state.trip);
+
+  const flights = trip ? trip.flightReservation : [];
+  const numberOfPeople = trip ? trip.numberOfPeople : 0;
+
   return (
     <TableContainer component={Paper}>
       <Table>

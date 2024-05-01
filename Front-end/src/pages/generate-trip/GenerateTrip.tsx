@@ -19,6 +19,7 @@ import { userStore } from "../../zustand/UserStore";
 import { Navigate, useNavigate } from "react-router-dom";
 import { generateTrip } from "../../RESTFunctions";
 import { Error } from "@mui/icons-material";
+import { mapStore } from "../../zustand/MapStore";
 
 function GenerateTrip() {
   const [formData, setFormData] = useState<GenerateTripData>({
@@ -40,6 +41,8 @@ function GenerateTrip() {
   const navigate = useNavigate();
 
   const user = userStore((state) => state.user);
+
+  const setTrip = mapStore((state) => state.setTrip);
 
   // console.log("genearateTrip:", formData);
   console.log("places: ", places);
@@ -67,15 +70,11 @@ function GenerateTrip() {
     try {
       const trip = await generateTrip(user?.id, formData, places);
 
-      console.log("trip generate: ", trip);
+      console.log("trip generated: ", trip);
 
-      navigate("../trips/1", {
-        state: {
-          trip: trip,
-          places: places,
-          careAboutBudget: formData.careAboutBudget,
-        },
-      });
+      setTrip(trip);
+
+      navigate("../trips/1");
     } catch (error) {
       console.error(error);
       setError("something went worng please try again later");

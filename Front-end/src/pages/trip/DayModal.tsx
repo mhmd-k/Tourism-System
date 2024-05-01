@@ -1,18 +1,21 @@
 import { Backdrop, Box, Fade, Modal } from "@mui/material";
-import { TripDay } from "../../types";
 import { AttachMoney, Bed, LocationCity } from "@mui/icons-material";
+import { mapStore } from "../../zustand/MapStore";
 
 function DayModal({
-  activeDay,
-  day,
   isModalOpen,
   handleOpenCloseModal,
 }: {
-  activeDay: number;
-  day: TripDay;
   isModalOpen: boolean;
   handleOpenCloseModal: () => void;
 }) {
+  const activeDay = mapStore((state) => state.activeDay);
+  const trip = mapStore((state) => state.trip);
+
+  if (!trip) return;
+
+  const day = trip.tripDays[activeDay];
+
   return (
     <Modal
       open={isModalOpen}

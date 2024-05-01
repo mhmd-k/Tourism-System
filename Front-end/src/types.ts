@@ -75,6 +75,7 @@ export interface Trip {
   tripDays: TripDay[];
   flightReservation: FlightReservation[];
   hotelReservation: HotelReservation[];
+  careAboutBudget?: boolean;
 }
 
 export interface TripDay {

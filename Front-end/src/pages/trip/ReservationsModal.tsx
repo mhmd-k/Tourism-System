@@ -13,7 +13,7 @@ import SimCardRoundedIcon from "@mui/icons-material/SimCardRounded";
 import { styled } from "@mui/system";
 import { Alert, Button } from "@mui/material";
 import { Info } from "@mui/icons-material";
-import { FlightReservation, HotelReservation } from "../../types";
+import { mapStore } from "../../zustand/MapStore";
 
 const FormGrid = styled("div")(() => ({
   display: "flex",
@@ -23,19 +23,19 @@ const FormGrid = styled("div")(() => ({
 function ReservationsModal({
   isModalOpen,
   handleOpenCloseModal,
-  hotelsReservations,
-  flightsReservations,
-  numberOfPeople,
 }: {
   isModalOpen: boolean;
   handleOpenCloseModal: () => void;
-  hotelsReservations: HotelReservation[];
-  flightsReservations: FlightReservation[];
-  numberOfPeople: number;
 }) {
   const [cardNumber, setCardNumber] = useState("");
   const [cvv, setCvv] = useState("");
   const [expirationDate, setExpirationDate] = useState("");
+
+  const trip = mapStore((state) => state.trip);
+
+  const flightsReservations = trip ? trip.flightReservation : [];
+  const hotelsReservations = trip ? trip.hotelReservation : [];
+  const numberOfPeople = trip ? trip.numberOfPeople : 0;
 
   const handleCardNumberChange = (event: { target: { value: string } }) => {
     const value = event.target.value.replace(/\D/g, "");
@@ -83,18 +83,8 @@ function ReservationsModal({
       <Fade in={isModalOpen}>
         <Box className="reservations-popup">
           <h3>Reservations Needed:</h3>
-          {hotelsReservations && (
-            <HotelsTable
-              hotels={hotelsReservations}
-              numberOfPeople={numberOfPeople}
-            />
-          )}
-          {flightsReservations && (
-            <FlightsTable
-              flights={flightsReservations}
-              numberOfPeople={numberOfPeople}
-            />
-          )}
+          {hotelsReservations && <HotelsTable />}
+          {flightsReservations && <FlightsTable />}
           <p>Total: {totalCost}$</p>
           <Box
             sx={{
