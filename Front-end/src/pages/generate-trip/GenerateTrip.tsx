@@ -28,7 +28,8 @@ function GenerateTrip() {
     date: "",
     numberOfDays: 0,
     numberOfPeople: 0,
-    careAboutBudget: true,
+    cheapestTrip: true,
+    careAboutBudget: false,
     budget: 0,
     preferredFood: [],
     preferredPlaces: [],
@@ -43,10 +44,10 @@ function GenerateTrip() {
   const user = userStore((state) => state.user);
 
   const setTrip = mapStore((state) => state.setTrip);
+  const setActiveDay = mapStore((state) => state.setActiveDay);
 
   // console.log("genearateTrip:", formData);
   console.log("places: ", places);
-  // console.log("trip: ", trip);
 
   if (!user?.token) {
     return Navigate({
@@ -67,40 +68,47 @@ function GenerateTrip() {
       return;
     }
 
-    try {
-      const trip = await generateTrip(user?.id, formData, places);
+    const trip = await generateTrip(user?.id, formData, places);
 
-      console.log("trip generated: ", trip);
+    console.log("trip generated: ", trip);
 
+    if (trip) {
       setTrip(trip);
-
-      navigate("../trips/1");
-    } catch (error) {
-      console.error(error);
+      setActiveDay(0);
+      navigate("../trips/1", { state: { places: places } });
+    } else {
       setError("something went worng please try again later");
-    } finally {
-      setIsLoading(false);
     }
+
+    setIsLoading(false);
   };
 
   return (
     <div className="generate-trip">
       <Stack direction={"row"} sx={{ height: "100%" }}>
         <Container className="generate-trip-container">
-          {error ? (
-            <Alert color="error" icon={<Error />}>
-              {error}
-            </Alert>
-          ) : (
-            <></>
-          )}
-
           <div className="form-body">
             {page === 0 && (
               <Survey setFormData={setFormData} formData={formData} />
             )}
             {page === 1 && <PlacesSearch setPlaces={setPlaces} />}
           </div>
+
+          {error ? (
+            <Alert
+              variant="filled"
+              severity="error"
+              sx={{ marginTop: 2 }}
+              icon={<Error />}
+              onClose={() => {
+                setError(null);
+              }}
+            >
+              {error}
+            </Alert>
+          ) : (
+            <></>
+          )}
 
           <ButtonGroup sx={{ p: 3, gap: 2, justifyContent: "center" }}>
             <IconButton onClick={() => setPage(page - 1)} disabled={page === 0}>
@@ -116,7 +124,7 @@ function GenerateTrip() {
                 borderRadius: "5px !important",
               }}
               endIcon={isLoading ? <></> : <AutoFixHighOutlinedIcon />}
-              disabled={isLoading || page === 0}
+              disabled={isLoading}
               onClick={handleSubmit}
             >
               {isLoading ? <Spinner /> : "Generate Trip"}

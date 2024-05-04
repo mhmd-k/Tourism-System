@@ -7,8 +7,10 @@ import {
   Stack,
   TextField,
   Typography,
-  Checkbox,
   FormControlLabel,
+  Radio,
+  FormLabel,
+  RadioGroup,
 } from "@mui/material";
 import { GroupOutlined, PriceChange } from "@mui/icons-material";
 import { ChangeEvent } from "react";
@@ -127,10 +129,8 @@ const cities = [
   "Naypyidaw",
   "Gaborone",
   "Bissau",
-  "Nukuʻalofa",
   "Port-au-Prince",
   "Windhoek",
-  "Brazzaville",
 ];
 
 function Survey({
@@ -239,14 +239,14 @@ function Survey({
             <TextField
               type="number"
               label="Number of People"
-              inputProps={{ min: "1", max: "8" }}
+              inputProps={{ min: "1", max: "30" }}
               size="small"
               value={formData.numberOfPeople}
               onChange={(e) =>
                 setFormData((prevState) => ({
                   ...prevState,
                   numberOfPeople:
-                    Number(e.target.value) > 8 ? 8 : Number(e.target.value),
+                    Number(e.target.value) > 30 ? 30 : Number(e.target.value),
                 }))
               }
             />
@@ -256,49 +256,118 @@ function Survey({
             <TextField
               type="number"
               label="Number of Days"
-              inputProps={{ min: "1" }}
+              inputProps={{ min: "1", max: "26" }}
               size="small"
               value={formData.numberOfDays}
               onChange={(e) =>
                 setFormData((prevState) => ({
                   ...prevState,
-                  numberOfDays: Number(e.target.value),
+                  numberOfDays:
+                    Number(e.target.value) > 26 ? 26 : Number(e.target.value),
                 }))
               }
             />
           </FormControl>
         </Stack>
-        <FormControl className="generate-trip-input-container">
-          <TextField
-            type="number"
-            label="Total Budget in Dollars"
-            inputProps={{ min: "1000" }}
-            size="small"
-            disabled={!formData.careAboutBudget}
-            value={formData.budget}
-            onChange={(e) =>
-              setFormData((prevState) => ({
-                ...prevState,
-                budget: Number(e.target.value),
-              }))
-            }
-          />
-          <PriceChange />
+        <FormControl>
+          <FormLabel
+            id="care-about-budget"
+            sx={{ textAlign: "left", color: "var(--text-color)" }}
+          >
+            Do you care about budget?
+          </FormLabel>
+          <RadioGroup
+            aria-labelledby="care-about-budget"
+            name="radio-buttons-group"
+            sx={{ display: "flex", flexDirection: "row" }}
+          >
+            <FormControlLabel
+              onClick={() =>
+                setFormData((prevState) => ({
+                  ...prevState,
+                  careAboutBudget: true,
+                }))
+              }
+              control={<Radio />}
+              label="Yes"
+              checked={formData.careAboutBudget === true}
+            />
+            <FormControlLabel
+              onClick={() =>
+                setFormData((prevState) => ({
+                  ...prevState,
+                  careAboutBudget: false,
+                }))
+              }
+              control={<Radio />}
+              label="No"
+              checked={formData.careAboutBudget === false}
+            />
+          </RadioGroup>
         </FormControl>
-        <FormControlLabel
-          control={
-            <Checkbox
-              checked={!formData.careAboutBudget}
-              onChange={() =>
-                setFormData((prevData) => ({
-                  ...prevData,
-                  careAboutBudget: !prevData.careAboutBudget,
+
+        {formData.careAboutBudget ? (
+          <FormControl>
+            <FormLabel
+              id="cheapest-trip"
+              sx={{ textAlign: "left", color: "var(--text-color)" }}
+            >
+              Do you want the cheapest trip?
+            </FormLabel>
+            <RadioGroup
+              aria-labelledby="cheapest-trip"
+              name="radio-buttons-group"
+              sx={{ display: "flex", flexDirection: "row" }}
+            >
+              <FormControlLabel
+                onClick={() =>
+                  setFormData((prevState) => ({
+                    ...prevState,
+                    cheapestTrip: true,
+                  }))
+                }
+                control={<Radio />}
+                label="Yes"
+                checked={formData.cheapestTrip === true}
+              />
+              <FormControlLabel
+                onClick={() =>
+                  setFormData((prevState) => ({
+                    ...prevState,
+                    cheapestTrip: false,
+                  }))
+                }
+                control={<Radio />}
+                label="No"
+                checked={formData.cheapestTrip === false}
+              />
+            </RadioGroup>
+          </FormControl>
+        ) : (
+          <></>
+        )}
+
+        {formData.careAboutBudget && !formData.cheapestTrip ? (
+          <FormControl className="generate-trip-input-container">
+            <TextField
+              type="number"
+              label="Total Budget in Dollars"
+              inputProps={{ min: "500" }}
+              size="small"
+              value={formData.budget}
+              onChange={(e) =>
+                setFormData((prevState) => ({
+                  ...prevState,
+                  budget: Number(e.target.value),
                 }))
               }
             />
-          }
-          label="Doesn't care about budget"
-        />
+            <PriceChange />
+          </FormControl>
+        ) : (
+          <></>
+        )}
+
         <FormControl>
           <InputLabel size="small" id="to-country">
             Prefered Food

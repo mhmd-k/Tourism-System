@@ -1,6 +1,6 @@
 import { mapStore } from "../../zustand/MapStore";
 
-function TripHeader({ careAboutBudget }: { careAboutBudget: boolean }) {
+function TripHeader() {
   const trip = mapStore((state) => state.trip);
 
   if (!trip) return;
@@ -12,7 +12,7 @@ function TripHeader({ careAboutBudget }: { careAboutBudget: boolean }) {
         <li>
           date: <span>{trip.date}</span>
         </li>
-        {careAboutBudget ? (
+        {typeof trip.totalBudget == "number" ? (
           <li>
             budget:{" "}
             <span
@@ -27,7 +27,7 @@ function TripHeader({ careAboutBudget }: { careAboutBudget: boolean }) {
           <></>
         )}
         <li>
-          needed Mony: <span>{trip.TotalCost}$</span>
+          needed Money: <span>{trip.TotalCost}$</span>
         </li>
         <li>
           number of people: <span>{trip.numberOfPeople}</span>

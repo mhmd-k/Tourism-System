@@ -72,11 +72,11 @@ function PlacesSearch({
         marginBottom={"20px"}
         fontWeight={"bold"}
       >
-        Add a specific places
+        Add some specific places
       </Typography>
 
       {error ? (
-        <Alert color="error" icon={<Error />}>
+        <Alert icon={<Error />} variant="filled" severity="error">
           {error}
         </Alert>
       ) : (
@@ -91,12 +91,6 @@ function PlacesSearch({
         onClose={() => {
           setOpen(false);
         }}
-        isOptionEqualToValue={(option, value) => option.name === value.name}
-        getOptionLabel={(option) =>
-          `${option.name} - ${option.cityName} - ${option.placeType}`
-        }
-        options={options}
-        loading={isLoading}
         renderInput={(params) => (
           <TextField
             {...params}
@@ -116,8 +110,24 @@ function PlacesSearch({
             onChange={(e) => setPlaceName(e.target.value)}
           />
         )}
-        multiple
+        groupBy={(option) =>
+          `${option.placeType.split("_").join(" ").toUpperCase()}S`
+        }
+        renderOption={(props, option) => (
+          <li {...props} key={`${option.id} - ${option.name}`}>
+            {option.name},{" "}
+            <u>
+              <i>{option.cityName}</i>
+            </u>
+          </li>
+        )}
+        isOptionEqualToValue={(option, value) => option.name === value.name}
+        getOptionLabel={(option) => `${option.name} - ${option.cityName}`}
+        options={options}
+        loading={isLoading}
         onChange={handleChange}
+        autoHighlight
+        multiple
       />
     </>
   );

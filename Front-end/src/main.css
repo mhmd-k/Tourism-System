@@ -258,14 +258,16 @@ input::-webkit-inner-spin-button {
     }
   }
 
-  button {
-    background-color: var(--green-color);
-    color: white;
-    border-radius: 3px;
-  }
+  .MuiButtonGroup-root {
+    button {
+      background-color: var(--green-color);
+      color: white;
+      border-radius: 3px;
+    }
 
-  button:hover {
-    background-color: var(--green-color);
+    button:hover {
+      background-color: var(--green-color);
+    }
   }
 
   .generate-trip-input-container {

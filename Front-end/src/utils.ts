@@ -22,7 +22,12 @@ export function validateTripInfo(
 ): string | null {
   // if there is a field empty
   for (const [key, value] of Object.entries(userPreferrences)) {
-    if (!value && key !== "careAboutBudget" && key !== "budget") {
+    if (
+      !value &&
+      key !== "careAboutBudget" &&
+      key !== "budget" &&
+      key !== "cheapestTrip"
+    ) {
       return "Please fill all the fields";
     }
   }
@@ -34,6 +39,13 @@ export function validateTripInfo(
   // if the user choosed less than 2 types of places
   if (userPreferrences.preferredPlaces.length < 2)
     return "Please Choose at least two types of Places.";
+
+  // if the number of days is greter than 26
+  if (userPreferrences.numberOfDays > 26) return "Maximum number of days is 26";
+
+  // if the number of people is greter than 30
+  if (userPreferrences.numberOfPeople > 30)
+    return "Maximum number of people is 30";
 
   return null;
 }

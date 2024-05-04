@@ -53,6 +53,7 @@ export interface GenerateTripData {
   date: string;
   numberOfDays: number;
   numberOfPeople: number;
+  cheapestTrip: boolean;
   careAboutBudget: boolean;
   budget: number;
   preferredFood: Array<string>;
@@ -65,7 +66,7 @@ export interface PlaceLocation {
 }
 
 export interface Trip {
-  id: number;
+  trip_id: number;
   date: string;
   fromCity: string;
   destination: string;
@@ -75,7 +76,6 @@ export interface Trip {
   tripDays: TripDay[];
   flightReservation: FlightReservation[];
   hotelReservation: HotelReservation[];
-  careAboutBudget?: boolean;
 }
 
 export interface TripDay {
@@ -107,7 +107,7 @@ export interface TripPlace {
   transportaionMethod?: string | null;
   ticketPrice?: number;
   travelTimeInMinutes?: number;
-  time?: string;
+  time?: number;
   spentTime?: number;
   city_id?: number;
   cityName?: string;

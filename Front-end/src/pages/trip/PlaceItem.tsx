@@ -90,7 +90,14 @@ function PlaceItem({
             <PlaceIcon placeType={place.placeType.toLowerCase()} />
           </Avatar>
         </ListItemAvatar>
-        <ListItemText primary={place.name} secondary={place.address} />
+        <ListItemText
+          primary={
+            place.name.length > 35
+              ? `${place.name.substring(0, 25)}...`
+              : place.name
+          }
+          secondary={place.address}
+        />
       </ListItem>
       {isModalOpen ? (
         <PlaceModal

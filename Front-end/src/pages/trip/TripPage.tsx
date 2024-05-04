@@ -11,7 +11,6 @@ import { mapStore } from "../../zustand/MapStore";
 import { stringToLngLat } from "../../utils";
 import Spinner from "../../components/Spinner";
 import ReservationsModal from "./ReservationsModal";
-import { useLocation } from "react-router-dom";
 
 function TripPage() {
   const [isLoading] = useState(false);
@@ -26,8 +25,6 @@ function TripPage() {
 
   console.log("activeDay: ", activeDay);
   console.log("trip: ", trip);
-
-  const location = useLocation();
 
   const setCenter = mapStore((state) => state.setCenter);
   const setDestination = mapStore((state) => state.setDestination);
@@ -117,7 +114,7 @@ function TripPage() {
 
   const tripNavbar = (
     <>
-      <TripHeader careAboutBudget={location.state.careAboutBudget as boolean} />
+      <TripHeader />
       <Stack
         direction={"row"}
         alignItems={"center"}

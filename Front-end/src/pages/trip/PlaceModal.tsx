@@ -61,8 +61,8 @@ function PlaceModal({
             >
               {place.placeType !== "airport" && place.transportaionMethod ? (
                 <div title="transport method">
-                  <EmojiTransportation fontSize="small" />{" "}
-                  {place.transportaionMethod}
+                  <EmojiTransportation fontSize="small" /> Transportation
+                  method: {place.transportaionMethod}
                 </div>
               ) : (
                 <></>
@@ -78,7 +78,7 @@ function PlaceModal({
               {place.time ? (
                 <div title="arrival time">
                   <img src="/src/assets/wall-clock.png" alt="" />
-                  {place.time}
+                  Time to spend: {formatTravelTime(place.time * 60)}
                 </div>
               ) : (
                 <></>

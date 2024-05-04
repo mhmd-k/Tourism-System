@@ -51,7 +51,11 @@ function Home() {
         <div className="home">
           <Container>
             <h2>Build a trip in minutes</h2>
-            <Typography>Get a personalized itinerary just for you</Typography>
+            <Typography>
+              Get a personalized itinerary just for you by answering some
+              <br />
+              questions and picking the places that you want to visit
+            </Typography>
             <Stack sx={{ margin: "30px 0" }} direction={"row"} gap={2}>
               <Button
                 endIcon={<AutoFixHighOutlinedIcon />}
