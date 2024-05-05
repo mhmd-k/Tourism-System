@@ -16,6 +16,9 @@
 body {
   font-family: "Trip Sans", sans-serif;
 }
+* {
+  font-family: "Trip Sans", sans-serif !important;
+}
 #root {
   display: flex;
   flex-direction: column;
@@ -223,28 +226,11 @@ input::-webkit-inner-spin-button {
 
 /* generate trip form page */
 .generate-trip {
-  .image {
-    background-image: url(./assets/generateTripsImage.jpg);
-    background-position: right;
-    background-size: cover;
-    width: 40%;
-    filter: brightness(0.7);
-  }
-
   > div {
     min-height: 90vh;
   }
 
   .generate-trip-container {
-    margin: 20px 0;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    > div {
-      width: 100%;
-    }
     .form-body {
       flex: 1;
 
@@ -252,9 +238,84 @@ input::-webkit-inner-spin-button {
         margin: auto;
 
         button {
-          background-color: var(--secondary-text-color);
+          background-color: var(--blue-color);
         }
       }
+    }
+    h3 {
+      text-align: left;
+      margin-top: 30px;
+    }
+    .ai-places-container {
+      .ai-place-card {
+        min-width: 200px;
+        text-align: left;
+
+        .place-image {
+          width: 100%;
+          height: 200px;
+          border-radius: 10px;
+          overflow: hidden;
+          position: relative;
+
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+          button {
+            color: var(--text-color);
+            position: absolute;
+            color: white;
+            z-index: 1;
+            right: 10px;
+            top: 10px;
+          }
+          button:hover {
+            background-color: #9e9e9e;
+          }
+        }
+        .place-type {
+          text-align: left;
+          width: fit-content;
+          border: 1px solid #ff4a87;
+          border-radius: 3px;
+          padding: 4px;
+          display: flex;
+          align-items: center;
+          font-weight: bold;
+          gap: 5px;
+          margin-top: 10px;
+          color: #ff4a87;
+          font-size: 12px;
+          svg {
+            font-size: 17px;
+          }
+        }
+        p {
+          color: var(--secondary-text-color);
+          padding-bottom: 10px;
+        }
+      }
+    }
+
+    .ai-places-container::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    .ai-places-container::-webkit-scrollbar-track {
+      border-radius: 10px;
+      background: rgba(0, 0, 0, 0.1);
+    }
+    .ai-places-container::-webkit-scrollbar-thumb {
+      border-radius: 10px;
+      background: rgba(0, 0, 0, 0.2);
+    }
+    .ai-places-container::-webkit-scrollbar-thumb:hover {
+      background: rgba(0, 0, 0, 0.4);
+    }
+    .ai-places-container::-webkit-scrollbar-thumb:active {
+      background: rgba(0, 0, 0, 0.9);
     }
   }
 

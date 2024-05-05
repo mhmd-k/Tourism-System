@@ -6,7 +6,6 @@ import {
   SelectChangeEvent,
   Stack,
   TextField,
-  Typography,
   FormControlLabel,
   Radio,
   FormLabel,
@@ -179,15 +178,7 @@ function Survey({
 
   return (
     <>
-      <Typography
-        component={"h2"}
-        fontSize={22}
-        align="center"
-        marginBottom={"20px"}
-        fontWeight={"bold"}
-      >
-        Answer The Following Questions
-      </Typography>
+      <h2>Answer The Following Questions</h2>
       <Stack direction={"column"} gap={2}>
         <FormControl>
           <InputLabel id="from" size="small">
@@ -278,7 +269,6 @@ function Survey({
           </FormLabel>
           <RadioGroup
             aria-labelledby="care-about-budget"
-            name="radio-buttons-group"
             sx={{ display: "flex", flexDirection: "row" }}
           >
             <FormControlLabel
@@ -316,7 +306,6 @@ function Survey({
             </FormLabel>
             <RadioGroup
               aria-labelledby="cheapest-trip"
-              name="radio-buttons-group"
               sx={{ display: "flex", flexDirection: "row" }}
             >
               <FormControlLabel

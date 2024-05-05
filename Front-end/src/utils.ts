@@ -50,39 +50,36 @@ export function validateTripInfo(
   return null;
 }
 
-export function setImage(placeType: string, foodType?: string) {
+export function setImage(placeType: string) {
   let imageUrl = "";
 
-  switch (placeType.split("_").join("")) {
-    case "hotel":
+  switch (placeType.slice(0, 3)) {
+    case "hot":
       imageUrl = `/src/assets/hotel-${Math.ceil(Math.random() * 4)}.jpg`;
       break;
 
-    case "airport":
+    case "air":
       imageUrl = `/src/assets/airport-${Math.ceil(Math.random() * 3)}.jpg`;
       break;
 
-    case "night place":
-      imageUrl = `/src/assets/night-${Math.ceil(Math.random() * 2)}.jpg`;
+    case "nig":
+      imageUrl = `/src/assets/night-${Math.ceil(Math.random() * 3)}.jpg`;
       break;
 
-    case "old place":
-      imageUrl = `/src/assets/old-${Math.ceil(Math.random() * 5)}.jpg`;
+    case "old":
+      imageUrl = `/src/assets/old-${Math.ceil(Math.random() * 4)}.jpg`;
       break;
 
-    case "natural place":
+    case "nat":
       imageUrl = `/src/assets/nature-${Math.ceil(Math.random() * 3)}.jpg`;
       break;
 
-    case "shopping place":
+    case "sho":
       imageUrl = `/src/assets/shop-${Math.ceil(Math.random() * 3)}.jpg`;
       break;
 
-    case "restaurant":
-      if (foodType === "fine dinning")
-        imageUrl = `/src/assets/fine-dinning.jpg`;
-      if (foodType === "sea food") imageUrl = `/src/assets/sea-food.jpg`;
-      else imageUrl = `/src/assets/fast-food.jpg`;
+    case "res":
+      imageUrl = `https://source.unsplash.com/1600x900/?${placeType}`;
       break;
   }
 

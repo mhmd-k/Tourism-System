@@ -1,4 +1,4 @@
-import { GenerateTripData, TripPlace } from "../../types";
+import { GenerateTripData } from "../../types";
 import { validateTripInfo } from "../../utils";
 import Survey from "./Survey";
 import Spinner from "../../components/Spinner";
@@ -9,7 +9,6 @@ import {
   ButtonGroup,
   Container,
   IconButton,
-  Stack,
 } from "@mui/material";
 import AutoFixHighOutlinedIcon from "@mui/icons-material/AutoFixHighOutlined";
 import ArrowBackOutlined from "@mui/icons-material/ArrowBackOutlined";
@@ -20,6 +19,7 @@ import { Navigate, useNavigate } from "react-router-dom";
 import { generateTrip } from "../../RESTFunctions";
 import { Error } from "@mui/icons-material";
 import { mapStore } from "../../zustand/MapStore";
+import { selectedPlacesStore } from "../../zustand/SelectedPlacesStore";
 
 function GenerateTrip() {
   const [formData, setFormData] = useState<GenerateTripData>({
@@ -34,12 +34,14 @@ function GenerateTrip() {
     preferredFood: [],
     preferredPlaces: [],
   });
-  const [places, setPlaces] = useState<TripPlace[]>([]);
   const [error, setError] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [page, setPage] = useState<number>(0);
 
   const navigate = useNavigate();
+
+  const places = selectedPlacesStore((state) => state.places);
+  const Modelplaces = selectedPlacesStore((state) => state.ModelPlaces);
 
   const user = userStore((state) => state.user);
 
@@ -48,6 +50,7 @@ function GenerateTrip() {
 
   // console.log("genearateTrip:", formData);
   console.log("places: ", places);
+  console.log("Modelplaces: ", Modelplaces);
 
   if (!user?.token) {
     return Navigate({
@@ -68,7 +71,10 @@ function GenerateTrip() {
       return;
     }
 
-    const trip = await generateTrip(user?.id, formData, places);
+    const trip = await generateTrip(user?.id, formData, [
+      ...places,
+      ...Modelplaces,
+    ]);
 
     console.log("trip generated: ", trip);
 
@@ -85,54 +91,51 @@ function GenerateTrip() {
 
   return (
     <div className="generate-trip">
-      <Stack direction={"row"} sx={{ height: "100%" }}>
-        <Container className="generate-trip-container">
-          <div className="form-body">
-            {page === 0 && (
-              <Survey setFormData={setFormData} formData={formData} />
-            )}
-            {page === 1 && <PlacesSearch setPlaces={setPlaces} />}
-          </div>
-
-          {error ? (
-            <Alert
-              variant="filled"
-              severity="error"
-              sx={{ marginTop: 2 }}
-              icon={<Error />}
-              onClose={() => {
-                setError(null);
-              }}
-            >
-              {error}
-            </Alert>
-          ) : (
-            <></>
+      <Container className="generate-trip-container">
+        <div className="form-body">
+          {page === 0 && (
+            <Survey setFormData={setFormData} formData={formData} />
           )}
+          {page === 1 && <PlacesSearch />}
+        </div>
 
-          <ButtonGroup sx={{ p: 3, gap: 2, justifyContent: "center" }}>
-            <IconButton onClick={() => setPage(page - 1)} disabled={page === 0}>
-              <ArrowBackOutlined />
-            </IconButton>
-            <IconButton onClick={() => setPage(page + 1)} disabled={page === 1}>
-              <ArrowForwardOutlinedIcon />
-            </IconButton>
-            <Button
-              variant="contained"
-              sx={{
-                backgroundColor: "var(--green-color)",
-                borderRadius: "5px !important",
-              }}
-              endIcon={isLoading ? <></> : <AutoFixHighOutlinedIcon />}
-              disabled={isLoading}
-              onClick={handleSubmit}
-            >
-              {isLoading ? <Spinner /> : "Generate Trip"}
-            </Button>
-          </ButtonGroup>
-        </Container>
-        <Container fixed className="image"></Container>
-      </Stack>
+        {error ? (
+          <Alert
+            variant="filled"
+            severity="error"
+            sx={{ marginTop: 2 }}
+            icon={<Error />}
+            onClose={() => {
+              setError(null);
+            }}
+          >
+            {error}
+          </Alert>
+        ) : (
+          <></>
+        )}
+
+        <ButtonGroup sx={{ p: 3, gap: 2, justifyContent: "center" }}>
+          <IconButton onClick={() => setPage(page - 1)} disabled={page === 0}>
+            <ArrowBackOutlined />
+          </IconButton>
+          <IconButton onClick={() => setPage(page + 1)} disabled={page === 1}>
+            <ArrowForwardOutlinedIcon />
+          </IconButton>
+          <Button
+            variant="contained"
+            sx={{
+              backgroundColor: "var(--green-color)",
+              borderRadius: "5px !important",
+            }}
+            endIcon={isLoading ? <></> : <AutoFixHighOutlinedIcon />}
+            disabled={isLoading}
+            onClick={handleSubmit}
+          >
+            {isLoading ? <Spinner /> : "Generate Trip"}
+          </Button>
+        </ButtonGroup>
+      </Container>
     </div>
   );
 }

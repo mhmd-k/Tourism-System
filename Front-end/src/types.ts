@@ -18,6 +18,7 @@ export interface User {
   email: string;
   token: string;
   image: null | string;
+  age: number;
 }
 
 export interface LoginRequest {
@@ -132,4 +133,22 @@ export interface FlightReservation {
   price: number;
   toatlAmountOfMony: number;
   location: string;
+}
+
+export interface AverageUserRatings {
+  shopping: number;
+  hotel: number;
+  restaurant: number;
+  night: number;
+  old: number;
+  natural: number;
+}
+
+export interface ModelPlace {
+  cityId: number;
+  cityName: string;
+  id: number;
+  name: string;
+  placeType: string;
+  predictedRating: number;
 }

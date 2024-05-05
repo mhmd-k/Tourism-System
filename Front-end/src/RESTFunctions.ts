@@ -1,18 +1,24 @@
 import axios from "axios";
 import {
+  AverageUserRatings,
   GenerateTripData,
   LoginRequest,
+  ModelPlace,
   PlaceLocation,
   SignupRequest,
   Trip,
   TripPlace,
+  User,
 } from "./types";
+
+const flaskUrl = "http://127.0.0.1:5000";
+const laravelUrl = "http://localhost:8000/api";
 
 export async function signup(request: SignupRequest) {
   const { name, email, password, age } = request;
 
   try {
-    const response = await axios.post("http://localhost:8000/api/signup", {
+    const response = await axios.post(`${laravelUrl}/signup`, {
       name,
       email,
       password,
@@ -31,7 +37,7 @@ export async function login(request: LoginRequest) {
   const { email, password } = request;
 
   try {
-    const response = await axios.post("http://localhost:8000/api/login", {
+    const response = await axios.post(`${laravelUrl}/login`, {
       email,
       password,
     });
@@ -79,7 +85,7 @@ export async function getPath(
 export async function generateTrip(
   userId: number,
   tripInfo: GenerateTripData,
-  places: TripPlace[]
+  places: (TripPlace | ModelPlace)[]
 ) {
   const romaPlaces = places.filter(
     (e) => e.cityName && e.cityName.toLowerCase() === "roma"
@@ -340,10 +346,7 @@ export async function generateTrip(
   console.log("body: ", body);
 
   try {
-    const response = await axios.put(
-      "http://localhost:8000/api/generate_trip",
-      body
-    );
+    const response = await axios.put(`${laravelUrl}/generate_trip`, body);
 
     console.log("response: ", response);
 
@@ -376,5 +379,31 @@ export async function generateTrip(
     }
   } catch (e) {
     console.error("error: ", e);
+  }
+}
+
+export async function getPredictedPlacesRatings(
+  user: User,
+  averageUserRatings: AverageUserRatings
+) {
+  try {
+    const response = await axios.post(`${flaskUrl}/predict`, {
+      age: user.age,
+      gender: "Male",
+      country: "China",
+      ...averageUserRatings,
+    });
+
+    if (response.status === 200) {
+      const data = await response.data;
+
+      console.log("getPredictedPlacesRatings Response: ", data);
+
+      return data;
+    } else {
+      throw new Error("Server error: " + response.status);
+    }
+  } catch (error) {
+    console.error("getPredictedPlacesRatings error: ", error);
   }
 }
