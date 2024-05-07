@@ -87,10 +87,10 @@ export function setImage(placeType: string) {
 }
 
 export const stringToLngLat = (str: string): PlaceLocation => {
-  const coords = str.split(" ");
+  const coords = str.split(/\s+/).map(Number);
   return {
-    lat: Number(coords[0]),
-    lng: Number(coords[1]),
+    lat: coords[0],
+    lng: coords[1],
   };
 };
 
