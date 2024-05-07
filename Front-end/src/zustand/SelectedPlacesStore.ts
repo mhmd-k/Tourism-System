@@ -6,7 +6,7 @@ interface selectedPlaces {
   ModelPlaces: ModelPlace[];
   addPlace: (place: ModelPlace) => void;
   removePlace: (id: number) => void;
-  setPlaces: (palces: TripPlace[]) => void;
+  setPlaces: (key: string, places: TripPlace[]) => void;
 }
 
 export const selectedPlacesStore = create<selectedPlaces>((set) => ({
@@ -23,5 +23,5 @@ export const selectedPlacesStore = create<selectedPlaces>((set) => ({
         ModelPlaces: state.ModelPlaces.filter((place) => place.id !== id),
       };
     }),
-  setPlaces: (places) => set({ places }),
+  setPlaces: (key, places) => set({ [key]: places }),
 }));

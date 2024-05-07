@@ -41,7 +41,7 @@ function GenerateTrip() {
   const navigate = useNavigate();
 
   const places = selectedPlacesStore((state) => state.places);
-  const Modelplaces = selectedPlacesStore((state) => state.ModelPlaces);
+  const modelplaces = selectedPlacesStore((state) => state.ModelPlaces);
 
   const user = userStore((state) => state.user);
 
@@ -50,7 +50,7 @@ function GenerateTrip() {
 
   // console.log("genearateTrip:", formData);
   console.log("places: ", places);
-  console.log("Modelplaces: ", Modelplaces);
+  console.log("Modelplaces: ", modelplaces);
 
   if (!user?.token) {
     return Navigate({
@@ -73,7 +73,7 @@ function GenerateTrip() {
 
     const trip = await generateTrip(user?.id, formData, [
       ...places,
-      ...Modelplaces,
+      ...modelplaces,
     ]);
 
     console.log("trip generated: ", trip);
@@ -81,7 +81,9 @@ function GenerateTrip() {
     if (trip) {
       setTrip(trip);
       setActiveDay(0);
-      navigate("../trips/1", { state: { places: places } });
+      navigate("../trips/1", {
+        state: { places: [...places, ...modelplaces] },
+      });
     } else {
       setError("something went worng please try again later");
     }

@@ -63,6 +63,7 @@ function PlacesSearch() {
 
   useEffect(() => {
     (async () => {
+      setPlaces("ModelPlaces", []);
       if (user) {
         setIsModelLoading(true);
 
@@ -96,7 +97,7 @@ function PlacesSearch() {
     value: TripPlace[]
   ) => {
     console.log("select value:", value);
-    setPlaces(value);
+    setPlaces("places", value);
   };
 
   return (
