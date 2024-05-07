@@ -507,6 +507,24 @@ input::-webkit-inner-spin-button {
   max-height: 90vh;
   overflow-y: auto;
 }
+.trip aside::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+.trip aside::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.1);
+}
+.trip aside::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.2);
+}
+.trip aside::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.4);
+}
+.trip aside::-webkit-scrollbar-thumb:active {
+  background: rgba(0, 0, 0, 0.9);
+}
 .trip .map {
   grid-column: span 9;
   min-height: 90vh;
