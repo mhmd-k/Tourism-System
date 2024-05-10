@@ -151,30 +151,35 @@ export async function generateTrip(
           .map((place) => ({
             id: place.id,
             name: place.name,
+            time: place.time,
           })),
         shopping: romaPlaces
           .filter((e) => e.placeType.slice(0, 3) === "sho")
           .map((place) => ({
             id: place.id,
             name: place.name,
+            time: place.time,
           })),
         natural: romaPlaces
           .filter((e) => e.placeType.slice(0, 3) === "nat")
           .map((place) => ({
             id: place.id,
             name: place.name,
+            time: place.time,
           })),
         Resturants: romaPlaces
           .filter((e) => e.placeType.slice(0, 3) === "res")
           .map((place) => ({
             id: place.id,
             name: place.name,
+            time: place.time,
           })),
         old: romaPlaces
           .filter((e) => e.placeType.slice(0, 3) === "old")
           .map((place) => ({
             id: place.id,
             name: place.name,
+            time: place.time,
           })),
         Hotels: romaPlaces
           .filter((e) => e.placeType.slice(0, 3) === "hot")
@@ -182,6 +187,7 @@ export async function generateTrip(
           .map((place) => ({
             id: place.id,
             name: place.name,
+            time: place.time,
           })),
       },
       milan: {
@@ -190,30 +196,35 @@ export async function generateTrip(
           .map((place) => ({
             id: place.id,
             name: place.name,
+            time: place.time,
           })),
         shopping: milanPlaces
           .filter((e) => e.placeType.slice(0, 3) === "sho")
           .map((place) => ({
             id: place.id,
             name: place.name,
+            time: place.time,
           })),
         natural: milanPlaces
           .filter((e) => e.placeType.slice(0, 3) === "nat")
           .map((place) => ({
             id: place.id,
             name: place.name,
+            time: place.time,
           })),
         Resturants: milanPlaces
           .filter((e) => e.placeType.slice(0, 3) === "res")
           .map((place) => ({
             id: place.id,
             name: place.name,
+            time: place.time,
           })),
         old: milanPlaces
           .filter((e) => e.placeType.slice(0, 3) === "old")
           .map((place) => ({
             id: place.id,
             name: place.name,
+            time: place.time,
           })),
         Hotels: milanPlaces
           .filter((e) => e.placeType.slice(0, 3) === "hot")
@@ -221,6 +232,7 @@ export async function generateTrip(
           .map((place) => ({
             id: place.id,
             name: place.name,
+            time: place.time,
           })),
       },
       venice: {
@@ -229,30 +241,35 @@ export async function generateTrip(
           .map((place) => ({
             id: place.id,
             name: place.name,
+            time: place.time,
           })),
         shopping: venicePlaces
           .filter((e) => e.placeType.slice(0, 3) === "sho")
           .map((place) => ({
             id: place.id,
             name: place.name,
+            time: place.time,
           })),
         natural: venicePlaces
           .filter((e) => e.placeType.slice(0, 3) === "nat")
           .map((place) => ({
             id: place.id,
             name: place.name,
+            time: place.time,
           })),
         Resturants: venicePlaces
           .filter((e) => e.placeType.slice(0, 3) === "res")
           .map((place) => ({
             id: place.id,
             name: place.name,
+            time: place.time,
           })),
         old: venicePlaces
           .filter((e) => e.placeType.slice(0, 3) === "old")
           .map((place) => ({
             id: place.id,
             name: place.name,
+            time: place.time,
           })),
         Hotels: venicePlaces
           .filter((e) => e.placeType.slice(0, 3) === "hot")
@@ -260,6 +277,7 @@ export async function generateTrip(
           .map((place) => ({
             id: place.id,
             name: place.name,
+            time: place.time,
           })),
       },
       napoli: {
@@ -268,30 +286,35 @@ export async function generateTrip(
           .map((place) => ({
             id: place.id,
             name: place.name,
+            time: place.time,
           })),
         shopping: napoliPlaces
           .filter((e) => e.placeType.slice(0, 3) === "sho")
           .map((place) => ({
             id: place.id,
             name: place.name,
+            time: place.time,
           })),
         natural: napoliPlaces
           .filter((e) => e.placeType.slice(0, 3) === "nat")
           .map((place) => ({
             id: place.id,
             name: place.name,
+            time: place.time,
           })),
         Resturants: napoliPlaces
           .filter((e) => e.placeType.slice(0, 3) === "res")
           .map((place) => ({
             id: place.id,
             name: place.name,
+            time: place.time,
           })),
         old: napoliPlaces
           .filter((e) => e.placeType.slice(0, 3) === "old")
           .map((place) => ({
             id: place.id,
             name: place.name,
+            time: place.time,
           })),
         Hotels: napoliPlaces
           .filter((e) => e.placeType.slice(0, 3) === "hot")
@@ -299,6 +322,7 @@ export async function generateTrip(
           .map((place) => ({
             id: place.id,
             name: place.name,
+            time: place.time,
           })),
       },
       florence: {
@@ -307,30 +331,35 @@ export async function generateTrip(
           .map((place) => ({
             id: place.id,
             name: place.name,
+            time: place.time,
           })),
         shopping: florencePlaces
           .filter((e) => e.placeType.slice(0, 3) === "sho")
           .map((place) => ({
             id: place.id,
             name: place.name,
+            time: place.time,
           })),
         natural: florencePlaces
           .filter((e) => e.placeType.slice(0, 3) === "nat")
           .map((place) => ({
             id: place.id,
             name: place.name,
+            time: place.time,
           })),
         Resturants: florencePlaces
           .filter((e) => e.placeType.slice(0, 3) === "res")
           .map((place) => ({
             id: place.id,
             name: place.name,
+            time: place.time,
           })),
         old: florencePlaces
           .filter((e) => e.placeType.slice(0, 3) === "old")
           .map((place) => ({
             id: place.id,
             name: place.name,
+            time: place.time,
           })),
         Hotels: florencePlaces
           .filter((e) => e.placeType.slice(0, 3) === "hot")
@@ -338,6 +367,7 @@ export async function generateTrip(
           .map((place) => ({
             id: place.id,
             name: place.name,
+            time: place.time,
           })),
       },
     },

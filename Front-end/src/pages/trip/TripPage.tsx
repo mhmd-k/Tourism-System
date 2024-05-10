@@ -21,6 +21,7 @@ function TripPage() {
 
   const trip = mapStore((state) => state.trip);
   const activeDay = mapStore((state) => state.activeDay);
+  const setTrip = mapStore((state) => state.setTrip);
   const setActiveDay = mapStore((state) => state.setActiveDay);
 
   console.log("activeDay: ", activeDay);
@@ -51,6 +52,15 @@ function TripPage() {
   const handleOpenCloseReservationsModel = () => {
     setIsReservationsModalOpen(!isReservationsModalOpen);
   };
+
+  useEffect(() => {
+    if (!trip) {
+      const storedTrip = localStorage.getItem("trip");
+      if (storedTrip) {
+        setTrip(JSON.parse(storedTrip));
+      }
+    }
+  }, []);
 
   // useEffect(() => {
   // async function fetchTripTimes() {

@@ -7,7 +7,15 @@ import { selectedPlacesStore } from "../../zustand/SelectedPlacesStore";
 import { setImage } from "../../utils";
 
 const ModelPlaceCard = memo(
-  ({ id, placeType, name, cityName, cityId, predictedRating }: ModelPlace) => {
+  ({
+    id,
+    placeType,
+    name,
+    cityName,
+    cityId,
+    predictedRating,
+    time,
+  }: ModelPlace) => {
     const [selected, setSelected] = useState<boolean>(false);
 
     const addPlace = selectedPlacesStore((state) => state.addPlace);
@@ -32,6 +40,7 @@ const ModelPlaceCard = memo(
           placeType,
           cityName,
           predictedRating,
+          time,
         });
       }
       setSelected(!selected);

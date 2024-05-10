@@ -17,7 +17,10 @@ function TripHeader() {
             budget:{" "}
             <span
               style={{
-                color: trip.totalBudget - trip.TotalCost > 0 ? "blue" : "red",
+                color:
+                  Math.abs(trip.totalBudget - trip.TotalCost) > 500
+                    ? "red"
+                    : "var(--blue-color)",
               }}
             >
               {trip.totalBudget}$

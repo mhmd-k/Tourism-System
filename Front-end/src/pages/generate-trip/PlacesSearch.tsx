@@ -63,7 +63,6 @@ function PlacesSearch() {
 
   useEffect(() => {
     (async () => {
-      setPlaces("ModelPlaces", []);
       if (user) {
         setIsModelLoading(true);
 

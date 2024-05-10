@@ -2,7 +2,7 @@ import { GenerateTripData } from "../../types";
 import { validateTripInfo } from "../../utils";
 import Survey from "./Survey";
 import Spinner from "../../components/Spinner";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   Alert,
   Button,
@@ -42,6 +42,7 @@ function GenerateTrip() {
 
   const places = selectedPlacesStore((state) => state.places);
   const modelplaces = selectedPlacesStore((state) => state.ModelPlaces);
+  const setPlaces = selectedPlacesStore((state) => state.setPlaces);
 
   const user = userStore((state) => state.user);
 
@@ -52,6 +53,12 @@ function GenerateTrip() {
   console.log("places: ", places);
   console.log("Modelplaces: ", modelplaces);
 
+  useEffect(() => {
+    setPlaces("ModelPlaces", []);
+    setPlaces("places", []);
+  }, []);
+
+  // if the user is not signed in
   if (!user?.token) {
     return Navigate({
       to: "../login",
@@ -81,6 +88,7 @@ function GenerateTrip() {
     if (trip) {
       setTrip(trip);
       setActiveDay(0);
+      localStorage.setItem("trip", JSON.stringify(trip));
       navigate("../trips/1", {
         state: { places: [...places, ...modelplaces] },
       });

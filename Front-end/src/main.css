@@ -506,6 +506,23 @@ input::-webkit-inner-spin-button {
   background-color: white;
   max-height: 90vh;
   overflow-y: auto;
+
+  .break {
+    border-radius: 16px;
+    color: var(--blue-color);
+    font-weight: bold;
+    padding: 2px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    font-size: 15px;
+    border: 2px solid var(--blue-color);
+
+    svg {
+      font-size: 20px;
+    }
+  }
 }
 .trip aside::-webkit-scrollbar {
   width: 6px;

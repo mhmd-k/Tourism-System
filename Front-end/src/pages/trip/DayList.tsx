@@ -2,6 +2,7 @@ import { List } from "@mui/material";
 import PlaceItem from "./PlaceItem";
 import { useEffect, useState } from "react";
 import { mapStore } from "../../zustand/MapStore";
+// import BreakItem from "./BreakItem";
 
 function DayList() {
   const [activePlace, setActivePlace] = useState<number>(0);
@@ -20,14 +21,23 @@ function DayList() {
   return (
     <List>
       {day.dayPlaces.map((place, i) => (
-        <PlaceItem
-          key={i}
-          place={place}
-          nextPlace={day.dayPlaces[i + 1] || null}
-          isActive={activePlace === i}
-          activeIndex={i}
-          setActiveIndex={setActivePlace}
-        />
+        <div key={i}>
+          <PlaceItem
+            place={place}
+            nextPlace={day.dayPlaces[i + 1] || null}
+            isActive={activePlace === i}
+            activeIndex={i}
+            setActiveIndex={setActivePlace}
+          />
+          {/* {i !== day.dayPlaces.length - 1 &&
+          place.placeType.toLowerCase().slice(0, 3) !== "res" &&
+          place.placeType.toLowerCase().slice(0, 3) !== "hot" &&
+          place.placeType.toLowerCase().slice(0, 3) !== "air" ? (
+            <BreakItem />
+          ) : (
+            <></>
+          )} */}
+        </div>
       ))}
     </List>
   );

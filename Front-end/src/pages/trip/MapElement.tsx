@@ -44,42 +44,46 @@ function MapElement() {
 
   useEffect(() => {
     async function drawPath() {
-      if (!destination || !map) return;
+      try {
+        if (!destination || !map) return;
 
-      const path = await getPath(center, destination);
+        const path = await getPath(center, destination);
 
-      console.log("path: ", path);
+        console.log("path: ", path);
 
-      if (map.getSource("route")) {
-        map.removeLayer("path");
-        map.removeSource("route");
-      }
+        if (map.getSource("route")) {
+          map.removeLayer("path");
+          map.removeSource("route");
+        }
 
-      map.addSource("route", {
-        type: "geojson",
-        data: {
-          type: "Feature",
-          properties: {},
-          geometry: {
-            type: "LineString",
-            coordinates: path?.coordinates,
+        map.addSource("route", {
+          type: "geojson",
+          data: {
+            type: "Feature",
+            properties: {},
+            geometry: {
+              type: "LineString",
+              coordinates: path?.coordinates,
+            },
           },
-        },
-      });
+        });
 
-      map.addLayer({
-        id: "path",
-        type: "line",
-        source: "route",
-        layout: {
-          "line-join": "round",
-          "line-cap": "round",
-        },
-        paint: {
-          "line-color": "red",
-          "line-width": 2,
-        },
-      });
+        map.addLayer({
+          id: "path",
+          type: "line",
+          source: "route",
+          layout: {
+            "line-join": "round",
+            "line-cap": "round",
+          },
+          paint: {
+            "line-color": "red",
+            "line-width": 2,
+          },
+        });
+      } catch (error) {
+        console.error(error);
+      }
     }
 
     if (map) {

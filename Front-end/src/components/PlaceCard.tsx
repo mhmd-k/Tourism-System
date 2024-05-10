@@ -5,7 +5,7 @@ import PlaceIcon from "./PlaceIcon";
 import { memo } from "react";
 
 const PlaceCard = memo(
-  ({ name, address, price, stars, placeType }: TripPlace) => {
+  ({ name, address, price, stars, placeType, food_type }: TripPlace) => {
     const starsArr = [];
     if (stars) {
       for (let i = 0; i < stars; i++) {
@@ -46,6 +46,13 @@ const PlaceCard = memo(
           )}
           {price ? <p>Avg price: {price}$</p> : <></>}
           <address>{address}</address>
+          {food_type ? (
+            <p>
+              Food type: <strong>{food_type.toLocaleUpperCase()}</strong>
+            </p>
+          ) : (
+            <></>
+          )}
         </div>
       </div>
     );

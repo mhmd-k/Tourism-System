@@ -27,15 +27,15 @@ function HotelsTable() {
         </TableHead>
 
         <TableBody>
-          {hotels.map((place) => (
-            <TableRow>
+          {hotels.map((place, i) => (
+            <TableRow key={i}>
               <TableCell component="th" scope="row">
                 {place.name ? place.name : <></>}
               </TableCell>
               <TableCell align="center">{place.address}</TableCell>
               <TableCell align="center">{numberOfPeople}</TableCell>
               <TableCell align="center">{place.price}$</TableCell>
-              <TableCell align="center">
+              <TableCell align="center" sx={{ fontWeight: "bold" }}>
                 {place.price * numberOfPeople}$
               </TableCell>
             </TableRow>

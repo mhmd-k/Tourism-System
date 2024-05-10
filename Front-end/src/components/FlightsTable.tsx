@@ -26,8 +26,8 @@ function FlightsTable() {
         </TableHead>
 
         <TableBody>
-          {flights.map((place) => (
-            <TableRow>
+          {flights.map((place, i) => (
+            <TableRow key={i}>
               <TableCell component="th" scope="row">
                 {place.airportName}
               </TableCell>
@@ -35,7 +35,9 @@ function FlightsTable() {
                 {numberOfPeople}
               </TableCell>
               <TableCell align="center">{place.price}$</TableCell>
-              <TableCell align="center">{place.toatlAmountOfMony}$</TableCell>
+              <TableCell align="center" sx={{ fontWeight: "bold" }}>
+                {place.toatlAmountOfMony}$
+              </TableCell>
             </TableRow>
           ))}
         </TableBody>

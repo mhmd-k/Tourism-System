@@ -103,7 +103,7 @@ export interface TripPlace {
   location: string;
   stars?: number;
   description?: string;
-  foodType?: string;
+  food_type?: string;
   price?: number;
   transportaionMethod?: string | null;
   ticketPrice?: number;
@@ -151,4 +151,5 @@ export interface ModelPlace {
   name: string;
   placeType: string;
   predictedRating: number;
+  time: number;
 }
