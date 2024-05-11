@@ -236,8 +236,7 @@ function Survey({
               onChange={(e) =>
                 setFormData((prevState) => ({
                   ...prevState,
-                  numberOfPeople:
-                    Number(e.target.value) > 30 ? 30 : Number(e.target.value),
+                  numberOfPeople: Number(e.target.value),
                 }))
               }
             />
@@ -247,14 +246,13 @@ function Survey({
             <TextField
               type="number"
               label="Number of Days"
-              inputProps={{ min: "1", max: "26" }}
+              inputProps={{ min: "1", max: "30" }}
               size="small"
               value={formData.numberOfDays}
               onChange={(e) =>
                 setFormData((prevState) => ({
                   ...prevState,
-                  numberOfDays:
-                    Number(e.target.value) > 26 ? 26 : Number(e.target.value),
+                  numberOfDays: Number(e.target.value),
                 }))
               }
             />
