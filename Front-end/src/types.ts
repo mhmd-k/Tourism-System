@@ -112,6 +112,7 @@ export interface TripPlace {
   spentTime?: number;
   city_id?: number;
   cityName?: string;
+  distancefromlastplace?: number;
 }
 
 export interface HotelReservation {

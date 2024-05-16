@@ -23,6 +23,7 @@ function DayList() {
       {day.dayPlaces.map((place, i) => (
         <div key={i}>
           <PlaceItem
+            previosPlace={day.dayPlaces[i - 1] || null}
             place={place}
             nextPlace={day.dayPlaces[i + 1] || null}
             isActive={activePlace === i}

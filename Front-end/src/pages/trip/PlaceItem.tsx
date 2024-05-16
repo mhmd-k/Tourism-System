@@ -15,12 +15,14 @@ import { stringToLngLat } from "../../utils";
 import { useLocation } from "react-router-dom";
 
 function PlaceItem({
+  previosPlace,
   place,
   nextPlace,
   isActive,
   activeIndex,
   setActiveIndex,
 }: {
+  previosPlace: TripPlace | null;
   place: TripPlace;
   nextPlace: TripPlace | null;
   isActive: boolean;
@@ -101,6 +103,7 @@ function PlaceItem({
       </ListItem>
       {isModalOpen ? (
         <PlaceModal
+          previosPlace={previosPlace}
           place={place}
           isModalOpen={isModalOpen}
           handleOpenCloseModal={handleOpenCloseModal}

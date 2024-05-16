@@ -18,7 +18,7 @@ function TripHeader() {
             <span
               style={{
                 color:
-                  Math.abs(trip.totalBudget - trip.TotalCost) > 500
+                  trip.TotalCost - trip.totalBudget > 500
                     ? "red"
                     : "var(--blue-color)",
               }}

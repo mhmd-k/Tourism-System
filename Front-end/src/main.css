@@ -491,13 +491,17 @@ input::-webkit-inner-spin-button {
   max-height: 80vh;
 
   .reservations-btn {
-    background-color: var(--green-color) !important;
-    width: 40px;
-    height: 40px;
+    background-color: #8153d4 !important;
+    color: white;
+    width: 50px;
+    height: 50px;
     position: fixed;
     box-shadow: 0 0 9px #2f2f2f;
-    right: 40px;
-    bottom: 40px;
+    right: 2%;
+    bottom: 3%;
+  }
+  .reservations-btn:hover {
+    background-color: #785bae !important;
   }
 }
 .trip aside {

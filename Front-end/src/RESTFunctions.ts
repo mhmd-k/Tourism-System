@@ -52,12 +52,17 @@ export async function login(request: LoginRequest) {
 
 export async function getPath(
   center: PlaceLocation,
-  destination: PlaceLocation
+  destination: PlaceLocation,
+  transportMethod?: string
 ) {
+  let URL = `https://api.tomtom.com/routing/1/calculateRoute/${center.lat},${center.lng}:${destination.lat},${destination.lng}/json?key=YZJHNBZyfgHI0qyHkfQGAPe8ALsnCJN4`;
+
+  if (transportMethod) {
+    URL = `https://api.tomtom.com/routing/1/calculateRoute/${center.lat},${center.lng}:${destination.lat},${destination.lng}/json?travelMode=${transportMethod}&key=YZJHNBZyfgHI0qyHkfQGAPe8ALsnCJN4`;
+  }
+
   try {
-    const response = await axios.get(
-      `https://api.tomtom.com/routing/1/calculateRoute/${center.lat},${center.lng}:${destination.lat},${destination.lng}/json?key=YZJHNBZyfgHI0qyHkfQGAPe8ALsnCJN4`
-    );
+    const response = await axios.get(URL);
 
     // console.log("Get Path Response: ", response.data);
 
