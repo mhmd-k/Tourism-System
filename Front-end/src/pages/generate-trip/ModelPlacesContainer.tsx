@@ -4,25 +4,25 @@ import ModelPlaceCard from "./ModelPlaceCard";
 import Slider, { Settings } from "react-slick";
 
 const settings: Settings = {
+  arrows: false,
   infinite: true,
   speed: 500,
   draggable: true,
   slidesToShow: 6,
-  slidesToScroll: 3,
+  slidesToScroll: 2,
   responsive: [
     {
       breakpoint: 1100,
       settings: {
         slidesToShow: 5,
-        slidesToScroll: 3,
+        slidesToScroll: 2,
       },
     },
     {
       breakpoint: 900,
       settings: {
         slidesToShow: 4,
-        slidesToScroll: 1,
-        initialSlide: 1,
+        slidesToScroll: 2,
       },
     },
     {
@@ -30,7 +30,6 @@ const settings: Settings = {
       settings: {
         slidesToShow: 3,
         slidesToScroll: 1,
-        initialSlide: 1,
       },
     },
     {
@@ -77,7 +76,7 @@ function ModelPlacesContainer({ places }: { places: ModelPlace[] }) {
   return (
     <>
       <h3>Recommended to you by AI</h3>
-      <Slider className="ai-places-container" {...settings}>
+      <Slider {...settings}>
         {displayPlaces.map((place) => (
           <ModelPlaceCard key={place.id} {...place} />
         ))}

@@ -153,4 +153,5 @@ export interface ModelPlace {
   placeType: string;
   predictedRating: number;
   time: number;
+  foodType: string;
 }

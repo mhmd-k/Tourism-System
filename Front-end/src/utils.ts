@@ -50,7 +50,7 @@ export function validateTripInfo(
   return null;
 }
 
-export function setImage(placeType: string) {
+export function setImage(placeType: string, foodType?: string) {
   let imageUrl = "";
 
   switch (placeType.slice(0, 3)) {
@@ -79,7 +79,11 @@ export function setImage(placeType: string) {
       break;
 
     case "res":
-      imageUrl = `https://source.unsplash.com/1600x900/?${placeType}`;
+      if (foodType === "sea food") imageUrl = "/src/assets/sea-food.jpg";
+      if (foodType === "fine dinning") imageUrl = "/src/assets/fineDinning.jpg";
+      if (foodType === "fast food") imageUrl = "/src/assets/fastFood.jpg";
+      if (foodType === "dessert") imageUrl = "/src/assets/dessert.jpg";
+      if (foodType === "traditional") imageUrl = "/src/assets/traditional.jpg";
       break;
   }
 

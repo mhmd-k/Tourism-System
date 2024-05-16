@@ -2,7 +2,7 @@ import { IconButton } from "@mui/material";
 import { ModelPlace } from "../../types";
 import { Add, Remove } from "@mui/icons-material";
 import PlaceIcon from "../../components/PlaceIcon";
-import { memo, useMemo, useState } from "react";
+import { memo, useMemo, useState, useEffect } from "react";
 import { selectedPlacesStore } from "../../zustand/SelectedPlacesStore";
 import { setImage } from "../../utils";
 
@@ -15,18 +15,17 @@ const ModelPlaceCard = memo(
     cityId,
     predictedRating,
     time,
+    foodType,
   }: ModelPlace) => {
     const [selected, setSelected] = useState<boolean>(false);
 
+    const modelPlaces = selectedPlacesStore((state) => state.modelPlaces);
     const addPlace = selectedPlacesStore((state) => state.addPlace);
     const removePlace = selectedPlacesStore((state) => state.removePlace);
 
     const image = useMemo(
-      () =>
-        placeType !== "restaurant"
-          ? setImage(placeType)
-          : `https://source.unsplash.com/1600x900/?${name}`,
-      [name, placeType]
+      () => setImage(placeType, foodType),
+      [foodType, placeType]
     );
 
     const handelSelect = () => {
@@ -42,10 +41,17 @@ const ModelPlaceCard = memo(
           cityName,
           predictedRating,
           time,
+          foodType,
         });
       }
       setSelected(!selected);
     };
+
+    useEffect(() => {
+      const elementIsSelected = modelPlaces.find((place) => place.id === id);
+      if (elementIsSelected) setSelected(true);
+      else setSelected(false);
+    }, [id, modelPlaces]);
 
     return (
       <div className="ai-place-card">

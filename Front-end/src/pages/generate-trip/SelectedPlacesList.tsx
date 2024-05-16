@@ -6,10 +6,13 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import { selectedPlacesStore } from "../../zustand/SelectedPlacesStore";
+import { Delete } from "@mui/icons-material";
+import { IconButton } from "@mui/material";
 
 function SelectedPlacesList() {
   const places = selectedPlacesStore((state) => state.places);
   const modelplaces = selectedPlacesStore((state) => state.modelPlaces);
+  const removePlace = selectedPlacesStore((state) => state.removePlace);
 
   const allPlaces = [...places, ...modelplaces];
 
@@ -24,6 +27,7 @@ function SelectedPlacesList() {
                 <TableCell align="center">place</TableCell>
                 <TableCell align="center">place type</TableCell>
                 <TableCell align="center">city</TableCell>
+                <TableCell></TableCell>
               </TableRow>
             </TableHead>
 
@@ -36,6 +40,14 @@ function SelectedPlacesList() {
                   <TableCell align="center">{place.name}</TableCell>
                   <TableCell align="center">{place.placeType}</TableCell>
                   <TableCell align="center">{place.cityName}</TableCell>
+                  <TableCell align="center">
+                    <IconButton
+                      color="error"
+                      onClick={() => removePlace(place.id)}
+                    >
+                      <Delete />
+                    </IconButton>
+                  </TableCell>
                 </TableRow>
               ))}
             </TableBody>

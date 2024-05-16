@@ -24,6 +24,7 @@ function PlacesSearch() {
   const [open, setOpen] = useState(false);
   const [options, setOptions] = useState<TripPlace[]>([]);
 
+  const places = selectedPlacesStore((state) => state.places);
   const setPlaces = selectedPlacesStore((state) => state.setPlaces);
 
   useEffect(() => {
@@ -75,6 +76,7 @@ function PlacesSearch() {
       )}
 
       <Autocomplete
+        value={places}
         open={open}
         onOpen={() => {
           setOpen(true);

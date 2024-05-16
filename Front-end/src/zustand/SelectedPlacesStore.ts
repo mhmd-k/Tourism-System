@@ -21,6 +21,7 @@ export const selectedPlacesStore = create<SelectedPlaces>((set) => ({
       return {
         ...state,
         modelPlaces: state.modelPlaces.filter((place) => place.id !== id),
+        places: state.places.filter((place) => place.id !== id),
       };
     }),
   // set places or modelPlaces

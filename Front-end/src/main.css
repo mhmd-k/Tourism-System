@@ -246,7 +246,7 @@ input::-webkit-inner-spin-button {
       text-align: left;
       margin-top: 30px;
     }
-    .ai-places-container {
+    .slick-slider {
       cursor: grab;
 
       .ai-place-card {
