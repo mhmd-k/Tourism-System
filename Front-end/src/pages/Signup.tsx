@@ -4,7 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { signup } from "../RESTFunctions";
 import { isEmailValid } from "../utils";
 import { SignupRequest, User, UserResponse, UserResponseError } from "../types";
-import Spinner from "../components/Spinner";
+import LoadingSpinner from "../components/LoadingSpinner";
 import { userStore } from "../zustand/UserStore";
 
 function Signup() {
@@ -173,7 +173,7 @@ function Signup() {
           onClick={handleSubmit}
           disabled={loading}
         >
-          {loading ? <Spinner /> : "Submit"}
+          {loading ? <LoadingSpinner /> : "Submit"}
         </Button>
         <Typography textAlign={"center"}>
           Already have an Account? <Link to={"../login"}>Login</Link>

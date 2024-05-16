@@ -9,7 +9,7 @@ import { CreditCard, InfoSharp, Map } from "@mui/icons-material";
 import DayModal from "./DayModal";
 import { mapStore } from "../../zustand/MapStore";
 import { stringToLngLat } from "../../utils";
-import Spinner from "../../components/Spinner";
+import LoadingSpinner from "../../components/LoadingSpinner";
 import ReservationsModal from "./ReservationsModal";
 
 function TripPage() {
@@ -119,7 +119,7 @@ function TripPage() {
     }
   }, [activeDay, trip]);
 
-  if (isLoading) return <Spinner color="var(--green-color)" size={50} />;
+  if (isLoading) return <LoadingSpinner color="var(--green-color)" size={50} />;
   if (!trip) return <h2>Error fetching trip</h2>;
 
   const tripNavbar = (

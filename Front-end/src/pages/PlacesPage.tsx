@@ -3,7 +3,7 @@ import { Container, TextField, Typography } from "@mui/material";
 import { NavLink, useLocation, useSearchParams } from "react-router-dom";
 import PlaceCard from "../components/PlaceCard";
 import { TripPlace } from "../types";
-import Spinner from "../components/Spinner";
+import LoadingSpinner from "../components/LoadingSpinner";
 import axios from "axios";
 
 const filters = [
@@ -106,7 +106,7 @@ function PlacesPage() {
             autoComplete="off"
           />
           <button onClick={handleSearchSubmit} disabled={isLoading}>
-            {isLoading ? <Spinner color="white" size={20} /> : "Search"}
+            {isLoading ? <LoadingSpinner color="white" size={20} /> : "Search"}
           </button>
         </div>
       </Container>

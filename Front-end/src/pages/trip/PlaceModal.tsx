@@ -9,7 +9,7 @@ import PlaceCard from "../../components/PlaceCard";
 import { formatDistance, formatTravelTime, stringToLngLat } from "../../utils";
 import { useEffect, useState } from "react";
 import { getPath } from "../../RESTFunctions";
-import Spinner from "../../components/Spinner";
+import LoadingSpinner from "../../components/LoadingSpinner";
 
 function PlaceModal({
   previosPlace,
@@ -75,7 +75,7 @@ function PlaceModal({
       <Fade in={isModalOpen}>
         <Box className="place-popup">
           {isLoading ? (
-            <Spinner size={30} color="red" />
+            <LoadingSpinner size={30} color="red" />
           ) : (
             <>
               <div className="header">

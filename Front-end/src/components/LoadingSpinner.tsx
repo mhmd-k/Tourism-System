@@ -1,4 +1,4 @@
-function Spinner({ color, size }: { color?: string; size?: number }) {
+function LoadingSpinner({ color, size }: { color?: string; size?: number }) {
   return (
     <div
       className="spinner"
@@ -13,4 +13,4 @@ function Spinner({ color, size }: { color?: string; size?: number }) {
   );
 }
 
-export default Spinner;
+export default LoadingSpinner;

@@ -1,7 +1,7 @@
 import { GenerateTripData } from "../../types";
 import { validateTripInfo } from "../../utils";
 import Survey from "./Survey";
-import Spinner from "../../components/Spinner";
+import Spinner from "../../components/LoadingSpinner";
 import { useEffect, useState } from "react";
 import {
   Alert,
@@ -41,7 +41,7 @@ function GenerateTrip() {
   const navigate = useNavigate();
 
   const places = selectedPlacesStore((state) => state.places);
-  const modelplaces = selectedPlacesStore((state) => state.ModelPlaces);
+  const modelplaces = selectedPlacesStore((state) => state.modelPlaces);
   const setPlaces = selectedPlacesStore((state) => state.setPlaces);
 
   const user = userStore((state) => state.user);

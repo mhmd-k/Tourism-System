@@ -1,15 +1,13 @@
-import { Alert, Box, TextField } from "@mui/material";
-import { ModelPlace, TripPlace } from "../../types";
+import { Alert, TextField } from "@mui/material";
+import { TripPlace } from "../../types";
 import { SyntheticEvent, useEffect, useState } from "react";
 import Autocomplete from "@mui/material/Autocomplete";
 import CircularProgress from "@mui/material/CircularProgress";
 import axios from "axios";
 import { Error } from "@mui/icons-material";
-import { getPredictedPlacesRatings } from "../../RESTFunctions";
-import { userStore } from "../../zustand/UserStore";
-import ModelPlacesContainer from "./ModelPlacesContainer";
-import Spinner from "../../components/Spinner";
 import { selectedPlacesStore } from "../../zustand/SelectedPlacesStore";
+import ModelPlaces from "./ModelPlaces";
+import SelectedPlacesList from "./SelectedPlacesList";
 
 function sleep(duration: number): Promise<void> {
   return new Promise<void>((resolve) => {
@@ -23,15 +21,10 @@ function PlacesSearch() {
   const [placeName, setPlaceName] = useState<string>("");
   const [error, setError] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(false);
-  const [isModelLoading, setIsModelLoading] = useState<boolean>(false);
-  const [modelPlaces, setModelPlaces] = useState<ModelPlace[]>([]);
-
   const [open, setOpen] = useState(false);
   const [options, setOptions] = useState<TripPlace[]>([]);
 
   const setPlaces = selectedPlacesStore((state) => state.setPlaces);
-
-  const user = userStore((state) => state.user);
 
   useEffect(() => {
     (async () => {
@@ -60,36 +53,6 @@ function PlacesSearch() {
       }
     })();
   }, [placeName]);
-
-  useEffect(() => {
-    (async () => {
-      if (user) {
-        setIsModelLoading(true);
-
-        const data = await getPredictedPlacesRatings(user, {
-          shopping: 0,
-          night: 0,
-          old: 0,
-          restaurant: 0,
-          hotel: 0,
-          natural: 0,
-        });
-
-        if (data) {
-          setModelPlaces(
-            data.sort(
-              (
-                a: { predictedRating: number },
-                b: { predictedRating: number }
-              ) => b.predictedRating - a.predictedRating
-            )
-          );
-        }
-
-        setIsModelLoading(false);
-      }
-    })();
-  }, []);
 
   const handleChange = (
     _event: SyntheticEvent<Element, Event>,
@@ -159,13 +122,9 @@ function PlacesSearch() {
         multiple
       />
 
-      {isModelLoading ? (
-        <Box margin={"20px 0"}>
-          <Spinner color="var(--blue-color)" size={40} />
-        </Box>
-      ) : (
-        <ModelPlacesContainer places={modelPlaces} />
-      )}
+      <ModelPlaces />
+
+      <SelectedPlacesList />
     </>
   );
 }

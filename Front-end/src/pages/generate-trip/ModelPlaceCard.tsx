@@ -32,6 +32,7 @@ const ModelPlaceCard = memo(
     const handelSelect = () => {
       if (selected) {
         removePlace(id);
+        setSelected(!selected);
       } else {
         addPlace({
           id,

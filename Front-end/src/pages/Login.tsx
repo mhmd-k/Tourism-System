@@ -16,7 +16,7 @@ import { Email, Error } from "@mui/icons-material";
 import LockIcon from "@mui/icons-material/Lock";
 import LockOpenIcon from "@mui/icons-material/LockOpen";
 import IconButton from "@mui/material/IconButton";
-import Spinner from "../components/Spinner";
+import LoadingSpinner from "../components/LoadingSpinner";
 import { login } from "../RESTFunctions";
 import { userStore } from "../zustand/UserStore";
 
@@ -160,7 +160,7 @@ function Login() {
           onClick={handleSubmit}
           disabled={loading}
         >
-          {loading ? <Spinner size={20} /> : "Login"}
+          {loading ? <LoadingSpinner size={20} /> : "Login"}
         </Button>
         <Typography textAlign={"center"}>
           Not a member? <Link to={"../signup"}>Create Account</Link>

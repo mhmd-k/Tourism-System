@@ -12,6 +12,8 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Trip from "./pages/trip/TripPage";
 import HotelsReservationsPage from "./pages/HotelsReservationsPage";
 import FlightsReservationsPage from "./pages/FlightsReservationsPage";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const router = createBrowserRouter([
   {

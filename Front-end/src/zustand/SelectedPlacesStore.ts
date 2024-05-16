@@ -1,27 +1,28 @@
 import { create } from "zustand";
 import { ModelPlace, TripPlace } from "../types";
 
-interface selectedPlaces {
+interface SelectedPlaces {
   places: TripPlace[];
-  ModelPlaces: ModelPlace[];
+  modelPlaces: ModelPlace[];
   addPlace: (place: ModelPlace) => void;
   removePlace: (id: number) => void;
   setPlaces: (key: string, places: TripPlace[]) => void;
 }
 
-export const selectedPlacesStore = create<selectedPlaces>((set) => ({
+export const selectedPlacesStore = create<SelectedPlaces>((set) => ({
   places: [],
-  ModelPlaces: [],
+  modelPlaces: [],
   addPlace: (place) =>
     set((state) => {
-      return { ...state, ModelPlaces: [...state.ModelPlaces, place] };
+      return { ...state, modelPlaces: [...state.modelPlaces, place] };
     }),
   removePlace: (id) =>
     set((state) => {
       return {
         ...state,
-        ModelPlaces: state.ModelPlaces.filter((place) => place.id !== id),
+        modelPlaces: state.modelPlaces.filter((place) => place.id !== id),
       };
     }),
+  // set places or modelPlaces
   setPlaces: (key, places) => set({ [key]: places }),
 }));
