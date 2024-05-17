@@ -154,8 +154,8 @@ function Survey({
   };
 
   const handleMultiSelect = (
-    value: string,
-    property: "preferredFood" | "preferredPlaces"
+    property: "preferredFood" | "preferredPlaces",
+    value: string
   ) => {
     let arr =
       property === "preferredFood"
@@ -180,13 +180,13 @@ function Survey({
     <>
       <h2>Answer The Following Questions</h2>
       <Stack direction={"column"} gap={2}>
-        <FormControl>
-          <InputLabel id="from" size="small">
+        <FormControl required>
+          <InputLabel id="from-city" size="small">
             From City
           </InputLabel>
           <Select
             size="small"
-            label="from"
+            label="from-city"
             sx={{ textAlign: "left" }}
             value={formData.fromCity}
             onChange={handelSelectChange}
@@ -200,7 +200,7 @@ function Survey({
             ))}
           </Select>
         </FormControl>
-        <FormControl>
+        <FormControl required>
           <InputLabel size="small" id="to-country">
             To Country
           </InputLabel>
@@ -216,7 +216,7 @@ function Survey({
             <MenuItem value="Italy">Italy</MenuItem>
           </Select>
         </FormControl>
-        <FormControl>
+        <FormControl required>
           <TextField
             type="date"
             size="small"
@@ -239,6 +239,7 @@ function Survey({
                   numberOfPeople: Number(e.target.value),
                 }))
               }
+              required
             />
             <GroupOutlined />
           </FormControl>
@@ -255,6 +256,7 @@ function Survey({
                   numberOfDays: Number(e.target.value),
                 }))
               }
+              required
             />
           </FormControl>
         </Stack>
@@ -356,11 +358,11 @@ function Survey({
         )}
 
         <FormControl>
-          <InputLabel size="small" id="to-country">
+          <InputLabel size="small" id="preferred-food">
             Prefered Food
           </InputLabel>
           <Select
-            label="to-country"
+            label="preferred-food"
             size="small"
             multiple
             value={formData.preferredFood}
@@ -369,7 +371,7 @@ function Survey({
               <MenuItem
                 value={e}
                 key={`${e} . ${i}`}
-                onClick={() => handleMultiSelect(e, "preferredFood")}
+                onClick={() => handleMultiSelect("preferredFood", e)}
               >
                 {e}
               </MenuItem>
@@ -377,12 +379,12 @@ function Survey({
           </Select>
         </FormControl>
         <FormControl>
-          <InputLabel size="small" id="to-country">
-            Prefered Places
+          <InputLabel size="small" id="preferred-places">
+            Preferred Places
           </InputLabel>
           <Select
             size="small"
-            label="to-country"
+            label="preferred-places"
             sx={{ textAlign: "left" }}
             multiple
             value={formData.preferredPlaces}
@@ -391,7 +393,7 @@ function Survey({
               <MenuItem
                 value={e}
                 key={`${e} . ${i}`}
-                onClick={() => handleMultiSelect(e, "preferredPlaces")}
+                onClick={() => handleMultiSelect("preferredPlaces", e)}
               >
                 {e}
               </MenuItem>

@@ -2,6 +2,7 @@ import axios from "axios";
 import {
   AverageUserRatings,
   GenerateTripData,
+  GenerateTripRequestBody,
   LoginRequest,
   ModelPlace,
   PlaceLocation,
@@ -10,6 +11,7 @@ import {
   TripPlace,
   User,
 } from "./types";
+import { prepareCitySelectedPlaces } from "./utils";
 
 const flaskUrl = "http://127.0.0.1:5000";
 const laravelUrl = "http://localhost:8000/api";
@@ -125,7 +127,7 @@ export async function generateTrip(
     totalBudget = tripInfo.budget;
   }
 
-  const body = {
+  const body: GenerateTripRequestBody = {
     user_id: userId,
     date: tripInfo.date.split("-").join("/"),
     fromcity: tripInfo.fromCity.toLowerCase(),
@@ -150,231 +152,11 @@ export async function generateTrip(
       ),
     },
     places: {
-      roma: {
-        night: romaPlaces
-          .filter((e) => e.placeType.slice(0, 3) === "nig")
-          .map((place) => ({
-            id: place.id,
-            name: place.name,
-            time: place.time,
-          })),
-        shopping: romaPlaces
-          .filter((e) => e.placeType.slice(0, 3) === "sho")
-          .map((place) => ({
-            id: place.id,
-            name: place.name,
-            time: place.time,
-          })),
-        natural: romaPlaces
-          .filter((e) => e.placeType.slice(0, 3) === "nat")
-          .map((place) => ({
-            id: place.id,
-            name: place.name,
-            time: place.time,
-          })),
-        Resturants: romaPlaces
-          .filter((e) => e.placeType.slice(0, 3) === "res")
-          .map((place) => ({
-            id: place.id,
-            name: place.name,
-            time: place.time,
-          })),
-        old: romaPlaces
-          .filter((e) => e.placeType.slice(0, 3) === "old")
-          .map((place) => ({
-            id: place.id,
-            name: place.name,
-            time: place.time,
-          })),
-        Hotels: romaPlaces
-          .filter((e) => e.placeType.slice(0, 3) === "hot")
-          .slice(0, 1)
-          .map((place) => ({
-            id: place.id,
-            name: place.name,
-            time: place.time,
-          })),
-      },
-      milan: {
-        night: milanPlaces
-          .filter((e) => e.placeType.slice(0, 3) === "nig")
-          .map((place) => ({
-            id: place.id,
-            name: place.name,
-            time: place.time,
-          })),
-        shopping: milanPlaces
-          .filter((e) => e.placeType.slice(0, 3) === "sho")
-          .map((place) => ({
-            id: place.id,
-            name: place.name,
-            time: place.time,
-          })),
-        natural: milanPlaces
-          .filter((e) => e.placeType.slice(0, 3) === "nat")
-          .map((place) => ({
-            id: place.id,
-            name: place.name,
-            time: place.time,
-          })),
-        Resturants: milanPlaces
-          .filter((e) => e.placeType.slice(0, 3) === "res")
-          .map((place) => ({
-            id: place.id,
-            name: place.name,
-            time: place.time,
-          })),
-        old: milanPlaces
-          .filter((e) => e.placeType.slice(0, 3) === "old")
-          .map((place) => ({
-            id: place.id,
-            name: place.name,
-            time: place.time,
-          })),
-        Hotels: milanPlaces
-          .filter((e) => e.placeType.slice(0, 3) === "hot")
-          .slice(0, 1)
-          .map((place) => ({
-            id: place.id,
-            name: place.name,
-            time: place.time,
-          })),
-      },
-      venice: {
-        night: venicePlaces
-          .filter((e) => e.placeType.slice(0, 3) === "nig")
-          .map((place) => ({
-            id: place.id,
-            name: place.name,
-            time: place.time,
-          })),
-        shopping: venicePlaces
-          .filter((e) => e.placeType.slice(0, 3) === "sho")
-          .map((place) => ({
-            id: place.id,
-            name: place.name,
-            time: place.time,
-          })),
-        natural: venicePlaces
-          .filter((e) => e.placeType.slice(0, 3) === "nat")
-          .map((place) => ({
-            id: place.id,
-            name: place.name,
-            time: place.time,
-          })),
-        Resturants: venicePlaces
-          .filter((e) => e.placeType.slice(0, 3) === "res")
-          .map((place) => ({
-            id: place.id,
-            name: place.name,
-            time: place.time,
-          })),
-        old: venicePlaces
-          .filter((e) => e.placeType.slice(0, 3) === "old")
-          .map((place) => ({
-            id: place.id,
-            name: place.name,
-            time: place.time,
-          })),
-        Hotels: venicePlaces
-          .filter((e) => e.placeType.slice(0, 3) === "hot")
-          .slice(0, 1)
-          .map((place) => ({
-            id: place.id,
-            name: place.name,
-            time: place.time,
-          })),
-      },
-      napoli: {
-        night: napoliPlaces
-          .filter((e) => e.placeType.slice(0, 3) === "nig")
-          .map((place) => ({
-            id: place.id,
-            name: place.name,
-            time: place.time,
-          })),
-        shopping: napoliPlaces
-          .filter((e) => e.placeType.slice(0, 3) === "sho")
-          .map((place) => ({
-            id: place.id,
-            name: place.name,
-            time: place.time,
-          })),
-        natural: napoliPlaces
-          .filter((e) => e.placeType.slice(0, 3) === "nat")
-          .map((place) => ({
-            id: place.id,
-            name: place.name,
-            time: place.time,
-          })),
-        Resturants: napoliPlaces
-          .filter((e) => e.placeType.slice(0, 3) === "res")
-          .map((place) => ({
-            id: place.id,
-            name: place.name,
-            time: place.time,
-          })),
-        old: napoliPlaces
-          .filter((e) => e.placeType.slice(0, 3) === "old")
-          .map((place) => ({
-            id: place.id,
-            name: place.name,
-            time: place.time,
-          })),
-        Hotels: napoliPlaces
-          .filter((e) => e.placeType.slice(0, 3) === "hot")
-          .slice(0, 1)
-          .map((place) => ({
-            id: place.id,
-            name: place.name,
-            time: place.time,
-          })),
-      },
-      florence: {
-        night: florencePlaces
-          .filter((e) => e.placeType.slice(0, 3) === "nig")
-          .map((place) => ({
-            id: place.id,
-            name: place.name,
-            time: place.time,
-          })),
-        shopping: florencePlaces
-          .filter((e) => e.placeType.slice(0, 3) === "sho")
-          .map((place) => ({
-            id: place.id,
-            name: place.name,
-            time: place.time,
-          })),
-        natural: florencePlaces
-          .filter((e) => e.placeType.slice(0, 3) === "nat")
-          .map((place) => ({
-            id: place.id,
-            name: place.name,
-            time: place.time,
-          })),
-        Resturants: florencePlaces
-          .filter((e) => e.placeType.slice(0, 3) === "res")
-          .map((place) => ({
-            id: place.id,
-            name: place.name,
-            time: place.time,
-          })),
-        old: florencePlaces
-          .filter((e) => e.placeType.slice(0, 3) === "old")
-          .map((place) => ({
-            id: place.id,
-            name: place.name,
-            time: place.time,
-          })),
-        Hotels: florencePlaces
-          .filter((e) => e.placeType.slice(0, 3) === "hot")
-          .slice(0, 1)
-          .map((place) => ({
-            id: place.id,
-            name: place.name,
-            time: place.time,
-          })),
-      },
+      roma: prepareCitySelectedPlaces(romaPlaces),
+      milan: prepareCitySelectedPlaces(milanPlaces),
+      napoli: prepareCitySelectedPlaces(napoliPlaces),
+      florence: prepareCitySelectedPlaces(florencePlaces),
+      venice: prepareCitySelectedPlaces(venicePlaces),
     },
   };
 

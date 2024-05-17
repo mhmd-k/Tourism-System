@@ -1,4 +1,10 @@
-import { GenerateTripData, PlaceLocation, User } from "./types";
+import {
+  GenerateTripData,
+  ModelPlace,
+  PlaceLocation,
+  TripPlace,
+  User,
+} from "./types";
 import { DateTime } from "luxon";
 
 export const isEmailValid = (email: string): boolean => {
@@ -31,14 +37,6 @@ export function validateTripInfo(
       return "Please fill all the fields";
     }
   }
-
-  // if the user choosed less than 2 types of food
-  if (userPreferrences.preferredFood.length < 2)
-    return "Please Choose at least two types of food.";
-
-  // if the user choosed less than 2 types of places
-  if (userPreferrences.preferredPlaces.length < 2)
-    return "Please Choose at least two types of Places.";
 
   // if the number of days is greter than 26
   if (userPreferrences.numberOfDays > 30) return "Maximum number of days is 30";
@@ -140,4 +138,54 @@ export function formatDistance(distanceInMeters: number): string {
 
   const distanceInKilometers = (distanceInMeters / 1000).toFixed(1);
   return `${distanceInKilometers}km`;
+}
+
+export function prepareCitySelectedPlaces(
+  cityPlaces: (TripPlace | ModelPlace)[]
+) {
+  return {
+    night: cityPlaces
+      .filter((e) => e.placeType.slice(0, 3) === "nig")
+      .map((place) => ({
+        id: place.id,
+        name: place.name,
+        time: place.time,
+      })),
+    shopping: cityPlaces
+      .filter((e) => e.placeType.slice(0, 3) === "sho")
+      .map((place) => ({
+        id: place.id,
+        name: place.name,
+        time: place.time,
+      })),
+    natural: cityPlaces
+      .filter((e) => e.placeType.slice(0, 3) === "nat")
+      .map((place) => ({
+        id: place.id,
+        name: place.name,
+        time: place.time,
+      })),
+    Resturants: cityPlaces
+      .filter((e) => e.placeType.slice(0, 3) === "res")
+      .map((place) => ({
+        id: place.id,
+        name: place.name,
+        time: place.time,
+      })),
+    old: cityPlaces
+      .filter((e) => e.placeType.slice(0, 3) === "old")
+      .map((place) => ({
+        id: place.id,
+        name: place.name,
+        time: place.time,
+      })),
+    Hotels: cityPlaces
+      .filter((e) => e.placeType.slice(0, 3) === "hot")
+      .slice(0, 1)
+      .map((place) => ({
+        id: place.id,
+        name: place.name,
+        time: place.time,
+      })),
+  };
 }

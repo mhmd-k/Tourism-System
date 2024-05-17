@@ -52,8 +52,8 @@ export interface GenerateTripData {
   toCountry: string;
   fromCity: string;
   date: string;
-  numberOfDays: number;
-  numberOfPeople: number;
+  numberOfDays: number | "";
+  numberOfPeople: number | "";
   cheapestTrip: boolean;
   careAboutBudget: boolean;
   budget: number;
@@ -154,4 +154,70 @@ export interface ModelPlace {
   predictedRating: number;
   time: number;
   foodType: string;
+}
+
+export interface GenerateTripRequestPlace {
+  id: number;
+  name: string;
+  time: number | undefined;
+}
+
+export interface GenerateTripRequestBody {
+  user_id: number;
+  date: string;
+  fromcity: string;
+  tocountry: string;
+  "N.days": number;
+  "N.people": number;
+  totalBudget: number | string;
+  preferedplaces: string[];
+  preferedfood: {
+    "Fine dinning": boolean;
+    "Fast food": boolean;
+    "Sea food": boolean;
+    Dessert: boolean;
+    Traditional: boolean;
+  };
+  places: {
+    roma: {
+      night: GenerateTripRequestPlace[];
+      shopping: GenerateTripRequestPlace[];
+      natural: GenerateTripRequestPlace[];
+      Resturants: GenerateTripRequestPlace[];
+      old: GenerateTripRequestPlace[];
+      Hotels: GenerateTripRequestPlace[];
+    };
+    milan: {
+      night: GenerateTripRequestPlace[];
+      shopping: GenerateTripRequestPlace[];
+      natural: GenerateTripRequestPlace[];
+      Resturants: GenerateTripRequestPlace[];
+      old: GenerateTripRequestPlace[];
+      Hotels: GenerateTripRequestPlace[];
+    };
+    napoli: {
+      night: GenerateTripRequestPlace[];
+      shopping: GenerateTripRequestPlace[];
+      natural: GenerateTripRequestPlace[];
+      Resturants: GenerateTripRequestPlace[];
+      old: GenerateTripRequestPlace[];
+      Hotels: GenerateTripRequestPlace[];
+    };
+    florence: {
+      night: GenerateTripRequestPlace[];
+      shopping: GenerateTripRequestPlace[];
+      natural: GenerateTripRequestPlace[];
+      Resturants: GenerateTripRequestPlace[];
+      old: GenerateTripRequestPlace[];
+      Hotels: GenerateTripRequestPlace[];
+    };
+    venice: {
+      night: GenerateTripRequestPlace[];
+      shopping: GenerateTripRequestPlace[];
+      natural: GenerateTripRequestPlace[];
+      Resturants: GenerateTripRequestPlace[];
+      old: GenerateTripRequestPlace[];
+      Hotels: GenerateTripRequestPlace[];
+    };
+  };
 }
