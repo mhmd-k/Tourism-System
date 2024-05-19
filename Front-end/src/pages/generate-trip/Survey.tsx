@@ -26,10 +26,10 @@ const foodTypes = [
 ];
 
 const places = [
-  "Old Places",
-  "Natural places",
-  "Night Places",
-  "Shopping Places",
+  { label: "Old Places", value: "oldplace" },
+  { label: "Natural places", value: "naturalplace" },
+  { label: "Night Places", value: "nightplace" },
+  { label: "Shopping Places", value: "shoppingplace" },
 ];
 
 function Survey({
@@ -278,11 +278,11 @@ function Survey({
           >
             {places.map((e, i) => (
               <MenuItem
-                value={e}
+                value={e.value}
                 key={`${e} . ${i}`}
-                onClick={() => handleMultiSelect("preferredPlaces", e)}
+                onClick={() => handleMultiSelect("preferredPlaces", e.value)}
               >
-                {e}
+                {e.label}
               </MenuItem>
             ))}
           </Select>

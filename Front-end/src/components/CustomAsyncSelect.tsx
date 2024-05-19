@@ -9,15 +9,17 @@ import {
 import { sleep } from "../utils";
 import { v4 as uuidv4 } from "uuid";
 
-function CustomAsyncSelect({
+interface CustomAsyncSelectProps<T> {
+  name: string;
+  handleValueChange: Dispatch<SetStateAction<T>>;
+  getOptions: (str: string) => Promise<unknown>;
+}
+
+function CustomAsyncSelect<T>({
   name,
   handleValueChange,
   getOptions,
-}: {
-  name: string;
-  handleValueChange: Dispatch<SetStateAction<unknown>>;
-  getOptions: (str: string) => Promise<unknown>;
-}) {
+}: CustomAsyncSelectProps<T>) {
   const [fieldValue, setFieldValue] = useState<string>("");
   const [options, setOptions] = useState<string[]>([]);
   const [error, setError] = useState<string | null>(null);

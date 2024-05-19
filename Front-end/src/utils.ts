@@ -145,42 +145,42 @@ export function prepareCitySelectedPlaces(
   cityPlaces: (TripPlace | ModelPlace)[]
 ) {
   return {
-    night: cityPlaces
+    nightplace: cityPlaces
       .filter((e) => e.placeType.slice(0, 3) === "nig")
       .map((place) => ({
         id: place.id,
         name: place.name,
         time: place.time,
       })),
-    shopping: cityPlaces
+    shoppingplace: cityPlaces
       .filter((e) => e.placeType.slice(0, 3) === "sho")
       .map((place) => ({
         id: place.id,
         name: place.name,
         time: place.time,
       })),
-    natural: cityPlaces
+    naturalplace: cityPlaces
       .filter((e) => e.placeType.slice(0, 3) === "nat")
       .map((place) => ({
         id: place.id,
         name: place.name,
         time: place.time,
       })),
-    Resturants: cityPlaces
+    resturant: cityPlaces
       .filter((e) => e.placeType.slice(0, 3) === "res")
       .map((place) => ({
         id: place.id,
         name: place.name,
         time: place.time,
       })),
-    old: cityPlaces
+    oldplace: cityPlaces
       .filter((e) => e.placeType.slice(0, 3) === "old")
       .map((place) => ({
         id: place.id,
         name: place.name,
         time: place.time,
       })),
-    Hotels: cityPlaces
+    hotel: cityPlaces
       .filter((e) => e.placeType.slice(0, 3) === "hot")
       .slice(0, 1)
       .map((place) => ({
