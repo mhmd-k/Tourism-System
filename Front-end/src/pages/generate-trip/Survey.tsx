@@ -80,13 +80,12 @@ function Survey({
     <>
       <h2>Answer The Following Questions</h2>
       <Stack direction={"column"} gap={2}>
-        <FormControl>
-          <CustomAsyncSelect
-            name="fromCity"
-            handleValueChange={setFormData}
-            getOptions={getCities}
-          />
-        </FormControl>
+        <CustomAsyncSelect
+          name="fromCity"
+          label="From City"
+          handleValueChange={setFormData}
+          getOptions={getCities}
+        />
         <FormControl required>
           <InputLabel size="small" id="to-country">
             To Country

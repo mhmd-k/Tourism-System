@@ -167,6 +167,7 @@ function Signup() {
         />
         <CustomAsyncSelect
           name="country"
+          label="Country"
           handleValueChange={setSignupData}
           getOptions={getCountries}
         />

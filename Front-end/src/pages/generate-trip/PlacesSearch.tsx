@@ -9,6 +9,7 @@ import { selectedPlacesStore } from "../../zustand/SelectedPlacesStore";
 import ModelPlaces from "./ModelPlaces";
 import SelectedPlacesList from "./SelectedPlacesList";
 import { sleep } from "../../utils";
+import { v4 as uuidv4 } from "uuid";
 
 function PlacesSearch() {
   const [placeName, setPlaceName] = useState<string>("");
@@ -102,7 +103,7 @@ function PlacesSearch() {
           `${option.placeType.split("_").join(" ").toUpperCase()}S`
         }
         renderOption={(props, option) => (
-          <li {...props} key={`${option.id} - ${option.name}`}>
+          <li {...props} key={uuidv4()}>
             {option.name},{" "}
             <u>
               <i>{option.cityName}</i>

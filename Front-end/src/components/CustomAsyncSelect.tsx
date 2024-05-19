@@ -11,12 +11,14 @@ import { v4 as uuidv4 } from "uuid";
 
 interface CustomAsyncSelectProps<T> {
   name: string;
+  label: string;
   handleValueChange: Dispatch<SetStateAction<T>>;
   getOptions: (str: string) => Promise<unknown>;
 }
 
 function CustomAsyncSelect<T>({
   name,
+  label,
   handleValueChange,
   getOptions,
 }: CustomAsyncSelectProps<T>) {
@@ -41,13 +43,13 @@ function CustomAsyncSelect<T>({
         setOptions(data as string[]);
       } catch (error) {
         setError(
-          `an error occured while fetching ${name} options, please try again later.`
+          `an error occured while fetching ${label} options, please try again later.`
         );
       } finally {
         setIsLoading(false);
       }
     })();
-  }, [fieldValue, getOptions, name]);
+  }, [fieldValue, getOptions, label, name]);
 
   const handleChange = (
     _event: SyntheticEvent<Element, Event>,
@@ -84,10 +86,11 @@ function CustomAsyncSelect<T>({
           <TextField
             {...params}
             name="city"
-            label={`${name.slice(0, 1).toUpperCase()}${name.slice(1)}`}
+            label={label}
             size="small"
             value={fieldValue}
             onChange={(e) => setFieldValue(e.target.value)}
+            required
           />
         )}
         renderOption={(props, option) => (

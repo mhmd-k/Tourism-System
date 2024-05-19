@@ -105,15 +105,13 @@ export interface TripPlace {
   placeType: string;
   address: string;
   location: string;
+  transportaionMethod: string | null;
   stars?: number;
   description?: string;
   food_type?: string;
   price?: number;
-  transportaionMethod?: string | null;
-  ticketPrice?: number;
   travelTimeInMinutes?: number;
   time?: number;
-  spentTime?: number;
   city_id?: number;
   cityName?: string;
   distancefromlastplace?: number;
