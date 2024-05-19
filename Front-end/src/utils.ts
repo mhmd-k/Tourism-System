@@ -39,10 +39,11 @@ export function validateTripInfo(
   }
 
   // if the number of days is greter than 26
-  if (userPreferrences.numberOfDays > 30) return "Maximum number of days is 30";
+  if (Number(userPreferrences.numberOfDays) > 30)
+    return "Maximum number of days is 30";
 
   // if the number of people is greter than 30
-  if (userPreferrences.numberOfPeople > 30)
+  if (Number(userPreferrences.numberOfPeople) > 30)
     return "Maximum number of people is 30";
 
   return null;
@@ -188,4 +189,12 @@ export function prepareCitySelectedPlaces(
         time: place.time,
       })),
   };
+}
+
+export function sleep(duration: number): Promise<void> {
+  return new Promise<void>((resolve) => {
+    setTimeout(() => {
+      resolve();
+    }, duration);
+  });
 }

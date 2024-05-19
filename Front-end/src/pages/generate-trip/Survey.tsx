@@ -14,6 +14,8 @@ import {
 import { GroupOutlined, PriceChange } from "@mui/icons-material";
 import { ChangeEvent } from "react";
 import { GenerateTripData } from "../../types";
+import CustomAsyncSelect from "../../components/CustomAsyncSelect";
+import { getCities } from "../../RESTFunctions";
 
 const foodTypes = [
   "Sea food",
@@ -28,108 +30,6 @@ const places = [
   "Natural places",
   "Night Places",
   "Shopping Places",
-];
-
-const cities = [
-  "Aleppo",
-  "Damascus",
-  "Beirut",
-  "Gaza",
-  "Paris",
-  "London",
-  "Cairo",
-  "Berlin",
-  "Moscow",
-  "Washington",
-  "New Delhi",
-  "Brasília",
-  "Canberra",
-  "Madrid",
-  "Athens",
-  "Stockholm",
-  "Ankara",
-  "Dublin",
-  "Hanoi",
-  "Bangkok",
-  "Mexico City",
-  "Buenos Aires",
-  "Nairobi",
-  "Brussels",
-  "Havana",
-  "Jakarta",
-  "Lisbon",
-  "Vienna",
-  "Wellington",
-  "Amsterdam",
-  "Oslo",
-  "Budapest",
-  "Warsaw",
-  "Prague",
-  "Helsinki",
-  "Kuala Lumpur",
-  "Copenhagen",
-  "Manila",
-  "Lima",
-  "Bogotá",
-  "Caracas",
-  "Ljubljana",
-  "Tallinn",
-  "Reykjavik",
-  "Belgrade",
-  "Luxembourg City",
-  "Dakar",
-  "Minsk",
-  "Tirana",
-  "Santiago",
-  "Kiev",
-  "Lilongwe",
-  "Bucharest",
-  "Baku",
-  "Lima",
-  "Kathmandu",
-  "Seoul",
-  "Doha",
-  "Singapore",
-  "Colombo",
-  "Abuja",
-  "Kampala",
-  "Addis Ababa",
-  "Nicosia",
-  "Tegucigalpa",
-  "Helsinki",
-  "Port Louis",
-  "San Salvador",
-  "Suva",
-  "Georgetown",
-  "Kigali",
-  "Djibouti",
-  "Banjul",
-  "Antananarivo",
-  "Port Vila",
-  "Asmara",
-  "Monrovia",
-  "Apia",
-  "Maseru",
-  "Paramaribo",
-  "Vaduz",
-  "Basseterre",
-  "Kingstown",
-  "Castries",
-  "Roseau",
-  "Saint John's",
-  "Saint George's",
-  "Palikir",
-  "Funafuti",
-  "Ngerulmud",
-  "Male",
-  "Valletta",
-  "Pristina",
-  "Podgorica",
-  "Naypyidaw",
-  "Gaborone",
-  "Bissau",
-  "Port-au-Prince",
-  "Windhoek",
 ];
 
 function Survey({
@@ -180,25 +80,12 @@ function Survey({
     <>
       <h2>Answer The Following Questions</h2>
       <Stack direction={"column"} gap={2}>
-        <FormControl required>
-          <InputLabel id="from-city" size="small">
-            From City
-          </InputLabel>
-          <Select
-            size="small"
-            label="from-city"
-            sx={{ textAlign: "left" }}
-            value={formData.fromCity}
-            onChange={handelSelectChange}
+        <FormControl>
+          <CustomAsyncSelect
             name="fromCity"
-          >
-            <MenuItem value=""></MenuItem>
-            {cities.map((city, i) => (
-              <MenuItem value={city.toLowerCase()} key={i}>
-                {city}
-              </MenuItem>
-            ))}
-          </Select>
+            handleValueChange={setFormData}
+            getOptions={getCities}
+          />
         </FormControl>
         <FormControl required>
           <InputLabel size="small" id="to-country">

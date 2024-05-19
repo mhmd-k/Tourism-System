@@ -1,11 +1,23 @@
-import { Button, Stack, TextField, Typography } from "@mui/material";
+import {
+  Alert,
+  Button,
+  FormControl,
+  InputLabel,
+  MenuItem,
+  Select,
+  SelectChangeEvent,
+  Stack,
+  TextField,
+  Typography,
+} from "@mui/material";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { signup } from "../RESTFunctions";
+import { getCountries, signup } from "../RESTFunctions";
 import { isEmailValid } from "../utils";
-import { SignupRequest, User, UserResponse, UserResponseError } from "../types";
+import { SignupRequest } from "../types";
 import LoadingSpinner from "../components/LoadingSpinner";
 import { userStore } from "../zustand/UserStore";
+import CustomAsyncSelect from "../components/CustomAsyncSelect";
 
 function Signup() {
   const [signupData, setSignupData] = useState<SignupRequest>({
@@ -13,6 +25,8 @@ function Signup() {
     email: "",
     password: "",
     age: 0,
+    country: "",
+    gender: "Male",
   });
   const [verifyPass, setVerifyPass] = useState<string>("");
   const [error, setError] = useState<null | string>(null);
@@ -36,6 +50,13 @@ function Signup() {
     }));
   };
 
+  const handelGenderChange = (event: SelectChangeEvent<string>) => {
+    setSignupData((prevState) => ({
+      ...prevState,
+      gender: event.target.value,
+    }));
+  };
+
   const handleVerifyPasswordChange = (
     e: React.ChangeEvent<HTMLInputElement>
   ) => {
@@ -46,10 +67,10 @@ function Signup() {
     setLoading(true);
     setError(null);
 
-    const { email, name, password, age } = signupData;
+    const { email, name, password, age, gender, country } = signupData;
 
     // if any of the field is empty
-    if (!email || !name || !password || !verifyPass) {
+    if (!email || !name || !password || !verifyPass || !gender || !country) {
       setError("please fill all the fields");
       setLoading(false);
       return;
@@ -82,61 +103,56 @@ function Signup() {
       return;
     }
 
-    const res = await signup(signupData);
+    try {
+      const data = await signup(signupData);
 
-    if ((res as UserResponse).status === 200) {
-      setUser((res as UserResponse).data.user as User);
+      console.log("data: ", data);
+
+      setUser(data.user);
       navigate("/", {
-        state: `Welcome to Travel Helper "${(res as UserResponse).data.user.name}",
+        state: `Welcome to Travel Helper "${data.user.name}",
           We are glade to have u here 😁`,
         replace: true,
       });
-    } else {
-      setError((res as UserResponseError).response.data.message);
+    } catch (err) {
+      setError("some error happend please try again");
+    } finally {
+      setLoading(false);
     }
-
-    setLoading(false);
   };
 
   return (
     <div className="login">
-      <Stack direction={"column"} paddingY={3} gap={3} className="login-from">
+      <Stack direction={"column"} gap={3} className="login-from">
         <Typography component={"h2"} fontSize={30} textAlign={"center"}>
           Create Account
         </Typography>
         {error ? (
-          <Typography
-            className="bold"
-            component={"p"}
-            fontSize={15}
-            textAlign={"center"}
-            color={"red"}
-            style={{
-              border: "2px solid red",
-              padding: 10,
-              borderRadius: 2,
-            }}
+          <Alert
+            severity="error"
+            variant="filled"
+            onClose={() => setError(null)}
           >
             {error}
-          </Typography>
+          </Alert>
         ) : (
           <></>
         )}
         <TextField
+          name="name"
           size="small"
           label="Username"
           type="text"
           variant="outlined"
-          name="name"
           value={signupData.name}
           autoFocus
           onChange={handleChange}
         />
         <TextField
+          name="email"
           size="small"
           label="Email"
           type="email"
-          name="email"
           value={signupData.email}
           variant="outlined"
           onChange={handleChange}
@@ -149,6 +165,26 @@ function Signup() {
           variant="outlined"
           onChange={handleAgeChange}
         />
+        <CustomAsyncSelect
+          name="country"
+          handleValueChange={setSignupData}
+          getOptions={getCountries}
+        />
+        <FormControl>
+          <InputLabel>Gender</InputLabel>
+          <Select
+            size="small"
+            label="Gender"
+            type="text"
+            name="gender"
+            value={signupData.gender}
+            variant="outlined"
+            onChange={handelGenderChange}
+          >
+            <MenuItem value="Male">Male</MenuItem>
+            <MenuItem value="Female">Female</MenuItem>
+          </Select>
+        </FormControl>
         <TextField
           size="small"
           label="Password"

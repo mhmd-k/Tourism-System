@@ -19,6 +19,8 @@ export interface User {
   token: string;
   image: null | string;
   age: number;
+  country: string;
+  gender: "Male" | "Female";
 }
 
 export interface LoginRequest {
@@ -29,6 +31,8 @@ export interface LoginRequest {
 export interface SignupRequest extends LoginRequest {
   name: string;
   age: number;
+  country: string;
+  gender: string;
 }
 
 export interface UserResponse {
@@ -167,8 +171,8 @@ export interface GenerateTripRequestBody {
   date: string;
   fromcity: string;
   tocountry: string;
-  "N.days": number;
-  "N.people": number;
+  "N.days": number | "";
+  "N.people": number | "";
   totalBudget: number | string;
   preferedplaces: string[];
   preferedfood: {

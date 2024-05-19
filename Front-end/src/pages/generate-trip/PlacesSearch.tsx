@@ -8,14 +8,7 @@ import { Error } from "@mui/icons-material";
 import { selectedPlacesStore } from "../../zustand/SelectedPlacesStore";
 import ModelPlaces from "./ModelPlaces";
 import SelectedPlacesList from "./SelectedPlacesList";
-
-function sleep(duration: number): Promise<void> {
-  return new Promise<void>((resolve) => {
-    setTimeout(() => {
-      resolve();
-    }, duration);
-  });
-}
+import { sleep } from "../../utils";
 
 function PlacesSearch() {
   const [placeName, setPlaceName] = useState<string>("");
@@ -59,7 +52,8 @@ function PlacesSearch() {
     _event: SyntheticEvent<Element, Event>,
     value: TripPlace[]
   ) => {
-    console.log("select value:", value);
+    // console.log("select value:", value);
+
     setPlaces("places", value);
   };
 

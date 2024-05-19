@@ -199,7 +199,7 @@ input::-webkit-inner-spin-button {
 }
 /* login page */
 .login {
-  height: 100dvh;
+  min-height: 100dvh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -210,7 +210,7 @@ input::-webkit-inner-spin-button {
   );
 }
 .login-from {
-  max-width: 400px;
+  max-width: 450px;
   width: 100%;
   margin: 20px;
   border-radius: 5px;
@@ -224,6 +224,13 @@ input::-webkit-inner-spin-button {
   background-color: #009688 !important;
 }
 
+@media (max-width: 768px) {
+  .login-from {
+    margin: 0;
+    max-width: unset;
+  }
+}
+
 /* generate trip form page */
 .generate-trip {
   > div {
@@ -235,11 +242,8 @@ input::-webkit-inner-spin-button {
       flex: 1;
 
       .MuiAutocomplete-root {
+        width: 100%;
         margin: auto;
-
-        button {
-          background-color: var(--blue-color);
-        }
       }
     }
     h3 {

@@ -17,7 +17,7 @@ const flaskUrl = "http://127.0.0.1:5000";
 const laravelUrl = "http://localhost:8000/api";
 
 export async function signup(request: SignupRequest) {
-  const { name, email, password, age } = request;
+  const { name, email, password, age, gender, country } = request;
 
   try {
     const response = await axios.post(`${laravelUrl}/signup`, {
@@ -25,10 +25,15 @@ export async function signup(request: SignupRequest) {
       email,
       password,
       age,
+      gender,
+      country,
     });
 
     console.log("Signup Respnose:", response);
-    return response;
+    if (response.status === 200) {
+      const data = await response.data;
+      return data;
+    }
   } catch (error) {
     console.log("Signup Error:", error);
     return error;
@@ -222,5 +227,41 @@ export async function getPredictedPlacesRatings(
     }
   } catch (error) {
     console.error("getPredictedPlacesRatings error: ", error);
+  }
+}
+
+export async function getCountries(str: string) {
+  try {
+    const res = await axios.post(`${laravelUrl}/get_all-countries`, {
+      letter: str,
+    });
+
+    console.log("getCountiesResponse: ", res);
+
+    if (res.status === 200) {
+      return res.data.countries;
+    } else {
+      throw new Error("error fetching countries");
+    }
+  } catch (error) {
+    console.error("getCountiesResponse error: ", error);
+  }
+}
+
+export async function getCities(str: string) {
+  try {
+    const res = await axios.post(`${laravelUrl}/get_all-cities`, {
+      letter: str,
+    });
+
+    console.log("getCitiesResponse: ", res);
+
+    if (res.status === 200) {
+      return res.data.cities;
+    } else {
+      throw new Error("error fetching cities");
+    }
+  } catch (error) {
+    console.error("getCitiesResponse error: ", error);
   }
 }

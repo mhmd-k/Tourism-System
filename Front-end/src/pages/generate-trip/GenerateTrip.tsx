@@ -49,7 +49,7 @@ function GenerateTrip() {
   const setTrip = mapStore((state) => state.setTrip);
   const setActiveDay = mapStore((state) => state.setActiveDay);
 
-  // console.log("genearateTrip:", formData);
+  console.log("genearateTrip:", formData);
   console.log("places: ", places);
   console.log("Modelplaces: ", modelplaces);
 

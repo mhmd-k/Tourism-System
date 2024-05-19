@@ -68,11 +68,16 @@ function Login() {
     const res = await login(loginData);
 
     if ((res as UserResponse).status === 200) {
-      setUser({
-        ...(res as UserResponse).data.user,
-        // http://localhost:8000/storage/profile_pictures/picture
-        image: `http://localhost:8000/storage/${(res as UserResponse).data.user.image?.slice(7)}`,
-      });
+      if ((res as UserResponse).data.user.image) {
+        setUser({
+          ...(res as UserResponse).data.user,
+          // http://localhost:8000/storage/profile_pictures/picture
+          image: `http://localhost:8000/storage/${(res as UserResponse).data.user.image?.slice(7)}`,
+        });
+      } else {
+        setUser((res as UserResponse).data.user);
+      }
+
       navigate("/", {
         state: `Welcome Back "${(res as UserResponse).data.user.name}",
           We are glade to have u here 😁`,
