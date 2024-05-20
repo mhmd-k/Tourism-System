@@ -13,6 +13,7 @@ import PlaceModal from "./PlaceModal";
 import { mapStore } from "../../zustand/MapStore";
 import { stringToLngLat } from "../../utils";
 import { useLocation } from "react-router-dom";
+import Popup from "../../components/Popup";
 
 function PlaceItem({
   previosPlace,
@@ -38,9 +39,7 @@ function PlaceItem({
   const setCenter = mapStore((state) => state.setCenter);
   const setDestination = mapStore((state) => state.setDestination);
 
-  const handleOpenCloseModal = () => {
-    setIsModalOpen(!isModalOpen);
-  };
+  const handleOpenCloseModal = () => setIsModalOpen(!isModalOpen);
 
   const handelClick = () => {
     setCenter(stringToLngLat(place.location));
@@ -102,12 +101,9 @@ function PlaceItem({
         />
       </ListItem>
       {isModalOpen ? (
-        <PlaceModal
-          previosPlace={previosPlace}
-          place={place}
-          isModalOpen={isModalOpen}
-          handleOpenCloseModal={handleOpenCloseModal}
-        />
+        <Popup isOpen={isModalOpen} handleOpenClose={handleOpenCloseModal}>
+          <PlaceModal previosPlace={previosPlace} place={place} />
+        </Popup>
       ) : (
         <></>
       )}

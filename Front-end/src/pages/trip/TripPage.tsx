@@ -11,6 +11,7 @@ import { mapStore } from "../../zustand/MapStore";
 import { stringToLngLat } from "../../utils";
 import LoadingSpinner from "../../components/LoadingSpinner";
 import ReservationsModal from "./ReservationsModal";
+import Popup from "../../components/Popup";
 
 function TripPage() {
   const [isLoading] = useState(false);
@@ -45,7 +46,7 @@ function TripPage() {
     }
   };
 
-  const handleOpenCloseModel = () => {
+  const handleOpenCloseDayModel = () => {
     setIsDayModalOpen(!isDayModalOpen);
   };
 
@@ -137,13 +138,15 @@ function TripPage() {
           onChange={handleDayChange}
           page={activeDay + 1}
         />
-        <IconButton title="Day info" onClick={handleOpenCloseModel}>
+        <IconButton title="Day info" onClick={handleOpenCloseDayModel}>
           <InfoSharp />
         </IconButton>
-        <DayModal
-          isModalOpen={isDayModalOpen}
-          handleOpenCloseModal={handleOpenCloseModel}
-        />
+        <Popup
+          isOpen={isDayModalOpen}
+          handleOpenClose={handleOpenCloseDayModel}
+        >
+          <DayModal />
+        </Popup>
       </Stack>
       <DayList />
     </>
@@ -171,10 +174,12 @@ function TripPage() {
       ) : (
         <></>
       )}
-      <ReservationsModal
-        handleOpenCloseModal={handleOpenCloseReservationsModel}
-        isModalOpen={isReservationsModalOpen}
-      />
+      <Popup
+        isOpen={isReservationsModalOpen}
+        handleOpenClose={handleOpenCloseReservationsModel}
+      >
+        <ReservationsModal />
+      </Popup>
     </div>
   );
 }

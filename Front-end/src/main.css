@@ -561,6 +561,13 @@ input::-webkit-inner-spin-button {
   padding: 10px 20px;
   border-bottom: 1px solid var(--secondary-text-color);
   color: var(--text-color);
+  position: relative;
+
+  .itinerary-btn {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+  }
 }
 .trip-header h2 {
   font-weight: 600;
