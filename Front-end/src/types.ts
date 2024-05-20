@@ -111,10 +111,12 @@ export interface TripPlace {
   food_type?: string;
   price?: number;
   travelTimeInMinutes?: number;
-  time?: number;
+  time: number;
   city_id?: number;
   cityName?: string;
   distancefromlastplace?: number;
+  startHour?: string;
+  endHour?: string;
 }
 
 export interface HotelReservation {

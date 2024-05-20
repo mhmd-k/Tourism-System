@@ -198,3 +198,32 @@ export function sleep(duration: number): Promise<void> {
     }, duration);
   });
 }
+
+export const formatPlaceType = (palceType: string): string => {
+  let str = "";
+  switch (palceType.toLowerCase().slice(0, 3)) {
+    case "res":
+      str = "Restaurant";
+      break;
+    case "old":
+      str = "Old Place";
+      break;
+    case "nig":
+      str = "Night Place";
+      break;
+    case "sho":
+      str = "Shopping Place";
+      break;
+    case "hot":
+      str = "Hotel";
+      break;
+    case "nat":
+      str = "Natural Place";
+      break;
+
+    default:
+      str = "Airport";
+  }
+
+  return str;
+};

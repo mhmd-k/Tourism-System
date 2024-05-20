@@ -1,6 +1,4 @@
-import { IconButton } from "@mui/material";
 import { mapStore } from "../../zustand/MapStore";
-import EventNoteIcon from "@mui/icons-material/EventNote";
 
 function TripHeader() {
   const trip = mapStore((state) => state.trip);
@@ -9,9 +7,6 @@ function TripHeader() {
 
   return (
     <div className="trip-header">
-      <IconButton color="primary" className="itinerary-btn">
-        <EventNoteIcon />
-      </IconButton>
       <h2>Trip to {trip.destination}</h2>
       <ul>
         <li>

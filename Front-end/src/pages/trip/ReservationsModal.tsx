@@ -60,7 +60,7 @@ function ReservationsModal() {
   });
 
   return (
-    <Box className="reservations-popup">
+    <Box className="popup reservations-popup">
       <h3>Reservations Needed:</h3>
       {hotelsReservations && <HotelsTable />}
       {flightsReservations && <FlightsTable />}

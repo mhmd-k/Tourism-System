@@ -5,18 +5,20 @@ import Stack from "@mui/material/Stack";
 import DayList from "./DayList";
 import MapElement from "./MapElement";
 import { Box, Drawer, IconButton } from "@mui/material";
-import { CreditCard, InfoSharp, Map } from "@mui/icons-material";
-import DayModal from "./DayModal";
+import { CreditCard, Map } from "@mui/icons-material";
 import { mapStore } from "../../zustand/MapStore";
 import { stringToLngLat } from "../../utils";
 import LoadingSpinner from "../../components/LoadingSpinner";
 import ReservationsModal from "./ReservationsModal";
 import Popup from "../../components/Popup";
+import EventNoteIcon from "@mui/icons-material/EventNote";
+import ItineraryTable from "./ItineraryTable";
 
 function TripPage() {
   const [isLoading] = useState(false);
   const [isMobileNavbarOpen, setIsMobileNavbarOpen] = useState<boolean>(false);
-  const [isDayModalOpen, setIsDayModalOpen] = useState<boolean>(false);
+  const [isTripInfoModalOpen, setIsTripInfoModalOpen] =
+    useState<boolean>(false);
   const [isReservationsModalOpen, setIsReservationsModalOpen] =
     useState<boolean>(false);
 
@@ -46,8 +48,8 @@ function TripPage() {
     }
   };
 
-  const handleOpenCloseDayModel = () => {
-    setIsDayModalOpen(!isDayModalOpen);
+  const handleOpenCloseTripInfoModel = () => {
+    setIsTripInfoModalOpen(!isTripInfoModalOpen);
   };
 
   const handleOpenCloseReservationsModel = () => {
@@ -125,6 +127,13 @@ function TripPage() {
 
   const tripNavbar = (
     <>
+      <IconButton
+        color="primary"
+        className="trip-info-btn"
+        onClick={handleOpenCloseTripInfoModel}
+      >
+        <EventNoteIcon />
+      </IconButton>
       <TripHeader />
       <Stack
         direction={"row"}
@@ -137,15 +146,18 @@ function TripPage() {
           color="primary"
           onChange={handleDayChange}
           page={activeDay + 1}
+          siblingCount={0}
         />
-        <IconButton title="Day info" onClick={handleOpenCloseDayModel}>
-          <InfoSharp />
-        </IconButton>
+
         <Popup
-          isOpen={isDayModalOpen}
-          handleOpenClose={handleOpenCloseDayModel}
+          isOpen={isTripInfoModalOpen}
+          handleOpenClose={handleOpenCloseTripInfoModel}
         >
-          <DayModal />
+          <Box className="popup itinerary-popup">
+            {trip.tripDays.map((_, i) => (
+              <ItineraryTable dayNumber={i + 1} />
+            ))}
+          </Box>
         </Popup>
       </Stack>
       <DayList />

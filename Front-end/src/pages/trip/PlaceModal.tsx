@@ -54,7 +54,7 @@ function PlaceModal({
   }, []);
 
   return (
-    <Box className="place-popup">
+    <Box className="popup place-popup">
       {isLoading ? (
         <LoadingSpinner size={30} color="red" />
       ) : (

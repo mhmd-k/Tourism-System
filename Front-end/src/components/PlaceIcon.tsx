@@ -3,7 +3,7 @@ import {
   Hotel,
   Flight,
   Nightlife,
-  ShoppingCart,
+  ShoppingBag,
 } from "@mui/icons-material";
 import ParkIcon from "@mui/icons-material/Park";
 import AccountBalanceIcon from "@mui/icons-material/AccountBalance";
@@ -28,7 +28,7 @@ function PlaceIcon({ placeType }: { placeType: string }) {
       icon = <ParkIcon />;
       break;
     case "sho":
-      icon = <ShoppingCart />;
+      icon = <ShoppingBag />;
       break;
     case "air":
       icon = <Flight />;

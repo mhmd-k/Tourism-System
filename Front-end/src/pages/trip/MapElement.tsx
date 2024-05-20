@@ -19,6 +19,7 @@ function MapElement() {
       key: "YZJHNBZyfgHI0qyHkfQGAPe8ALsnCJN4",
       container: mapElement.current || "",
       zoom: 10,
+      language: "english",
     });
 
     newMap.addControl(new tt.FullscreenControl());
