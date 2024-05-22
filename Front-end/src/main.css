@@ -33,6 +33,13 @@ thead {
     font-weight: 700 !important;
   }
 }
+@media (max-width: 767px) {
+  th,
+  td {
+    font-size: 12px !important;
+    padding: 10px !important;
+  }
+}
 img {
   width: 100%;
   height: 100%;
@@ -41,6 +48,11 @@ img {
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   display: none;
+}
+.close-btn {
+  width: 30px;
+  height: 30px;
+  min-width: unset !important;
 }
 .header-link {
   color: black;
@@ -608,7 +620,7 @@ input::-webkit-inner-spin-button {
   transform: translate(-50%, -50%);
   background-color: white;
   width: 90%;
-  max-width: 800px;
+  max-width: 900px;
   border-radius: 5px;
 }
 .itinerary-popup {
@@ -625,7 +637,7 @@ input::-webkit-inner-spin-button {
 
   .icon {
     svg {
-      font-size: 15px;
+      font-size: 20px;
     }
   }
 }

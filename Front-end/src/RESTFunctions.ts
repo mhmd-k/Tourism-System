@@ -265,3 +265,21 @@ export async function getCities(str: string) {
     console.error("getCitiesResponse error: ", error);
   }
 }
+
+export async function getPlaces(placeName: string, placeType?: string) {
+  const URL = placeType
+    ? `${laravelUrl}/search?placeName=${placeName}&placeType=${placeType}`
+    : `${laravelUrl}/search?placeName=${placeName}`;
+
+  try {
+    const response = await axios.get(URL);
+
+    if (response.status === 200) {
+      return response.data.places;
+    } else {
+      throw new Error(`getPalces error, status code:${response.status}`);
+    }
+  } catch (error) {
+    console.error(error);
+  }
+}

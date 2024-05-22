@@ -4,8 +4,8 @@ import Pagination from "@mui/material/Pagination";
 import Stack from "@mui/material/Stack";
 import DayList from "./DayList";
 import MapElement from "./MapElement";
-import { Box, Drawer, IconButton } from "@mui/material";
-import { CreditCard, Map } from "@mui/icons-material";
+import { Box, Button, Drawer, IconButton } from "@mui/material";
+import { Close, CreditCard, Map } from "@mui/icons-material";
 import { mapStore } from "../../zustand/MapStore";
 import { stringToLngLat } from "../../utils";
 import LoadingSpinner from "../../components/LoadingSpinner";
@@ -154,8 +154,19 @@ function TripPage() {
           handleOpenClose={handleOpenCloseTripInfoModel}
         >
           <Box className="popup itinerary-popup">
+            <Stack direction="row" justifyContent="space-between">
+              <h2>Trip Itinerary:</h2>
+              <Button
+                variant="contained"
+                color="error"
+                onClick={handleOpenCloseTripInfoModel}
+                className="close-btn"
+              >
+                <Close />
+              </Button>
+            </Stack>
             {trip.tripDays.map((_, i) => (
-              <ItineraryTable dayNumber={i + 1} />
+              <ItineraryTable key={i} dayNumber={i + 1} />
             ))}
           </Box>
         </Popup>

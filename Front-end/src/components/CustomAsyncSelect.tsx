@@ -36,7 +36,7 @@ function CustomAsyncSelect<T>({
       setError(null);
 
       try {
-        await sleep(2000);
+        await sleep(1000);
 
         const data = await getOptions(`${fieldValue}`);
 

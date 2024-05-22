@@ -227,3 +227,25 @@ export const formatPlaceType = (palceType: string): string => {
 
   return str;
 };
+
+export function calculateTotalCost(
+  place: TripPlace,
+  numberOfPeople: number,
+  ishotelAgain?: boolean
+): number {
+  let totalCost = 0;
+
+  if (place.price && !ishotelAgain) {
+    totalCost += place.price * numberOfPeople;
+  }
+
+  if (place.ticketprice) totalCost += place.ticketprice * numberOfPeople;
+  if (place.ticketprice_return)
+    totalCost += place.ticketprice_return * numberOfPeople;
+
+  if (place.transportaioncost) {
+    totalCost += place.transportaioncost;
+  }
+
+  return totalCost;
+}

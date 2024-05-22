@@ -3,13 +3,12 @@ import { TripPlace } from "../../types";
 import { SyntheticEvent, useEffect, useState } from "react";
 import Autocomplete from "@mui/material/Autocomplete";
 import CircularProgress from "@mui/material/CircularProgress";
-import axios from "axios";
-import { Error } from "@mui/icons-material";
 import { selectedPlacesStore } from "../../zustand/SelectedPlacesStore";
 import ModelPlaces from "./ModelPlaces";
 import SelectedPlacesList from "./SelectedPlacesList";
 import { sleep } from "../../utils";
 import { v4 as uuidv4 } from "uuid";
+import { getPlaces } from "../../RESTFunctions";
 
 function PlacesSearch() {
   const [placeName, setPlaceName] = useState<string>("");
@@ -31,18 +30,11 @@ function PlacesSearch() {
       try {
         await sleep(2000);
 
-        const response = await axios.get(
-          `http://localhost:8000/api/search?placeName=${placeName}`
-        );
+        const places = await getPlaces(placeName);
 
-        if (response.status === 200) {
-          setOptions(response.data.places);
-        } else {
-          setError(response.data.error);
-        }
+        setOptions(places);
       } catch (error) {
-        // @ts-expect-error error is undefined
-        setError(error.response.data.error);
+        setError("Error getting places");
       } finally {
         setIsLoading(false);
       }
@@ -63,7 +55,7 @@ function PlacesSearch() {
       <h2>Add some specific places</h2>
 
       {error ? (
-        <Alert icon={<Error />} variant="filled" severity="error">
+        <Alert variant="filled" severity="error">
           {error}
         </Alert>
       ) : (
