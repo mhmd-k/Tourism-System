@@ -19,7 +19,7 @@ function DayList() {
   if (!day) return;
 
   return (
-    <List>
+    <List className="trip-places-container" sx={{ overflowY: "auto" }}>
       {day.dayPlaces.map((place, i) => (
         <div key={i}>
           <PlaceItem

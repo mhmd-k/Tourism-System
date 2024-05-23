@@ -105,7 +105,7 @@ function ChangePlaceElement({
   return (
     <Stack gap={3} minHeight={270}>
       <h3>Change Place:</h3>
-      <FormControl>
+      <FormControl sx={{ bgcolor: "#f0f0f0" }}>
         <InputLabel size="small" id="new-palce-type">
           New Place Type
         </InputLabel>
@@ -134,7 +134,7 @@ function ChangePlaceElement({
       )}
 
       {formData.type && (
-        <FormControl>
+        <FormControl sx={{ bgcolor: "#f0f0f0" }}>
           <Autocomplete
             id="new-place-name"
             options={options}

@@ -527,9 +527,10 @@ input::-webkit-inner-spin-button {
   grid-column: span 5;
   z-index: 100;
   background-color: white;
-  max-height: 90vh;
-  overflow-y: auto;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  max-height: calc(100dvh - 70px);
 
   .break {
     border-radius: 16px;
@@ -548,22 +549,22 @@ input::-webkit-inner-spin-button {
     }
   }
 }
-.trip aside::-webkit-scrollbar {
+.trip aside .trip-places-container::-webkit-scrollbar {
   width: 6px;
   height: 6px;
 }
-.trip aside::-webkit-scrollbar-track {
+.trip aside .trip-places-container::-webkit-scrollbar-track {
   border-radius: 10px;
   background: rgba(0, 0, 0, 0.1);
 }
-.trip aside::-webkit-scrollbar-thumb {
+.trip aside .trip-places-container::-webkit-scrollbar-thumb {
   border-radius: 10px;
   background: rgba(0, 0, 0, 0.2);
 }
-.trip aside::-webkit-scrollbar-thumb:hover {
+.trip aside .trip-places-container::-webkit-scrollbar-thumb:hover {
   background: rgba(0, 0, 0, 0.4);
 }
-.trip aside::-webkit-scrollbar-thumb:active {
+.trip aside .trip-places-container::-webkit-scrollbar-thumb:active {
   background: rgba(0, 0, 0, 0.9);
 }
 .trip-info-btn {

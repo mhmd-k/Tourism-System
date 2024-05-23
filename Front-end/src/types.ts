@@ -106,12 +106,13 @@ export interface TripPlace {
   address: string;
   location: string;
   transportaionMethod: "car" | "plane" | "walking";
+  time: number;
+  money_amount?: number;
   stars?: number;
   description?: string;
   food_type?: string;
   price?: number;
   travelTimeInMinutes?: number;
-  time: number;
   city_id?: number;
   cityName?: string;
   distancefromlastplace?: number;
@@ -120,6 +121,7 @@ export interface TripPlace {
   ticketprice?: number;
   transportaioncost?: number;
   ticketprice_return?: number;
+  transportation_time?: number;
 }
 
 export interface HotelReservation {
