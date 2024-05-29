@@ -5,8 +5,8 @@ import {
   SyntheticEvent,
   useEffect,
   useState,
+  useRef,
 } from "react";
-import { sleep } from "../utils";
 import { v4 as uuidv4 } from "uuid";
 
 interface CustomAsyncSelectProps<T> {
@@ -27,28 +27,38 @@ function CustomAsyncSelect<T>({
   const [error, setError] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [open, setOpen] = useState(false);
+  const debounceTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
-    (async () => {
-      if (!fieldValue) return;
+    if (!fieldValue) return;
 
+    if (debounceTimeoutRef.current) {
+      clearTimeout(debounceTimeoutRef.current);
+    }
+
+    debounceTimeoutRef.current = setTimeout(async () => {
       setIsLoading(true);
       setError(null);
 
       try {
-        await sleep(1000);
-
         const data = await getOptions(`${fieldValue}`);
-
-        setOptions(data as string[]);
+        if (data) {
+          setOptions(data as string[]);
+        }
       } catch (error) {
         setError(
-          `an error occured while fetching ${label} options, please try again later.`
+          `an error occurred while fetching ${label} options, please try again later.`
         );
       } finally {
         setIsLoading(false);
       }
-    })();
+    }, 1000);
+
+    return () => {
+      if (debounceTimeoutRef.current) {
+        clearTimeout(debounceTimeoutRef.current);
+      }
+    };
   }, [fieldValue, getOptions, label, name]);
 
   const handleChange = (
@@ -56,22 +66,19 @@ function CustomAsyncSelect<T>({
     value: string | null
   ) => {
     if (value) {
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      handleValueChange((prevState: any) => ({ ...prevState, [name]: value }));
+      handleValueChange((prevState) => ({ ...prevState, [name]: value }));
     }
   };
 
   return (
     <>
-      {error ? (
+      {error && (
         <Alert variant="filled" severity="error">
           {error}
         </Alert>
-      ) : (
-        <></>
       )}
       <Autocomplete
-        id="city"
+        id={name}
         options={options}
         open={open}
         onOpen={() => {
@@ -85,7 +92,7 @@ function CustomAsyncSelect<T>({
         renderInput={(params) => (
           <TextField
             {...params}
-            name="city"
+            name={name}
             label={label}
             size="small"
             value={fieldValue}

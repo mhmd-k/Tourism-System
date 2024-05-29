@@ -70,64 +70,60 @@ function ItineraryTable({ dayNumber }: { dayNumber: number }) {
               let totalCost = 0;
               if (place.money_amount) totalCost += place.money_amount;
               if (place.transportaioncost) totalCost += place.transportaioncost;
-              if (place.ticketprice_return)
-                totalCost += place.ticketprice_return * numberOfPeople;
 
               return (
-                <>
-                  <TableRow key={i}>
-                    <TableCell component="th" scope="row">
-                      <Avatar
-                        sx={{
-                          bgcolor: "var(--green-color)",
-                          width: 30,
-                          height: 30,
-                        }}
-                        className="icon"
-                      >
-                        <PlaceIcon placeType={place.placeType} />
-                      </Avatar>
-                    </TableCell>
-                    <TableCell align="center">
-                      {i === places.length - 1
-                        ? `${place.startHour}`
-                        : `${place.startHour} - ${place.endHour}`}
-                    </TableCell>
-                    <TableCell align="center">
-                      <Stack
-                        direction={"row"}
-                        gap={2}
-                        justifyContent={"center"}
-                        alignItems={"center"}
-                      >
-                        {place.name}
-                      </Stack>
-                    </TableCell>
-                    <TableCell align="center">
-                      {place.transportation_time &&
-                        `${formatTravelTime(place.transportation_time)}`}{" "}
-                      - {place.transportaionMethod}
-                    </TableCell>
-                    <TableCell align="center">
-                      {place.transportaioncost
-                        ? `${place.transportaioncost}$`
+                <TableRow key={i}>
+                  <TableCell component="th" scope="row">
+                    <Avatar
+                      sx={{
+                        bgcolor: "var(--green-color)",
+                        width: 30,
+                        height: 30,
+                      }}
+                      className="icon"
+                    >
+                      <PlaceIcon placeType={place.placeType} />
+                    </Avatar>
+                  </TableCell>
+                  <TableCell align="center">
+                    {i === places.length - 1
+                      ? `${place.startHour}`
+                      : `${place.startHour} - ${place.endHour}`}
+                  </TableCell>
+                  <TableCell align="center">
+                    <Stack
+                      direction={"row"}
+                      gap={2}
+                      justifyContent={"center"}
+                      alignItems={"center"}
+                    >
+                      {place.name}
+                    </Stack>
+                  </TableCell>
+                  <TableCell align="center">
+                    {place.transportation_time &&
+                      `${formatTravelTime(place.transportation_time)}`}{" "}
+                    - {place.transportaionMethod}
+                  </TableCell>
+                  <TableCell align="center">
+                    {place.transportaioncost
+                      ? `${place.transportaioncost}$`
+                      : "-"}
+                  </TableCell>
+                  <TableCell align="center">
+                    {place.ticketprice
+                      ? `${place.ticketprice}$`
+                      : place.ticketprice_return
+                        ? `${place.ticketprice_return}$`
                         : "-"}
-                    </TableCell>
-                    <TableCell align="center">
-                      {place.ticketprice
-                        ? `${place.ticketprice}$`
-                        : place.ticketprice_return
-                          ? `${place.ticketprice_return}$`
-                          : "-"}
-                    </TableCell>
-                    <TableCell align="center">
-                      {place.price ? `${place.price}$` : "-"}
-                    </TableCell>
-                    <TableCell align="center" sx={{ fontWeight: "bold" }}>
-                      {totalCost}$
-                    </TableCell>
-                  </TableRow>
-                </>
+                  </TableCell>
+                  <TableCell align="center">
+                    {place.price ? `${place.price}$` : "-"}
+                  </TableCell>
+                  <TableCell align="center" sx={{ fontWeight: "bold" }}>
+                    {totalCost}$
+                  </TableCell>
+                </TableRow>
               );
             })}
           </TableBody>
