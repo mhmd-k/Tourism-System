@@ -23,7 +23,7 @@ const defaultTripInfo: GenerateTripData = {
   budget: 0,
   preferredFood: [],
   preferredPlaces: [],
-  userCompanions: null,
+  userCompanions: [],
 };
 
 export const tripInfoStore = create<TripInfoStore>((set) => ({

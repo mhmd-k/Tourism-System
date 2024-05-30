@@ -25,7 +25,7 @@ export interface User {
 
 export interface UserCompanion {
   age: number;
-  gender: "Male" | "Female" | "";
+  gender: string;
 }
 
 export interface LoginRequest {
@@ -68,7 +68,7 @@ export interface GenerateTripData {
   budget: number;
   preferredFood: string[];
   preferredPlaces: string[];
-  userCompanions: UserCompanion[] | null;
+  userCompanions: UserCompanion[];
 }
 
 export interface PlaceLocation {
