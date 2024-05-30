@@ -1,33 +1,28 @@
 import { Alert, Autocomplete, TextField } from "@mui/material";
-import {
-  Dispatch,
-  SetStateAction,
-  SyntheticEvent,
-  useEffect,
-  useState,
-  useRef,
-} from "react";
+import { SyntheticEvent, useEffect, useState, useRef } from "react";
 import { v4 as uuidv4 } from "uuid";
+import { tripInfoStore } from "../zustand/TripInfoStore";
 
-interface CustomAsyncSelectProps<T> {
+interface CustomAsyncSelectProps {
   name: string;
   label: string;
-  handleValueChange: Dispatch<SetStateAction<T>>;
   getOptions: (str: string) => Promise<unknown>;
 }
 
-function CustomAsyncSelect<T>({
+function CustomAsyncSelect({
   name,
   label,
-  handleValueChange,
   getOptions,
-}: CustomAsyncSelectProps<T>) {
+}: CustomAsyncSelectProps) {
   const [fieldValue, setFieldValue] = useState<string>("");
   const [options, setOptions] = useState<string[]>([]);
   const [error, setError] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [open, setOpen] = useState(false);
   const debounceTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  const tripInfo = tripInfoStore((state) => state.tripInfo);
+  const setTripInfo = tripInfoStore((state) => state.setTripInfo);
 
   useEffect(() => {
     if (!fieldValue) return;
@@ -66,7 +61,7 @@ function CustomAsyncSelect<T>({
     value: string | null
   ) => {
     if (value) {
-      handleValueChange((prevState) => ({ ...prevState, [name]: value }));
+      setTripInfo({ ...tripInfo, [name]: value });
     }
   };
 

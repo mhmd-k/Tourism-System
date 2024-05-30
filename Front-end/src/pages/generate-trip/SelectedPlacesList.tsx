@@ -5,14 +5,14 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
-import { selectedPlacesStore } from "../../zustand/SelectedPlacesStore";
+import { tripInfoStore } from "../../zustand/TripInfoStore";
 import { Delete } from "@mui/icons-material";
 import { IconButton } from "@mui/material";
 
 function SelectedPlacesList() {
-  const places = selectedPlacesStore((state) => state.places);
-  const modelplaces = selectedPlacesStore((state) => state.modelPlaces);
-  const removePlace = selectedPlacesStore((state) => state.removePlace);
+  const places = tripInfoStore((state) => state.places);
+  const modelplaces = tripInfoStore((state) => state.modelPlaces);
+  const removePlace = tripInfoStore((state) => state.removePlace);
 
   const allPlaces = [...places, ...modelplaces];
 

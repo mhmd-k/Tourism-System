@@ -6,13 +6,13 @@ import React from "react";
 
 const cites = ["milan", "napoli", "roma", "venice", "florence"];
 
-function TripCard({ id, destination, tripDays, date }: Trip) {
+function TripCard({ trip_id, destination, tripDays, date }: Trip) {
   const handleDelete = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
   };
 
   return (
-    <Link to={`${id}`}>
+    <Link to={`${trip_id}`}>
       <div className="trip-card">
         <div className="image">
           <img

@@ -15,10 +15,11 @@ import {
 } from "@mui/material";
 import { GroupOutlined, PriceChange } from "@mui/icons-material";
 import { ChangeEvent, useState } from "react";
-import { GenerateTripData, UserCompanion } from "../../types";
+import { UserCompanion } from "../../types";
 import CustomAsyncSelect from "../../components/CustomAsyncSelect";
 import { getCities } from "../../RESTFunctions";
 import Popup from "../../components/Popup";
+import { tripInfoStore } from "../../zustand/TripInfoStore";
 
 const foodTypes = [
   "Sea food",
@@ -35,31 +36,28 @@ const places = [
   { label: "Shopping Places", value: "shoppingplace" },
 ];
 
-function Survey({
-  setFormData,
-  formData,
-}: {
-  setFormData: React.Dispatch<React.SetStateAction<GenerateTripData>>;
-  formData: GenerateTripData;
-}) {
+function Survey() {
   const [isUserCompanionsPopupOpen, setIsUserCompanionPopupOpen] =
     useState(false);
+
+  const formData = tripInfoStore((state) => state.tripInfo);
+  const setFormData = tripInfoStore((state) => state.setTripInfo);
 
   const handleOpenClosePopup = () =>
     setIsUserCompanionPopupOpen(!isUserCompanionsPopupOpen);
 
   const handelSelectChange = (event: SelectChangeEvent<string>) => {
-    setFormData((prevState) => ({
-      ...prevState,
+    setFormData({
+      ...formData,
       [event.target.name]: `${event.target.value}`,
-    }));
+    });
   };
 
   const handleDateChange = (event: ChangeEvent<HTMLInputElement>) => {
-    setFormData((prevState) => ({
-      ...prevState,
+    setFormData({
+      ...formData,
       date: event.target.value,
-    }));
+    });
   };
 
   const handleMultiSelect = (
@@ -79,10 +77,10 @@ function Survey({
       arr = [...arr, value];
     }
 
-    setFormData((prevState) => ({
-      ...prevState,
+    setFormData({
+      ...formData,
       [property]: arr,
-    }));
+    });
   };
 
   return (
@@ -92,7 +90,6 @@ function Survey({
         <CustomAsyncSelect
           name="fromCity"
           label="From City"
-          handleValueChange={setFormData}
           getOptions={getCities}
         />
         <FormControl required>
@@ -135,11 +132,11 @@ function Survey({
                   userCompanions.push({ age: 0, gender: "" });
                 }
 
-                setFormData((prevState) => ({
-                  ...prevState,
+                setFormData({
+                  ...formData,
                   numberOfPeople: Number(e.target.value),
                   userCompanions: userCompanions,
-                }));
+                });
               }}
               required
             />
@@ -170,10 +167,10 @@ function Survey({
               size="small"
               value={formData.numberOfDays}
               onChange={(e) =>
-                setFormData((prevState) => ({
-                  ...prevState,
+                setFormData({
+                  ...formData,
                   numberOfDays: Number(e.target.value),
-                }))
+                })
               }
               required
             />
@@ -192,10 +189,10 @@ function Survey({
           >
             <FormControlLabel
               onClick={() =>
-                setFormData((prevState) => ({
-                  ...prevState,
+                setFormData({
+                  ...formData,
                   careAboutBudget: true,
-                }))
+                })
               }
               control={<Radio />}
               label="Yes"
@@ -203,10 +200,10 @@ function Survey({
             />
             <FormControlLabel
               onClick={() =>
-                setFormData((prevState) => ({
-                  ...prevState,
+                setFormData({
+                  ...formData,
                   careAboutBudget: false,
-                }))
+                })
               }
               control={<Radio />}
               label="No"
@@ -229,10 +226,10 @@ function Survey({
             >
               <FormControlLabel
                 onClick={() =>
-                  setFormData((prevState) => ({
-                    ...prevState,
+                  setFormData({
+                    ...formData,
                     cheapestTrip: true,
-                  }))
+                  })
                 }
                 control={<Radio />}
                 label="Yes"
@@ -240,10 +237,10 @@ function Survey({
               />
               <FormControlLabel
                 onClick={() =>
-                  setFormData((prevState) => ({
-                    ...prevState,
+                  setFormData({
+                    ...formData,
                     cheapestTrip: false,
-                  }))
+                  })
                 }
                 control={<Radio />}
                 label="No"
@@ -264,10 +261,10 @@ function Survey({
               size="small"
               value={formData.budget}
               onChange={(e) =>
-                setFormData((prevState) => ({
-                  ...prevState,
+                setFormData({
+                  ...formData,
                   budget: Number(e.target.value),
-                }))
+                })
               }
             />
             <PriceChange />

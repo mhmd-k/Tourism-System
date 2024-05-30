@@ -1,4 +1,3 @@
-import { GenerateTripData } from "../../types";
 import { validateTripInfo } from "../../utils";
 import Survey from "./Survey";
 import Spinner from "../../components/LoadingSpinner";
@@ -19,31 +18,21 @@ import { Navigate, useNavigate } from "react-router-dom";
 import { generateTrip } from "../../RESTFunctions";
 import { Error } from "@mui/icons-material";
 import { mapStore } from "../../zustand/MapStore";
-import { selectedPlacesStore } from "../../zustand/SelectedPlacesStore";
+import { tripInfoStore } from "../../zustand/TripInfoStore";
 
 function GenerateTrip() {
-  const [formData, setFormData] = useState<GenerateTripData>({
-    toCountry: "",
-    fromCity: "",
-    date: "",
-    numberOfDays: "",
-    numberOfPeople: "",
-    cheapestTrip: true,
-    careAboutBudget: false,
-    budget: 0,
-    preferredFood: [],
-    preferredPlaces: [],
-    userCompanions: null,
-  });
   const [error, setError] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [page, setPage] = useState<number>(0);
 
   const navigate = useNavigate();
 
-  const places = selectedPlacesStore((state) => state.places);
-  const modelplaces = selectedPlacesStore((state) => state.modelPlaces);
-  const setPlaces = selectedPlacesStore((state) => state.setPlaces);
+  const formData = tripInfoStore((state) => state.tripInfo);
+
+  const places = tripInfoStore((state) => state.places);
+  const modelplaces = tripInfoStore((state) => state.modelPlaces);
+  const setPlaces = tripInfoStore((state) => state.setPlaces);
+  const setModelPlaces = tripInfoStore((state) => state.setModelPlaces);
 
   const user = userStore((state) => state.user);
 
@@ -55,8 +44,8 @@ function GenerateTrip() {
   console.log("Modelplaces: ", modelplaces);
 
   useEffect(() => {
-    setPlaces("ModelPlaces", []);
-    setPlaces("places", []);
+    setModelPlaces([]);
+    setPlaces([]);
   }, []);
 
   // if the user is not signed in
@@ -104,9 +93,7 @@ function GenerateTrip() {
     <div className="generate-trip">
       <Container className="generate-trip-container">
         <div className="form-body">
-          {page === 0 && (
-            <Survey setFormData={setFormData} formData={formData} />
-          )}
+          {page === 0 && <Survey />}
           {page === 1 && <PlacesSearch />}
         </div>
 

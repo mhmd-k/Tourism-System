@@ -3,12 +3,12 @@ import { TripPlace } from "../../types";
 import { SyntheticEvent, useEffect, useRef, useState } from "react";
 import Autocomplete from "@mui/material/Autocomplete";
 import CircularProgress from "@mui/material/CircularProgress";
-import { selectedPlacesStore } from "../../zustand/SelectedPlacesStore";
 import ModelPlaces from "./ModelPlaces";
 import SelectedPlacesList from "./SelectedPlacesList";
 import { sleep } from "../../utils";
 import { v4 as uuidv4 } from "uuid";
 import { getPlaces } from "../../RESTFunctions";
+import { tripInfoStore } from "../../zustand/TripInfoStore";
 
 function PlacesSearch() {
   const [placeName, setPlaceName] = useState<string>("");
@@ -18,8 +18,8 @@ function PlacesSearch() {
   const [options, setOptions] = useState<TripPlace[]>([]);
   const debounceTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
-  const places = selectedPlacesStore((state) => state.places);
-  const setPlaces = selectedPlacesStore((state) => state.setPlaces);
+  const places = tripInfoStore((state) => state.places);
+  const setPlaces = tripInfoStore((state) => state.setPlaces);
 
   useEffect(() => {
     if (debounceTimeoutRef.current) {
@@ -58,9 +58,9 @@ function PlacesSearch() {
     _event: SyntheticEvent<Element, Event>,
     value: TripPlace[]
   ) => {
-    // console.log("select value:", value);
+    // console.log("selected value:", value);
 
-    setPlaces("places", value);
+    setPlaces(value);
   };
 
   return (

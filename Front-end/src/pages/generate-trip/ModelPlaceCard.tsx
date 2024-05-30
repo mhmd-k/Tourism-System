@@ -3,7 +3,7 @@ import { ModelPlace } from "../../types";
 import { Add, Remove } from "@mui/icons-material";
 import PlaceIcon from "../../components/PlaceIcon";
 import { memo, useMemo, useState, useEffect } from "react";
-import { selectedPlacesStore } from "../../zustand/SelectedPlacesStore";
+import { tripInfoStore } from "../../zustand/TripInfoStore";
 import { setImage } from "../../utils";
 
 const ModelPlaceCard = memo(
@@ -19,9 +19,9 @@ const ModelPlaceCard = memo(
   }: ModelPlace) => {
     const [selected, setSelected] = useState<boolean>(false);
 
-    const modelPlaces = selectedPlacesStore((state) => state.modelPlaces);
-    const addPlace = selectedPlacesStore((state) => state.addPlace);
-    const removePlace = selectedPlacesStore((state) => state.removePlace);
+    const modelPlaces = tripInfoStore((state) => state.modelPlaces);
+    const addPlace = tripInfoStore((state) => state.addPlace);
+    const removePlace = tripInfoStore((state) => state.removePlace);
 
     const image = useMemo(
       () => setImage(placeType, foodType),
