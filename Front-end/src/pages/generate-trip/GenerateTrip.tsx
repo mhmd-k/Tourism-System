@@ -33,6 +33,7 @@ function GenerateTrip() {
     budget: 0,
     preferredFood: [],
     preferredPlaces: [],
+    userCompanions: null,
   });
   const [error, setError] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(false);

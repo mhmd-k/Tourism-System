@@ -1,6 +1,6 @@
 import { Alert, TextField } from "@mui/material";
 import { TripPlace } from "../../types";
-import { SyntheticEvent, useEffect, useState } from "react";
+import { SyntheticEvent, useEffect, useRef, useState } from "react";
 import Autocomplete from "@mui/material/Autocomplete";
 import CircularProgress from "@mui/material/CircularProgress";
 import { selectedPlacesStore } from "../../zustand/SelectedPlacesStore";
@@ -16,12 +16,17 @@ function PlacesSearch() {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [open, setOpen] = useState(false);
   const [options, setOptions] = useState<TripPlace[]>([]);
+  const debounceTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   const places = selectedPlacesStore((state) => state.places);
   const setPlaces = selectedPlacesStore((state) => state.setPlaces);
 
   useEffect(() => {
-    (async () => {
+    if (debounceTimeoutRef.current) {
+      clearTimeout(debounceTimeoutRef.current);
+    }
+
+    debounceTimeoutRef.current = setTimeout(async () => {
       if (!placeName) return;
 
       setIsLoading(true);
@@ -32,13 +37,21 @@ function PlacesSearch() {
 
         const places = await getPlaces(placeName);
 
-        setOptions(places);
+        if (places) {
+          setOptions(places);
+        }
       } catch (error) {
         setError("Error getting places");
       } finally {
         setIsLoading(false);
       }
-    })();
+    }, 1000);
+
+    return () => {
+      if (debounceTimeoutRef.current) {
+        clearTimeout(debounceTimeoutRef.current);
+      }
+    };
   }, [placeName]);
 
   const handleChange = (

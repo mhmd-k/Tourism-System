@@ -115,6 +115,9 @@ export async function generateTrip(
     (e) => e.cityName && e.cityName.toLowerCase() === "florence"
   );
 
+  let preferredFood = tripInfo.preferredFood;
+  let preferredPlaces = tripInfo.preferredPlaces;
+
   let totalBudget: string | number = 0;
 
   if (!tripInfo.careAboutBudget) {
@@ -132,6 +135,27 @@ export async function generateTrip(
     totalBudget = tripInfo.budget;
   }
 
+  if (preferredFood.length === 0) {
+    preferredFood = [
+      "Sea food",
+      "Traditional",
+      "Dessert",
+      "Fast food",
+      "Fine dinning",
+    ];
+  }
+
+  if (preferredPlaces.length === 0) {
+    preferredPlaces = [
+      "oldplace",
+      "naturalplace",
+      "nightplace",
+      "shoppingplace",
+    ];
+  }
+
+  console.log("tripInfo: ", tripInfo);
+
   const body: GenerateTripRequestBody = {
     user_id: userId,
     date: tripInfo.date.split("-").join("/"),
@@ -140,21 +164,13 @@ export async function generateTrip(
     "N.days": tripInfo.numberOfDays,
     "N.people": tripInfo.numberOfPeople,
     totalBudget: totalBudget,
-    preferedplaces: tripInfo.preferredPlaces.map(
-      (e) => e.toLowerCase().split(" ")[0]
-    ),
+    preferedplaces: preferredPlaces,
     preferedfood: {
-      "Fine dinning": Boolean(
-        tripInfo.preferredFood.find((e) => e === "Fine dinning")
-      ),
-      "Fast food": Boolean(
-        tripInfo.preferredFood.find((e) => e === "Fast food")
-      ),
-      "Sea food": Boolean(tripInfo.preferredFood.find((e) => e === "Sea food")),
-      Dessert: Boolean(tripInfo.preferredFood.find((e) => e === "Dessert")),
-      Traditional: Boolean(
-        tripInfo.preferredFood.find((e) => e === "Traditional")
-      ),
+      "Fine dinning": Boolean(preferredFood.find((e) => e === "Fine dinning")),
+      "Fast food": Boolean(preferredFood.find((e) => e === "Fast food")),
+      "Sea food": Boolean(preferredFood.find((e) => e === "Sea food")),
+      Dessert: Boolean(preferredFood.find((e) => e === "Dessert")),
+      Traditional: Boolean(preferredFood.find((e) => e === "Traditional")),
     },
     places: {
       roma: prepareCitySelectedPlaces(romaPlaces),

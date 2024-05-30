@@ -29,24 +29,30 @@ function ItineraryTable({ dayNumber }: { dayNumber: number }) {
       minutes += place.transportation_time;
     }
 
+    console.log(`minutes ${i} before:`, minutes);
+
+    console.log(place);
+
     places.push({
       ...place,
       startHour: formatMinutesToTime(minutes),
       endHour: formatMinutesToTime(minutes + place.time * 60),
     });
 
+    console.log(`minutes ${i} after:`, minutes);
+
     minutes += place.time * 60;
   });
 
   return (
     <>
-      <Box display="flex" gap={3} justifyContent={"center"}>
+      <Box display="flex" gap={3} justifyContent={"center"} fontWeight={"bold"}>
         <p>Day {dayNumber}</p>
         <p>Date: {day.date}</p>
         <p>City: {day.city.name}</p>
         <p>Needed Money: {day.neededMony}$</p>
       </Box>
-      <TableContainer component={Paper}>
+      <TableContainer component={Paper} sx={{ marginBottom: "60px" }}>
         <Table>
           <TableHead
             sx={{

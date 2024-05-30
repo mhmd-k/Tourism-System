@@ -10,12 +10,15 @@ import {
   Radio,
   FormLabel,
   RadioGroup,
+  Box,
+  IconButton,
 } from "@mui/material";
 import { GroupOutlined, PriceChange } from "@mui/icons-material";
-import { ChangeEvent } from "react";
-import { GenerateTripData } from "../../types";
+import { ChangeEvent, useState } from "react";
+import { GenerateTripData, UserCompanion } from "../../types";
 import CustomAsyncSelect from "../../components/CustomAsyncSelect";
 import { getCities } from "../../RESTFunctions";
+import Popup from "../../components/Popup";
 
 const foodTypes = [
   "Sea food",
@@ -39,6 +42,12 @@ function Survey({
   setFormData: React.Dispatch<React.SetStateAction<GenerateTripData>>;
   formData: GenerateTripData;
 }) {
+  const [isUserCompanionsPopupOpen, setIsUserCompanionPopupOpen] =
+    useState(false);
+
+  const handleOpenClosePopup = () =>
+    setIsUserCompanionPopupOpen(!isUserCompanionsPopupOpen);
+
   const handelSelectChange = (event: SelectChangeEvent<string>) => {
     setFormData((prevState) => ({
       ...prevState,
@@ -119,16 +128,40 @@ function Survey({
               inputProps={{ min: "1", max: "30" }}
               size="small"
               value={formData.numberOfPeople}
-              onChange={(e) =>
+              onChange={(e) => {
+                const userCompanions: UserCompanion[] = [];
+
+                for (let i = 0; i < Number(e.target.value) - 1; i++) {
+                  userCompanions.push({ age: 0, gender: "" });
+                }
+
                 setFormData((prevState) => ({
                   ...prevState,
                   numberOfPeople: Number(e.target.value),
-                }))
-              }
+                  userCompanions: userCompanions,
+                }));
+              }}
               required
             />
-            <GroupOutlined />
           </FormControl>
+          {Number(formData.numberOfPeople) > 1 && (
+            <>
+              <IconButton
+                onClick={handleOpenClosePopup}
+                sx={{ bgcolor: "var(--green-color)", color: "white" }}
+              >
+                <GroupOutlined />
+              </IconButton>
+              <Popup
+                isOpen={isUserCompanionsPopupOpen}
+                handleOpenClose={handleOpenClosePopup}
+              >
+                <Box className="popup">
+                  <h3>Your Companions Info:</h3>
+                </Box>
+              </Popup>
+            </>
+          )}
           <FormControl className="generate-trip-input-container">
             <TextField
               type="number"

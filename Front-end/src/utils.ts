@@ -32,7 +32,10 @@ export function validateTripInfo(
       !value &&
       key !== "careAboutBudget" &&
       key !== "budget" &&
-      key !== "cheapestTrip"
+      key !== "cheapestTrip" &&
+      key !== "preferredFood" &&
+      key !== "preferredPlaces" &&
+      key !== "userCompanions"
     ) {
       return "Please fill all the fields";
     }
@@ -98,6 +101,7 @@ export const stringToLngLat = (str: string): PlaceLocation => {
 };
 
 export const formatMinutesToTime = (minutes: number): string => {
+  if (minutes > 1440) minutes -= 1440;
   const hours = Math.floor(minutes / 60);
   const mins = Math.floor(minutes % 60);
 

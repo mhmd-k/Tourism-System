@@ -23,6 +23,11 @@ export interface User {
   gender: "Male" | "Female";
 }
 
+export interface UserCompanion {
+  age: number;
+  gender: "Male" | "Female" | "";
+}
+
 export interface LoginRequest {
   email: string;
   password: string;
@@ -61,8 +66,9 @@ export interface GenerateTripData {
   cheapestTrip: boolean;
   careAboutBudget: boolean;
   budget: number;
-  preferredFood: Array<string>;
-  preferredPlaces: Array<string>;
+  preferredFood: string[];
+  preferredPlaces: string[];
+  userCompanions: UserCompanion[] | null;
 }
 
 export interface PlaceLocation {
