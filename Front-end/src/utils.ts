@@ -26,19 +26,27 @@ export const clearUserInfo = (): void => {
 export function validateTripInfo(
   userPreferrences: GenerateTripData
 ): string | null {
-  // if there is a field empty
-  for (const [key, value] of Object.entries(userPreferrences)) {
-    if (
-      !value &&
-      key !== "careAboutBudget" &&
-      key !== "budget" &&
-      key !== "cheapestTrip" &&
-      key !== "preferredFood" &&
-      key !== "preferredPlaces" &&
-      key !== "userCompanions"
-    ) {
-      return "Please fill all the fields";
-    }
+  const { toCountry, fromCity, numberOfDays, numberOfPeople, date } =
+    userPreferrences;
+
+  if (!fromCity) {
+    return "Please select the city you are going from";
+  }
+
+  if (!toCountry) {
+    return "Please select a country";
+  }
+
+  if (!date) {
+    return "Please pick a date";
+  }
+
+  if (!numberOfPeople) {
+    return "Please insert the number of people going on the trip";
+  }
+
+  if (!numberOfDays) {
+    return "Please insert the length of the trip";
   }
 
   // if the number of days is greter than 26
