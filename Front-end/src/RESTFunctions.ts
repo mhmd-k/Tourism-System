@@ -9,7 +9,6 @@ import {
   SignupRequest,
   Trip,
   TripPlace,
-  User,
 } from "./types";
 import { prepareCitySelectedPlaces } from "./utils";
 
@@ -221,23 +220,23 @@ export async function generateTrip(
 }
 
 export async function getPredictedPlacesRatings(
-  user: User,
+  user: { age: number; country: string; gender: string },
   averageUserRatings: AverageUserRatings
 ) {
+  console.log("user:", user);
+
   try {
     const response = await axios.post(`${flaskUrl}/predict`, {
       age: user.age,
-      gender: "Male",
-      country: "China",
+      gender: user.gender,
+      country: user.country,
       ...averageUserRatings,
     });
 
     if (response.status === 200) {
-      const data = await response.data;
+      console.log("getPredictedPlacesRatings Response: ", response.data);
 
-      console.log("getPredictedPlacesRatings Response: ", data);
-
-      return data;
+      return response.data;
     } else {
       throw new Error("Server error: " + response.status);
     }

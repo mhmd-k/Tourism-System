@@ -2,9 +2,11 @@ import { IconButton } from "@mui/material";
 import { ModelPlace } from "../../types";
 import { Add, Remove } from "@mui/icons-material";
 import PlaceIcon from "../../components/PlaceIcon";
-import { memo, useMemo, useState, useEffect } from "react";
+import { memo, useMemo } from "react";
 import { tripInfoStore } from "../../zustand/TripInfoStore";
 import { setImage } from "../../utils";
+
+// TODO: Optimize performance issue - all ModelPlaceCards components are re-rendering on any card's button click
 
 const ModelPlaceCard = memo(
   ({
@@ -17,21 +19,20 @@ const ModelPlaceCard = memo(
     time,
     foodType,
   }: ModelPlace) => {
-    const [selected, setSelected] = useState<boolean>(false);
-
     const modelPlaces = tripInfoStore((state) => state.modelPlaces);
     const addPlace = tripInfoStore((state) => state.addPlace);
     const removePlace = tripInfoStore((state) => state.removePlace);
 
-    const image = useMemo(
-      () => setImage(placeType, foodType),
-      [foodType, placeType]
+    const image = useMemo(() => setImage(placeType, foodType), []);
+
+    const isSelected = useMemo(
+      () => modelPlaces.find((place) => place.id === id),
+      [id, modelPlaces]
     );
 
     const handelSelect = () => {
-      if (selected) {
+      if (isSelected) {
         removePlace(id);
-        setSelected(!selected);
       } else {
         addPlace({
           id,
@@ -44,14 +45,7 @@ const ModelPlaceCard = memo(
           foodType,
         });
       }
-      setSelected(!selected);
     };
-
-    useEffect(() => {
-      const elementIsSelected = modelPlaces.find((place) => place.id === id);
-      if (elementIsSelected) setSelected(true);
-      else setSelected(false);
-    }, [id, modelPlaces]);
 
     return (
       <div className="ai-place-card">
@@ -60,9 +54,9 @@ const ModelPlaceCard = memo(
           <IconButton
             size="large"
             onClick={handelSelect}
-            sx={{ backgroundColor: selected ? "#f44336" : "#2196f3" }}
+            sx={{ backgroundColor: isSelected ? "#f44336" : "#2196f3" }}
           >
-            {selected ? <Remove /> : <Add />}
+            {isSelected ? <Remove /> : <Add />}
           </IconButton>
         </div>
         <div className="place-type">

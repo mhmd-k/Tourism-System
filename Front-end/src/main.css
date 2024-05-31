@@ -250,6 +250,10 @@ input::-webkit-inner-spin-button {
   }
 
   .generate-trip-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
     .form-body {
       flex: 1;
 
