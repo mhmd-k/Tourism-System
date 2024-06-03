@@ -78,28 +78,6 @@ function ModelPlaces() {
         }
       }
 
-      if (companions.length > 0 && user) {
-        companions.forEach(async (companion) => {
-          if (companion.age > 0 && companion.gender) {
-            const companionData = await getPredictedPlacesRatings(
-              { ...companion, country: user.country },
-              {
-                shopping: 0,
-                night: 0,
-                old: 0,
-                restaurant: 0,
-                hotel: 0,
-                natural: 0,
-              }
-            );
-
-            if (companionData) {
-              setModelPlaces((prevState) => [...prevState, ...companionData]);
-            }
-          }
-        });
-      }
-
       setIsModelLoading(false);
     })();
   }, [companions, user]);

@@ -10,18 +10,13 @@ import {
   Radio,
   FormLabel,
   RadioGroup,
-  Box,
-  IconButton,
-  Button,
 } from "@mui/material";
-import { Close, GroupOutlined, PriceChange } from "@mui/icons-material";
-import { ChangeEvent, useState } from "react";
-import { UserCompanion } from "../../types";
+import { PriceChange } from "@mui/icons-material";
+import { ChangeEvent } from "react";
 import CustomAsyncSelect from "../../components/CustomAsyncSelect";
 import { getCities } from "../../RESTFunctions";
-import Popup from "../../components/Popup";
 import { tripInfoStore } from "../../zustand/TripInfoStore";
-import UserCompanionForm from "./UserCompanionForm";
+import { UserCompanion } from "../../types";
 
 const foodTypes = [
   "Sea food",
@@ -39,14 +34,8 @@ const places = [
 ];
 
 function Survey() {
-  const [isUserCompanionsPopupOpen, setIsUserCompanionPopupOpen] =
-    useState(false);
-
   const formData = tripInfoStore((state) => state.tripInfo);
   const setFormData = tripInfoStore((state) => state.setTripInfo);
-
-  const handleOpenClosePopup = () =>
-    setIsUserCompanionPopupOpen(!isUserCompanionsPopupOpen);
 
   const handleSelectChange = (event: SelectChangeEvent<string>) => {
     setFormData({
@@ -143,43 +132,6 @@ function Survey() {
               required
             />
           </FormControl>
-
-          {/* user companions popup  */}
-          {Number(formData.numberOfPeople) > 1 && (
-            <>
-              <IconButton
-                onClick={handleOpenClosePopup}
-                sx={{ bgcolor: "var(--green-color)", color: "white" }}
-              >
-                <GroupOutlined />
-              </IconButton>
-              <Popup
-                isOpen={isUserCompanionsPopupOpen}
-                handleOpenClose={handleOpenClosePopup}
-              >
-                <Box className="popup">
-                  <Stack
-                    direction="row"
-                    justifyContent="space-between"
-                    alignItems="center"
-                  >
-                    <h3>Your Companions Info:</h3>
-                    <Button
-                      variant="contained"
-                      color="error"
-                      onClick={handleOpenClosePopup}
-                      className="close-btn"
-                    >
-                      <Close />
-                    </Button>
-                  </Stack>
-                  {formData.userCompanions?.map((user, i) => (
-                    <UserCompanionForm user={user} i={i} key={i} />
-                  ))}
-                </Box>
-              </Popup>
-            </>
-          )}
 
           <FormControl className="generate-trip-input-container">
             <TextField
