@@ -53,8 +53,6 @@ function ModelPlaces() {
 
   const user = userStore((state) => state.user);
 
-  const companions = tripInfoStore((state) => state.tripInfo).userCompanions;
-
   console.log("m:", modelPlaces);
 
   useEffect(() => {
@@ -80,7 +78,7 @@ function ModelPlaces() {
 
       setIsModelLoading(false);
     })();
-  }, [companions, user]);
+  }, [user]);
 
   return (
     <>
