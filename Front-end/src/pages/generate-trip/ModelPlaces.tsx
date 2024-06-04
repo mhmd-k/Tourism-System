@@ -6,7 +6,6 @@ import { getPredictedPlacesRatings } from "../../RESTFunctions";
 import { ModelPlace } from "../../types";
 import Slider, { Settings } from "react-slick";
 import ModelPlaceCard from "./ModelPlaceCard";
-import { tripInfoStore } from "../../zustand/TripInfoStore";
 
 const settings: Settings = {
   arrows: false,
