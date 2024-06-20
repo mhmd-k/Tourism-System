@@ -224,7 +224,6 @@ input::-webkit-inner-spin-button {
 .login-from {
   max-width: 450px;
   width: 100%;
-  margin: 20px;
   border-radius: 5px;
   background-color: white;
   padding: 40px 20px;
@@ -238,8 +237,8 @@ input::-webkit-inner-spin-button {
 
 @media (max-width: 768px) {
   .login-from {
-    margin: 0;
     max-width: unset;
+    height: 100dvh;
   }
 }
 
@@ -249,6 +248,25 @@ input::-webkit-inner-spin-button {
     min-height: 90vh;
   }
 
+  h2 {
+    margin: 40px 0;
+  }
+
+  .Mui-focused {
+    color: var(--green-color) !important;
+  }
+  .Mui-focused .MuiOutlinedInput-notchedOutline {
+    border-color: var(--green-color) !important;
+  }
+  .Mui-checked {
+    color: var(--green-color) !important;
+  }
+  input {
+    color: var(--text-color) !important;
+  }
+  .css-kk1bwy-MuiButtonBase-root-MuiMenuItem-root.Mui-selected:hover {
+    background-color: var(--green-color) !important;
+  }
   .generate-trip-container {
     display: flex;
     flex-direction: column;
@@ -256,6 +274,14 @@ input::-webkit-inner-spin-button {
 
     .form-body {
       flex: 1;
+
+      .generate-trip-btn {
+        background-color: var(--green-color);
+        border-radius: 5px !important;
+        margin: 20px 0;
+        width: 100%;
+        font-weight: bold;
+      }
 
       .MuiAutocomplete-root {
         width: 100%;
@@ -822,6 +848,7 @@ input::-webkit-inner-spin-button {
 
     .image {
       flex-basis: 30%;
+      height: 200px;
 
       img {
         width: 100%;
@@ -877,4 +904,22 @@ input::-webkit-inner-spin-button {
   animation: spoinning 1s linear infinite;
   -webkit-animation: spoinning 1s linear infinite;
   margin: 0 auto;
+}
+
+/* payment modal */
+.payment-box {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  gap: 20px;
+
+  .cvv {
+    flex-basis: 20%;
+  }
+}
+
+@media (max-width: 768px) {
+  .payment-box {
+    flex-direction: column;
+  }
 }

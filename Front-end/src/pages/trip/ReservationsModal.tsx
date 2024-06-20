@@ -108,15 +108,8 @@ function ReservationsModal() {
               color: "text.secondary",
             }}
           />
-          <Box
-            sx={{
-              display: "flex",
-              justifyContent: "space-between",
-              width: "100%",
-              gap: 2,
-            }}
-          >
-            <FormGrid sx={{ flexGrow: 1 }}>
+          <Box className="payment-box">
+            <FormGrid sx={{ flex: 1 }}>
               <FormLabel htmlFor="card-number" required>
                 Card number
               </FormLabel>
@@ -129,7 +122,7 @@ function ReservationsModal() {
                 onChange={handleCardNumberChange}
               />
             </FormGrid>
-            <FormGrid sx={{ maxWidth: "20%" }}>
+            <FormGrid className="cvv">
               <FormLabel htmlFor="cvv" required>
                 CVV
               </FormLabel>
@@ -143,7 +136,7 @@ function ReservationsModal() {
               />
             </FormGrid>
           </Box>
-          <Box sx={{ display: "flex", gap: 2 }}>
+          <Box className="payment-box">
             <FormGrid sx={{ flexGrow: 1 }}>
               <FormLabel htmlFor="card-name" required>
                 Name

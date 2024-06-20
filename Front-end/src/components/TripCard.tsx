@@ -1,12 +1,17 @@
 import { DateRange, DeleteOutline } from "@mui/icons-material";
-import { Trip } from "../types";
 import { Link } from "react-router-dom";
 import { IconButton } from "@mui/material";
 import React from "react";
+import { TripDay } from "../types";
 
-const cites = ["milan", "napoli", "roma", "venice", "florence"];
+interface TripCardProps {
+  trip_id: number;
+  destination: string;
+  tripDays: TripDay[];
+  date: string;
+}
 
-function TripCard({ trip_id, destination, tripDays, date }: Trip) {
+function TripCard({ trip_id, destination, tripDays, date }: TripCardProps) {
   const handleDelete = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
   };
@@ -15,9 +20,7 @@ function TripCard({ trip_id, destination, tripDays, date }: Trip) {
     <Link to={`${trip_id}`}>
       <div className="trip-card">
         <div className="image">
-          <img
-            src={`https://source.unsplash.com/1600x900/?${cites[Math.floor(Math.random() * cites.length)]}`}
-          />
+          <img src={`/src/assets/italy-${trip_id}.jpg`} />
         </div>
         <div className="content">
           <h3>

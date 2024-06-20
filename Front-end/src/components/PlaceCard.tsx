@@ -3,6 +3,7 @@ import StarBorderIcon from "@mui/icons-material/StarBorder";
 import { TripPlace } from "../types";
 import PlaceIcon from "./PlaceIcon";
 import { memo } from "react";
+import { setImage } from "../utils";
 
 const PlaceCard = memo(
   ({ name, address, price, stars, placeType, food_type }: TripPlace) => {
@@ -19,11 +20,7 @@ const PlaceCard = memo(
     return (
       <div className="place-card">
         <div className="image">
-          <img
-            src={`https://source.unsplash.com/1600x900/?${placeType.toLowerCase() === "resturant" ? "restaurant" : name}`}
-            loading="lazy"
-            alt=""
-          />
+          <img src={setImage(placeType, food_type)} loading="lazy" alt="" />
           <div className="place-type">
             <PlaceIcon placeType={placeType} /> {placeType.split("_").join(" ")}{" "}
             <br />

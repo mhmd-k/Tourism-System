@@ -1,6 +1,6 @@
 [
   {
-    "id": 1,
+    "trip_id": 1,
     "date": "5/20/2024",
     "fromCity": "Damascus",
     "destination": "italy",
@@ -253,7 +253,7 @@
     ]
   },
   {
-    "id": 2,
+    "trip_id": 2,
     "date": "3/18/2024",
     "fromCity": "Damascus",
     "destination": "italy",
@@ -453,13 +453,179 @@
     ]
   },
   {
-    "id": 3,
+    "trip_id": 3,
     "date": "3/18/2024",
     "fromCity": "Damascus",
     "destination": "italy",
     "totalBudget": 9000,
     "numberOfPeople": 4,
     "tripDays": [
+      {
+        "dayId": 1,
+        "date": "3/18/2024",
+        "city": {
+          "cityId": 1,
+          "name": "Roma",
+          "latitude": 42.78980798698,
+          "longitude": 12.8698473094,
+          "capital": true
+        },
+        "neededMony": 1800,
+        "flightReservation": {
+          "airportId": 3,
+          "fromCity": "Damascus",
+          "airportName": "Leonardo da Vinci–Fiumicino Airport",
+          "address": "Via dell'Aeroporto, di, 00054 Fiumicino RM, Italy",
+          "price": 250,
+          "toatlAmountOfMony": 1000,
+          "location": "41.803499350173176 12.251828422382225"
+        },
+        "hotelReservation": {
+          "hotelId": 58,
+          "hotelName": "Hotel Quantimarcos",
+          "address": "Roma street Quant 1243, Italy",
+          "price": 200,
+          "toatlAmountOfMony": 800,
+          "location": "41.90182202037885 12.494873553074376"
+        },
+        "dayPlaces": [
+          {
+            "id": 3,
+            "name": "Leonardo da Vinci–Fiumicino Airport",
+            "placeType": "airport",
+            "address": "Via dell'Aeroporto, di, 00054 Fiumicino RM, Italy",
+            "transportationMethod": "plane",
+            "price": 250,
+            "location": "41.803499350173176 12.251828422382225"
+          },
+          {
+            "id": 58,
+            "name": "Hotel Quirinale",
+            "placeType": "hotel",
+            "address": "Via Nazionale 7, Central Station, 00184 Rome, Italy",
+            "transportationMethod": "car",
+            "price": 200,
+            "location": "41.90182202037885 12.494873553074376",
+            "stars": 4
+          },
+          {
+            "id": 5,
+            "name": "Trattoria Da Danilo",
+            "placeType": "restaurant",
+            "address": "Via Petrarca, 13, 00185 Roma RM, Italy",
+            "transportationMethod": "walking",
+            "price": 22,
+            "location": "41.89736613876378 12.507873998643996",
+            "description": "Trattoria Da Danilo is a cozy restaurant located on Via Petrarca. It specializes in seafood dishes, offering a variety of fresh and flavorful options. While the ambiance is casual, the focus is on serving delicious seafood prepared with care. Trattoria Da Danilo is a great choice for seafood enthusiasts looking for a relaxed dining experience..",
+            "stars": 3,
+            "foodType": "sea food"
+          },
+          {
+            "id": 5,
+            "name": "Pantheon",
+            "placeType": "old place",
+            "address": "Piazza della Rotonda, 00186 Roma RM, Italy",
+            "transportationMethod": "car",
+            "price": 22,
+            "location": "41.89873854344063 12.476787064716968",
+            "description": "The Pantheon is a former Roman temple and now a church. It is known for its impressive dome and the oculus in the center, which allows natural light to enter the building.",
+            "stars": 3,
+            "foodType": "sea food"
+          },
+          {
+            "id": 89,
+            "name": "Lake Bracciano",
+            "placeType": "natural place",
+            "address": "Lago di Bracciano, Italy",
+            "transportationMethod": "walking",
+            "location": "42.13049402148912 12.234714392817125",
+            "description": "a popular place for sailing, swimming & scuba diving."
+          }
+        ]
+      },
+      {
+        "dayId": 1,
+        "date": "3/18/2024",
+        "city": {
+          "cityId": 1,
+          "name": "Roma",
+          "latitude": 42.78980798698,
+          "longitude": 12.8698473094,
+          "capital": true
+        },
+        "neededMony": 1800,
+        "flightReservation": {
+          "airportId": 3,
+          "fromCity": "Damascus",
+          "airportName": "Leonardo da Vinci–Fiumicino Airport",
+          "address": "Via dell'Aeroporto, di, 00054 Fiumicino RM, Italy",
+          "price": 250,
+          "toatlAmountOfMony": 1000,
+          "location": "41.803499350173176 12.251828422382225"
+        },
+        "hotelReservation": {
+          "hotelId": 58,
+          "hotelName": "Hotel Quantimarcos",
+          "address": "Roma street Quant 1243, Italy",
+          "price": 200,
+          "toatlAmountOfMony": 800,
+          "location": "41.90182202037885 12.494873553074376"
+        },
+        "dayPlaces": [
+          {
+            "id": 3,
+            "name": "Leonardo da Vinci–Fiumicino Airport",
+            "placeType": "airport",
+            "address": "Via dell'Aeroporto, di, 00054 Fiumicino RM, Italy",
+            "transportationMethod": "plane",
+            "price": 250,
+            "location": "41.803499350173176 12.251828422382225"
+          },
+          {
+            "id": 58,
+            "name": "Hotel Quirinale",
+            "placeType": "hotel",
+            "address": "Via Nazionale 7, Central Station, 00184 Rome, Italy",
+            "transportationMethod": "car",
+            "price": 200,
+            "location": "41.90182202037885 12.494873553074376",
+            "stars": 4
+          },
+          {
+            "id": 5,
+            "name": "Trattoria Da Danilo",
+            "placeType": "restaurant",
+            "address": "Via Petrarca, 13, 00185 Roma RM, Italy",
+            "transportationMethod": "walking",
+            "price": 22,
+            "location": "41.89736613876378 12.507873998643996",
+            "description": "Trattoria Da Danilo is a cozy restaurant located on Via Petrarca. It specializes in seafood dishes, offering a variety of fresh and flavorful options. While the ambiance is casual, the focus is on serving delicious seafood prepared with care. Trattoria Da Danilo is a great choice for seafood enthusiasts looking for a relaxed dining experience..",
+            "stars": 3,
+            "foodType": "sea food"
+          },
+          {
+            "id": 5,
+            "name": "Pantheon",
+            "placeType": "old place",
+            "address": "Piazza della Rotonda, 00186 Roma RM, Italy",
+            "transportationMethod": "car",
+            "price": 22,
+            "location": "41.89873854344063 12.476787064716968",
+            "description": "The Pantheon is a former Roman temple and now a church. It is known for its impressive dome and the oculus in the center, which allows natural light to enter the building.",
+            "stars": 3,
+            "foodType": "sea food"
+          },
+          {
+            "id": 89,
+            "name": "Lake Bracciano",
+            "placeType": "natural place",
+            "address": "Lago di Bracciano, Italy",
+            "transportationMethod": "walking",
+            "location": "42.13049402148912 12.234714392817125",
+            "description": "a popular place for sailing, swimming & scuba diving."
+          }
+        ]
+      },
       {
         "dayId": 1,
         "date": "3/18/2024",
@@ -653,7 +819,7 @@
     ]
   },
   {
-    "id": 4,
+    "trip_id": 4,
     "date": "3/18/2024",
     "fromCity": "Damascus",
     "destination": "italy",

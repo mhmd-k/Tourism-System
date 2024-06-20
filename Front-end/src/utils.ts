@@ -57,6 +57,14 @@ export function validateTripInfo(
   if (Number(userPreferrences.numberOfPeople) > 30)
     return "Maximum number of people is 30";
 
+  // if the user selected only one type of food
+  if (userPreferrences.preferredFood.length === 1)
+    return "Please select at least two type of food";
+
+  // if the user selected only one type of places
+  if (userPreferrences.preferredPlaces.length === 1)
+    return "Please select at least two type of food";
+
   return null;
 }
 

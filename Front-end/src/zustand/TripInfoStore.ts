@@ -13,8 +13,8 @@ interface TripInfoStore {
 }
 
 const defaultTripInfo: GenerateTripData = {
-  toCountry: "",
   fromCity: "",
+  toCountry: "",
   date: "",
   numberOfDays: "",
   numberOfPeople: "",
