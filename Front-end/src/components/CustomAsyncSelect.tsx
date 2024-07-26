@@ -1,18 +1,28 @@
 import { Alert, Autocomplete, TextField } from "@mui/material";
-import { SyntheticEvent, useEffect, useState, useRef } from "react";
+import {
+  SyntheticEvent,
+  useEffect,
+  useState,
+  useRef,
+  Dispatch,
+  SetStateAction,
+} from "react";
 import { v4 as uuidv4 } from "uuid";
 import { tripInfoStore } from "../zustand/TripInfoStore";
+import { SignupRequest } from "../types";
 
 interface CustomAsyncSelectProps {
   name: string;
   label: string;
   getOptions: (str: string) => Promise<unknown>;
+  handleValueChange?: Dispatch<SetStateAction<SignupRequest>>;
 }
 
 function CustomAsyncSelect({
   name,
   label,
   getOptions,
+  handleValueChange,
 }: CustomAsyncSelectProps) {
   const [fieldValue, setFieldValue] = useState<string>("");
   const [options, setOptions] = useState<string[]>([]);
@@ -62,6 +72,9 @@ function CustomAsyncSelect({
   ) => {
     if (value) {
       setTripInfo({ ...tripInfo, [name]: value });
+
+      if (handleValueChange)
+        handleValueChange((prevState) => ({ ...prevState, [name]: value }));
     }
   };
 

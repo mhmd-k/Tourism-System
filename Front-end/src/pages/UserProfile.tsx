@@ -44,7 +44,7 @@ function UserProfile() {
         console.log("response: ", response);
         if (response.status === 200) {
           if (response.data) {
-            setImage(`http://localhost:8000${response.data.image}`);
+            setImage(response.data.image);
           }
         }
       } catch (error) {

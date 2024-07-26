@@ -63,6 +63,8 @@ function Signup() {
     setVerifyPass(e.target.value);
   };
 
+  console.log(signupData);
+
   const handleSubmit = async () => {
     setLoading(true);
     setError(null);
