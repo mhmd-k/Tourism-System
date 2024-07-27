@@ -1,6 +1,5 @@
 import axios from "axios";
 import {
-  AverageUserRatings,
   GenerateTripData,
   GenerateTripRequestBody,
   LoginRequest,
@@ -10,6 +9,7 @@ import {
   Trip,
   TripPlace,
   UploadImageResponse,
+  User,
 } from "./types";
 import { prepareCitySelectedPlaces } from "./utils";
 
@@ -220,10 +220,7 @@ export async function generateTrip(
   }
 }
 
-export async function getPredictedPlacesRatings(
-  user: { age: number; country: string; gender: string },
-  averageUserRatings: AverageUserRatings
-) {
+export async function getPredictedPlacesRatings(user: User) {
   console.log("user:", user);
 
   try {
@@ -231,7 +228,7 @@ export async function getPredictedPlacesRatings(
       age: user.age,
       gender: user.gender,
       country: user.country,
-      ...averageUserRatings,
+      ...user.ratings,
     });
 
     if (response.status === 200) {

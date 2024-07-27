@@ -30,6 +30,9 @@ function Login() {
   const [showPassword, setShowPassword] = useState<boolean>(false);
 
   const setUser = userStore((state) => state.setUser);
+  const user = userStore((state) => state.user);
+
+  console.log("the user is:", user);
 
   const { state } = useLocation();
   const navigate = useNavigate();

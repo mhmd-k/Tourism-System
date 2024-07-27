@@ -101,6 +101,7 @@ function Survey() {
         </FormControl>
         <FormControl required>
           <TextField
+            name="date"
             type="date"
             size="small"
             inputProps={{ min: new Date().toISOString().split("T")[0] }}
@@ -113,6 +114,7 @@ function Survey() {
             <TextField
               type="number"
               label="Number of People"
+              name="numberOfPeople"
               inputProps={{ min: "1", max: "30" }}
               size="small"
               value={formData.numberOfPeople}
@@ -137,6 +139,7 @@ function Survey() {
             <TextField
               type="number"
               label="Number of Days"
+              name="numberOfDays"
               inputProps={{ min: "1", max: "30" }}
               size="small"
               value={formData.numberOfDays}
@@ -158,7 +161,7 @@ function Survey() {
             Do you care about budget?
           </FormLabel>
           <RadioGroup
-            aria-labelledby="care-about-budget"
+            aria-label="care-about-budget"
             sx={{ display: "flex", flexDirection: "row" }}
           >
             <FormControlLabel
@@ -252,6 +255,7 @@ function Survey() {
             Prefered Food
           </InputLabel>
           <Select
+            name="preferredFood"
             label="preferred-food"
             size="small"
             multiple
@@ -273,6 +277,7 @@ function Survey() {
             Preferred Places
           </InputLabel>
           <Select
+            name="preferredPlaces"
             size="small"
             label="preferred-places"
             sx={{ textAlign: "left" }}

@@ -61,14 +61,7 @@ function ModelPlaces() {
       if (user) {
         setIsModelLoading(true);
 
-        const data = await getPredictedPlacesRatings(user, {
-          shopping: 0,
-          night: 0,
-          old: 0,
-          restaurant: 0,
-          hotel: 0,
-          natural: 0,
-        });
+        const data = await getPredictedPlacesRatings(user);
 
         if (data) {
           setModelPlaces((prevState) => [...prevState, ...data]);
@@ -87,7 +80,7 @@ function ModelPlaces() {
         </Box>
       ) : (
         <>
-          <h3>Recommended to you by AI</h3>
+          <h2>Recommended to you by AI</h2>
           <Slider {...settings}>
             {modelPlaces.map((place) => (
               <ModelPlaceCard key={place.id} {...place} />

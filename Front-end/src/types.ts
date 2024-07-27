@@ -21,6 +21,14 @@ export interface User {
   age: number;
   country: string;
   gender: "Male" | "Female";
+  ratings: {
+    hotel: number;
+    natural: number;
+    night: number;
+    old: number;
+    restaurant: number;
+    shopping: number;
+  };
 }
 
 export interface UserCompanion {
@@ -150,15 +158,6 @@ export interface FlightReservation {
   price: number;
   toatlAmountOfMony: number;
   location: string;
-}
-
-export interface AverageUserRatings {
-  shopping: number;
-  hotel: number;
-  restaurant: number;
-  night: number;
-  old: number;
-  natural: number;
 }
 
 export interface ModelPlace {
