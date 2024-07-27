@@ -30,7 +30,7 @@ function MapElement() {
 
   // everytime the center changes, update the map
   useEffect(() => {
-    if (map) {
+    if (map?.loaded) {
       setTimeout(() => {
         map.panTo(
           { ...center },

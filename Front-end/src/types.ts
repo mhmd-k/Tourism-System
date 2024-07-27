@@ -74,6 +74,7 @@ export interface GenerateTripData {
 export interface PlaceLocation {
   lng: number;
   lat: number;
+  placeType?: string;
 }
 
 export interface Trip {

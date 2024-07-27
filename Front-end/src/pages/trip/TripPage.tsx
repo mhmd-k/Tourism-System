@@ -115,9 +115,10 @@ function TripPage() {
       );
 
       setMarkers(
-        trip.tripDays[activeDay].dayPlaces.map((e) =>
-          stringToLngLat(e.location)
-        )
+        trip.tripDays[activeDay].dayPlaces.map((e) => ({
+          ...stringToLngLat(e.location),
+          placeType: e.placeType,
+        }))
       );
     }
   }, [activeDay, trip]);
