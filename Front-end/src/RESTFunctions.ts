@@ -9,6 +9,7 @@ import {
   SignupRequest,
   Trip,
   TripPlace,
+  UploadImageResponse,
 } from "./types";
 import { prepareCitySelectedPlaces } from "./utils";
 
@@ -296,5 +297,49 @@ export async function getPlaces(placeName: string, placeType?: string) {
     }
   } catch (error) {
     console.error(error);
+  }
+}
+
+export async function uploadImage(
+  image: FormDataEntryValue | null,
+  userId: number
+) {
+  try {
+    const response: UploadImageResponse = await axios.post(
+      "http://localhost:8000/api/update-image",
+      {
+        image: image,
+        userId: userId,
+      },
+      { headers: { "Content-Type": "multipart/form-data" } }
+    );
+
+    console.log("UploadImageResponse: ", response);
+    if (response.status === 200) {
+      return response.data;
+    }
+
+    throw new Error("Error uploading image");
+  } catch (error) {
+    console.error("Error occurred during image upload:", error);
+  }
+}
+
+export async function deleteImage(userId: number): Promise<boolean> {
+  try {
+    const res: UploadImageResponse = await axios.put(
+      "http://localhost:8000/api/delete-image",
+      { userId: userId }
+    );
+
+    console.log("Delete Image response: ", res);
+    if (res.status === 200) {
+      return true;
+    }
+
+    throw new Error("Error deleting image");
+  } catch (error) {
+    console.error("Error occurred during image delete:", error);
+    return false;
   }
 }

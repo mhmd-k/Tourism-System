@@ -2,11 +2,13 @@ import { Button, Container, Stack, TextField, Typography } from "@mui/material";
 import Avatar from "@mui/material/Avatar";
 import { userStore } from "../zustand/UserStore";
 import { Navigate } from "react-router-dom";
-import { useRef } from "react";
-import axios from "axios";
-import { UploadImageResponse } from "../types";
+import { useRef, useState } from "react";
+import { deleteImage, uploadImage } from "../RESTFunctions";
+import LoadingSpinner from "../components/LoadingSpinner";
 
 function UserProfile() {
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+
   const user = userStore((state) => state.user);
   const setImage = userStore((state) => state.setImage);
 
@@ -25,48 +27,29 @@ function UserProfile() {
   const handleImageChange = async (
     event: React.ChangeEvent<HTMLInputElement>
   ) => {
+    setIsLoading(true);
+
     const file = event.target.files?.[0];
 
     if (file) {
       const formData = new FormData();
       formData.append("image", file);
 
-      try {
-        const response: UploadImageResponse = await axios.post(
-          "http://localhost:8000/api/update-image",
-          {
-            image: formData.get("image"),
-            userId: user?.id,
-          },
-          { headers: { "Content-Type": "multipart/form-data" } }
-        );
+      const response = await uploadImage(formData.get("image"), user.id);
 
-        console.log("response: ", response);
-        if (response.status === 200) {
-          if (response.data) {
-            setImage(response.data.image);
-          }
-        }
-      } catch (error) {
-        console.error("Error occurred during image upload:", error);
-      }
+      if (response) setImage(response.image);
     }
+
+    setIsLoading(false);
   };
 
   const handleDeleteImage = async () => {
-    try {
-      const res: UploadImageResponse = await axios.put(
-        "http://localhost:8000/api/delete-image",
-        { userId: user.id }
-      );
+    setIsLoading(true);
 
-      console.log("Delete Image response: ", res);
-      if (res.status === 200) {
-        setImage(null);
-      }
-    } catch (error) {
-      console.error("Error occurred during image delete:", error);
-    }
+    const response = await deleteImage(user.id);
+    if (response) setImage(null);
+
+    setIsLoading(false);
   };
 
   if (!user) {
@@ -96,7 +79,11 @@ function UserProfile() {
         >
           {user.image ? (
             <div className="profile-image">
-              <img src={user.image} alt="" />
+              {isLoading ? (
+                <LoadingSpinner color="black" size={20} />
+              ) : (
+                <img src={user.image} alt="" />
+              )}
             </div>
           ) : (
             <Avatar
@@ -107,7 +94,11 @@ function UserProfile() {
                 alignSelf: "start",
               }}
             >
-              {user.name[0].toUpperCase()}
+              {isLoading ? (
+                <LoadingSpinner color="black" size={20} />
+              ) : (
+                user.name[0].toUpperCase()
+              )}
             </Avatar>
           )}
           <Stack gap={2}>
