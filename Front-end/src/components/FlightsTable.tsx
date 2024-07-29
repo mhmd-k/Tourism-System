@@ -31,7 +31,7 @@ function FlightsTable() {
               <TableCell component="th" scope="row">
                 {place.airportName}
               </TableCell>
-              <TableCell component="th" scope="row">
+              <TableCell align="center" component="th" scope="row">
                 {numberOfPeople}
               </TableCell>
               <TableCell align="center">{place.price}$</TableCell>

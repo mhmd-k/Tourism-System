@@ -1,3 +1,4 @@
+import { formatCurrency } from "../../utils";
 import { mapStore } from "../../zustand/MapStore";
 
 function TripHeader() {
@@ -23,14 +24,14 @@ function TripHeader() {
                     : "var(--blue-color)",
               }}
             >
-              {trip.totalBudget}$
+              {formatCurrency(trip.totalBudget)}
             </span>
           </li>
         ) : (
           <></>
         )}
         <li>
-          needed Money: <span>{trip.TotalCost}$</span>
+          needed Money: <span>{formatCurrency(trip.TotalCost)}</span>
         </li>
         <li>
           number of people: <span>{trip.numberOfPeople}</span>

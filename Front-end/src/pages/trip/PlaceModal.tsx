@@ -1,4 +1,3 @@
-import Box from "@mui/material/Box";
 import { IconButton, Stack, Typography } from "@mui/material";
 import { DeleteOutline, EditLocationTwoTone } from "@mui/icons-material";
 import { TripPlace } from "../../types";
@@ -57,7 +56,7 @@ function PlaceModal({
   const handleIsEditingChange = () => setIsEditing(!isEditing);
 
   return (
-    <Box className="popup place-popup">
+    <>
       {isLoading ? (
         <LoadingSpinner size={30} color="red" />
       ) : (
@@ -148,7 +147,7 @@ function PlaceModal({
           )}
         </>
       )}
-    </Box>
+    </>
   );
 }
 

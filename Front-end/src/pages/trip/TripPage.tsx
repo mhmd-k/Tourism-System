@@ -7,12 +7,13 @@ import MapElement from "./MapElement";
 import { Box, Button, Drawer, IconButton } from "@mui/material";
 import { Close, CreditCard, Map } from "@mui/icons-material";
 import { mapStore } from "../../zustand/MapStore";
-import { stringToLngLat } from "../../utils";
+import { formatCurrency, stringToLngLat } from "../../utils";
 import LoadingSpinner from "../../components/LoadingSpinner";
 import ReservationsModal from "./ReservationsModal";
 import Popup from "../../components/Popup";
 import EventNoteIcon from "@mui/icons-material/EventNote";
 import ItineraryTable from "./ItineraryTable";
+import Alert from "@mui/material/Alert";
 
 function TripPage() {
   const [isLoading] = useState(false);
@@ -21,6 +22,7 @@ function TripPage() {
     useState<boolean>(false);
   const [isReservationsModalOpen, setIsReservationsModalOpen] =
     useState<boolean>(false);
+  const [isAlertOpen, setIsAlertOpen] = useState<boolean>(false);
 
   const trip = mapStore((state) => state.trip);
   const activeDay = mapStore((state) => state.activeDay);
@@ -29,6 +31,7 @@ function TripPage() {
 
   console.log("activeDay: ", activeDay);
   console.log("trip: ", trip);
+  console.log("alert: ", isAlertOpen);
 
   const setCenter = mapStore((state) => state.setCenter);
   const setDestination = mapStore((state) => state.setDestination);
@@ -56,6 +59,10 @@ function TripPage() {
     setIsReservationsModalOpen(!isReservationsModalOpen);
   };
 
+  const handleCloseAlert = () => {
+    setIsAlertOpen(false);
+  };
+
   useEffect(() => {
     if (!trip) {
       const storedTrip = localStorage.getItem("trip");
@@ -64,6 +71,11 @@ function TripPage() {
       }
     }
   }, []);
+
+  useEffect(() => {
+    if (trip && Math.abs(trip.totalBudget - trip.TotalCost) > 500)
+      setIsAlertOpen(true);
+  }, [trip]);
 
   // useEffect(() => {
   // async function fetchTripTimes() {
@@ -178,6 +190,19 @@ function TripPage() {
 
   return (
     <div className="trip">
+      {isAlertOpen ? (
+        <Alert
+          className="trip-alert"
+          severity="warning"
+          color="warning"
+          onClose={handleCloseAlert}
+        >
+          Your budget is so low, The cheapest trip costs{" "}
+          {formatCurrency(trip.TotalCost)}
+        </Alert>
+      ) : (
+        <></>
+      )}
       <IconButton className="trip-mobile-btn" onClick={toggleDrawer(true)}>
         <Map color="primary" fontSize="large" />
       </IconButton>
@@ -202,7 +227,20 @@ function TripPage() {
         isOpen={isReservationsModalOpen}
         handleOpenClose={handleOpenCloseReservationsModel}
       >
-        <ReservationsModal />
+        <Box className="popup reservations-popup">
+          <Stack direction="row" justifyContent="space-between">
+            <h2>Reservations Needed:</h2>
+            <Button
+              variant="contained"
+              color="error"
+              onClick={handleOpenCloseReservationsModel}
+              className="close-btn"
+            >
+              <Close />
+            </Button>
+          </Stack>
+          <ReservationsModal />
+        </Box>
       </Popup>
     </div>
   );

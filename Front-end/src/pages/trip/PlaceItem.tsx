@@ -1,13 +1,16 @@
 import {
   Avatar,
+  Box,
+  Button,
   IconButton,
   ListItem,
   ListItemAvatar,
   ListItemText,
+  Stack,
 } from "@mui/material";
 import PlaceIcon from "../../components/PlaceIcon";
 import { TripPlace } from "../../types";
-import { InfoOutlined } from "@mui/icons-material";
+import { Close, InfoOutlined } from "@mui/icons-material";
 import { useState } from "react";
 import PlaceModal from "./PlaceModal";
 import { mapStore } from "../../zustand/MapStore";
@@ -102,7 +105,20 @@ function PlaceItem({
       </ListItem>
       {isModalOpen ? (
         <Popup isOpen={isModalOpen} handleOpenClose={handleOpenCloseModal}>
-          <PlaceModal previosPlace={previosPlace} place={place} />
+          <Box className="popup place-popup">
+            <Stack direction="row" justifyContent="space-between">
+              <h2>Place Info:</h2>
+              <Button
+                variant="contained"
+                color="error"
+                onClick={handleOpenCloseModal}
+                className="close-btn"
+              >
+                <Close />
+              </Button>
+            </Stack>
+            <PlaceModal previosPlace={previosPlace} place={place} />
+          </Box>
         </Popup>
       ) : (
         <></>
