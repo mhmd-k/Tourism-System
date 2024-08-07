@@ -641,11 +641,14 @@ input::-webkit-inner-spin-button {
 .trip-header ul {
   padding: 0;
   display: flex;
-  gap: 15px;
   flex-wrap: wrap;
+  justify-content: space-between;
 }
 .trip-header ul li span {
   color: var(--blue-color);
+  display: block;
+  padding-top: 15px;
+  font-weight: bold;
 }
 .day-item {
   border-bottom: var(--secondary-text-color) 1px solid;

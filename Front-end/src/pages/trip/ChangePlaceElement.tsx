@@ -1,14 +1,10 @@
 import { useState, useEffect, SyntheticEvent } from "react";
 import { TripPlace } from "../../types";
 import {
-  MenuItem,
-  Select,
-  InputLabel,
   FormControl,
   Stack,
   Button,
   TextField,
-  SelectChangeEvent,
   Autocomplete,
   Alert,
 } from "@mui/material";
@@ -16,33 +12,18 @@ import { getPlaces } from "../../RESTFunctions";
 import { v4 as uuidv4 } from "uuid";
 import { mapStore } from "../../zustand/MapStore";
 
-interface formData {
-  name: string;
-  type: string;
-  newPlace: TripPlace | null;
-}
-
-const placeTypeOptions = [
-  { label: "Old Place", value: "old_place" },
-  { label: "Natural place", value: "natural_place" },
-  { label: "Night Place", value: "night_place" },
-  { label: "Shopping Place", value: "shopping_place" },
-  { label: "Restaurant", value: "restaurant" },
-];
-
 function ChangePlaceElement({
   handleIsEditingChange,
   oldPlace,
+  handleOpenCloseModal,
 }: {
   isEditing: boolean;
   handleIsEditingChange: () => void;
   oldPlace: TripPlace;
+  handleOpenCloseModal: () => void;
 }) {
-  const [formData, setFormData] = useState<formData>({
-    name: "",
-    type: "",
-    newPlace: null,
-  });
+  const [search, setSearch] = useState<string>("");
+  const [newPlace, setNewPlace] = useState<TripPlace | null>(null);
 
   const [error, setError] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -52,20 +33,22 @@ function ChangePlaceElement({
   const trip = mapStore((state) => state.trip);
   const activeDay = mapStore((state) => state.activeDay);
 
+  const setTrip = mapStore((state) => state.setTrip);
+
   const city = trip?.tripDays[activeDay].city.name;
 
   // console.log(formData);
 
   useEffect(() => {
     (async () => {
-      if (!formData.name) return;
+      if (!search) return;
 
       setIsLoading(true);
 
       try {
         const places: TripPlace[] = await getPlaces(
-          formData.name,
-          formData.type
+          search,
+          oldPlace.placeType.slice(0, 3)
         );
 
         // filter places to get only the places in the current city
@@ -75,19 +58,12 @@ function ChangePlaceElement({
 
         setOptions(cityPlaces);
       } catch (error) {
-        setError(`There is no place with the name ${formData.name}`);
+        setError(`There is no place with the name ${search}`);
       } finally {
         setIsLoading(false);
       }
     })();
-  }, [city, formData.name, formData.type]);
-
-  const handelChange = (e: SelectChangeEvent<string>) => {
-    setFormData((prevState) => ({
-      ...prevState,
-      [e.target.name]: e.target.value,
-    }));
-  };
+  }, [city, search, oldPlace.placeType]);
 
   const handelAutoCompleteChange = (
     _event: SyntheticEvent<Element, Event>,
@@ -95,86 +71,91 @@ function ChangePlaceElement({
   ) => {
     console.log("select value:", value);
 
-    setFormData((prevState) => ({ ...prevState, newPlace: value }));
+    if (value) setNewPlace(value);
   };
 
-  const handel = async () => {
+  const handelPlaceChange = () => {
+    if (trip && newPlace) {
+      setTrip({
+        ...trip,
+        tripDays: trip.tripDays.map((day, i) =>
+          i === activeDay
+            ? {
+                ...day,
+                dayPlaces: day.dayPlaces.map((place: TripPlace) =>
+                  place.id === oldPlace.id ? { ...place, ...newPlace } : place
+                ),
+                neededMony:
+                  oldPlace.price && newPlace.price
+                    ? day.neededMony -
+                      oldPlace.price * trip.numberOfPeople +
+                      newPlace.price * trip.numberOfPeople
+                    : day.neededMony,
+              }
+            : day
+        ),
+        TotalCost:
+          oldPlace.price && newPlace.price
+            ? trip.TotalCost -
+              oldPlace.price * trip.numberOfPeople +
+              newPlace.price * trip.numberOfPeople
+            : trip.TotalCost,
+      });
+
+      handleOpenCloseModal();
+    }
+
     // TODO: make the API call to change the place
   };
 
   return (
     <Stack gap={3} minHeight={270}>
       <h3>Change Place:</h3>
-      <FormControl sx={{ bgcolor: "#f0f0f0" }}>
-        <InputLabel size="small" id="new-palce-type">
-          New Place Type
-        </InputLabel>
-        <Select
-          name="type"
-          type="text"
-          label="new-palce-type"
-          size="small"
-          value={formData.type}
-          onChange={handelChange}
-        >
-          {placeTypeOptions.map((e, i) => (
-            <MenuItem key={i} value={e.value}>
-              {e.label}
-            </MenuItem>
-          ))}
-        </Select>
-      </FormControl>
 
       {error ? (
-        <Alert variant="filled" severity="error">
+        <Alert variant="filled" severity="error" onClose={() => setError(null)}>
           {error}
         </Alert>
       ) : (
         <></>
       )}
 
-      {formData.type && (
-        <FormControl sx={{ bgcolor: "#f0f0f0" }}>
-          <Autocomplete
-            id="new-place-name"
-            options={options}
-            open={open}
-            onOpen={() => {
-              setOpen(true);
-            }}
-            onClose={() => {
-              setOpen(false);
-            }}
-            loading={isLoading}
-            autoHighlight
-            renderInput={(params) => (
-              <TextField
-                {...params}
-                label="New Place Name"
-                name="name"
-                value={formData.name}
-                onChange={(e) =>
-                  setFormData((prevData) => ({
-                    ...prevData,
-                    name: e.target.value,
-                  }))
-                }
-              />
-            )}
-            renderOption={(props, option) => (
-              <li {...props} key={uuidv4()}>
-                {option.name}
-              </li>
-            )}
-            getOptionLabel={(option) => `${option.name} - ${option.cityName}`}
-            onChange={handelAutoCompleteChange}
-          />
-        </FormControl>
-      )}
+      <FormControl sx={{ bgcolor: "#f0f0f0" }}>
+        <Autocomplete
+          id="new-place-name"
+          options={options}
+          open={open}
+          onOpen={() => {
+            setOpen(true);
+          }}
+          onClose={() => {
+            setOpen(false);
+          }}
+          loading={isLoading}
+          autoHighlight
+          renderInput={(params) => (
+            <TextField
+              {...params}
+              label="New Place Name"
+              name="name"
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+            />
+          )}
+          renderOption={(props, option) => (
+            <li {...props} key={uuidv4()}>
+              {option.name} - {option.cityName} - {option.placeType}
+            </li>
+          )}
+          getOptionLabel={(option) => `${option.name} - ${option.cityName}`}
+          onChange={handelAutoCompleteChange}
+        />
+      </FormControl>
       <Stack direction="row" gap={2} justifyContent="end" marginTop="auto">
         <Button
           variant="contained"
-          disabled={!formData.newPlace || !formData.type}
+          disabled={!newPlace}
+          onClick={handelPlaceChange}
         >
           Done
         </Button>

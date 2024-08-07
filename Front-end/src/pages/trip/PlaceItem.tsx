@@ -107,7 +107,7 @@ function PlaceItem({
         <Popup isOpen={isModalOpen} handleOpenClose={handleOpenCloseModal}>
           <Box className="popup place-popup">
             <Stack direction="row" justifyContent="space-between">
-              <h2>Place Info:</h2>
+              <h2>Place Info</h2>
               <Button
                 variant="contained"
                 color="error"
@@ -117,7 +117,11 @@ function PlaceItem({
                 <Close />
               </Button>
             </Stack>
-            <PlaceModal previosPlace={previosPlace} place={place} />
+            <PlaceModal
+              previosPlace={previosPlace}
+              place={place}
+              handleOpenCloseModal={handleOpenCloseModal}
+            />
           </Box>
         </Popup>
       ) : (

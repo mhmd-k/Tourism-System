@@ -11,11 +11,13 @@ function TripHeader() {
       <h2>Trip to {trip.destination}</h2>
       <ul>
         <li>
-          date: <span>{trip.date}</span>
+          date
+          <br /> <span>{trip.date}</span>
         </li>
         {typeof trip.totalBudget == "number" ? (
           <li>
-            budget:{" "}
+            budget
+            <br />
             <span
               style={{
                 color:
@@ -31,10 +33,12 @@ function TripHeader() {
           <></>
         )}
         <li>
-          needed Money: <span>{formatCurrency(trip.TotalCost)}</span>
+          needed Money
+          <br /> <span>{formatCurrency(trip.TotalCost)}</span>
         </li>
         <li>
-          number of people: <span>{trip.numberOfPeople}</span>
+          num of people
+          <br /> <span>{trip.numberOfPeople}</span>
         </li>
       </ul>
     </div>

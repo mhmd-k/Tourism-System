@@ -10,9 +10,13 @@ import PlaceIcon from "../../components/PlaceIcon";
 import { mapStore } from "../../zustand/MapStore";
 import { formatMinutesToTime, formatTravelTime } from "../../utils";
 import { TripPlace } from "../../types";
+import { useLocation } from "react-router-dom";
 
 function ItineraryTable({ dayNumber }: { dayNumber: number }) {
   const trip = mapStore((state) => state.trip);
+
+  const location = useLocation();
+  const userPlaces = location.state.places as TripPlace[];
 
   const numberOfPeople = trip?.numberOfPeople;
 
@@ -77,12 +81,20 @@ function ItineraryTable({ dayNumber }: { dayNumber: number }) {
               if (place.money_amount) totalCost += place.money_amount;
               if (place.transportaioncost) totalCost += place.transportaioncost;
 
+              let isUserPlace = false;
+
+              userPlaces.forEach((e) => {
+                if (e.name === place.name) isUserPlace = true;
+              });
+
               return (
                 <TableRow key={i}>
                   <TableCell component="th" scope="row">
                     <Avatar
                       sx={{
-                        bgcolor: "var(--green-color)",
+                        background: isUserPlace
+                          ? "linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%)"
+                          : "var(--green-color)",
                         width: 30,
                         height: 30,
                       }}

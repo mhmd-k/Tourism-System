@@ -66,7 +66,7 @@ function PlacesPage() {
     const placeType = searchParams.get("type");
 
     const URL = placeType
-      ? `http://localhost:8000/api/search?placeType=${placeType}&placeName=${placeName}`
+      ? `http://localhost:8000/api/search?placeType=${placeType.slice(0, 3)}&placeName=${placeName}`
       : `http://localhost:8000/api/search?placeName=${placeName}`;
 
     try {
@@ -86,7 +86,10 @@ function PlacesPage() {
   };
 
   const filteredPlaces = searchParams.get("type")
-    ? places.filter((place) => place.placeType === searchParams.get("type"))
+    ? places.filter(
+        (place) =>
+          place.placeType.slice(0, 3) === searchParams.get("type")?.slice(0, 3)
+      )
     : places;
 
   return (

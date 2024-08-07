@@ -70,7 +70,7 @@ function GenerateTrip() {
       setTrip(trip);
       setActiveDay(0);
       localStorage.setItem("trip", JSON.stringify(trip));
-      navigate("../trips/1", {
+      navigate(`../trips/${trip.trip_id}`, {
         state: { places: [...places, ...modelplaces] },
       });
     } else {
