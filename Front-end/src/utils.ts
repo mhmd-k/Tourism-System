@@ -19,6 +19,7 @@ export const getStoredUser = (): User | null => {
 
 // this funciton is used to logout the user
 export const clearUserInfo = (): void => {
+  localStorage.removeItem("modelPlaces");
   localStorage.removeItem("user");
   window.location.reload();
 };
@@ -279,4 +280,8 @@ export function formatCurrency(amount: number): string {
     ","
   );
   return `$${numberWithCommas}`;
+}
+
+export function removeDups(array: string[]): string[] {
+  return [...new Set(array)];
 }

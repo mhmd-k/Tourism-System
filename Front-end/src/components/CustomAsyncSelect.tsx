@@ -10,6 +10,7 @@ import {
 import { v4 as uuidv4 } from "uuid";
 import { tripInfoStore } from "../zustand/TripInfoStore";
 import { SignupRequest } from "../types";
+import { removeDups } from "../utils";
 
 interface CustomAsyncSelectProps {
   name: string;
@@ -48,7 +49,7 @@ function CustomAsyncSelect({
       try {
         const data = await getOptions(`${fieldValue}`);
         if (data) {
-          setOptions(data as string[]);
+          setOptions(removeDups(data as string[]));
         }
       } catch (error) {
         setError(

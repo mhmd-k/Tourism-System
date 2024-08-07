@@ -54,8 +54,16 @@ function ModelPlaces() {
 
   console.log("m:", modelPlaces);
 
+  useEffect(() => {}, []);
+
   useEffect(() => {
     (async () => {
+      const storedModelPlaces = localStorage.getItem("modelPlaces");
+      if (storedModelPlaces) {
+        setModelPlaces(JSON.parse(storedModelPlaces));
+        return;
+      }
+
       setModelPlaces([]);
 
       if (user) {
@@ -65,6 +73,7 @@ function ModelPlaces() {
 
         if (data) {
           setModelPlaces((prevState) => [...prevState, ...data]);
+          localStorage.setItem("modelPlaces", JSON.stringify(data));
         }
       }
 
