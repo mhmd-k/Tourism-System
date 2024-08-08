@@ -641,6 +641,7 @@ input::-webkit-inner-spin-button {
 .trip-header ul {
   padding: 0;
   display: flex;
+  gap: 15px;
   flex-wrap: wrap;
   justify-content: space-between;
 }

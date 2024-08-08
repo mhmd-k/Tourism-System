@@ -14,6 +14,7 @@ import Popup from "../../components/Popup";
 import EventNoteIcon from "@mui/icons-material/EventNote";
 import ItineraryTable from "./ItineraryTable";
 import Alert from "@mui/material/Alert";
+import { alertStore } from "../../zustand/AlertStore";
 
 function TripPage() {
   const [isLoading] = useState(false);
@@ -22,7 +23,9 @@ function TripPage() {
     useState<boolean>(false);
   const [isReservationsModalOpen, setIsReservationsModalOpen] =
     useState<boolean>(false);
-  const [isAlertOpen, setIsAlertOpen] = useState<boolean>(false);
+
+  const alert = alertStore((state) => state.alert);
+  const setAlert = alertStore((state) => state.setAlert);
 
   const trip = mapStore((state) => state.trip);
   const activeDay = mapStore((state) => state.activeDay);
@@ -31,7 +34,7 @@ function TripPage() {
 
   console.log("activeDay: ", activeDay);
   console.log("trip: ", trip);
-  console.log("alert: ", isAlertOpen);
+  console.log("alert: ", alert);
 
   const setCenter = mapStore((state) => state.setCenter);
   const setDestination = mapStore((state) => state.setDestination);
@@ -59,10 +62,6 @@ function TripPage() {
     setIsReservationsModalOpen(!isReservationsModalOpen);
   };
 
-  const handleCloseAlert = () => {
-    setIsAlertOpen(false);
-  };
-
   useEffect(() => {
     if (!trip) {
       const storedTrip = localStorage.getItem("trip");
@@ -70,11 +69,26 @@ function TripPage() {
         setTrip(JSON.parse(storedTrip));
       }
     }
+
+    if (trip && Math.abs(trip.totalBudget - trip.TotalCost) > 500) {
+      setAlert({
+        text: `Your budget is so low, The cheapest trip costs
+      ${formatCurrency(trip.TotalCost)}`,
+        type: "warning",
+      });
+    }
   }, []);
 
   useEffect(() => {
-    if (trip && Math.abs(trip.totalBudget - trip.TotalCost) > 500)
-      setIsAlertOpen(true);
+    const n = setTimeout(() => {
+      setAlert(null);
+    }, 6000);
+
+    return () => clearTimeout(n);
+  }, [alert, setAlert]);
+
+  useEffect(() => {
+    localStorage.setItem("trip", JSON.stringify(trip));
   }, [trip]);
 
   // useEffect(() => {
@@ -190,15 +204,15 @@ function TripPage() {
 
   return (
     <div className="trip">
-      {isAlertOpen ? (
+      {alert ? (
         <Alert
           className="trip-alert"
-          severity="warning"
-          color="warning"
-          onClose={handleCloseAlert}
+          severity={alert.type}
+          color={alert.type}
+          variant="outlined"
+          onClose={() => setAlert(null)}
         >
-          Your budget is so low, The cheapest trip costs{" "}
-          {formatCurrency(trip.TotalCost)}
+          {alert.text}
         </Alert>
       ) : (
         <></>

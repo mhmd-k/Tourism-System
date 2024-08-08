@@ -8,6 +8,7 @@ import { getPath } from "../../RESTFunctions";
 import LoadingSpinner from "../../components/LoadingSpinner";
 import ChangePlaceElement from "./ChangePlaceElement";
 import { mapStore } from "../../zustand/MapStore";
+import { alertStore } from "../../zustand/AlertStore";
 
 function PlaceModal({
   previosPlace,
@@ -25,9 +26,10 @@ function PlaceModal({
   const [destince, setDestince] = useState<number | null>(null);
   const [isEditing, setIsEditing] = useState<boolean>(false);
 
+  const setAlert = alertStore((state) => state.setAlert);
+
   const trip = mapStore((state) => state.trip);
   const activeDay = mapStore((state) => state.activeDay);
-
   const setTrip = mapStore((state) => state.setTrip);
 
   useEffect(() => {
@@ -86,6 +88,8 @@ function PlaceModal({
       });
 
       handleOpenCloseModal();
+
+      setAlert({ text: "Place Deleted Successfully", type: "success" });
     }
 
     // TODO: make API call to delete the place

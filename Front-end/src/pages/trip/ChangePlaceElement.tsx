@@ -11,6 +11,7 @@ import {
 import { getPlaces } from "../../RESTFunctions";
 import { v4 as uuidv4 } from "uuid";
 import { mapStore } from "../../zustand/MapStore";
+import { alertStore } from "../../zustand/AlertStore";
 
 function ChangePlaceElement({
   handleIsEditingChange,
@@ -30,9 +31,10 @@ function ChangePlaceElement({
   const [open, setOpen] = useState(false);
   const [options, setOptions] = useState<TripPlace[]>([]);
 
+  const setAlert = alertStore((state) => state.setAlert);
+
   const trip = mapStore((state) => state.trip);
   const activeDay = mapStore((state) => state.activeDay);
-
   const setTrip = mapStore((state) => state.setTrip);
 
   const city = trip?.tripDays[activeDay].city.name;
@@ -103,6 +105,8 @@ function ChangePlaceElement({
       });
 
       handleOpenCloseModal();
+
+      setAlert({ text: "Place Changed Successfully", type: "success" });
     }
 
     // TODO: make the API call to change the place
