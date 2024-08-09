@@ -160,6 +160,33 @@ export interface FlightReservation {
   location: string;
 }
 
+export interface CreditCard {
+  cardNumber: number;
+  name: string;
+  cvv: number;
+}
+
+export interface FlightRes {
+  airportId: number;
+  numOfTickets: number;
+  ticketPrice: number;
+  date: string;
+}
+
+export interface HotelRes {
+  hotelId: number;
+  paidAmount: number;
+  date: string;
+}
+
+export interface ReservationsRequest {
+  hotels?: HotelRes[];
+  flights?: FlightRes[];
+  userId: number;
+  tripId: number;
+  creditCardInfo: CreditCard;
+}
+
 export interface ModelPlace {
   cityId: number;
   cityName: string;

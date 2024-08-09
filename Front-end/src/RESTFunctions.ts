@@ -5,6 +5,7 @@ import {
   LoginRequest,
   ModelPlace,
   PlaceLocation,
+  ReservationsRequest,
   SignupRequest,
   Trip,
   TripPlace,
@@ -325,7 +326,7 @@ export async function uploadImage(
 export async function deleteImage(userId: number): Promise<boolean> {
   try {
     const res: UploadImageResponse = await axios.put(
-      "http://localhost:8000/api/delete-image",
+      `${laravelUrl}/delete-image`,
       { userId: userId }
     );
 
@@ -337,6 +338,34 @@ export async function deleteImage(userId: number): Promise<boolean> {
     throw new Error("Error deleting image");
   } catch (error) {
     console.error("Error occurred during image delete:", error);
+    return false;
+  }
+}
+
+export async function bookReservations(
+  flightsReq: ReservationsRequest,
+  hotelsReq: ReservationsRequest
+) {
+  try {
+    console.log("flightsRequest: ", flightsReq);
+    console.log("hotelsRequest: ", hotelsReq);
+
+    const [response1, response2] = await Promise.all([
+      axios.post(`${laravelUrl}/store_flights`, flightsReq),
+      axios.post(`${laravelUrl}/store_hotels_reservations`, hotelsReq),
+    ]);
+
+    console.log("Res1: ", response1);
+    console.log("Res2: ", response2);
+
+    // Check if both responses have a status of 200
+    if (response1.status === 200 && response2.status === 200) {
+      return true;
+    } else {
+      throw new Error("Error storing flights or hotel reservations");
+    }
+  } catch (err) {
+    console.error("storeFlightsError: ", err);
     return false;
   }
 }

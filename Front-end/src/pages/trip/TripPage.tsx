@@ -8,7 +8,6 @@ import { Box, Button, Drawer, IconButton } from "@mui/material";
 import { Close, CreditCard, Map } from "@mui/icons-material";
 import { mapStore } from "../../zustand/MapStore";
 import { formatCurrency, stringToLngLat } from "../../utils";
-import LoadingSpinner from "../../components/LoadingSpinner";
 import ReservationsModal from "./ReservationsModal";
 import Popup from "../../components/Popup";
 import EventNoteIcon from "@mui/icons-material/EventNote";
@@ -17,12 +16,13 @@ import Alert from "@mui/material/Alert";
 import { alertStore } from "../../zustand/AlertStore";
 
 function TripPage() {
-  const [isLoading] = useState(false);
+  // const [isLoading] = useState(false);
   const [isMobileNavbarOpen, setIsMobileNavbarOpen] = useState<boolean>(false);
   const [isTripInfoModalOpen, setIsTripInfoModalOpen] =
     useState<boolean>(false);
   const [isReservationsModalOpen, setIsReservationsModalOpen] =
     useState<boolean>(false);
+  const [isReservationsDone, setIsReservationsDone] = useState<boolean>(false);
 
   const alert = alertStore((state) => state.alert);
   const setAlert = alertStore((state) => state.setAlert);
@@ -62,6 +62,8 @@ function TripPage() {
     setIsReservationsModalOpen(!isReservationsModalOpen);
   };
 
+  const handleReservationsDone = () => setIsReservationsDone(true);
+
   useEffect(() => {
     if (!trip) {
       const storedTrip = localStorage.getItem("trip");
@@ -82,7 +84,7 @@ function TripPage() {
   useEffect(() => {
     const n = setTimeout(() => {
       setAlert(null);
-    }, 6000);
+    }, 10000);
 
     return () => clearTimeout(n);
   }, [alert, setAlert]);
@@ -149,7 +151,7 @@ function TripPage() {
     }
   }, [activeDay, trip]);
 
-  if (isLoading) return <LoadingSpinner color="var(--green-color)" size={50} />;
+  // if (isLoading) return <LoadingSpinner color="var(--green-color)" size={50} />;
   if (!trip) return <h2>Error fetching trip</h2>;
 
   const tripNavbar = (
@@ -227,7 +229,7 @@ function TripPage() {
       </Drawer>
       <aside>{tripNavbar}</aside>
       <MapElement />
-      {trip.flightReservation || trip.hotelReservation ? (
+      {!isReservationsDone ? (
         <IconButton
           className="reservations-btn"
           onClick={handleOpenCloseReservationsModel}
@@ -253,7 +255,10 @@ function TripPage() {
               <Close />
             </Button>
           </Stack>
-          <ReservationsModal />
+          <ReservationsModal
+            handleOpenCloseModel={handleOpenCloseReservationsModel}
+            handleReservationsDone={handleReservationsDone}
+          />
         </Box>
       </Popup>
     </div>
