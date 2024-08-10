@@ -8,7 +8,11 @@ import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import PlaceIcon from "../../components/PlaceIcon";
 import { mapStore } from "../../zustand/MapStore";
-import { formatMinutesToTime, formatTravelTime } from "../../utils";
+import {
+  formatCurrency,
+  formatMinutesToTime,
+  formatTravelTime,
+} from "../../utils";
 import { TripPlace } from "../../types";
 import { useLocation } from "react-router-dom";
 
@@ -54,7 +58,7 @@ function ItineraryTable({ dayNumber }: { dayNumber: number }) {
         <p>Day {dayNumber}</p>
         <p>Date: {day.date}</p>
         <p>City: {day.city.name}</p>
-        <p>Needed Money: {day.neededMony}$</p>
+        <p>Needed Money: {formatCurrency(day.neededMony)}</p>
       </Box>
       <TableContainer component={Paper} sx={{ marginBottom: "60px" }}>
         <Table>
@@ -125,21 +129,21 @@ function ItineraryTable({ dayNumber }: { dayNumber: number }) {
                   </TableCell>
                   <TableCell align="center">
                     {place.transportaioncost
-                      ? `${place.transportaioncost}$`
+                      ? formatCurrency(place.transportaioncost)
                       : "-"}
                   </TableCell>
                   <TableCell align="center">
                     {place.ticketprice
-                      ? `${place.ticketprice}$`
+                      ? formatCurrency(place.ticketprice)
                       : place.ticketprice_return
-                        ? `${place.ticketprice_return}$`
+                        ? formatCurrency(place.ticketprice_return)
                         : "-"}
                   </TableCell>
                   <TableCell align="center">
-                    {place.price ? `${place.price}$` : "-"}
+                    {place.price ? formatCurrency(place.price) : "-"}
                   </TableCell>
                   <TableCell align="center" sx={{ fontWeight: "bold" }}>
-                    {totalCost}$
+                    {formatCurrency(totalCost)}
                   </TableCell>
                 </TableRow>
               );

@@ -271,7 +271,7 @@ export async function getCities(str: string) {
     console.log("getCitiesResponse: ", res);
 
     if (res.status === 200) {
-      return res.data.cities;
+      return res.data.cities.filter((city: string) => city !== "roma");
     } else {
       throw new Error("error fetching cities");
     }
@@ -367,5 +367,23 @@ export async function bookReservations(
   } catch (err) {
     console.error("storeFlightsError: ", err);
     return false;
+  }
+}
+
+export async function getHotelsReservations(userId: number) {
+  try {
+    const response = await axios.post(`${laravelUrl}/get_hotels_reservations`, {
+      userId,
+    });
+
+    console.log("get hotels res response: ", response);
+
+    if (response.status === 200) {
+      return response;
+    } else {
+      throw new Error("Error getting hotels reservations");
+    }
+  } catch (err) {
+    console.error(err);
   }
 }

@@ -81,13 +81,13 @@ function TripPage() {
     }
   }, []);
 
-  useEffect(() => {
-    const n = setTimeout(() => {
-      setAlert(null);
-    }, 10000);
+  // useEffect(() => {
+  //   const n = setTimeout(() => {
+  //     setAlert(null);
+  //   }, 10000);
 
-    return () => clearTimeout(n);
-  }, [alert, setAlert]);
+  //   return () => clearTimeout(n);
+  // }, [alert, setAlert]);
 
   useEffect(() => {
     localStorage.setItem("trip", JSON.stringify(trip));
