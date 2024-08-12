@@ -36,7 +36,7 @@ function PlacesSearch() {
         await sleep(2000);
 
         const places = await getPlaces(placeName);
-
+        console.log(places);
         if (places) {
           setOptions(places);
         }

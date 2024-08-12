@@ -10,9 +10,9 @@ const filters = [
   { label: "All", value: "" },
   { label: "Resturants", value: "restaurant" },
   { label: "Hotels", value: "hotel" },
-  { label: "Old Places", value: "old_place" },
-  { label: "Night Places", value: "night_place" },
-  { label: "Natural Places", value: "natural_place" },
+  { label: "Old Places", value: "old" },
+  { label: "Night Places", value: "night" },
+  { label: "Natural Places", value: "natural" },
 ];
 
 function PlacesPage() {
@@ -66,7 +66,7 @@ function PlacesPage() {
     const placeType = searchParams.get("type");
 
     const URL = placeType
-      ? `http://localhost:8000/api/search?placeType=${placeType.slice(0, 3)}&placeName=${placeName}`
+      ? `http://localhost:8000/api/search?placeType=${placeType}&placeName=${placeName}`
       : `http://localhost:8000/api/search?placeName=${placeName}`;
 
     try {
