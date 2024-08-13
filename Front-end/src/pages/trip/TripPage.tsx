@@ -72,7 +72,7 @@ function TripPage() {
       }
     }
 
-    if (trip && Math.abs(trip.totalBudget - trip.TotalCost) > 500) {
+    if (trip && trip.TotalCost - trip.totalBudget > 1000) {
       setAlert({
         text: `Your budget is so low, The cheapest trip costs
       ${formatCurrency(trip.TotalCost)}`,
