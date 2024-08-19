@@ -148,7 +148,7 @@ function ChangePlaceElement({
           )}
           renderOption={(props, option) => (
             <li {...props} key={uuidv4()}>
-              {option.name} - {option.cityName} - {option.placeType}
+              {option.name}
             </li>
           )}
           getOptionLabel={(option) => `${option.name} - ${option.cityName}`}
