@@ -7,7 +7,6 @@
 
 ### Back-end done by [Mosaab Dayoub](https://github.com/MosaabDayoub)
 
----
 ## Prerequisites
 Before you begin, ensure you have the following installed:
 - [Python](https://www.python.org/downloads/)
